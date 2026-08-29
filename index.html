@@ -4,934 +4,928 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>BRIX | Catálogo</title>
+<title>BRIX | Tu momento, tu bebida</title>
+
+<meta name="description" content="BRIX - Tu momento, tu bebida. Catálogo de bebidas, promociones y pedidos por WhatsApp.">
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-  font-family:Arial,sans-serif;
-}
 
 :root{
-  --negro:#111111;
-  --negro2:#1c1c1c;
-  --blanco:#ffffff;
-  --gris:#f3f3f3;
-  --verde:#18b957;
-  --verde-oscuro:#0d8f43;
+    --negro:#050505;
+    --negro2:#111111;
+    --blanco:#ffffff;
+    --gris:#eeeeee;
+    --verde:#b7ff00;
+    --verde2:#8ed000;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
 body{
-  background:var(--gris);
-  color:var(--negro);
+    font-family:Arial, Helvetica, sans-serif;
+    background:var(--negro);
+    color:var(--blanco);
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 header{
-  background:var(--negro);
-  color:white;
-  padding:18px 20px;
-  position:sticky;
-  top:0;
-  z-index:20;
-  box-shadow:0 3px 15px rgba(0,0,0,.25);
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(5,5,5,.95);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid #222;
 }
 
-.top{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  max-width:900px;
-  margin:auto;
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:18px 25px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
 .logo{
-  font-size:32px;
-  font-weight:900;
-  letter-spacing:3px;
-  color:var(--verde);
+    font-size:30px;
+    font-weight:900;
+    letter-spacing:3px;
+    color:white;
 }
 
-.cart{
-  background:var(--verde);
-  color:white;
-  border:0;
-  border-radius:12px;
-  padding:10px 15px;
-  font-size:18px;
-  font-weight:bold;
-  cursor:pointer;
+.logo span{
+    color:var(--verde);
 }
 
-/* UBICACIÓN */
-
-.location{
-  background:var(--verde);
-  color:white;
-  padding:13px 20px;
-  font-size:16px;
-  font-weight:bold;
-  text-align:center;
+nav{
+    display:flex;
+    gap:25px;
 }
 
-/* HERO */
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--verde);
+}
+
+/* =========================
+   PORTADA
+========================= */
 
 .hero{
-  background:var(--negro);
-  color:white;
-  padding:32px 20px;
-  text-align:center;
+    width:100%;
+    position:relative;
+    overflow:hidden;
 }
 
-.hero h1{
-  font-size:36px;
-  margin-bottom:8px;
-  color:var(--verde);
-  letter-spacing:2px;
+.hero img{
+    width:100%;
+    height:auto;
+    display:block;
 }
 
-.hero p{
-  color:#ddd;
-  font-size:17px;
+.hero-button{
+    position:absolute;
+    left:18%;
+    bottom:23%;
+    background:var(--verde);
+    color:#000;
+    padding:15px 30px;
+    font-weight:900;
+    text-decoration:none;
+    border-radius:5px;
+    transition:.3s;
+    box-shadow:0 0 20px rgba(183,255,0,.25);
 }
 
-/* CATEGORÍAS */
-
-.categories{
-  display:flex;
-  gap:10px;
-  overflow-x:auto;
-  padding:15px;
-  background:white;
-  border-bottom:1px solid #ddd;
+.hero-button:hover{
+    transform:scale(1.05);
+    background:white;
 }
 
-.categories button{
-  white-space:nowrap;
-  border:2px solid var(--verde);
-  color:var(--verde-oscuro);
-  background:white;
-  border-radius:12px;
-  padding:10px 16px;
-  font-size:15px;
-  font-weight:bold;
-  cursor:pointer;
-}
+/* =========================
+   GENERAL
+========================= */
 
-.categories button.active{
-  background:var(--verde);
-  color:white;
-}
-
-/* PRODUCTOS */
-
-.products{
-  padding:15px;
-  max-width:900px;
-  margin:auto;
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:70px 25px;
 }
 
 .section-title{
-  font-size:25px;
-  margin:15px 0;
+    text-align:center;
+    margin-bottom:45px;
 }
 
-/* TARJETA */
-
-.card{
-  background:white;
-  border-radius:16px;
-  margin-bottom:15px;
-  padding:13px;
-  display:flex;
-  gap:15px;
-  align-items:center;
-  box-shadow:0 3px 12px rgba(0,0,0,.08);
-  border-left:5px solid var(--verde);
+.section-title h2{
+    font-size:40px;
+    text-transform:uppercase;
+    letter-spacing:2px;
 }
 
-.product-img{
-  width:105px;
-  height:105px;
-  border-radius:12px;
-  background:var(--negro);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:white;
-  font-size:42px;
-  flex-shrink:0;
+.section-title h2 span{
+    color:var(--verde);
 }
 
-.info{
-  flex:1;
+.section-title p{
+    margin-top:12px;
+    color:#aaa;
 }
 
-.info h3{
-  font-size:18px;
-  margin-bottom:8px;
-  line-height:1.2;
+/* =========================
+   BENEFICIOS
+========================= */
+
+.benefits{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-top:30px;
+}
+
+.benefit{
+    background:var(--negro2);
+    border:1px solid #252525;
+    padding:30px 20px;
+    text-align:center;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.benefit:hover{
+    border-color:var(--verde);
+    transform:translateY(-5px);
+}
+
+.benefit .icon{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.benefit h3{
+    color:var(--verde);
+    margin-bottom:10px;
+}
+
+.benefit p{
+    color:#bbb;
+}
+
+/* =========================
+   CATALOGO
+========================= */
+
+.catalog{
+    background:#0b0b0b;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.product{
+    background:white;
+    color:#111;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+    transition:.3s;
+}
+
+.product:hover{
+    transform:translateY(-7px);
+    box-shadow:0 0 25px rgba(183,255,0,.15);
+}
+
+.product-image{
+    width:100%;
+    height:250px;
+    background:#ddd;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.product-info{
+    padding:20px;
+}
+
+.product-info h3{
+    font-size:22px;
+    margin-bottom:8px;
+}
+
+.product-info p{
+    color:#666;
+    margin-bottom:15px;
 }
 
 .price{
-  font-size:25px;
-  font-weight:900;
-  color:var(--verde-oscuro);
+    font-size:22px;
+    font-weight:900;
+    color:#111;
 }
 
-.add{
-  margin-top:10px;
-  border:0;
-  background:var(--verde);
-  color:white;
-  padding:10px 13px;
-  border-radius:9px;
-  font-weight:bold;
-  cursor:pointer;
+.order-button{
+    display:block;
+    margin-top:18px;
+    text-align:center;
+    padding:12px;
+    background:#111;
+    color:white;
+    text-decoration:none;
+    border-radius:7px;
+    font-weight:bold;
+    transition:.3s;
 }
 
-.add:active{
-  transform:scale(.97);
+.order-button:hover{
+    background:var(--verde);
+    color:#000;
 }
 
-/* CARRITO */
+/* =========================
+   PROMOCIONES
+========================= */
 
-.cart-panel{
-  position:fixed;
-  right:15px;
-  bottom:15px;
-  width:calc(100% - 30px);
-  max-width:420px;
-  max-height:80vh;
-  overflow-y:auto;
-  background:white;
-  border-radius:18px;
-  padding:20px;
-  box-shadow:0 5px 30px rgba(0,0,0,.35);
-  z-index:30;
-  display:none;
-  border-top:6px solid var(--verde);
+.promos{
+    background:var(--negro);
 }
 
-.cart-panel h2{
-  margin-bottom:15px;
+.promo-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
 }
 
-.cart-item{
-  padding:10px 0;
-  border-bottom:1px solid #ddd;
-  font-size:15px;
+.promo{
+    background:var(--negro2);
+    border:2px solid var(--verde);
+    border-radius:15px;
+    padding:30px;
+    text-align:center;
 }
 
-.remove{
-  float:right;
-  border:0;
-  background:#eee;
-  color:#111;
-  border-radius:6px;
-  padding:3px 7px;
-  cursor:pointer;
+.promo h3{
+    color:var(--verde);
+    font-size:28px;
+    margin-bottom:10px;
 }
 
-.total{
-  font-size:23px;
-  font-weight:bold;
-  margin:18px 0;
+.promo p{
+    color:#ccc;
+    margin-bottom:20px;
+}
+
+.promo-button{
+    display:inline-block;
+    background:var(--verde);
+    color:#000;
+    padding:12px 25px;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:900;
+}
+
+/* =========================
+   PEDIDOS
+========================= */
+
+.order-section{
+    background:var(--verde);
+    color:#000;
+    text-align:center;
+}
+
+.order-section h2{
+    font-size:38px;
+    margin-bottom:15px;
+}
+
+.order-section p{
+    font-size:18px;
+    margin-bottom:25px;
 }
 
 .whatsapp{
-  width:100%;
-  border:0;
-  background:var(--verde);
-  color:white;
-  padding:14px;
-  border-radius:10px;
-  font-size:17px;
-  font-weight:bold;
-  cursor:pointer;
+    display:inline-block;
+    background:#000;
+    color:white;
+    padding:15px 30px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:900;
+    transition:.3s;
 }
 
-.close{
-  float:right;
-  border:0;
-  background:none;
-  font-size:22px;
-  cursor:pointer;
+.whatsapp:hover{
+    background:white;
+    color:#000;
 }
 
-/* FOOTER */
+/* =========================
+   INSTAGRAM
+========================= */
+
+.instagram{
+    text-align:center;
+    background:#0b0b0b;
+}
+
+.instagram-box{
+    max-width:600px;
+    margin:auto;
+    background:#111;
+    border:1px solid #333;
+    border-radius:15px;
+    padding:35px 20px;
+}
+
+.instagram-icon{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.instagram-box h3{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.instagram-box h3 span{
+    color:var(--verde);
+}
+
+.instagram-box p{
+    color:#aaa;
+    margin-bottom:25px;
+}
+
+.instagram-button{
+    display:inline-block;
+    background:var(--verde);
+    color:#000;
+    padding:13px 30px;
+    border-radius:7px;
+    text-decoration:none;
+    font-weight:900;
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-  background:var(--negro);
-  color:white;
-  text-align:center;
-  padding:30px 20px;
-  margin-top:30px;
+    background:#000;
+    border-top:1px solid #222;
+    text-align:center;
+    padding:35px 20px;
 }
 
-footer h2{
-  color:var(--verde);
-  font-size:30px;
-  margin-bottom:10px;
+.footer-logo{
+    font-size:28px;
+    font-weight:900;
+    letter-spacing:3px;
+    margin-bottom:10px;
 }
 
-/* CELULAR */
-
-@media(max-width:500px){
-
-  .logo{
-    font-size:27px;
-  }
-
-  .hero h1{
-    font-size:30px;
-  }
-
-  .product-img{
-    width:85px;
-    height:85px;
-    font-size:34px;
-  }
-
-  .info h3{
-    font-size:16px;
-  }
-
-  .price{
-    font-size:21px;
-  }
-
-  .add{
-    font-size:13px;
-  }
+.footer-logo span{
+    color:var(--verde);
 }
+
+footer p{
+    color:#777;
+    margin:6px;
+}
+
+.footer-social{
+    margin-top:15px;
+}
+
+.footer-social a{
+    color:var(--verde);
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* =========================
+   BOTON ARRIBA
+========================= */
+
+.top{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:var(--verde);
+    color:#000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    font-size:22px;
+    font-weight:bold;
+    z-index:999;
+    box-shadow:0 5px 20px rgba(0,0,0,.5);
+}
+
+/* =========================
+   CELULAR
+========================= */
+
+@media(max-width:800px){
+
+    .navbar{
+        padding:15px 18px;
+    }
+
+    .logo{
+        font-size:24px;
+    }
+
+    nav{
+        display:none;
+    }
+
+    .hero-button{
+        left:50%;
+        transform:translateX(-50%);
+        bottom:10%;
+        white-space:nowrap;
+        padding:11px 18px;
+        font-size:13px;
+    }
+
+    .hero-button:hover{
+        transform:translateX(-50%) scale(1.05);
+    }
+
+    .container{
+        padding:50px 18px;
+    }
+
+    .section-title h2{
+        font-size:30px;
+    }
+
+    .benefits{
+        grid-template-columns:1fr;
+    }
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    .promo-grid{
+        grid-template-columns:1fr;
+    }
+
+    .product-image{
+        height:280px;
+    }
+
+    .order-section h2{
+        font-size:30px;
+    }
+
+}
+
 </style>
 </head>
 
-<body>
+<body id="inicio">
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
-  <div class="top">
+<div class="navbar">
 
-    <div class="logo">
-      BRIX
-    </div>
+<div class="logo">
+BRI<span>X</span>
+</div>
 
-    <button class="cart" onclick="toggleCart()">
-      🛒 <span id="cartCount">0</span>
-    </button>
+<nav>
+<a href="#inicio">Inicio</a>
+<a href="#catalogo">Catálogo</a>
+<a href="#promos">Promos</a>
+<a href="#contacto">Contacto</a>
+</nav>
 
-  </div>
+</div>
 
 </header>
 
 
-<div class="location">
-  📍 QUEBRADA DEL CONDORITO 3673
-</div>
-
+<!-- =========================
+     PORTADA
+========================= -->
 
 <section class="hero">
 
-  <h1>BRIX</h1>
+<img src="banner.jpg" alt="BRIX - Tu momento, tu bebida">
 
-  <p>
-    Tu momento, tu bebida.
-  </p>
+<a class="hero-button" href="#catalogo">
+VER CATÁLOGO
+</a>
 
 </section>
 
 
-<div class="categories">
+<!-- =========================
+     BENEFICIOS
+========================= -->
 
-  <button class="active"
-  onclick="filterProducts('todos',this)">
-    Todos
-  </button>
+<section>
 
-  <button onclick="filterProducts('vodka',this)">
-    Vodkas
-  </button>
+<div class="container">
 
-  <button onclick="filterProducts('fernet',this)">
-    Fernet
-  </button>
+<div class="section-title">
 
-  <button onclick="filterProducts('energizante',this)">
-    Energizantes
-  </button>
+<h2>
+¿Por qué <span>BRIX</span>?
+</h2>
 
-  <button onclick="filterProducts('gaseosa',this)">
-    Gaseosas
-  </button>
-
-  <button onclick="filterProducts('vino',this)">
-    Vinos
-  </button>
-
-  <button onclick="filterProducts('combo',this)">
-    Combos
-  </button>
+<p>
+Tu momento, tu bebida.
+</p>
 
 </div>
 
 
-<main class="products">
+<div class="benefits">
 
-  <h2 class="section-title">
-    Productos y promociones
-  </h2>
+<div class="benefit">
 
-  <div id="productList"></div>
+<div class="icon">👍</div>
 
-</main>
+<h3>CALIDAD SIEMPRE</h3>
 
-
-<!-- CARRITO -->
-
-<div class="cart-panel" id="cartPanel">
-
-  <button class="close" onclick="toggleCart()">
-    ✕
-  </button>
-
-  <h2>
-    🛒 Mi pedido
-  </h2>
-
-  <div id="cartItems"></div>
-
-  <div class="total">
-    Total: $<span id="total">0</span>
-  </div>
-
-  <button class="whatsapp" onclick="sendWhatsApp()">
-    📲 Enviar pedido por WhatsApp
-  </button>
+<p>
+Productos seleccionados para que disfrutes cada momento.
+</p>
 
 </div>
 
+
+<div class="benefit">
+
+<div class="icon">🛵</div>
+
+<h3>ENVÍOS RÁPIDOS</h3>
+
+<p>
+Recibí tu pedido de manera rápida y cómoda.
+</p>
+
+</div>
+
+
+<div class="benefit">
+
+<div class="icon">💬</div>
+
+<h3>PEDÍ FÁCIL</h3>
+
+<p>
+Hacé tu pedido directamente por WhatsApp.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CATALOGO
+========================= -->
+
+<section class="catalog" id="catalogo">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+NUESTRO <span>CATÁLOGO</span>
+</h2>
+
+<p>
+Elegí tu bebida favorita.
+</p>
+
+</div>
+
+
+<div class="products">
+
+
+<!-- PRODUCTO 1 -->
+
+<div class="product">
+
+<div class="product-image">
+
+<img src="producto1.jpg" alt="Bebida BRIX">
+
+</div>
+
+<div class="product-info">
+
+<h3>Bebida BRIX</h3>
+
+<p>
+Refrescante y preparada para acompañar tu momento.
+</p>
+
+<div class="price">
+Consultar precio
+</div>
+
+<a class="order-button"
+href="https://wa.me/543512573455?text=Hola%20BRIX,%20quiero%20hacer%20un%20pedido">
+PEDIR POR WHATSAPP
+</a>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCTO 2 -->
+
+<div class="product">
+
+<div class="product-image">
+
+<img src="producto2.jpg" alt="Bebida BRIX">
+
+</div>
+
+<div class="product-info">
+
+<h3>Bebida BRIX</h3>
+
+<p>
+Una opción ideal para disfrutar bien fría.
+</p>
+
+<div class="price">
+Consultar precio
+</div>
+
+<a class="order-button"
+href="https://wa.me/543512573455?text=Hola%20BRIX,%20quiero%20hacer%20un%20pedido">
+PEDIR POR WHATSAPP
+</a>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCTO 3 -->
+
+<div class="product">
+
+<div class="product-image">
+
+<img src="producto3.jpg" alt="Bebida BRIX">
+
+</div>
+
+<div class="product-info">
+
+<h3>Bebida BRIX</h3>
+
+<p>
+Tu bebida, tu momento.
+</p>
+
+<div class="price">
+Consultar precio
+</div>
+
+<a class="order-button"
+href="https://wa.me/543512573455?text=Hola%20BRIX,%20quiero%20hacer%20un%20pedido">
+PEDIR POR WHATSAPP
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PROMOCIONES
+========================= -->
+
+<section class="promos" id="promos">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+PROMOCIONES <span>BRIX</span>
+</h2>
+
+<p>
+Aprovechá nuestras promos.
+</p>
+
+</div>
+
+
+<div class="promo-grid">
+
+
+<div class="promo">
+
+<h3>PROMO ESPECIAL</h3>
+
+<p>
+Consultá las promociones disponibles de BRIX.
+</p>
+
+<a class="promo-button"
+href="https://wa.me/543512573455?text=Hola%20BRIX,%20quiero%20consultar%20las%20promociones">
+CONSULTAR PROMO
+</a>
+
+</div>
+
+
+<div class="promo">
+
+<h3>ARMÁ TU PEDIDO</h3>
+
+<p>
+Escribinos y te ayudamos a elegir.
+</p>
+
+<a class="promo-button"
+href="https://wa.me/543512573455?text=Hola%20BRIX,%20quiero%20armar%20un%20pedido">
+PEDIR AHORA
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     WHATSAPP
+========================= -->
+
+<section class="order-section" id="contacto">
+
+<div class="container">
+
+<h2>
+¿QUERÉS HACER UN PEDIDO?
+</h2>
+
+<p>
+Escribinos directamente por WhatsApp.
+</p>
+
+<a class="whatsapp"
+href="https://wa.me/543512573455?text=Hola%20BRIX,%20quiero%20hacer%20un%20pedido"
+target="_blank">
+
+💬 PEDIR POR WHATSAPP
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     INSTAGRAM
+========================= -->
+
+<section class="instagram">
+
+<div class="container">
+
+<div class="instagram-box">
+
+<div class="instagram-icon">
+📸
+</div>
+
+<h3>
+SEGUINOS EN <span>INSTAGRAM</span>
+</h3>
+
+<p>
+Mirá nuestras bebidas, novedades y promociones.
+</p>
+
+<a class="instagram-button"
+href="https://www.instagram.com/brix_bebidas/"
+target="_blank">
+
+@brix_bebidas
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
-  <h2>BRIX</h2>
+<div class="footer-logo">
+BRI<span>X</span>
+</div>
 
-  <p>
-    📍 Quebrada del Condorito 3673
-  </p>
+<p>
+Tu momento, tu bebida.
+</p>
 
-  <p style="margin-top:8px;">
-    Tu momento, tu bebida.
-  </p>
+<p>
+Pedidos por WhatsApp: 3512573455
+</p>
+
+<div class="footer-social">
+
+<a href="https://www.instagram.com/brix_bebidas/"
+target="_blank">
+
+Instagram: @brix_bebidas
+
+</a>
+
+</div>
+
+<p style="margin-top:20px;">
+© 2026 BRIX. Todos los derechos reservados.
+</p>
 
 </footer>
 
 
-<script>
+<!-- =========================
+     BOTON ARRIBA
+========================= -->
 
-const products = [
+<a class="top" href="#inicio">
+↑
+</a>
 
-{
- name:"SMIRNOFF SABORIZADO",
- price:10900,
- category:"vodka",
- emoji:"🍸"
-},
-
-{
- name:"PROMO SMIRNOFF + 2 SPEED",
- price:15500,
- category:"vodka",
- emoji:"🍸"
-},
-
-{
- name:"2 PROMO SMIRNOFF",
- price:29500,
- category:"vodka",
- emoji:"🍸"
-},
-
-{
- name:"SKYY SABORIZADO",
- price:14500,
- category:"vodka",
- emoji:"🍾"
-},
-
-{
- name:"SKYY SABORIZADO 2",
- price:15500,
- category:"vodka",
- emoji:"🍾"
-},
-
-{
- name:"SKYY COSMIC",
- price:17500,
- category:"vodka",
- emoji:"🍾"
-},
-
-{
- name:"ABSOLUT SABORIZADO",
- price:26000,
- category:"vodka",
- emoji:"🍾"
-},
-
-{
- name:"BRANCA 750",
- price:17500,
- category:"fernet",
- emoji:"🍾"
-},
-
-{
- name:"FERNET 180 AÑOS",
- price:18000,
- category:"fernet",
- emoji:"🍾"
-},
-
-{
- name:"PROMO BRANCA 750 CON HIELO",
- price:25000,
- category:"fernet",
- emoji:"🧊"
-},
-
-{
- name:"PROMO BRANCA 750 + 2 COCA COLA 2,5L + HIELO",
- price:30000,
- category:"fernet",
- emoji:"🥃"
-},
-
-{
- name:"2 PROMO FERNET 750",
- price:48000,
- category:"fernet",
- emoji:"🥃"
-},
-
-{
- name:"FERNET 180° + COCA 2,5L",
- price:24000,
- category:"fernet",
- emoji:"🥃"
-},
-
-{
- name:"SPEED 250",
- price:2000,
- category:"energizante",
- emoji:"⚡"
-},
-
-{
- name:"SPEED XL",
- price:3000,
- category:"energizante",
- emoji:"⚡"
-},
-
-{
- name:"MONSTER",
- price:3500,
- category:"energizante",
- emoji:"⚡"
-},
-
-{
- name:"COCA COLA 500 ML",
- price:2000,
- category:"gaseosa",
- emoji:"🥤"
-},
-
-{
- name:"COCA COLA 2,5L",
- price:5500,
- category:"gaseosa",
- emoji:"🥤"
-},
-
-{
- name:"SPRITE 2,25L",
- price:5000,
- category:"gaseosa",
- emoji:"🥤"
-},
-
-{
- name:"PRITTY 2,25L",
- price:3000,
- category:"gaseosa",
- emoji:"🥤"
-},
-
-{
- name:"PROMO 2 BALBOS + 1 PRITTY",
- price:10500,
- category:"vino",
- emoji:"🍷"
-},
-
-{
- name:"2 SANTA JULIA MALBEC",
- price:10500,
- category:"vino",
- emoji:"🍷"
-},
-
-{
- name:"COLON SELECTO DULCE",
- price:7500,
- category:"vino",
- emoji:"🍷"
-},
-
-{
- name:"SANTA JULIA TINTO DULCE",
- price:8500,
- category:"vino",
- emoji:"🍷"
-},
-
-{
- name:"SANTA JULIA CHENIN DULCE",
- price:9000,
- category:"vino",
- emoji:"🍷"
-},
-
-{
- name:"CAVA NEGRA CHARDONNAY",
- price:9000,
- category:"vino",
- emoji:"🍷"
-},
-
-{
- name:"CASARENA ESTATE CHARDONNAY",
- price:9900,
- category:"vino",
- emoji:"🍷"
-},
-
-{
- name:"SKYY + SMIRNOFF + 4 SPEED",
- price:29000,
- category:"combo",
- emoji:"🔥"
-},
-
-{
- name:"PROMO BRANCA + PROMO",
- price:38500,
- category:"combo",
- emoji:"🔥"
-},
-
-{
- name:"ABSOLUT + SKYY + 4 SPEED XL",
- price:45000,
- category:"combo",
- emoji:"🔥"
-},
-
-{
- name:"3 PROMO SKYY",
- price:43500,
- category:"combo",
- emoji:"🔥"
-},
-
-{
- name:"2 PROMO ABSOLUT",
- price:59000,
- category:"combo",
- emoji:"🔥"
-},
-
-{
- name:"ABSOLUT + 2 SKYY + 9 SPEED",
- price:68000,
- category:"combo",
- emoji:"🔥"
-},
-
-{
- name:"JAGER + ABSOLUT",
- price:73500,
- category:"combo",
- emoji:"🔥"
-}
-
-];
-
-
-let cart=[];
-
-
-/* FORMATO DE DINERO */
-
-function money(value){
-
- return value.toLocaleString("es-AR");
-
-}
-
-
-/* MOSTRAR PRODUCTOS */
-
-function renderProducts(list=products){
-
- const container=document.getElementById("productList");
-
- container.innerHTML="";
-
- list.forEach((product)=>{
-
-   const originalIndex=products.indexOf(product);
-
-   container.innerHTML+=`
-
-   <div class="card">
-
-     <div class="product-img">
-       ${product.emoji}
-     </div>
-
-     <div class="info">
-
-       <h3>
-         ${product.name}
-       </h3>
-
-       <div class="price">
-         $${money(product.price)}
-       </div>
-
-       <button class="add"
-       onclick="addToCart(${originalIndex})">
-
-         + Agregar al pedido
-
-       </button>
-
-     </div>
-
-   </div>
-
-   `;
-
- });
-
-}
-
-
-/* FILTRAR */
-
-function filterProducts(category,button){
-
- document.querySelectorAll(".categories button")
- .forEach(btn=>btn.classList.remove("active"));
-
- button.classList.add("active");
-
-
- if(category==="todos"){
-
-   renderProducts(products);
-
- }else{
-
-   renderProducts(
-     products.filter(
-       product=>product.category===category
-     )
-   );
-
- }
-
-}
-
-
-/* AGREGAR AL CARRITO */
-
-function addToCart(index){
-
- cart.push(products[index]);
-
- updateCart();
-
-}
-
-
-/* ACTUALIZAR CARRITO */
-
-function updateCart(){
-
- document.getElementById("cartCount").innerText=cart.length;
-
- let html="";
- let total=0;
-
-
- cart.forEach((item,index)=>{
-
-   total+=item.price;
-
-   html+=`
-
-   <div class="cart-item">
-
-     ${item.name}
-
-     <br>
-
-     <strong>
-       $${money(item.price)}
-     </strong>
-
-     <button
-       class="remove"
-       onclick="removeFromCart(${index})">
-
-       ✕
-
-     </button>
-
-   </div>
-
-   `;
-
- });
-
-
- document.getElementById("cartItems").innerHTML=
-
- cart.length
-
- ? html
-
- : "<p>Tu pedido está vacío.</p>";
-
-
- document.getElementById("total").innerText=
- money(total);
-
-}
-
-
-/* ELIMINAR DEL CARRITO */
-
-function removeFromCart(index){
-
- cart.splice(index,1);
-
- updateCart();
-
-}
-
-
-/* ABRIR / CERRAR CARRITO */
-
-function toggleCart(){
-
- const panel=
- document.getElementById("cartPanel");
-
-
- panel.style.display=
-
- panel.style.display==="block"
-
- ? "none"
-
- : "block";
-
-}
-
-
-/* WHATSAPP */
-
-function sendWhatsApp(){
-
- if(cart.length===0){
-
-   alert("Agregá algún producto al pedido.");
-
-   return;
-
- }
-
-
- let message=
- "Hola! Quiero hacer este pedido:%0A%0A";
-
-
- let total=0;
-
-
- cart.forEach(item=>{
-
-   message+=
-   "• "+item.name+
-   " — $"+money(item.price)+
-   "%0A";
-
-   total+=item.price;
-
- });
-
-
- message+=
- "%0A*Total: $"+
- money(total)+
- "*";
-
-
- /*
-  IMPORTANTE:
-  CAMBIÁ ESTE NÚMERO POR EL WHATSAPP
-  REAL DE BRIX.
-
-  Formato:
-  549 + código de área + número
-
-  Ejemplo Córdoba:
-  549351XXXXXXXX
- */
-
-
- const phone="5493510000000";
-
-
- window.open(
-   "https://wa.me/"+
-   phone+
-   "?text="+
-   message,
-   "_blank"
- );
-
-}
-
-
-/* INICIAR */
-
-renderProducts();
-
-updateCart();
-
-</script>
 
 </body>
 </html>
