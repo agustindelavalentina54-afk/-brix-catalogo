@@ -7,7 +7,6 @@
 <title>BRIX | Catálogo</title>
 
 <style>
-
 *{
   box-sizing:border-box;
   margin:0;
@@ -15,172 +14,156 @@
   font-family:Arial,sans-serif;
 }
 
+:root{
+  --negro:#111111;
+  --negro2:#1c1c1c;
+  --blanco:#ffffff;
+  --gris:#f3f3f3;
+  --verde:#18b957;
+  --verde-oscuro:#0d8f43;
+}
+
 body{
-  background:#f5f4f8;
-  color:#211b35;
+  background:var(--gris);
+  color:var(--negro);
 }
 
 /* HEADER */
 
 header{
+  background:var(--negro);
+  color:white;
+  padding:18px 20px;
   position:sticky;
   top:0;
-  z-index:100;
-  background:linear-gradient(135deg,#42168f,#7d28c9);
-  padding:15px 18px;
-  box-shadow:0 3px 15px rgba(0,0,0,.2);
+  z-index:20;
+  box-shadow:0 3px 15px rgba(0,0,0,.25);
 }
 
 .top{
   display:flex;
   align-items:center;
   justify-content:space-between;
+  max-width:900px;
+  margin:auto;
 }
 
 .logo{
-  font-size:36px;
-  font-weight:1000;
-  letter-spacing:4px;
-
-  background:linear-gradient(
-    90deg,
-    #ffffff,
-    #e9c8ff,
-    #ffffff
-  );
-
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-
-  text-shadow:0 2px 15px rgba(255,255,255,.25);
+  font-size:32px;
+  font-weight:900;
+  letter-spacing:3px;
+  color:var(--verde);
 }
 
 .cart{
+  background:var(--verde);
+  color:white;
   border:0;
-  background:white;
-  color:#6322ad;
-  border-radius:13px;
+  border-radius:12px;
   padding:10px 15px;
-  font-size:19px;
+  font-size:18px;
   font-weight:bold;
+  cursor:pointer;
 }
 
-/* UBICACION */
+/* UBICACIÓN */
 
 .location{
-  background:#e1f5ff;
-  color:#0878ad;
-  text-align:center;
-  padding:14px 12px;
-  font-size:15px;
+  background:var(--verde);
+  color:white;
+  padding:13px 20px;
+  font-size:16px;
   font-weight:bold;
+  text-align:center;
 }
 
 /* HERO */
 
 .hero{
-  padding:35px 20px;
+  background:var(--negro);
   color:white;
-
-  background:
-  radial-gradient(circle at top right,#a94ce5,transparent 35%),
-  linear-gradient(135deg,#351070,#7526c4);
+  padding:32px 20px;
+  text-align:center;
 }
 
 .hero h1{
-  font-size:34px;
-  margin-bottom:10px;
+  font-size:36px;
+  margin-bottom:8px;
+  color:var(--verde);
+  letter-spacing:2px;
 }
 
 .hero p{
+  color:#ddd;
   font-size:17px;
-  opacity:.92;
 }
 
-/* CATEGORIAS */
+/* CATEGORÍAS */
 
 .categories{
   display:flex;
-  gap:9px;
+  gap:10px;
   overflow-x:auto;
-  padding:14px;
+  padding:15px;
   background:white;
-  scrollbar-width:none;
-}
-
-.categories::-webkit-scrollbar{
-  display:none;
+  border-bottom:1px solid #ddd;
 }
 
 .categories button{
   white-space:nowrap;
-  border:2px solid #6726b6;
+  border:2px solid var(--verde);
+  color:var(--verde-oscuro);
   background:white;
-  color:#6726b6;
   border-radius:12px;
-  padding:10px 15px;
+  padding:10px 16px;
   font-size:15px;
   font-weight:bold;
+  cursor:pointer;
 }
 
 .categories button.active{
-  background:#6726b6;
+  background:var(--verde);
   color:white;
 }
 
 /* PRODUCTOS */
 
 .products{
-  max-width:950px;
-  margin:auto;
   padding:15px;
+  max-width:900px;
+  margin:auto;
 }
 
 .section-title{
   font-size:25px;
-  margin:10px 0 18px;
+  margin:15px 0;
 }
 
 /* TARJETA */
 
 .card{
   background:white;
-  border-radius:18px;
+  border-radius:16px;
   margin-bottom:15px;
-  padding:12px;
-
+  padding:13px;
   display:flex;
+  gap:15px;
   align-items:center;
-  gap:14px;
-
-  box-shadow:0 4px 15px rgba(0,0,0,.08);
+  box-shadow:0 3px 12px rgba(0,0,0,.08);
+  border-left:5px solid var(--verde);
 }
 
 .product-img{
   width:105px;
   height:105px;
-
-  flex-shrink:0;
-
-  border-radius:15px;
-
-  background:
-  linear-gradient(135deg,#381052,#9c2fc5);
-
+  border-radius:12px;
+  background:var(--negro);
   display:flex;
   align-items:center;
   justify-content:center;
-
-  overflow:hidden;
-
   color:white;
-  font-size:43px;
-}
-
-.product-img img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+  font-size:42px;
+  flex-shrink:0;
 }
 
 .info{
@@ -188,170 +171,111 @@ header{
 }
 
 .info h3{
-  font-size:17px;
-  margin-bottom:7px;
+  font-size:18px;
+  margin-bottom:8px;
+  line-height:1.2;
 }
 
 .price{
-  font-size:24px;
+  font-size:25px;
   font-weight:900;
+  color:var(--verde-oscuro);
 }
 
 .add{
-  margin-top:9px;
-
+  margin-top:10px;
   border:0;
-  background:#6524b8;
+  background:var(--verde);
   color:white;
-
   padding:10px 13px;
-
-  border-radius:10px;
-
-  font-size:14px;
+  border-radius:9px;
   font-weight:bold;
+  cursor:pointer;
 }
 
 .add:active{
-  transform:scale(.96);
-}
-
-/* PROMO */
-
-.promo{
-  border:2px solid #7a32c7;
-
-  background:
-  linear-gradient(
-    135deg,
-    #fff,
-    #f6edff
-  );
-}
-
-.promo .product-img{
-  background:
-  linear-gradient(135deg,#7a179e,#e32e9b);
-}
-
-.promo-label{
-  display:inline-block;
-
-  background:#dcf7e4;
-  color:#118247;
-
-  padding:4px 8px;
-
-  border-radius:20px;
-
-  font-size:12px;
-  font-weight:bold;
-
-  margin-bottom:5px;
+  transform:scale(.97);
 }
 
 /* CARRITO */
 
 .cart-panel{
   position:fixed;
-
-  left:15px;
   right:15px;
   bottom:15px;
-
-  max-width:450px;
-  margin:auto;
-
-  background:white;
-
-  border-radius:20px;
-
-  padding:20px;
-
-  box-shadow:0 5px 35px rgba(0,0,0,.3);
-
-  z-index:200;
-
-  display:none;
-
-  max-height:75vh;
+  width:calc(100% - 30px);
+  max-width:420px;
+  max-height:80vh;
   overflow-y:auto;
+  background:white;
+  border-radius:18px;
+  padding:20px;
+  box-shadow:0 5px 30px rgba(0,0,0,.35);
+  z-index:30;
+  display:none;
+  border-top:6px solid var(--verde);
 }
 
-.cart-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-
+.cart-panel h2{
   margin-bottom:15px;
-}
-
-.close{
-  border:0;
-  background:#eee;
-
-  width:35px;
-  height:35px;
-
-  border-radius:50%;
-
-  font-size:20px;
 }
 
 .cart-item{
   padding:10px 0;
-
   border-bottom:1px solid #ddd;
+  font-size:15px;
+}
 
-  font-size:14px;
+.remove{
+  float:right;
+  border:0;
+  background:#eee;
+  color:#111;
+  border-radius:6px;
+  padding:3px 7px;
+  cursor:pointer;
 }
 
 .total{
   font-size:23px;
-  font-weight:900;
-
+  font-weight:bold;
   margin:18px 0;
 }
 
 .whatsapp{
   width:100%;
-
   border:0;
-
-  background:#20b85a;
+  background:var(--verde);
   color:white;
-
-  padding:15px;
-
-  border-radius:12px;
-
+  padding:14px;
+  border-radius:10px;
   font-size:17px;
   font-weight:bold;
+  cursor:pointer;
+}
+
+.close{
+  float:right;
+  border:0;
+  background:none;
+  font-size:22px;
+  cursor:pointer;
 }
 
 /* FOOTER */
 
 footer{
-  margin-top:30px;
-
-  background:#21132f;
+  background:var(--negro);
   color:white;
-
   text-align:center;
-
-  padding:35px 20px;
+  padding:30px 20px;
+  margin-top:30px;
 }
 
 footer h2{
+  color:var(--verde);
   font-size:30px;
-  letter-spacing:4px;
-
-  margin-bottom:12px;
-}
-
-footer p{
-  opacity:.85;
-  margin-top:6px;
+  margin-bottom:10px;
 }
 
 /* CELULAR */
@@ -359,20 +283,21 @@ footer p{
 @media(max-width:500px){
 
   .logo{
-    font-size:29px;
+    font-size:27px;
   }
 
   .hero h1{
-    font-size:28px;
+    font-size:30px;
   }
 
   .product-img{
-    width:88px;
-    height:88px;
+    width:85px;
+    height:85px;
+    font-size:34px;
   }
 
   .info h3{
-    font-size:15px;
+    font-size:16px;
   }
 
   .price{
@@ -382,12 +307,9 @@ footer p{
   .add{
     font-size:13px;
   }
-
 }
-
 </style>
 </head>
-
 
 <body>
 
@@ -409,18 +331,16 @@ footer p{
 
 
 <div class="location">
-
-📍 NUEVO LOCAL — QUEBRADA DEL CONDORITO 3673
-
+  📍 QUEBRADA DEL CONDORITO 3673
 </div>
 
 
 <section class="hero">
 
-  <h1>🍾 BRIX CATÁLOGO</h1>
+  <h1>BRIX</h1>
 
   <p>
-    Bebidas, combos y promociones
+    Tu momento, tu bebida.
   </p>
 
 </section>
@@ -428,39 +348,32 @@ footer p{
 
 <div class="categories">
 
-  <button
-    class="active"
-    onclick="filterProducts('todos',this)">
+  <button class="active"
+  onclick="filterProducts('todos',this)">
     Todos
   </button>
 
-  <button
-    onclick="filterProducts('vodka',this)">
+  <button onclick="filterProducts('vodka',this)">
     Vodkas
   </button>
 
-  <button
-    onclick="filterProducts('fernet',this)">
+  <button onclick="filterProducts('fernet',this)">
     Fernet
   </button>
 
-  <button
-    onclick="filterProducts('energizante',this)">
+  <button onclick="filterProducts('energizante',this)">
     Energizantes
   </button>
 
-  <button
-    onclick="filterProducts('gaseosa',this)">
+  <button onclick="filterProducts('gaseosa',this)">
     Gaseosas
   </button>
 
-  <button
-    onclick="filterProducts('vino',this)">
+  <button onclick="filterProducts('vino',this)">
     Vinos
   </button>
 
-  <button
-    onclick="filterProducts('combo',this)">
+  <button onclick="filterProducts('combo',this)">
     Combos
   </button>
 
@@ -469,50 +382,35 @@ footer p{
 
 <main class="products">
 
-<h2 class="section-title">
-  Productos y promociones
-</h2>
+  <h2 class="section-title">
+    Productos y promociones
+  </h2>
 
-<div id="productList"></div>
+  <div id="productList"></div>
 
 </main>
 
 
 <!-- CARRITO -->
 
-<div
-  class="cart-panel"
-  id="cartPanel">
+<div class="cart-panel" id="cartPanel">
 
-  <div class="cart-header">
+  <button class="close" onclick="toggleCart()">
+    ✕
+  </button>
 
-    <h2>
-      🛒 Mi pedido
-    </h2>
-
-    <button
-      class="close"
-      onclick="toggleCart()">
-      ✕
-    </button>
-
-  </div>
+  <h2>
+    🛒 Mi pedido
+  </h2>
 
   <div id="cartItems"></div>
 
   <div class="total">
-
-    Total:
-    $<span id="total">0</span>
-
+    Total: $<span id="total">0</span>
   </div>
 
-  <button
-    class="whatsapp"
-    onclick="sendWhatsApp()">
-
+  <button class="whatsapp" onclick="sendWhatsApp()">
     📲 Enviar pedido por WhatsApp
-
   </button>
 
 </div>
@@ -526,8 +424,8 @@ footer p{
     📍 Quebrada del Condorito 3673
   </p>
 
-  <p>
-    Catálogo online
+  <p style="margin-top:8px;">
+    Tu momento, tu bebida.
   </p>
 
 </footer>
@@ -535,15 +433,9 @@ footer p{
 
 <script>
 
-
-/* =========================
-   PRODUCTOS
-========================= */
-
 const products = [
 
 {
- id:1,
  name:"SMIRNOFF SABORIZADO",
  price:10900,
  category:"vodka",
@@ -551,25 +443,20 @@ const products = [
 },
 
 {
- id:2,
  name:"PROMO SMIRNOFF + 2 SPEED",
  price:15500,
  category:"vodka",
- emoji:"🍸",
- promo:true
+ emoji:"🍸"
 },
 
 {
- id:3,
  name:"2 PROMO SMIRNOFF",
  price:29500,
  category:"vodka",
- emoji:"🍸",
- promo:true
+ emoji:"🍸"
 },
 
 {
- id:4,
  name:"SKYY SABORIZADO",
  price:14500,
  category:"vodka",
@@ -577,7 +464,6 @@ const products = [
 },
 
 {
- id:5,
  name:"SKYY SABORIZADO 2",
  price:15500,
  category:"vodka",
@@ -585,7 +471,6 @@ const products = [
 },
 
 {
- id:6,
  name:"SKYY COSMIC",
  price:17500,
  category:"vodka",
@@ -593,7 +478,6 @@ const products = [
 },
 
 {
- id:7,
  name:"ABSOLUT SABORIZADO",
  price:26000,
  category:"vodka",
@@ -601,7 +485,6 @@ const products = [
 },
 
 {
- id:8,
  name:"BRANCA 750",
  price:17500,
  category:"fernet",
@@ -609,7 +492,6 @@ const products = [
 },
 
 {
- id:9,
  name:"FERNET 180 AÑOS",
  price:18000,
  category:"fernet",
@@ -617,43 +499,34 @@ const products = [
 },
 
 {
- id:10,
  name:"PROMO BRANCA 750 CON HIELO",
  price:25000,
  category:"fernet",
- emoji:"🧊",
- promo:true
+ emoji:"🧊"
 },
 
 {
- id:11,
  name:"PROMO BRANCA 750 + 2 COCA COLA 2,5L + HIELO",
  price:30000,
  category:"fernet",
- emoji:"🥃",
- promo:true
+ emoji:"🥃"
 },
 
 {
- id:12,
  name:"2 PROMO FERNET 750",
  price:48000,
  category:"fernet",
- emoji:"🥃",
- promo:true
+ emoji:"🥃"
 },
 
 {
- id:13,
  name:"FERNET 180° + COCA 2,5L",
  price:24000,
  category:"fernet",
- emoji:"🥃",
- promo:true
+ emoji:"🥃"
 },
 
 {
- id:14,
  name:"SPEED 250",
  price:2000,
  category:"energizante",
@@ -661,7 +534,6 @@ const products = [
 },
 
 {
- id:15,
  name:"SPEED XL",
  price:3000,
  category:"energizante",
@@ -669,7 +541,6 @@ const products = [
 },
 
 {
- id:16,
  name:"MONSTER",
  price:3500,
  category:"energizante",
@@ -677,7 +548,6 @@ const products = [
 },
 
 {
- id:17,
  name:"COCA COLA 500 ML",
  price:2000,
  category:"gaseosa",
@@ -685,7 +555,6 @@ const products = [
 },
 
 {
- id:18,
  name:"COCA COLA 2,5L",
  price:5500,
  category:"gaseosa",
@@ -693,7 +562,6 @@ const products = [
 },
 
 {
- id:19,
  name:"SPRITE 2,25L",
  price:5000,
  category:"gaseosa",
@@ -701,7 +569,6 @@ const products = [
 },
 
 {
- id:20,
  name:"PRITTY 2,25L",
  price:3000,
  category:"gaseosa",
@@ -709,25 +576,20 @@ const products = [
 },
 
 {
- id:21,
  name:"PROMO 2 BALBOS + 1 PRITTY",
  price:10500,
  category:"vino",
- emoji:"🍷",
- promo:true
+ emoji:"🍷"
 },
 
 {
- id:22,
  name:"2 SANTA JULIA MALBEC",
  price:10500,
  category:"vino",
- emoji:"🍷",
- promo:true
+ emoji:"🍷"
 },
 
 {
- id:23,
  name:"COLON SELECTO DULCE",
  price:7500,
  category:"vino",
@@ -735,7 +597,6 @@ const products = [
 },
 
 {
- id:24,
  name:"SANTA JULIA TINTO DULCE",
  price:8500,
  category:"vino",
@@ -743,7 +604,6 @@ const products = [
 },
 
 {
- id:25,
  name:"SANTA JULIA CHENIN DULCE",
  price:9000,
  category:"vino",
@@ -751,7 +611,6 @@ const products = [
 },
 
 {
- id:26,
  name:"CAVA NEGRA CHARDONNAY",
  price:9000,
  category:"vino",
@@ -759,7 +618,6 @@ const products = [
 },
 
 {
- id:27,
  name:"CASARENA ESTATE CHARDONNAY",
  price:9900,
  category:"vino",
@@ -767,66 +625,52 @@ const products = [
 },
 
 {
- id:28,
  name:"SKYY + SMIRNOFF + 4 SPEED",
  price:29000,
  category:"combo",
- emoji:"🔥",
- promo:true
+ emoji:"🔥"
 },
 
 {
- id:29,
  name:"PROMO BRANCA + PROMO",
  price:38500,
  category:"combo",
- emoji:"🔥",
- promo:true
+ emoji:"🔥"
 },
 
 {
- id:30,
  name:"ABSOLUT + SKYY + 4 SPEED XL",
  price:45000,
  category:"combo",
- emoji:"🔥",
- promo:true
+ emoji:"🔥"
 },
 
 {
- id:31,
  name:"3 PROMO SKYY",
  price:43500,
  category:"combo",
- emoji:"🔥",
- promo:true
+ emoji:"🔥"
 },
 
 {
- id:32,
  name:"2 PROMO ABSOLUT",
  price:59000,
  category:"combo",
- emoji:"🔥",
- promo:true
+ emoji:"🔥"
 },
 
 {
- id:33,
  name:"ABSOLUT + 2 SKYY + 9 SPEED",
  price:68000,
  category:"combo",
- emoji:"🔥",
- promo:true
+ emoji:"🔥"
 },
 
 {
- id:34,
  name:"JAGER + ABSOLUT",
  price:73500,
  category:"combo",
- emoji:"🔥",
- promo:true
+ emoji:"🔥"
 }
 
 ];
@@ -835,9 +679,7 @@ const products = [
 let cart=[];
 
 
-/* =========================
-   DINERO
-========================= */
+/* FORMATO DE DINERO */
 
 function money(value){
 
@@ -846,73 +688,44 @@ function money(value){
 }
 
 
-/* =========================
-   MOSTRAR PRODUCTOS
-========================= */
+/* MOSTRAR PRODUCTOS */
 
 function renderProducts(list=products){
 
- const container =
- document.getElementById("productList");
+ const container=document.getElementById("productList");
 
  container.innerHTML="";
 
+ list.forEach((product)=>{
 
- list.forEach(product=>{
+   const originalIndex=products.indexOf(product);
 
-   const cardClass =
-   product.promo
-   ? "card promo"
-   : "card";
+   container.innerHTML+=`
 
+   <div class="card">
 
-   container.innerHTML += `
+     <div class="product-img">
+       ${product.emoji}
+     </div>
 
-   <div class="${cardClass}">
+     <div class="info">
 
-      <div class="product-img">
+       <h3>
+         ${product.name}
+       </h3>
 
-        ${
-          product.image
-          ?
-          `<img src="${product.image}"
-          alt="${product.name}">`
-          :
-          product.emoji
-        }
+       <div class="price">
+         $${money(product.price)}
+       </div>
 
-      </div>
+       <button class="add"
+       onclick="addToCart(${originalIndex})">
 
+         + Agregar al pedido
 
-      <div class="info">
+       </button>
 
-        ${
-          product.promo
-          ?
-          `<span class="promo-label">
-             🔥 PROMOCIÓN
-           </span>`
-          :
-          ""
-        }
-
-        <h3>
-          ${product.name}
-        </h3>
-
-        <div class="price">
-          $${money(product.price)}
-        </div>
-
-        <button
-          class="add"
-          onclick="addToCart(${product.id})">
-
-          + Agregar al pedido
-
-        </button>
-
-      </div>
+     </div>
 
    </div>
 
@@ -923,17 +736,12 @@ function renderProducts(list=products){
 }
 
 
-/* =========================
-   FILTROS
-========================= */
+/* FILTRAR */
 
 function filterProducts(category,button){
 
- document
- .querySelectorAll(".categories button")
- .forEach(btn=>{
-   btn.classList.remove("active");
- });
+ document.querySelectorAll(".categories button")
+ .forEach(btn=>btn.classList.remove("active"));
 
  button.classList.add("active");
 
@@ -946,8 +754,7 @@ function filterProducts(category,button){
 
    renderProducts(
      products.filter(
-       product =>
-       product.category===category
+       product=>product.category===category
      )
    );
 
@@ -956,36 +763,22 @@ function filterProducts(category,button){
 }
 
 
-/* =========================
-   AGREGAR
-========================= */
+/* AGREGAR AL CARRITO */
 
-function addToCart(id){
+function addToCart(index){
 
- const product =
- products.find(
-   product => product.id===id
- );
-
- if(!product) return;
-
- cart.push(product);
+ cart.push(products[index]);
 
  updateCart();
 
 }
 
 
-/* =========================
-   ACTUALIZAR CARRITO
-========================= */
+/* ACTUALIZAR CARRITO */
 
 function updateCart(){
 
- document
- .getElementById("cartCount")
- .innerText=cart.length;
-
+ document.getElementById("cartCount").innerText=cart.length;
 
  let html="";
  let total=0;
@@ -993,15 +786,27 @@ function updateCart(){
 
  cart.forEach((item,index)=>{
 
-   total += item.price;
+   total+=item.price;
 
-   html += `
+   html+=`
 
    <div class="cart-item">
 
      ${item.name}
 
-     — $${money(item.price)}
+     <br>
+
+     <strong>
+       $${money(item.price)}
+     </strong>
+
+     <button
+       class="remove"
+       onclick="removeFromCart(${index})">
+
+       ✕
+
+     </button>
 
    </div>
 
@@ -1010,64 +815,66 @@ function updateCart(){
  });
 
 
- document
- .getElementById("cartItems")
- .innerHTML =
+ document.getElementById("cartItems").innerHTML=
 
  cart.length
- ?
- html
- :
- "<p>Tu pedido está vacío.</p>";
+
+ ? html
+
+ : "<p>Tu pedido está vacío.</p>";
 
 
- document
- .getElementById("total")
- .innerText=money(total);
+ document.getElementById("total").innerText=
+ money(total);
 
 }
 
 
-/* =========================
-   ABRIR CARRITO
-========================= */
+/* ELIMINAR DEL CARRITO */
+
+function removeFromCart(index){
+
+ cart.splice(index,1);
+
+ updateCart();
+
+}
+
+
+/* ABRIR / CERRAR CARRITO */
 
 function toggleCart(){
 
- const panel =
+ const panel=
  document.getElementById("cartPanel");
 
 
- panel.style.display =
+ panel.style.display=
 
  panel.style.display==="block"
- ?
- "none"
- :
- "block";
+
+ ? "none"
+
+ : "block";
 
 }
 
 
-/* =========================
-   WHATSAPP
-========================= */
+/* WHATSAPP */
 
 function sendWhatsApp(){
 
  if(cart.length===0){
 
-   alert(
-     "Agregá algún producto al pedido."
-   );
+   alert("Agregá algún producto al pedido.");
 
    return;
 
  }
 
 
- let message =
- "Hola! Quiero hacer este pedido:\n\n";
+ let message=
+ "Hola! Quiero hacer este pedido:%0A%0A";
 
 
  let total=0;
@@ -1075,52 +882,50 @@ function sendWhatsApp(){
 
  cart.forEach(item=>{
 
-   message +=
-   "• "+
-   item.name+
-   " — $"+
-   money(item.price)+
-   "\n";
+   message+=
+   "• "+item.name+
+   " — $"+money(item.price)+
+   "%0A";
 
-   total += item.price;
+   total+=item.price;
 
  });
 
 
- message +=
- "\nTotal: $"+
- money(total);
+ message+=
+ "%0A*Total: $"+
+ money(total)+
+ "*";
 
 
  /*
- ==============================
- CAMBIÁ ESTE NÚMERO
- POR EL WHATSAPP DE BRIX
- ==============================
+  IMPORTANTE:
+  CAMBIÁ ESTE NÚMERO POR EL WHATSAPP
+  REAL DE BRIX.
+
+  Formato:
+  549 + código de área + número
+
+  Ejemplo Córdoba:
+  549351XXXXXXXX
  */
 
- const phone =
- "5493510000000";
 
-
- const url =
- "https://wa.me/"+
- phone+
- "?text="+
- encodeURIComponent(message);
+ const phone="5493510000000";
 
 
  window.open(
-   url,
+   "https://wa.me/"+
+   phone+
+   "?text="+
+   message,
    "_blank"
  );
 
 }
 
 
-/* =========================
-   INICIAR
-========================= */
+/* INICIAR */
 
 renderProducts();
 
