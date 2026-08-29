@@ -4,25 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>BRIX | Tu momento, tu bebida</title>
-
-<meta name="description" content="BRIX - Tu momento, tu bebida. Catálogo de bebidas, promociones y pedidos por WhatsApp.">
+<title>BRIX | Catálogo</title>
 
 <style>
 
 :root{
     --negro:#050505;
-    --negro2:#111111;
+    --negro2:#101010;
     --blanco:#ffffff;
-    --gris:#eeeeee;
-    --verde:#b7ff00;
-    --verde2:#8ed000;
+    --gris:#171717;
+    --verde:#b8ff00;
+    --verde2:#8fd400;
 }
 
 *{
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
+}
+
+html{
     scroll-behavior:smooth;
 }
 
@@ -33,48 +34,82 @@ body{
 }
 
 /* =========================
-   HEADER
+   PORTADA
 ========================= */
 
-header{
+.hero{
+    width:100%;
+    background:#000;
+}
+
+.hero img{
+    display:block;
+    width:100%;
+    height:auto;
+}
+
+/* Botón debajo del banner */
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    padding:25px 20px;
+    background:#000;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 28px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:16px;
+    transition:0.2s;
+}
+
+.btn-verde{
+    background:var(--verde);
+    color:#000;
+}
+
+.btn-verde:hover{
+    background:var(--verde2);
+    transform:translateY(-2px);
+}
+
+.btn-blanco{
+    border:2px solid var(--blanco);
+    color:var(--blanco);
+}
+
+.btn-blanco:hover{
+    background:var(--blanco);
+    color:#000;
+}
+
+/* =========================
+   NAVEGACIÓN
+========================= */
+
+nav{
     position:sticky;
     top:0;
     z-index:1000;
-    background:rgba(5,5,5,.95);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid #222;
-}
-
-.navbar{
-    max-width:1200px;
-    margin:auto;
-    padding:18px 25px;
+    background:#080808;
+    border-bottom:1px solid #292929;
     display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.logo{
-    font-size:30px;
-    font-weight:900;
-    letter-spacing:3px;
-    color:white;
-}
-
-.logo span{
-    color:var(--verde);
-}
-
-nav{
-    display:flex;
-    gap:25px;
+    justify-content:center;
+    gap:30px;
+    padding:15px;
 }
 
 nav a{
     color:white;
     text-decoration:none;
     font-weight:bold;
-    transition:.3s;
+    font-size:15px;
 }
 
 nav a:hover{
@@ -82,189 +117,89 @@ nav a:hover{
 }
 
 /* =========================
-   PORTADA
+   SECCIONES
 ========================= */
 
-.hero{
-    width:100%;
-    position:relative;
-    overflow:hidden;
-}
-
-.hero img{
-    width:100%;
-    height:auto;
-    display:block;
-}
-
-.hero-button{
-    position:absolute;
-    left:18%;
-    bottom:23%;
-    background:var(--verde);
-    color:#000;
-    padding:15px 30px;
-    font-weight:900;
-    text-decoration:none;
-    border-radius:5px;
-    transition:.3s;
-    box-shadow:0 0 20px rgba(183,255,0,.25);
-}
-
-.hero-button:hover{
-    transform:scale(1.05);
-    background:white;
-}
-
-/* =========================
-   GENERAL
-========================= */
-
-.container{
+section{
+    padding:60px 20px;
     max-width:1200px;
     margin:auto;
-    padding:70px 25px;
 }
 
-.section-title{
+.titulo{
     text-align:center;
-    margin-bottom:45px;
+    margin-bottom:40px;
 }
 
-.section-title h2{
-    font-size:40px;
-    text-transform:uppercase;
-    letter-spacing:2px;
-}
-
-.section-title h2 span{
-    color:var(--verde);
-}
-
-.section-title p{
-    margin-top:12px;
-    color:#aaa;
-}
-
-/* =========================
-   BENEFICIOS
-========================= */
-
-.benefits{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-    margin-top:30px;
-}
-
-.benefit{
-    background:var(--negro2);
-    border:1px solid #252525;
-    padding:30px 20px;
-    text-align:center;
-    border-radius:12px;
-    transition:.3s;
-}
-
-.benefit:hover{
-    border-color:var(--verde);
-    transform:translateY(-5px);
-}
-
-.benefit .icon{
-    font-size:40px;
-    margin-bottom:15px;
-}
-
-.benefit h3{
-    color:var(--verde);
+.titulo h2{
+    font-size:34px;
     margin-bottom:10px;
 }
 
-.benefit p{
-    color:#bbb;
+.titulo span{
+    color:var(--verde);
+}
+
+.titulo p{
+    color:#aaa;
+    font-size:16px;
 }
 
 /* =========================
-   CATALOGO
+   CATÁLOGO
 ========================= */
 
-.catalog{
-    background:#0b0b0b;
-}
-
-.products{
+.catalogo{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:25px;
 }
 
-.product{
-    background:white;
-    color:#111;
+.producto{
+    background:var(--negro2);
+    border:1px solid #292929;
     border-radius:15px;
     overflow:hidden;
-    box-shadow:0 10px 30px rgba(0,0,0,.35);
-    transition:.3s;
+    transition:0.25s;
 }
 
-.product:hover{
-    transform:translateY(-7px);
-    box-shadow:0 0 25px rgba(183,255,0,.15);
+.producto:hover{
+    transform:translateY(-5px);
+    border-color:var(--verde);
 }
 
-.product-image{
+.producto img{
     width:100%;
     height:250px;
-    background:#ddd;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    overflow:hidden;
-}
-
-.product-image img{
-    width:100%;
-    height:100%;
     object-fit:cover;
+    background:#111;
 }
 
-.product-info{
+.producto-info{
     padding:20px;
 }
 
-.product-info h3{
-    font-size:22px;
+.producto h3{
+    font-size:21px;
     margin-bottom:8px;
 }
 
-.product-info p{
-    color:#666;
+.producto p{
+    color:#aaa;
+    line-height:1.5;
     margin-bottom:15px;
 }
 
-.price{
+.precio{
+    color:var(--verde);
     font-size:22px;
-    font-weight:900;
-    color:#111;
-}
-
-.order-button{
-    display:block;
-    margin-top:18px;
-    text-align:center;
-    padding:12px;
-    background:#111;
-    color:white;
-    text-decoration:none;
-    border-radius:7px;
     font-weight:bold;
-    transition:.3s;
+    margin-bottom:15px;
 }
 
-.order-button:hover{
-    background:var(--verde);
-    color:#000;
+.producto .btn{
+    width:100%;
+    text-align:center;
 }
 
 /* =========================
@@ -272,17 +207,13 @@ nav a:hover{
 ========================= */
 
 .promos{
-    background:var(--negro);
-}
-
-.promo-grid{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:25px;
 }
 
 .promo{
-    background:var(--negro2);
+    background:#0c0c0c;
     border:2px solid var(--verde);
     border-radius:15px;
     padding:30px;
@@ -291,106 +222,34 @@ nav a:hover{
 
 .promo h3{
     color:var(--verde);
-    font-size:28px;
-    margin-bottom:10px;
+    font-size:25px;
+    margin-bottom:12px;
 }
 
 .promo p{
-    color:#ccc;
-    margin-bottom:20px;
-}
-
-.promo-button{
-    display:inline-block;
-    background:var(--verde);
-    color:#000;
-    padding:12px 25px;
-    border-radius:6px;
-    text-decoration:none;
-    font-weight:900;
+    color:#ddd;
+    line-height:1.6;
 }
 
 /* =========================
-   PEDIDOS
+   WHATSAPP
 ========================= */
-
-.order-section{
-    background:var(--verde);
-    color:#000;
-    text-align:center;
-}
-
-.order-section h2{
-    font-size:38px;
-    margin-bottom:15px;
-}
-
-.order-section p{
-    font-size:18px;
-    margin-bottom:25px;
-}
 
 .whatsapp{
-    display:inline-block;
-    background:#000;
-    color:white;
-    padding:15px 30px;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:900;
-    transition:.3s;
-}
-
-.whatsapp:hover{
-    background:white;
-    color:#000;
-}
-
-/* =========================
-   INSTAGRAM
-========================= */
-
-.instagram{
     text-align:center;
     background:#0b0b0b;
+    border-top:1px solid #222;
+    border-bottom:1px solid #222;
 }
 
-.instagram-box{
-    max-width:600px;
-    margin:auto;
-    background:#111;
-    border:1px solid #333;
-    border-radius:15px;
-    padding:35px 20px;
+.whatsapp h2{
+    font-size:32px;
+    margin-bottom:12px;
 }
 
-.instagram-icon{
-    font-size:50px;
-    margin-bottom:15px;
-}
-
-.instagram-box h3{
-    font-size:28px;
-    margin-bottom:10px;
-}
-
-.instagram-box h3 span{
-    color:var(--verde);
-}
-
-.instagram-box p{
+.whatsapp p{
     color:#aaa;
     margin-bottom:25px;
-}
-
-.instagram-button{
-    display:inline-block;
-    background:var(--verde);
-    color:#000;
-    padding:13px 30px;
-    border-radius:7px;
-    text-decoration:none;
-    font-weight:900;
 }
 
 /* =========================
@@ -398,118 +257,62 @@ nav a:hover{
 ========================= */
 
 footer{
-    background:#000;
-    border-top:1px solid #222;
     text-align:center;
     padding:35px 20px;
-}
-
-.footer-logo{
-    font-size:28px;
-    font-weight:900;
-    letter-spacing:3px;
-    margin-bottom:10px;
-}
-
-.footer-logo span{
-    color:var(--verde);
-}
-
-footer p{
+    background:#000;
     color:#777;
-    margin:6px;
 }
 
-.footer-social{
-    margin-top:15px;
-}
-
-.footer-social a{
+footer strong{
     color:var(--verde);
-    text-decoration:none;
-    font-weight:bold;
 }
 
 /* =========================
-   BOTON ARRIBA
+   BOTÓN WHATSAPP FLOTANTE
 ========================= */
 
-.top{
+.whatsapp-float{
     position:fixed;
     right:20px;
     bottom:20px;
-    width:50px;
-    height:50px;
+    width:60px;
+    height:60px;
     border-radius:50%;
-    background:var(--verde);
-    color:#000;
+    background:#25D366;
+    color:white;
     display:flex;
     align-items:center;
     justify-content:center;
     text-decoration:none;
-    font-size:22px;
+    font-size:28px;
     font-weight:bold;
-    z-index:999;
     box-shadow:0 5px 20px rgba(0,0,0,.5);
+    z-index:9999;
 }
 
 /* =========================
-   CELULAR
+   MÓVIL
 ========================= */
 
-@media(max-width:800px){
-
-    .navbar{
-        padding:15px 18px;
-    }
-
-    .logo{
-        font-size:24px;
-    }
+@media(max-width:600px){
 
     nav{
-        display:none;
-    }
-
-    .hero-button{
-        left:50%;
-        transform:translateX(-50%);
-        bottom:10%;
+        gap:18px;
+        overflow-x:auto;
+        justify-content:flex-start;
         white-space:nowrap;
-        padding:11px 18px;
-        font-size:13px;
     }
 
-    .hero-button:hover{
-        transform:translateX(-50%) scale(1.05);
+    section{
+        padding:45px 15px;
     }
 
-    .container{
-        padding:50px 18px;
+    .titulo h2{
+        font-size:28px;
     }
 
-    .section-title h2{
-        font-size:30px;
-    }
-
-    .benefits{
-        grid-template-columns:1fr;
-    }
-
-    .products{
-        grid-template-columns:1fr;
-    }
-
-    .promo-grid{
-        grid-template-columns:1fr;
-    }
-
-    .product-image{
-        height:280px;
-    }
-
-    .order-section h2{
-        font-size:30px;
+    .producto img{
+        height:230px;
     }
 
 }
@@ -517,415 +320,174 @@ footer p{
 </style>
 </head>
 
-<body id="inicio">
+<body>
 
 <!-- =========================
-     HEADER
+     PORTADA BRIX
 ========================= -->
 
-<header>
+<header class="hero">
 
-<div class="navbar">
-
-<div class="logo">
-BRI<span>X</span>
-</div>
-
-<nav>
-<a href="#inicio">Inicio</a>
-<a href="#catalogo">Catálogo</a>
-<a href="#promos">Promos</a>
-<a href="#contacto">Contacto</a>
-</nav>
-
-</div>
+    <img src="banner.jpg" alt="BRIX - Tu momento, tu bebida">
 
 </header>
 
 
 <!-- =========================
-     PORTADA
+     BOTONES PORTADA
 ========================= -->
 
-<section class="hero">
+<div class="hero-buttons">
 
-<img src="banner.jpg" alt="BRIX - Tu momento, tu bebida">
+    <a href="#catalogo" class="btn btn-verde">
+        VER CATÁLOGO
+    </a>
 
-<a class="hero-button" href="#catalogo">
-VER CATÁLOGO
-</a>
+    <a href="https://wa.me/5493512573455?text=Hola%20BRIX%2C%20quiero%20hacer%20un%20pedido"
+       class="btn btn-blanco">
+        PEDIR POR WHATSAPP
+    </a>
 
-</section>
+</div>
 
 
 <!-- =========================
-     BENEFICIOS
+     MENÚ
 ========================= -->
 
-<section>
+<nav>
 
-<div class="container">
+    <a href="#catalogo">CATÁLOGO</a>
 
-<div class="section-title">
+    <a href="#promos">PROMOS</a>
 
-<h2>
-¿Por qué <span>BRIX</span>?
-</h2>
+    <a href="#contacto">WHATSAPP</a>
 
-<p>
-Tu momento, tu bebida.
-</p>
-
-</div>
-
-
-<div class="benefits">
-
-<div class="benefit">
-
-<div class="icon">👍</div>
-
-<h3>CALIDAD SIEMPRE</h3>
-
-<p>
-Productos seleccionados para que disfrutes cada momento.
-</p>
-
-</div>
-
-
-<div class="benefit">
-
-<div class="icon">🛵</div>
-
-<h3>ENVÍOS RÁPIDOS</h3>
-
-<p>
-Recibí tu pedido de manera rápida y cómoda.
-</p>
-
-</div>
-
-
-<div class="benefit">
-
-<div class="icon">💬</div>
-
-<h3>PEDÍ FÁCIL</h3>
-
-<p>
-Hacé tu pedido directamente por WhatsApp.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
+</nav>
 
 
 <!-- =========================
-     CATALOGO
+     CATÁLOGO
 ========================= -->
 
-<section class="catalog" id="catalogo">
+<section id="catalogo">
 
-<div class="container">
+    <div class="titulo">
 
-<div class="section-title">
+        <h2>
+            NUESTRO <span>CATÁLOGO</span>
+        </h2>
 
-<h2>
-NUESTRO <span>CATÁLOGO</span>
-</h2>
+        <p>
+            Elegí tu bebida favorita.
+        </p>
 
-<p>
-Elegí tu bebida favorita.
-</p>
+    </div>
 
-</div>
 
+    <div class="catalogo">
 
-<div class="products">
 
+        <!-- PRODUCTO 1 -->
 
-<!-- PRODUCTO 1 -->
+        <article class="producto">
 
-<div class="product">
+            <img src="producto1.jpg" alt="Producto BRIX">
 
-<div class="product-image">
+            <div class="producto-info">
 
-<img src="producto1.jpg" alt="Bebida BRIX">
+                <h3>Bebida BRIX</h3>
 
-</div>
+                <p>
+                    Tu bebida, tu momento.
+                </p>
 
-<div class="product-info">
+                <div class="precio">
+                    $ CONSULTAR
+                </div>
 
-<h3>Bebida BRIX</h3>
+                <a href="https://wa.me/5493512573455?text=Hola%20BRIX%2C%20quiero%20consultar%20por%20este%20producto"
+                   class="btn btn-verde">
+                    PEDIR
+                </a>
 
-<p>
-Refrescante y preparada para acompañar tu momento.
-</p>
+            </div>
 
-<div class="price">
-Consultar precio
-</div>
+        </article>
 
-<a class="order-button"
-href="https://wa.me/543512573455?text=Hola%20BRIX,%20quiero%20hacer%20un%20pedido">
-PEDIR POR WHATSAPP
-</a>
 
-</div>
+        <!-- PRODUCTO 2 -->
 
-</div>
+        <article class="producto">
 
+            <img src="producto2.jpg" alt="Producto BRIX">
 
-<!-- PRODUCTO 2 -->
+            <div class="producto-info">
 
-<div class="product">
+                <h3>Bebida BRIX</h3>
 
-<div class="product-image">
+                <p>
+                    Fresca, rica y lista para disfrutar.
+                </p>
 
-<img src="producto2.jpg" alt="Bebida BRIX">
+                <div class="precio">
+                    $ CONSULTAR
+                </div>
 
-</div>
+                <a href="https://wa.me/5493512573455?text=Hola%20BRIX%2C%20quiero%20consultar%20por%20este%20producto"
+                   class="btn btn-verde">
+                    PEDIR
+                </a>
 
-<div class="product-info">
+            </div>
 
-<h3>Bebida BRIX</h3>
+        </article>
 
-<p>
-Una opción ideal para disfrutar bien fría.
-</p>
 
-<div class="price">
-Consultar precio
-</div>
+        <!-- PRODUCTO 3 -->
 
-<a class="order-button"
-href="https://wa.me/543512573455?text=Hola%20BRIX,%20quiero%20hacer%20un%20pedido">
-PEDIR POR WHATSAPP
-</a>
+        <article class="producto">
 
-</div>
+            <img src="producto3.jpg" alt="Producto BRIX">
 
-</div>
+            <div class="producto-info">
 
+                <h3>Bebida BRIX</h3>
 
-<!-- PRODUCTO 3 -->
+                <p>
+                    Ideal para compartir.
+                </p>
 
-<div class="product">
+                <div class="precio">
+                    $ CONSULTAR
+                </div>
 
-<div class="product-image">
+                <a href="https://wa.me/5493512573455?text=Hola%20BRIX%2C%20quiero%20consultar%20por%20este%20producto"
+                   class="btn btn-verde">
+                    PEDIR
+                </a>
 
-<img src="producto3.jpg" alt="Bebida BRIX">
+            </div>
 
-</div>
+        </article>
 
-<div class="product-info">
 
-<h3>Bebida BRIX</h3>
+        <!-- PRODUCTO 4 -->
 
-<p>
-Tu bebida, tu momento.
-</p>
+        <article class="producto">
 
-<div class="price">
-Consultar precio
-</div>
+            <img src="producto4.jpg" alt="Producto BRIX">
 
-<a class="order-button"
-href="https://wa.me/543512573455?text=Hola%20BRIX,%20quiero%20hacer%20un%20pedido">
-PEDIR POR WHATSAPP
-</a>
+            <div class="producto-info">
 
-</div>
+                <h3>Bebida BRIX</h3>
 
-</div>
+                <p>
+                    Probá nuestras opciones.
+                </p>
 
+                <div class="precio">
+                    $ CONSULTAR
+                </div>
 
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     PROMOCIONES
-========================= -->
-
-<section class="promos" id="promos">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>
-PROMOCIONES <span>BRIX</span>
-</h2>
-
-<p>
-Aprovechá nuestras promos.
-</p>
-
-</div>
-
-
-<div class="promo-grid">
-
-
-<div class="promo">
-
-<h3>PROMO ESPECIAL</h3>
-
-<p>
-Consultá las promociones disponibles de BRIX.
-</p>
-
-<a class="promo-button"
-href="https://wa.me/543512573455?text=Hola%20BRIX,%20quiero%20consultar%20las%20promociones">
-CONSULTAR PROMO
-</a>
-
-</div>
-
-
-<div class="promo">
-
-<h3>ARMÁ TU PEDIDO</h3>
-
-<p>
-Escribinos y te ayudamos a elegir.
-</p>
-
-<a class="promo-button"
-href="https://wa.me/543512573455?text=Hola%20BRIX,%20quiero%20armar%20un%20pedido">
-PEDIR AHORA
-</a>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     WHATSAPP
-========================= -->
-
-<section class="order-section" id="contacto">
-
-<div class="container">
-
-<h2>
-¿QUERÉS HACER UN PEDIDO?
-</h2>
-
-<p>
-Escribinos directamente por WhatsApp.
-</p>
-
-<a class="whatsapp"
-href="https://wa.me/543512573455?text=Hola%20BRIX,%20quiero%20hacer%20un%20pedido"
-target="_blank">
-
-💬 PEDIR POR WHATSAPP
-
-</a>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     INSTAGRAM
-========================= -->
-
-<section class="instagram">
-
-<div class="container">
-
-<div class="instagram-box">
-
-<div class="instagram-icon">
-📸
-</div>
-
-<h3>
-SEGUINOS EN <span>INSTAGRAM</span>
-</h3>
-
-<p>
-Mirá nuestras bebidas, novedades y promociones.
-</p>
-
-<a class="instagram-button"
-href="https://www.instagram.com/brix_bebidas/"
-target="_blank">
-
-@brix_bebidas
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-<div class="footer-logo">
-BRI<span>X</span>
-</div>
-
-<p>
-Tu momento, tu bebida.
-</p>
-
-<p>
-Pedidos por WhatsApp: 3512573455
-</p>
-
-<div class="footer-social">
-
-<a href="https://www.instagram.com/brix_bebidas/"
-target="_blank">
-
-Instagram: @brix_bebidas
-
-</a>
-
-</div>
-
-<p style="margin-top:20px;">
-© 2026 BRIX. Todos los derechos reservados.
-</p>
-
-</footer>
-
-
-<!-- =========================
-     BOTON ARRIBA
-========================= -->
-
-<a class="top" href="#inicio">
-↑
-</a>
-
-
-</body>
-</html>
+                <a href="https://wa.me/5493512573455?text=Hola%20BRIX%2C%20quiero%20consult
