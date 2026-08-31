@@ -47,7 +47,7 @@
       letter-spacing: 2px;
     }
     .logo-text span {
-      color: #e50914;
+      color: #25d366; /* Cambiado a verde */
     }
 
     /* MENÚ LATERAL (SIDEBAR) */
@@ -103,7 +103,7 @@
     .sidebar ul li button:hover {
       background-color: #222;
       color: #fff;
-      border-left: 4px solid #e50914;
+      border-left: 4px solid #25d366;
     }
 
     /* FONDO OSCURO AL ABRIR MENÚ */
@@ -127,29 +127,43 @@
       min-height: 80vh;
     }
 
-    /* SECCIÓN INICIO (BANNER) */
+    /* SECCIÓN INICIO (BANNER MÁS GRANDE / ESPACIO PARA VIDEO) */
     .hero-section {
       text-align: center;
-      padding: 40px 20px;
+      padding: 20px 20px 50px 20px;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
-    .hero-img img {
-      max-width: 100%;
-      width: 380px;
-      border-radius: 12px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.7);
+    .hero-banner-container {
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
       margin-bottom: 30px;
+      background: #161616;
+      border: 1px solid #222;
+    }
+
+    /* Si ponés un video, va a ocupar este espacio grande de forma perfecta */
+    .hero-banner-container video, 
+    .hero-banner-container img {
+      width: 100%;
+      height: auto;
+      max-height: 500px;
+      object-fit: cover;
+      display: block;
     }
 
     .btn-whatsapp {
       display: inline-block;
       background-color: #25d366;
       color: #fff;
-      padding: 14px 30px;
+      padding: 15px 35px;
       border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
       transition: transform 0.2s;
     }
@@ -162,7 +176,7 @@
     .category-section {
       display: none;
       padding: 20px 20px 50px 20px;
-      max-width: 900px;
+      max-width: 950px;
       margin: 0 auto;
     }
 
@@ -179,7 +193,7 @@
     }
 
     .category-section h2 span {
-      color: #e50914;
+      color: #25d366;
     }
 
     /* GRILLA DE PRODUCTOS */
@@ -245,6 +259,7 @@
     </div>
     <ul>
       <li><button onclick="showCategory('inicio')">🏠 Inicio</button></li>
+      <li><button onclick="showCategory('catalogo-general')">📋 Catálogo Completo</button></li>
       <li><button onclick="showCategory('vodkas')">Vodkas</button></li>
       <li><button onclick="showCategory('gancia')">Gancia</button></li>
       <li><button onclick="showCategory('fernet')">Fernet</button></li>
@@ -259,9 +274,11 @@
 
   <!-- CONTENIDO PRINCIPAL -->
   <main>
-    <!-- 1. INICIO -->
+    <!-- 1. INICIO (Banner Grande / Espacio para video) -->
     <section id="inicio" class="category-section active-category hero-section">
-      <div class="hero-img">
+      <div class="hero-banner-container">
+        <!-- NOTA: Si querés usar un video en vez de imagen, reemplazá la etiqueta <img> de abajo por: 
+             <video src="tu-video.mp4" autoplay muted loop playsinline></video> -->
         <img alt="BRIX - Tu momento, tu bebida" src="F7E36772-8F96-4024-8D1F-244561E45971.png">
       </div>
       <div>
@@ -271,7 +288,34 @@
       </div>
     </section>
 
-    <!-- 2. VODKAS -->
+    <!-- 2. CATÁLOGO GENERAL (Todas las bebidas juntas) -->
+    <section id="catalogo-general" class="category-section">
+      <h2>CATÁLOGO <span>GENERAL</span></h2>
+      <div class="grid-productos">
+        <article>
+          <img src="IMG_3286.jpeg" alt="Vodka" loading="lazy">
+          <h3>Vodka Smirnoff</h3>
+          <div class="precio">$4.500</div>
+        </article>
+        <article>
+          <img src="IMG_3287.jpeg" alt="Gancia" loading="lazy">
+          <h3>Gancia Americano</h3>
+          <div class="precio">$3.800</div>
+        </article>
+        <article>
+          <img src="IMG_3288.jpeg" alt="Fernet" loading="lazy">
+          <h3>Fernet Branca</h3>
+          <div class="precio">$7.500</div>
+        </article>
+        <article>
+          <img src="IMG_3289.jpeg" alt="Cerveza" loading="lazy">
+          <h3>Cerveza Heineken</h3>
+          <div class="precio">$2.500</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3. VODKAS -->
     <section id="vodkas" class="category-section">
       <h2>VOD<span>KAS</span></h2>
       <div class="grid-productos">
@@ -283,7 +327,7 @@
       </div>
     </section>
 
-    <!-- 3. GANCIA -->
+    <!-- 4. GANCIA -->
     <section id="gancia" class="category-section">
       <h2>GAN<span>CIA</span></h2>
       <div class="grid-productos">
@@ -295,7 +339,7 @@
       </div>
     </section>
 
-    <!-- 4. FERNET -->
+    <!-- 5. FERNET -->
     <section id="fernet" class="category-section">
       <h2>FER<span>NET</span></h2>
       <div class="grid-productos">
@@ -307,7 +351,7 @@
       </div>
     </section>
 
-    <!-- 5. CERVEZA -->
+    <!-- 6. CERVEZA -->
     <section id="cerveza" class="category-section">
       <h2>CER<span>VEZA</span></h2>
       <div class="grid-productos">
@@ -319,7 +363,7 @@
       </div>
     </section>
 
-    <!-- 6. GASEOSAS -->
+    <!-- 7. GASEOSAS -->
     <section id="gaseosas" class="category-section">
       <h2>GASE<span>OSAS</span></h2>
       <div class="grid-productos">
@@ -331,7 +375,7 @@
       </div>
     </section>
 
-    <!-- 7. ENERGIZANTES -->
+    <!-- 8. ENERGIZANTES -->
     <section id="energizantes" class="category-section">
       <h2>ENERGI<span>ZANTES</span></h2>
       <div class="grid-productos">
@@ -343,7 +387,7 @@
       </div>
     </section>
 
-    <!-- 8. PROMOS -->
+    <!-- 9. PROMOS -->
     <section id="promos" class="category-section">
       <h2><span>PROMOS</span></h2>
       <div class="grid-productos">
