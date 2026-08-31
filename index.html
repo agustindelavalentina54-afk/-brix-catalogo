@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BRIX - Catálogo</title>
+  <title>BRIX - Catálogo de Bebidas</title>
   <style>
-    /* Estilos generales */
+    /* ESTILOS GENERALES */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -13,7 +13,7 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     body {
-      background-color: #111;
+      background-color: #0d0d0d;
       color: #fff;
     }
 
@@ -23,13 +23,14 @@
       top: 0;
       left: 0;
       width: 100%;
-      background-color: rgba(0, 0, 0, 0.9);
+      background-color: rgba(13, 13, 13, 0.95);
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 15px 20px;
       z-index: 1000;
       border-bottom: 1px solid #222;
+      backdrop-filter: blur(5px);
     }
 
     .menu-toggle {
@@ -42,25 +43,26 @@
 
     .logo-text {
       font-weight: bold;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       letter-spacing: 2px;
     }
     .logo-text span {
       color: #e50914;
     }
 
-    /* Menú lateral desplegable */
+    /* MENÚ LATERAL (SIDEBAR) */
     .sidebar {
       position: fixed;
       top: 0;
       left: -280px;
       width: 280px;
       height: 100%;
-      background-color: #1a1a1a;
-      box-shadow: 4px 0 15px rgba(0,0,0,0.5);
+      background-color: #161616;
+      box-shadow: 4px 0 15px rgba(0,0,0,0.7);
       transition: left 0.3s ease;
       z-index: 1100;
       padding-top: 70px;
+      overflow-y: auto;
     }
 
     .sidebar.open {
@@ -90,28 +92,28 @@
       width: 100%;
       background: none;
       border: none;
-      color: #ccc;
+      color: #bbb;
       text-align: left;
       padding: 15px 25px;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       cursor: pointer;
       transition: background 0.2s, color 0.2s;
     }
 
     .sidebar ul li button:hover {
-      background-color: #252525;
+      background-color: #222;
       color: #fff;
       border-left: 4px solid #e50914;
     }
 
-    /* Fondo oscuro al abrir el menú */
+    /* FONDO OSCURO AL ABRIR MENÚ */
     .overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0,0,0,0.6);
+      background-color: rgba(0,0,0,0.7);
       display: none;
       z-index: 1050;
     }
@@ -119,11 +121,13 @@
       display: block;
     }
 
-    /* CONTENIDO PRINCIPAL / BANNER */
+    /* CONTENIDO PRINCIPAL */
     main {
-      padding-top: 70px;
+      padding-top: 80px;
+      min-height: 80vh;
     }
 
+    /* SECCIÓN INICIO (BANNER) */
     .hero-section {
       text-align: center;
       padding: 40px 20px;
@@ -131,9 +135,9 @@
 
     .hero-img img {
       max-width: 100%;
-      width: 400px;
+      width: 380px;
       border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.7);
       margin-bottom: 30px;
     }
 
@@ -141,19 +145,24 @@
       display: inline-block;
       background-color: #25d366;
       color: #fff;
-      padding: 14px 28px;
+      padding: 14px 30px;
       border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
       font-size: 1.1rem;
-      box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+      transition: transform 0.2s;
     }
 
-    /* SECCIONES DE BEBIDAS (Ocultas por defecto) */
+    .btn-whatsapp:hover {
+      transform: scale(1.05);
+    }
+
+    /* SECCIONES DE CATEGORÍAS */
     .category-section {
       display: none;
-      padding: 30px 20px;
-      max-width: 1000px;
+      padding: 20px 20px 50px 20px;
+      max-width: 900px;
       margin: 0 auto;
     }
 
@@ -164,63 +173,72 @@
     .category-section h2 {
       margin-bottom: 25px;
       font-size: 1.8rem;
-      border-bottom: 2px solid #333;
+      border-bottom: 2px solid #222;
       padding-bottom: 10px;
+      letter-spacing: 1px;
     }
 
     .category-section h2 span {
       color: #e50914;
     }
 
-    /* Grilla de productos */
+    /* GRILLA DE PRODUCTOS */
     .grid-productos {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       gap: 20px;
     }
 
     .grid-productos article {
-      background: #1e1e1e;
-      border-radius: 10px;
+      background: #161616;
+      border-radius: 12px;
       overflow: hidden;
-      border: 1px solid #2a2a2a;
+      border: 1px solid #252525;
       text-align: center;
       padding-bottom: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
     .grid-productos article img {
       width: 100%;
-      height: 200px;
+      height: 190px;
       object-fit: cover;
+      border-bottom: 1px solid #252525;
     }
 
     .grid-productos article h3 {
-      margin: 15px 0 5px 0;
-      font-size: 1.2rem;
+      margin: 15px 10px 5px 10px;
+      font-size: 1.1rem;
     }
 
-    .grid-productos article p {
-      color: #aaa;
-      font-size: 0.95rem;
+    .grid-productos article .precio {
+      color: #25d366;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-top: 5px;
     }
 
+    /* FOOTER */
     footer {
       text-align: center;
       padding: 30px;
-      color: #666;
-      font-size: 0.9rem;
-      border-top: 1px solid #222;
-      margin-top: 50px;
+      color: #555;
+      font-size: 0.85rem;
+      border-top: 1px solid #1a1a1a;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
+  <!-- HEADER -->
   <header>
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     <div class="logo-text">BRI<span>X</span></div>
-    <div style="width: 24px;"></div> </header>
+    <div style="width: 24px;"></div>
+  </header>
 
+  <!-- MENÚ LATERAL -->
   <div class="sidebar" id="sidebar">
     <div class="sidebar-header">
       <button class="close-btn" onclick="toggleMenu()">✕</button>
@@ -239,7 +257,9 @@
 
   <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 
+  <!-- CONTENIDO PRINCIPAL -->
   <main>
+    <!-- 1. INICIO -->
     <section id="inicio" class="category-section active-category hero-section">
       <div class="hero-img">
         <img alt="BRIX - Tu momento, tu bebida" src="F7E36772-8F96-4024-8D1F-244561E45971.png">
@@ -251,79 +271,86 @@
       </div>
     </section>
 
+    <!-- 2. VODKAS -->
     <section id="vodkas" class="category-section">
       <h2>VOD<span>KAS</span></h2>
       <div class="grid-productos">
         <article>
-          <img src="IMG_3286.jpeg" alt="Vodka 1" loading="lazy">
+          <img src="IMG_3286.jpeg" alt="Vodka" loading="lazy">
           <h3>Vodka Smirnoff</h3>
-          <p>$4.500</p>
+          <div class="precio">$4.500</div>
         </article>
-        </div>
+      </div>
     </section>
 
+    <!-- 3. GANCIA -->
     <section id="gancia" class="category-section">
       <h2>GAN<span>CIA</span></h2>
       <div class="grid-productos">
         <article>
           <img src="IMG_3287.jpeg" alt="Gancia" loading="lazy">
           <h3>Gancia Americano</h3>
-          <p>$3.800</p>
+          <div class="precio">$3.800</div>
         </article>
       </div>
     </section>
 
+    <!-- 4. FERNET -->
     <section id="fernet" class="category-section">
       <h2>FER<span>NET</span></h2>
       <div class="grid-productos">
         <article>
           <img src="IMG_3288.jpeg" alt="Fernet" loading="lazy">
           <h3>Fernet Branca</h3>
-          <p>$7.500</p>
+          <div class="precio">$7.500</div>
         </article>
       </div>
     </section>
 
+    <!-- 5. CERVEZA -->
     <section id="cerveza" class="category-section">
       <h2>CER<span>VEZA</span></h2>
       <div class="grid-productos">
         <article>
           <img src="IMG_3289.jpeg" alt="Cerveza" loading="lazy">
           <h3>Cerveza Heineken</h3>
-          <p>$2.500</p>
+          <div class="precio">$2.500</div>
         </article>
       </div>
     </section>
 
+    <!-- 6. GASEOSAS -->
     <section id="gaseosas" class="category-section">
       <h2>GASE<span>OSAS</span></h2>
       <div class="grid-productos">
         <article>
           <img src="IMG_3290.jpeg" alt="Gaseosa" loading="lazy">
           <h3>Coca Cola 2L</h3>
-          <p>$2.800</p>
+          <div class="precio">$2.800</div>
         </article>
       </div>
     </section>
 
+    <!-- 7. ENERGIZANTES -->
     <section id="energizantes" class="category-section">
       <h2>ENERGI<span>ZANTES</span></h2>
       <div class="grid-productos">
         <article>
           <img src="IMG_3291.jpeg" alt="Energizante" loading="lazy">
           <h3>Speed Unlimited</h3>
-          <p>$1.800</p>
+          <div class="precio">$1.800</div>
         </article>
       </div>
     </section>
 
+    <!-- 8. PROMOS -->
     <section id="promos" class="category-section">
       <h2><span>PROMOS</span></h2>
       <div class="grid-productos">
         <article>
           <img src="IMG_3292.jpeg" alt="Promo" loading="lazy">
           <h3>Fernet + Coca</h3>
-          <p>$9.500</p>
+          <div class="precio">$9.500</div>
         </article>
       </div>
     </section>
@@ -333,6 +360,7 @@
     <p>© 2026 BRIX. Todos los derechos reservados.</p>
   </footer>
 
+  <!-- SCRIPT -->
   <script>
     function toggleMenu() {
       const sidebar = document.getElementById('sidebar');
@@ -342,17 +370,11 @@
     }
 
     function showCategory(categoryId) {
-      // Ocultar todas las secciones
       const sections = document.querySelectorAll('.category-section');
       sections.forEach(sec => sec.classList.remove('active-category'));
 
-      // Mostrar la seleccionada
       document.getElementById(categoryId).classList.add('active-category');
-
-      // Cerrar el menú lateral automáticamente
       toggleMenu();
-
-      // Subir arriba del todo suavemente
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
