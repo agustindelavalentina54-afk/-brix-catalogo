@@ -1,59 +1,64 @@
-/* Estilos para los botones de pestañas */
-.tabs-container {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin: 30px 0;
-}
+<main>
 
-.tab-btn {
-  background-color: #222;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
+  <section class="hero-section">
+    <div class="hero-img">
+      <img alt="BRIX - Tu momento, tu bebida" src="F7E36772-8F96-4024-8D1F-244561E45971.png">
+    </div>
+    
+    <div class="hero-buttons">
+      <button class="tab-btn" onclick="switchTabAndScroll(event, 'catalogo-tab')">VER CATÁLOGO</button>
+      <a href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20hacer%20un%20pedido." class="btn-whatsapp" rel="noopener" target="_blank">
+        PEDIR POR WHATSAPP
+      </a>
+    </div>
+  </section>
 
-.tab-btn.active {
-  background-color: #e50914; /* O el color principal de tu marca */
-}
+  <div class="tabs-container" id="seccion-pestañas">
+    <button class="tab-btn" onclick="switchTab(event, 'catalogo-tab')">Catálogo</button>
+    <button class="tab-btn" onclick="switchTab(event, 'precios-tab')">Precios</button>
+    <button class="tab-btn" onclick="switchTab(event, 'promos-tab')">Promos</button>
+  </div>
 
-/* Ocultar contenidos por defecto */
-.tab-content {
-  display: none;
-}
+  <div id="catalogo-tab" class="tab-content">
+    <h2>NUESTRO <span>CATÁLOGO</span></h2>
+    <p>Elegí tu bebida BRIX.</p>
+    <div class="grid-productos">
+      <article>
+        <img alt="Bebida BRIX 1" loading="lazy" src="IMG_3286.jpeg">
+        <div>
+          <h3>BRIX</h3>
+          <p>Tu momento, tu bebida.</p>
+        </div>
+      </article>
+      </div>
+  </div>
 
-/* Mostrar el contenido activo */
-.tab-content.active-content {
-  display: block;
-  animation: fadeIn 0.4s ease-in-out;
-}
+  <div id="precios-tab" class="tab-content">
+    <h2>LISTA DE <span>PRECIOS</span></h2>
+    <p>Conocé el valor de nuestras bebidas.</p>
+    <div class="lista-precios">
+      <div class="item-precio">
+        <span>BRIX Clásica</span>
+        <strong>$3.500</strong>
+      </div>
+      </div>
+  </div>
 
-/* Animación suave al cambiar */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
+  <div id="promos-tab" class="tab-content">
+    <h2><span>PROMOS</span> BRIX</h2>
+    <p>Aprovechá nuestras promociones.</p>
+    <div class="grid-promos">
+      <div>
+        <img alt="Promo BRIX 1" loading="lazy" src="IMG_3286.jpeg">
+      </div>
+    </div>
+  </div>
 
-/* Estilos de ejemplo para la lista de precios */
-.lista-precios {
-  max-width: 600px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.item-precio {
-  display: flex;
-  justify-content: space-between;
-  background: #1a1a1a;
-  padding: 15px 20px;
-  border-radius: 8px;
-  color: #fff;
-  font-size: 1.1rem;
+</main>
+function switchTabAndScroll(evt, tabId) {
+  // Llama a la función que cambia de pestaña
+  switchTab(evt, tabId);
+  
+  // Hace que la pantalla baje suavemente hacia los botones
+  document.getElementById('seccion-pestañas').scrollIntoView({ behavior: 'smooth' });
 }
