@@ -8,7 +8,6 @@
 <title>BRIX | Tu momento, tu bebida</title>
 
 <style>
-
 :root{
   --negro:#050505;
   --negro2:#111111;
@@ -22,10 +21,6 @@
   box-sizing:border-box;
   margin:0;
   padding:0;
-}
-
-html{
-  scroll-behavior:smooth;
 }
 
 body{
@@ -63,9 +58,9 @@ header{
 }
 
 .logo{
-  font-size:31px;
+  font-size:42px;
   font-weight:900;
-  letter-spacing:4px;
+  letter-spacing:5px;
 }
 
 .logo span{
@@ -76,9 +71,10 @@ header{
   border:0;
   background:var(--verde);
   color:#000;
-  border-radius:12px;
-  padding:9px 13px;
+  border-radius:14px;
+  padding:12px 17px;
   font-weight:900;
+  font-size:18px;
 }
 
 /* UBICACION */
@@ -108,14 +104,13 @@ header{
     opacity:0;
     transform:translateY(8px);
   }
-
   to{
     opacity:1;
     transform:translateY(0);
   }
 }
 
-/* INICIO */
+/* HERO */
 
 .hero{
   padding:18px;
@@ -123,15 +118,18 @@ header{
 
 .hero-banner{
   width:100%;
+  min-height:180px;
   border-radius:16px;
   border:1px solid var(--borde);
   overflow:hidden;
-  background:#050505;
+  background:#111;
 }
 
 .hero-banner img{
   width:100%;
   height:auto;
+  min-height:180px;
+  object-fit:cover;
   display:block;
 }
 
@@ -164,6 +162,7 @@ header{
   color:#ddd;
   margin-top:15px;
   line-height:1.5;
+  font-size:18px;
 }
 
 .home-buttons{
@@ -192,7 +191,7 @@ header{
 }
 
 .arrow{
-  font-size:23px;
+  font-size:25px;
 }
 
 /* SECCIONES */
@@ -219,7 +218,7 @@ header{
   margin:8px 0 20px;
 }
 
-/* CATEGORIAS */
+/* MENUS */
 
 .menu{
   display:grid;
@@ -237,10 +236,6 @@ header{
   align-items:center;
   gap:14px;
   text-align:left;
-}
-
-.menu-button:active{
-  transform:scale(.99);
 }
 
 .menu-icon{
@@ -297,11 +292,11 @@ header{
   height:100%;
   object-fit:contain;
   display:block;
-  padding:15px;
+  padding:20px;
 }
 
 .product-placeholder{
-  font-size:70px;
+  font-size:75px;
 }
 
 .media-label{
@@ -315,8 +310,6 @@ header{
   font-size:11px;
   font-weight:bold;
 }
-
-/* INFORMACION */
 
 .product-info{
   padding:15px;
@@ -453,7 +446,6 @@ footer a{
 /* DESKTOP */
 
 @media(min-width:700px){
-
   .home-buttons{
     grid-template-columns:1fr 1fr;
   }
@@ -466,9 +458,7 @@ footer a{
     border-radius:20px;
     margin:auto;
   }
-
 }
-
 </style>
 </head>
 
@@ -477,23 +467,17 @@ footer a{
 <div class="app">
 
 <header>
+  <div class="top">
+    <div class="logo">BRI<span>X</span></div>
 
-<div class="top">
-
-<div class="logo">
-BRI<span>X</span>
-</div>
-
-<button class="cart" onclick="openCart()">
-🛒 <span id="cartCount">0</span>
-</button>
-
-</div>
-
+    <button class="cart" onclick="openCart()">
+      🛒 <span id="cartCount">0</span>
+    </button>
+  </div>
 </header>
 
 <div class="location">
-📍 QUEBRADA DEL CONDORITO 3673
+  📍 QUEBRADA DEL CONDORITO 3673
 </div>
 
 
@@ -501,71 +485,69 @@ BRI<span>X</span>
 
 <section id="home" class="screen active">
 
-<div class="hero">
+  <div class="hero">
 
-<div class="hero-banner">
+    <div class="hero-banner">
+      <img
+        src="F7E36772-8F96-4024-8D1F-244561E45971.png"
+        alt="BRIX - Tu momento, tu bebida"
+      >
+    </div>
 
-<img
-src="F7E36772-8F96-4024-8D1F-244561E45971(3).jpeg"
-alt="BRIX - Tu momento, tu bebida"
->
+    <div class="hero-copy">
 
-</div>
+      <div class="badge">
+        BEBIDAS · PROMOS · COMBOS
+      </div>
 
-<div class="hero-copy">
+      <h1>
+        BRIX<span>.</span>
+      </h1>
 
-<div class="badge">
-BEBIDAS · PROMOS · COMBOS
-</div>
+      <p>
+        Tu momento, tu bebida.
+        Explorá nuestro catálogo por categorías.
+      </p>
 
-<h1>
-BRIX<span>.</span>
-</h1>
+      <div class="home-buttons">
 
-<p>
-Tu momento, tu bebida.<br>
-Explorá nuestro catálogo por categorías.
-</p>
+        <button
+          class="main-button primary"
+          onclick="showScreen('catalog')"
+        >
+          <span>🛒 CATÁLOGO</span>
+          <span class="arrow">›</span>
+        </button>
 
-<div class="home-buttons">
+        <button
+          class="main-button"
+          onclick="showScreen('promos')"
+        >
+          <span>🔥 PROMOCIONES</span>
+          <span class="arrow">›</span>
+        </button>
 
-<button
-class="main-button primary"
-onclick="showScreen('catalog')"
->
-<span>🛒 CATÁLOGO</span>
-<span class="arrow">›</span>
-</button>
+        <button
+          class="main-button"
+          onclick="sendWhatsApp()"
+        >
+          <span>📲 PEDIR POR WHATSAPP</span>
+          <span class="arrow">›</span>
+        </button>
 
-<button
-class="main-button"
-onclick="showScreen('promos')"
->
-<span>🔥 PROMOCIONES</span>
-<span class="arrow">›</span>
-</button>
+        <button
+          class="main-button"
+          onclick="openInstagram()"
+        >
+          <span>📸 @brix_bebidas</span>
+          <span class="arrow">›</span>
+        </button>
 
-<button
-class="main-button"
-onclick="sendWhatsApp()"
->
-<span>📲 PEDIR POR WHATSAPP</span>
-<span class="arrow">›</span>
-</button>
+      </div>
 
-<button
-class="main-button"
-onclick="openInstagram()"
->
-<span>📸 @brix_bebidas</span>
-<span class="arrow">›</span>
-</button>
+    </div>
 
-</div>
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
@@ -574,30 +556,29 @@ onclick="openInstagram()"
 
 <section id="catalog" class="screen">
 
-<div class="section">
+  <div class="section">
 
-<button
-class="back"
-onclick="showScreen('home')"
->
-← VOLVER
-</button>
+    <button
+      class="back"
+      onclick="showScreen('home')"
+    >
+      ← VOLVER
+    </button>
 
-<div class="title">
-CATÁLOGO
-</div>
+    <div class="title">
+      CATÁLOGO
+    </div>
 
-<div class="subtitle">
-Elegí una categoría.
-</div>
+    <div class="subtitle">
+      Elegí una categoría.
+    </div>
 
-<div
-class="menu"
-id="catalogMenu"
->
-</div>
+    <div
+      class="menu"
+      id="catalogMenu"
+    ></div>
 
-</div>
+  </div>
 
 </section>
 
@@ -606,32 +587,30 @@ id="catalogMenu"
 
 <section id="products" class="screen">
 
-<div class="section">
+  <div class="section">
 
-<button
-class="back"
-onclick="showScreen('catalog')"
->
-← VOLVER AL CATÁLOGO
-</button>
+    <button
+      class="back"
+      onclick="showScreen('catalog')"
+    >
+      ← VOLVER AL CATÁLOGO
+    </button>
 
-<div
-class="title"
-id="productTitle"
->
-</div>
+    <div
+      class="title"
+      id="productTitle"
+    ></div>
 
-<div class="subtitle">
-Elegí una bebida.
-</div>
+    <div class="subtitle">
+      Elegí una bebida.
+    </div>
 
-<div
-class="products"
-id="productList"
->
-</div>
+    <div
+      class="products"
+      id="productList"
+    ></div>
 
-</div>
+  </div>
 
 </section>
 
@@ -640,30 +619,29 @@ id="productList"
 
 <section id="promos" class="screen">
 
-<div class="section">
+  <div class="section">
 
-<button
-class="back"
-onclick="showScreen('home')"
->
-← VOLVER
-</button>
+    <button
+      class="back"
+      onclick="showScreen('home')"
+    >
+      ← VOLVER
+    </button>
 
-<div class="title">
-PROMOCIONES
-</div>
+    <div class="title">
+      PROMOCIONES
+    </div>
 
-<div class="subtitle">
-Elegí una categoría.
-</div>
+    <div class="subtitle">
+      Elegí una categoría.
+    </div>
 
-<div
-class="menu"
-id="promoMenu"
->
-</div>
+    <div
+      class="menu"
+      id="promoMenu"
+    ></div>
 
-</div>
+  </div>
 
 </section>
 
@@ -672,32 +650,30 @@ id="promoMenu"
 
 <section id="promoProducts" class="screen">
 
-<div class="section">
+  <div class="section">
 
-<button
-class="back"
-onclick="showScreen('promos')"
->
-← VOLVER A PROMOCIONES
-</button>
+    <button
+      class="back"
+      onclick="showScreen('promos')"
+    >
+      ← VOLVER A PROMOCIONES
+    </button>
 
-<div
-class="title"
-id="promoTitle"
->
-</div>
+    <div
+      class="title"
+      id="promoTitle"
+    ></div>
 
-<div class="subtitle">
-Promociones disponibles.
-</div>
+    <div class="subtitle">
+      Promociones disponibles.
+    </div>
 
-<div
-class="products"
-id="promoList"
->
-</div>
+    <div
+      class="products"
+      id="promoList"
+    ></div>
 
-</div>
+  </div>
 
 </section>
 
@@ -706,31 +682,31 @@ id="promoList"
 
 <footer>
 
-<strong>BRIX</strong>
+  <strong>BRIX</strong>
 
-<p style="margin-top:10px">
-📍 Quebrada del Condorito 3673
-</p>
+  <p style="margin-top:10px">
+    📍 Quebrada del Condorito 3673
+  </p>
 
-<p style="margin-top:7px">
-📲
-<a
-href="https://wa.me/5493512573455"
-target="_blank"
->
-351 257-3455
-</a>
-</p>
+  <p style="margin-top:7px">
+    📲
+    <a
+      href="https://wa.me/5493512573455"
+      target="_blank"
+    >
+      351 257-3455
+    </a>
+  </p>
 
-<p style="margin-top:7px">
-📸
-<a
-href="https://instagram.com/brix_bebidas"
-target="_blank"
->
-@brix_bebidas
-</a>
-</p>
+  <p style="margin-top:7px">
+    📸
+    <a
+      href="https://instagram.com/brix_bebidas"
+      target="_blank"
+    >
+      @brix_bebidas
+    </a>
+  </p>
 
 </footer>
 
@@ -738,521 +714,981 @@ target="_blank"
 <!-- ================= CARRITO ================= -->
 
 <div
-class="cart-panel"
-id="cartPanel"
-onclick="if(event.target===this)closeCart()"
+  class="cart-panel"
+  id="cartPanel"
+  onclick="if(event.target===this)closeCart()"
 >
 
-<div class="cart-box">
+  <div class="cart-box">
 
-<div class="cart-head">
+    <div class="cart-head">
 
-<h2>
-🛒 Mi pedido
-</h2>
+      <h2>
+        🛒 Mi pedido
+      </h2>
 
-<button
-class="close"
-onclick="closeCart()"
->
-✕
-</button>
+      <button
+        class="close"
+        onclick="closeCart()"
+      >
+        ✕
+      </button>
 
-</div>
+    </div>
 
-<div id="cartItems">
-</div>
+    <div id="cartItems"></div>
 
-<div class="total">
-Total: $<span id="total">0</span>
-</div>
+    <div class="total">
+      Total: $
+      <span id="total">0</span>
+    </div>
 
-<button
-class="send"
-onclick="sendOrder()"
->
-📲 ENVIAR PEDIDO POR WHATSAPP
-</button>
+    <button
+      class="send"
+      onclick="sendOrder()"
+    >
+      📲 ENVIAR PEDIDO POR WHATSAPP
+    </button>
 
-</div>
+  </div>
 
 </div>
 
 
 <script>
 
-/* ================= PRODUCTOS ================= */
+/* =====================================================
+   PRODUCTOS
+===================================================== */
 
 const products = [
 
-{
-name:"SMIRNOFF SABORIZADO",
-price:10900,
-category:"vodka",
-emoji:"🍸",
-image:"IMG_3286.jpeg"
-},
+  {
+    name:"SMIRNOFF SABORIZADO",
+    price:10900,
+    category:"vodka",
+    emoji:"🍸",
+    image:""
+  },
 
-{
-name:"PROMO SMIRNOFF + 2 SPEED",
-price:15500,
-category:"vodka",
-emoji:"🍸",
-image:"pack-red-bull-x4.png"
-},
+  {
+    name:"PROMO SMIRNOFF + 2 SPEED",
+    price:15500,
+    category:"vodka",
+    emoji:"🍸",
+    image:""
+  },
 
-{
-name:"2 PROMO SMIRNOFF",
-price:29500,
-category:"vodka",
-emoji:"🍸",
-image:"IMG_3287.jpeg"
-},
+  {
+    name:"2 PROMO SMIRNOFF",
+    price:29500,
+    category:"vodka",
+    emoji:"🍸",
+    image:""
+  },
 
-{
-name:"SKYY SABORIZADO",
-price:14500,
-category:"vodka",
-emoji:"🍾",
-image:"IMG_3288.jpeg"
-},
+  {
+    name:"SKYY SABORIZADO",
+    price:14500,
+    category:"vodka",
+    emoji:"🍾",
+    image:""
+  },
 
-{
-name:"SKYY SABORIZADO 2",
-price:15500,
-category:"vodka",
-emoji:"🍾",
-image:"IMG_3289.jpeg"
-},
+  {
+    name:"SKYY SABORIZADO 2",
+    price:15500,
+    category:"vodka",
+    emoji:"🍾",
+    image:""
+  },
 
-{
-name:"SKYY COSMIC",
-price:17500,
-category:"vodka",
-emoji:"🍾",
-image:"IMG_3290.jpeg"
-},
+  {
+    name:"SKYY COSMIC",
+    price:17500,
+    category:"vodka",
+    emoji:"🍾",
+    image:""
+  },
 
-{
-name:"ABSOLUT SABORIZADO",
-price:26000,
-category:"vodka",
-emoji:"🍾",
-image:"IMG_3291.jpeg"
-},
+  {
+    name:"ABSOLUT SABORIZADO",
+    price:26000,
+    category:"vodka",
+    emoji:"🍾",
+    image:""
+  },
 
-{
-name:"BRANCA 750",
-price:17500,
-category:"fernet",
-emoji:"🥃",
-image:"branca-750.png"
-},
+  {
+    name:"BRANCA 750",
+    price:17500,
+    category:"fernet",
+    emoji:"🥃",
+    image:"branca-750.png"
+  },
 
-{
-name:"FERNET 180 AÑOS",
-price:18000,
-category:"fernet",
-emoji:"🥃",
-image:"fernet-180-anos.png"
-},
+  {
+    name:"FERNET 180 AÑOS",
+    price:18000,
+    category:"fernet",
+    emoji:"🥃",
+    image:"fernet-180-anos.png"
+  },
 
-{
-name:"PROMO BRANCA 750 CON HIELO",
-price:25000,
-category:"fernet",
-emoji:"🧊",
-image:"promo-branca-750-con-hielo.png"
-},
+  {
+    name:"PROMO BRANCA 750 CON HIELO",
+    price:25000,
+    category:"fernet",
+    emoji:"🧊",
+    image:"promo-branca-750-con-hielo.png"
+  },
 
-{
-name:"PROMO BRANCA 750 + 2 COCA COLA 2,5L + HIELO",
-price:30000,
-category:"fernet",
-emoji:"🥃",
-image:"branca-750-2-coca-cola-2,5l-hielo.png"
-},
+  {
+    name:"PROMO BRANCA 750 + 2 COCA COLA 2,5L + HIELO",
+    price:30000,
+    category:"fernet",
+    emoji:"🥃",
+    image:"branca-750-2-coca-cola-2-5l.png"
+  },
 
-{
-name:"2 PROMO FERNET 750",
-price:48000,
-category:"fernet",
-emoji:"🥃",
-image:"2-promo-fernet-750.png"
-},
+  {
+    name:"2 PROMO FERNET 750",
+    price:48000,
+    category:"fernet",
+    emoji:"🥃",
+    image:"2-promo-fernet-750.png"
+  },
 
-{
-name:"FERNET 180° + COCA 2,5L",
-price:24000,
-category:"fernet",
-emoji:"🥃",
-image:"fernet-180-coca-cola-2,5l.png"
-},
+  {
+    name:"FERNET 180° + COCA 2,5L",
+    price:24000,
+    category:"fernet",
+    emoji:"🥃",
+    image:"fernet-180-coca-cola-2-5l.png"
+  },
 
-{
-name:"GANCIA",
-price:0,
-category:"gancia",
-emoji:"🍹"
-},
+  {
+    name:"GANCIA",
+    price:0,
+    category:"gancia",
+    emoji:"🍹",
+    image:""
+  },
 
-{
-name:"GANCIA + GASEOSA",
-price:0,
-category:"gancia",
-emoji:"🍹"
-},
+  {
+    name:"GANCIA + GASEOSA",
+    price:0,
+    category:"gancia",
+    emoji:"🍹",
+    image:""
+  },
 
-{
-name:"CERVEZA",
-price:0,
-category:"cerveza",
-emoji:"🍺"
-},
+  {
+    name:"CERVEZA",
+    price:0,
+    category:"cerveza",
+    emoji:"🍺",
+    image:""
+  },
 
-{
-name:"SPEED 250",
-price:2000,
-category:"energizante",
-emoji:"⚡",
-image:"speed-250.png"
-},
+  {
+    name:"SPEED 250",
+    price:2000,
+    category:"energizante",
+    emoji:"⚡",
+    image:"speed-250.png"
+  },
 
-{
-name:"SPEED XL",
-price:3000,
-category:"energizante",
-emoji:"⚡",
-image:"speed-xl.png"
-},
+  {
+    name:"SPEED XL",
+    price:3000,
+    category:"energizante",
+    emoji:"⚡",
+    image:"speed-xl.png"
+  },
 
-{
-name:"MONSTER",
-price:3500,
-category:"energizante",
-emoji:"⚡",
-image:"monster.png"
-},
+  {
+    name:"MONSTER",
+    price:3500,
+    category:"energizante",
+    emoji:"⚡",
+    image:"monster.png"
+  },
 
-{
-name:"COCA COLA 500 ML",
-price:2000,
-category:"gaseosa",
-emoji:"🥤",
-image:"coca-cola-500ml.png"
-},
+  {
+    name:"COCA COLA 500 ML",
+    price:2000,
+    category:"gaseosa",
+    emoji:"🥤",
+    image:"coca-cola-500ml.png"
+  },
 
-{
-name:"COCA COLA 2,5L",
-price:5500,
-category:"gaseosa",
-emoji:"🥤",
-image:"coca-cola-25-desc.png"
-},
+  {
+    name:"COCA COLA 2,5L",
+    price:5500,
+    category:"gaseosa",
+    emoji:"🥤",
+    image:"coca-cola-25-desc.png"
+  },
 
-{
-name:"SPRITE 2,25L",
-price:5000,
-category:"gaseosa",
-emoji:"🥤",
-image:"sprite-225l.png"
-},
+  {
+    name:"SPRITE 2,25L",
+    price:5000,
+    category:"gaseosa",
+    emoji:"🥤",
+    image:"sprite-225l.png"
+  },
 
-{
-name:"PRITTY 2,25L",
-price:3000,
-category:"gaseosa",
-emoji:"🥤",
-image:"pritty-225l.png"
-},
+  {
+    name:"PRITTY 2,25L",
+    price:3000,
+    category:"gaseosa",
+    emoji:"🥤",
+    image:"pritty-225l.png"
+  },
 
-{
-name:"PROMO 2 BALBOS + 1 PRITTY",
-price:10500,
-category:"vino",
-emoji:"🍷",
-image:"promo-2-balbos-1-pritty.png"
-},
+  {
+    name:"PROMO 2 BALBOS + 1 PRITTY",
+    price:10500,
+    category:"vino",
+    emoji:"🍷",
+    image:"promo-2-balbos-1-pritty.png"
+  },
 
-{
-name:"2 SANTA JULIA MALBEC",
-price:10500,
-category:"vino",
-emoji:"🍷",
-image:"2-santa-julia-malbec.png"
-},
+  {
+    name:"2 SANTA JULIA MALBEC",
+    price:10500,
+    category:"vino",
+    emoji:"🍷",
+    image:"2-santa-julia-malbec.png"
+  },
 
-{
-name:"COLON SELECTO DULCE",
-price:7500,
-category:"vino",
-emoji:"🍷",
-image:"colon-selecto-dulce.png"
-},
+  {
+    name:"COLON SELECTO DULCE",
+    price:7500,
+    category:"vino",
+    emoji:"🍷",
+    image:"colon-selecto-dulce.png"
+  },
 
-{
-name:"SANTA JULIA TINTO DULCE",
-price:8500,
-category:"vino",
-emoji:"🍷",
-image:"santa-julia-tinto-dulce.png"
-},
+  {
+    name:"SANTA JULIA TINTO DULCE",
+    price:8500,
+    category:"vino",
+    emoji:"🍷",
+    image:"santa-julia-tinto-dulce.png"
+  },
 
-{
-name:"SANTA JULIA CHENIN DULCE",
-price:9000,
-category:"vino",
-emoji:"🍷",
-image:"santa-julia-chenin-dulce.png"
-},
+  {
+    name:"SANTA JULIA CHENIN DULCE",
+    price:9000,
+    category:"vino",
+    emoji:"🍷",
+    image:"santa-julia-chenin-dulce.png"
+  },
 
-{
-name:"CAVA NEGRA CHARDONNAY",
-price:9000,
-category:"vino",
-emoji:"🍷",
-image:"cava-negra-chardonnay.png"
-},
+  {
+    name:"CAVA NEGRA CHARDONNAY",
+    price:9000,
+    category:"vino",
+    emoji:"🍷",
+    image:"cava-negra-chardonnay.png"
+  },
 
-{
-name:"CASARENA ESTATE CHARDONNAY",
-price:9900,
-category:"vino",
-emoji:"🍷",
-image:"casarena-estate-chardonnay.png"
-}
+  {
+    name:"CASARENA ESTATE CHARDONNAY",
+    price:9900,
+    category:"vino",
+    emoji:"🍷",
+    image:"casarena-estate-chardonnay.png"
+  }
 
 ];
 
 
-/* ================= PROMOS ================= */
+/* =====================================================
+   PROMOCIONES
+===================================================== */
 
 const promos = [
 
-{
-name:"PROMO SMIRNOFF + 2 SPEED",
-price:15500,
-category:"vodka",
-emoji:"🔥",
-image:"pack-red-bull-x4.png"
-},
+  {
+    name:"PROMO SMIRNOFF + 2 SPEED",
+    price:15500,
+    category:"vodka",
+    emoji:"🔥",
+    image:""
+  },
 
-{
-name:"2 PROMO SMIRNOFF",
-price:29500,
-category:"vodka",
-emoji:"🔥",
-image:"IMG_3287.jpeg"
-},
+  {
+    name:"2 PROMO SMIRNOFF",
+    price:29500,
+    category:"vodka",
+    emoji:"🔥",
+    image:""
+  },
 
-{
-name:"3 PROMO SKYY",
-price:43500,
-category:"vodka",
-emoji:"🔥",
-image:"IMG_3288.jpeg"
-},
+  {
+    name:"3 PROMO SKYY",
+    price:43500,
+    category:"vodka",
+    emoji:"🔥",
+    image:""
+  },
 
-{
-name:"2 PROMO ABSOLUT",
-price:59000,
-category:"vodka",
-emoji:"🔥",
-image:"IMG_3291.jpeg"
-},
+  {
+    name:"2 PROMO ABSOLUT",
+    price:59000,
+    category:"vodka",
+    emoji:"🔥",
+    image:""
+  },
 
-{
-name:"PROMO BRANCA 750 CON HIELO",
-price:25000,
-category:"fernet",
-emoji:"🔥",
-image:"promo-branca-750-con-hielo.png"
-},
+  {
+    name:"PROMO BRANCA 750 CON HIELO",
+    price:25000,
+    category:"fernet",
+    emoji:"🔥",
+    image:"promo-branca-750-con-hielo.png"
+  },
 
-{
-name:"PROMO BRANCA 750 + 2 COCA COLA 2,5L + HIELO",
-price:30000,
-category:"fernet",
-emoji:"🔥",
-image:"branca-750-2-coca-cola-2,5l-hielo.png"
-},
+  {
+    name:"PROMO BRANCA 750 + 2 COCA COLA 2,5L + HIELO",
+    price:30000,
+    category:"fernet",
+    emoji:"🔥",
+    image:"branca-750-2-coca-cola-2-5l.png"
+  },
 
-{
-name:"2 PROMO FERNET 750",
-price:48000,
-category:"fernet",
-emoji:"🔥",
-image:"2-promo-fernet-750.png"
-},
+  {
+    name:"2 PROMO FERNET 750",
+    price:48000,
+    category:"fernet",
+    emoji:"🔥",
+    image:"2-promo-fernet-750.png"
+  },
 
-{
-name:"FERNET 180° + COCA 2,5L",
-price:24000,
-category:"fernet",
-emoji:"🔥",
-image:"fernet-180-coca-cola-2,5l.png"
-},
+  {
+    name:"FERNET 180° + COCA 2,5L",
+    price:24000,
+    category:"fernet",
+    emoji:"🔥",
+    image:"fernet-180-coca-cola-2-5l.png"
+  },
 
-{
-name:"SKYY + SMIRNOFF + 4 SPEED",
-price:29000,
-category:"combo",
-emoji:"🔥",
-image:"pack-red-bull-x4.png"
-},
+  {
+    name:"SKYY + SMIRNOFF + 4 SPEED",
+    price:29000,
+    category:"combo",
+    emoji:"🔥",
+    image:""
+  },
 
-{
-name:"PROMO BRANCA + PROMO",
-price:38500,
-category:"combo",
-emoji:"🔥",
-image:"promo-branca-750-ret.png"
-},
+  {
+    name:"PROMO BRANCA + PROMO",
+    price:38500,
+    category:"combo",
+    emoji:"🔥",
+    image:""
+  },
 
-{
-name:"ABSOLUT + SKYY + 4 SPEED XL",
-price:45000,
-category:"combo",
-emoji:"🔥",
-image:"pack-red-bull-x4.png"
-},
+  {
+    name:"ABSOLUT + SKYY + 4 SPEED XL",
+    price:45000,
+    category:"combo",
+    emoji:"🔥",
+    image:""
+  },
 
-{
-name:"ABSOLUT + 2 SKYY + 9 SPEED",
-price:68000,
-category:"combo",
-emoji:"🔥",
-image:"pack-red-bull-x4.png"
-},
+  {
+    name:"ABSOLUT + 2 SKYY + 9 SPEED",
+    price:68000,
+    category:"combo",
+    emoji:"🔥",
+    image:""
+  },
 
-{
-name:"JAGER + ABSOLUT",
-price:73500,
-category:"combo",
-emoji:"🔥",
-image:"IMG_3291.jpeg"
-}
+  {
+    name:"JAGER + ABSOLUT",
+    price:73500,
+    category:"combo",
+    emoji:"🔥",
+    image:""
+  }
 
 ];
 
 
-/* ================= CATEGORIAS ================= */
+/* =====================================================
+   CATEGORIAS
+===================================================== */
 
 const categories = [
 
-[
-"vodka",
-"🥃",
-"VODKA",
-"Smirnoff, Skyy, Absolut y más"
-],
+  [
+    "vodka",
+    "🥃",
+    "VODKA",
+    "Smirnoff, Skyy, Absolut y más"
+  ],
 
-[
-"fernet",
-"🔥",
-"FERNET",
-"Branca y 180 Años"
-],
+  [
+    "fernet",
+    "🔥",
+    "FERNET",
+    "Branca y 180 Años"
+  ],
 
-[
-"gancia",
-"🍹",
-"GANCIA",
-"Gancia y combinaciones"
-],
+  [
+    "gancia",
+    "🍹",
+    "GANCIA",
+    "Gancia y combinaciones"
+  ],
 
-[
-"cerveza",
-"🍺",
-"CERVEZA",
-"Cervezas disponibles"
-],
+  [
+    "cerveza",
+    "🍺",
+    "CERVEZA",
+    "Cervezas disponibles"
+  ],
 
-[
-"gaseosa",
-"🥤",
-"GASEOSAS",
-"Coca-Cola, Sprite y Pritty"
-],
+  [
+    "gaseosa",
+    "🥤",
+    "GASEOSAS",
+    "Coca-Cola, Sprite y Pritty"
+  ],
 
-[
-"energizante",
-"⚡",
-"ENERGIZANTES",
-"Speed y Monster"
-],
+  [
+    "energizante",
+    "⚡",
+    "ENERGIZANTES",
+    "Speed y Monster"
+  ],
 
-[
-"vino",
-"🍷",
-"VINOS",
-"Tintos, blancos y dulces"
-]
+  [
+    "vino",
+    "🍷",
+    "VINOS",
+    "Tintos, blancos y dulces"
+  ]
 
 ];
 
 
 const promoCategories = [
 
-[
-"vodka",
-"🥃",
-"PROMOS VODKA",
-"Ofertas de vodka"
-],
+  [
+    "vodka",
+    "🥃",
+    "PROMOS VODKA",
+    "Ofertas de vodka"
+  ],
 
-[
-"fernet",
-"🔥",
-"PROMOS FERNET",
-"Combos de fernet"
-],
+  [
+    "fernet",
+    "🔥",
+    "PROMOS FERNET",
+    "Combos de fernet"
+  ],
 
-[
-"combo",
-"🔥",
-"COMBOS BRIX",
-"Las promos más completas"
-]
+  [
+    "combo",
+    "🔥",
+    "COMBOS BRIX",
+    "Las promos más completas"
+  ]
 
 ];
 
 
-/* ================= VARIABLES ================= */
+/* =====================================================
+   VARIABLES
+===================================================== */
 
-let currentList=[];
-let cart=[];
+let currentList = [];
+let cart = [];
 
 
-/* ================= DINERO ================= */
+/* =====================================================
+   DINERO
+===================================================== */
 
 function money(value){
 
-return Number(value || 0)
-.toLocaleString("es-AR");
+  return Number(value || 0)
+    .toLocaleString("es-AR");
 
 }
 
 
-/* ================= CAMBIAR PANTALLA ================= */
+/* =====================================================
+   CAMBIAR PANTALLA
+===================================================== */
 
 function showScreen(id){
 
-document
-.querySelectorAll(".screen")
-.forEach(screen=>{
-screen.classList.remove("active");
-});
+  document
+    .querySelectorAll(".screen")
+    .forEach(screen=>{
+      screen.classList.remove("active");
+    });
 
-document
-.getElementById(id)
-.classList.add("active");
+  document
+    .getElementById(id)
+    .classList.add("active");
 
-window.scrollTo(0,0);
+  window.scrollTo(0,0);
 
 }
 
 
-/* ================= MENU ================= */
+/* =====================================================
+   MENU
+===================================================== */
 
-function create
+function createMenu(
+  containerId,
+  items,
+  functionName
+){
+
+  const container =
+    document.getElementById(containerId);
+
+  container.innerHTML = "";
+
+  items.forEach(item=>{
+
+    container.innerHTML += `
+
+      <button
+        class="menu-button"
+        onclick="${functionName}('${item[0]}')"
+      >
+
+        <span class="menu-icon">
+          ${item[1]}
+        </span>
+
+        <span class="menu-info">
+
+          <strong>
+            ${item[2]}
+          </strong>
+
+          <small>
+            ${item[3]}
+          </small>
+
+        </span>
+
+        <span class="chevron">
+          ›
+        </span>
+
+      </button>
+
+    `;
+
+  });
+
+}
+
+
+/* =====================================================
+   PRODUCTOS
+===================================================== */
+
+function renderProducts(
+  list,
+  containerId,
+  titleId,
+  title
+){
+
+  const container =
+    document.getElementById(containerId);
+
+  container.innerHTML = "";
+
+  list.forEach((product,index)=>{
+
+    let media = "";
+
+    if(product.image){
+
+      media = `
+
+        <img
+          src="${product.image}"
+          alt="${product.name}"
+          loading="lazy"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
+        >
+
+        <div
+          class="product-placeholder"
+          style="display:none"
+        >
+          ${product.emoji}
+        </div>
+
+      `;
+
+    }else{
+
+      media = `
+
+        <div class="product-placeholder">
+          ${product.emoji}
+        </div>
+
+      `;
+
+    }
+
+    container.innerHTML += `
+
+      <article class="product">
+
+        <div class="product-media">
+
+          ${media}
+
+          <span class="media-label">
+            PRODUCTO
+          </span>
+
+        </div>
+
+        <div class="product-info">
+
+          <h3>
+            ${product.name}
+          </h3>
+
+          <div class="price">
+
+            ${
+              product.price > 0
+              ? "$" + money(product.price)
+              : "Consultar"
+            }
+
+          </div>
+
+          <div class="actions">
+
+            <button
+              class="add"
+              onclick="addToCart(${index})"
+            >
+
+              ${
+                product.price > 0
+                ? "+ AGREGAR"
+                : "CONSULTAR"
+              }
+
+            </button>
+
+            <button
+              class="whatsapp-small"
+              onclick="quickWhatsApp('${product.name.replace(/'/g,"\\'")}')"
+            >
+              📲
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    `;
+
+  });
+
+  document
+    .getElementById(titleId)
+    .textContent = title;
+
+}
+
+
+/* =====================================================
+   CATEGORIA
+===================================================== */
+
+function openCategory(category){
+
+  currentList =
+    products.filter(
+      product => product.category === category
+    );
+
+  renderProducts(
+    currentList,
+    "productList",
+    "productTitle",
+    category.toUpperCase()
+  );
+
+  showScreen("products");
+
+}
+
+
+/* =====================================================
+   PROMO
+===================================================== */
+
+function openPromo(category){
+
+  currentList =
+    promos.filter(
+      promo => promo.category === category
+    );
+
+  renderProducts(
+    currentList,
+    "promoList",
+    "promoTitle",
+    category.toUpperCase()
+  );
+
+  showScreen("promoProducts");
+
+}
+
+
+/* =====================================================
+   CARRITO
+===================================================== */
+
+function addToCart(index){
+
+  cart.push(currentList[index]);
+
+  updateCart();
+
+  openCart();
+
+}
+
+
+function updateCart(){
+
+  document
+    .getElementById("cartCount")
+    .textContent = cart.length;
+
+  let total = 0;
+
+  const container =
+    document.getElementById("cartItems");
+
+  if(cart.length === 0){
+
+    container.innerHTML =
+      "<p style='color:#888;margin-top:20px'>Tu pedido está vacío.</p>";
+
+  }else{
+
+    container.innerHTML = "";
+
+    cart.forEach((product,index)=>{
+
+      total += Number(product.price || 0);
+
+      container.innerHTML += `
+
+        <div class="cart-item">
+
+          <div class="cart-item-top">
+
+            <strong>
+              ${product.name}
+            </strong>
+
+            <button
+              class="close"
+              onclick="removeFromCart(${index})"
+            >
+              ✕
+            </button>
+
+          </div>
+
+          <div class="cart-price">
+
+            ${
+              product.price
+              ? "$" + money(product.price)
+              : "Consultar precio"
+            }
+
+          </div>
+
+        </div>
+
+      `;
+
+    });
+
+  }
+
+  document
+    .getElementById("total")
+    .textContent = money(total);
+
+}
+
+
+function removeFromCart(index){
+
+  cart.splice(index,1);
+
+  updateCart();
+
+}
+
+
+function openCart(){
+
+  document
+    .getElementById("cartPanel")
+    .classList.add("open");
+
+  updateCart();
+
+}
+
+
+function closeCart(){
+
+  document
+    .getElementById("cartPanel")
+    .classList.remove("open");
+
+}
+
+
+/* =====================================================
+   WHATSAPP
+===================================================== */
+
+function quickWhatsApp(productName){
+
+  const message =
+    "Hola BRIX! Quiero consultar por: "
+    + productName;
+
+  window.open(
+    "https://wa.me/5493512573455?text="
+    + encodeURIComponent(message),
+    "_blank"
+  );
+
+}
+
+
+function sendWhatsApp(){
+
+  const message =
+    "Hola BRIX! Quiero hacer un pedido.";
+
+  window.open(
+    "https://wa.me/5493512573455?text="
+    + encodeURIComponent(message),
+    "_blank"
+  );
+
+}
+
+
+function sendOrder(){
+
+  if(cart.length === 0){
+
+    sendWhatsApp();
+
+    return;
+
+  }
+
+  let message =
+    "Hola BRIX! Quiero hacer este pedido:\n\n";
+
+  let total = 0;
+
+  cart.forEach(product=>{
+
+    message +=
+      "• "
+      + product.name
+      + " — "
+      + (
+        product.price
+        ? "$" + money(product.price)
+        : "Consultar precio"
+      )
+      + "\n";
+
+    total += Number(product.price || 0);
+
+  });
+
+  message +=
+    "\nTotal: $"
+    + money(total);
+
+  window.open(
+    "https://wa.me/5493512573455?text="
+    + encodeURIComponent(message),
+    "_blank"
+  );
+
+}
+
+
+/* =====================================================
+   INSTAGRAM
+===================================================== */
+
+function openInstagram(){
+
+  window.open(
+    "https://instagram.com/brix_bebidas",
+    "_blank"
+  );
+
+}
+
+
+/* =====================================================
+   INICIAR
+===================================================== */
+
+createMenu(
+  "catalogMenu",
+  categories,
+  "openCategory"
+);
+
+createMenu(
+  "promoMenu",
+  promoCategories,
+  "openPromo"
+);
+
+updateCart();
+
+</script>
+
+</div>
+
+</body>
+</html>
