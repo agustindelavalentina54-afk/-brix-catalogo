@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -42,7 +41,7 @@ button{
   min-height:100vh;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 header{
   position:sticky;
@@ -78,7 +77,7 @@ header{
   font-weight:900;
 }
 
-/* UBICACIÓN */
+/* ================= UBICACIÓN ================= */
 
 .location{
   text-align:center;
@@ -89,7 +88,7 @@ header{
   font-weight:bold;
 }
 
-/* PANTALLAS */
+/* ================= PANTALLAS ================= */
 
 .screen{
   display:none;
@@ -114,7 +113,7 @@ header{
 
 }
 
-/* INICIO */
+/* ================= INICIO ================= */
 
 .hero{
   padding:18px;
@@ -226,7 +225,7 @@ header{
   font-size:23px;
 }
 
-/* SECCIONES */
+/* ================= SECCIONES ================= */
 
 .section{
   padding:22px 18px 40px;
@@ -262,7 +261,7 @@ header{
 
 }
 
-/* MENÚ DE CATEGORÍAS */
+/* ================= MENÚ ================= */
 
 .menu{
   display:grid;
@@ -329,7 +328,7 @@ header{
 
 }
 
-/* PRODUCTOS */
+/* ================= PRODUCTOS ================= */
 
 .products{
 
@@ -351,7 +350,7 @@ header{
 
 }
 
-/* VIDEO / FOTO */
+/* ================= FOTO PRODUCTO ================= */
 
 .product-media{
 
@@ -371,16 +370,17 @@ header{
 
 }
 
-.product-media video,
 .product-media img{
 
   width:100%;
 
   height:100%;
 
-  object-fit:cover;
+  object-fit:contain;
 
   display:block;
+
+  padding:20px;
 
 }
 
@@ -412,7 +412,7 @@ header{
 
 }
 
-/* INFORMACIÓN */
+/* ================= INFORMACIÓN ================= */
 
 .product-info{
 
@@ -482,7 +482,7 @@ header{
 
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
 
@@ -510,7 +510,7 @@ footer a{
 
 }
 
-/* CARRITO */
+/* ================= CARRITO ================= */
 
 .cart-panel{
 
@@ -636,7 +636,7 @@ footer a{
 
 }
 
-/* DESKTOP */
+/* ================= DESKTOP ================= */
 
 @media(min-width:700px){
 
@@ -669,7 +669,7 @@ footer a{
 
 <div class="app">
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 
 <header>
 
@@ -846,9 +846,7 @@ id="productTitle"
 >
 </div>
 
-<div
-class="subtitle"
->
+<div class="subtitle">
 Elegí una bebida.
 </div>
 
@@ -895,7 +893,7 @@ id="promoMenu"
 </section>
 
 
-<!-- ================= PROMOS ================= -->
+<!-- ================= PROMOS PRODUCTOS ================= -->
 
 <section id="promoProducts" class="screen">
 
@@ -1026,7 +1024,9 @@ onclick="sendOrder()"
 
 <script>
 
-/* ================= PRODUCTOS ================= */
+/* =========================================================
+   PRODUCTOS
+========================================================= */
 
 const products = [
 
@@ -1238,13 +1238,14 @@ name:"CASARENA ESTATE CHARDONNAY",
 price:9900,
 category:"vino",
 emoji:"🍷"
-
 }
 
 ];
 
 
-/* ================= PROMOS ================= */
+/* =========================================================
+   PROMOCIONES
+========================================================= */
 
 const promos = [
 
@@ -1342,7 +1343,94 @@ emoji:"🔥"
 ];
 
 
-/* ================= CATEGORIAS ================= */
+/* =========================================================
+   IMÁGENES
+========================================================= */
+
+/*
+   IMPORTANTE:
+   Las imágenes están en la misma carpeta que index.html.
+*/
+
+const productImages = {
+
+"BRANCA 750":
+"branca-750.png",
+
+"FERNET 180 AÑOS":
+"fernet-180-anos.png",
+
+"PROMO BRANCA 750 CON HIELO":
+"promo-branca-750-con-hielo.png",
+
+"PROMO BRANCA 750 + 2 COCA COLA 2,5L + HIELO":
+"promo-branca-750-2-coca-cola-2-5l-hielo.png",
+
+"2 PROMO FERNET 750":
+"2-promo-fernet-750.png",
+
+"FERNET 180° + COCA 2,5L":
+"fernet-180-coca-cola-25.png",
+
+"PROMO 2 BALBOS + 1 PRITTY":
+"promo-2-balbos-1-pritty.png",
+
+"2 SANTA JULIA MALBEC":
+"2-santa-julia-malbec.png",
+
+"COLON SELECTO DULCE":
+"colon-selecto-dulce.png",
+
+"SANTA JULIA TINTO DULCE":
+"santa-julia-tinto-dulce.png",
+
+"SANTA JULIA CHENIN DULCE":
+"santa-julia-chenin-dulce.png",
+
+"CAVA NEGRA CHARDONNAY":
+"cava-negra-chardonnay.png",
+
+"CASARENA ESTATE CHARDONNAY":
+"casarena-estate-chardonnay.png",
+
+"SPEED 250":
+"speed-250.png",
+
+"SPEED XL":
+"speed-xl.png",
+
+"MONSTER":
+"monster.png",
+
+"COCA COLA 500 ML":
+"coca-cola-500ml.png",
+
+"COCA COLA 2,5L":
+"coca-cola-25-desc.png",
+
+"SPRITE 2,25L":
+"sprite-225l.png",
+
+"PRITTY 2,25L":
+"pritty-225l.png"
+
+};
+
+
+/* =========================================================
+   OBTENER IMAGEN
+========================================================= */
+
+function getProductImage(name){
+
+return productImages[name] || "";
+
+}
+
+
+/* =========================================================
+   CATEGORÍAS
+========================================================= */
 
 const categories = [
 
@@ -1424,14 +1512,18 @@ const promoCategories = [
 ];
 
 
-/* ================= VARIABLES ================= */
+/* =========================================================
+   VARIABLES
+========================================================= */
 
 let currentList=[];
 
 let cart=[];
 
 
-/* ================= FUNCIONES ================= */
+/* =========================================================
+   FORMATO DE DINERO
+========================================================= */
 
 function money(value){
 
@@ -1441,7 +1533,9 @@ return Number(value || 0)
 }
 
 
-/* CAMBIAR PANTALLA */
+/* =========================================================
+   CAMBIAR PANTALLA
+========================================================= */
 
 function showScreen(id){
 
@@ -1460,7 +1554,9 @@ window.scrollTo(0,0);
 }
 
 
-/* CREAR MENÚ */
+/* =========================================================
+   CREAR MENÚ
+========================================================= */
 
 function createMenu(
 containerId,
@@ -1511,7 +1607,9 @@ ${item[3]}
 }
 
 
-/* MOSTRAR PRODUCTOS */
+/* =========================================================
+   MOSTRAR PRODUCTOS
+========================================================= */
 
 function renderProducts(
 list,
@@ -1527,17 +1625,51 @@ container.innerHTML="";
 
 list.forEach((product,index)=>{
 
+const image=
+getProductImage(product.name);
+
+let mediaHTML="";
+
+if(image){
+
+mediaHTML=`
+
+<img
+src="${image}"
+alt="${product.name}"
+loading="lazy"
+onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
+>
+
+<div
+class="product-placeholder"
+style="display:none"
+>
+${product.emoji}
+</div>
+
+`;
+
+}else{
+
+mediaHTML=`
+
+<div class="product-placeholder">
+${product.emoji}
+</div>
+
+`;
+
+}
+
+
 container.innerHTML += `
 
 <article class="product">
 
 <div class="product-media">
 
-<div class="product-placeholder">
-
-${product.emoji}
-
-</div>
+${mediaHTML}
 
 <span class="media-label">
 PRODUCTO
@@ -1605,7 +1737,9 @@ document
 }
 
 
-/* ABRIR CATEGORÍA */
+/* =========================================================
+   ABRIR CATEGORÍA
+========================================================= */
 
 function openCategory(category){
 
@@ -1626,7 +1760,9 @@ showScreen("products");
 }
 
 
-/* ABRIR PROMO */
+/* =========================================================
+   ABRIR PROMO
+========================================================= */
 
 function openPromo(category){
 
@@ -1647,7 +1783,9 @@ showScreen("promoProducts");
 }
 
 
-/* CARRITO */
+/* =========================================================
+   CARRITO
+========================================================= */
 
 function addToCart(index){
 
@@ -1737,7 +1875,9 @@ updateCart();
 }
 
 
-/* ABRIR CARRITO */
+/* =========================================================
+   ABRIR CARRITO
+========================================================= */
 
 function openCart(){
 
@@ -1750,7 +1890,9 @@ updateCart();
 }
 
 
-/* CERRAR CARRITO */
+/* =========================================================
+   CERRAR CARRITO
+========================================================= */
 
 function closeCart(){
 
@@ -1761,7 +1903,9 @@ document
 }
 
 
-/* WHATSAPP */
+/* =========================================================
+   WHATSAPP
+========================================================= */
 
 function quickWhatsApp(productName){
 
@@ -1778,7 +1922,9 @@ window.open(
 }
 
 
-/* ENVIAR PEDIDO */
+/* =========================================================
+   ENVIAR PEDIDO
+========================================================= */
 
 function sendOrder(){
 
@@ -1824,7 +1970,9 @@ window.open(
 }
 
 
-/* INSTAGRAM */
+/* =========================================================
+   INSTAGRAM
+========================================================= */
 
 function openInstagram(){
 
@@ -1836,7 +1984,9 @@ window.open(
 }
 
 
-/* INICIAR */
+/* =========================================================
+   INICIAR
+========================================================= */
 
 createMenu(
 "catalogMenu",
