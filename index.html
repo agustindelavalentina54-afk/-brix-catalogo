@@ -10,523 +10,462 @@
 <style>
 
 :root{
---negro:#050505;
---negro2:#111111;
---blanco:#ffffff;
---gris:#999999;
---verde:#b7ff00;
---borde:#292929;
+  --negro:#050505;
+  --negro2:#111111;
+  --blanco:#ffffff;
+  --gris:#999999;
+  --verde:#b7ff00;
+  --borde:#292929;
 }
 
 *{
-box-sizing:border-box;
-margin:0;
-padding:0;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
 }
 
 body{
-background:var(--negro);
-color:white;
-font-family:Arial,Helvetica,sans-serif;
+  background:var(--negro);
+  color:var(--blanco);
+  font-family:Arial,Helvetica,sans-serif;
 }
 
 button{
-font:inherit;
-cursor:pointer;
-}
-
-a{
-text-decoration:none;
+  font:inherit;
+  cursor:pointer;
 }
 
 .app{
-max-width:980px;
-margin:auto;
-min-height:100vh;
+  max-width:980px;
+  margin:auto;
+  min-height:100vh;
 }
 
 /* HEADER */
 
 header{
-position:sticky;
-top:0;
-z-index:20;
-background:rgba(5,5,5,.97);
-border-bottom:1px solid var(--borde);
-padding:15px 18px;
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(5,5,5,.97);
+  border-bottom:1px solid var(--borde);
+  padding:15px 18px;
 }
 
 .top{
-display:flex;
-align-items:center;
-justify-content:space-between;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
 
 .logo{
-font-size:31px;
-font-weight:900;
-letter-spacing:4px;
+  font-size:31px;
+  font-weight:900;
+  letter-spacing:4px;
 }
 
 .logo span{
-color:var(--verde);
+  color:var(--verde);
 }
 
 .cart{
-border:0;
-background:var(--verde);
-color:#000;
-border-radius:12px;
-padding:9px 13px;
-font-weight:900;
+  border:0;
+  background:var(--verde);
+  color:#000;
+  border-radius:12px;
+  padding:9px 13px;
+  font-weight:900;
 }
 
+/* UBICACION */
+
 .location{
-text-align:center;
-background:#101010;
-color:var(--verde);
-padding:11px;
-font-size:13px;
-font-weight:bold;
+  text-align:center;
+  background:#101010;
+  color:var(--verde);
+  padding:11px;
+  font-size:13px;
+  font-weight:bold;
 }
 
 /* PANTALLAS */
 
 .screen{
-display:none;
-animation:entrada .2s ease;
+  display:none;
+  animation:entrada .2s ease;
 }
 
 .screen.active{
-display:block;
+  display:block;
 }
 
 @keyframes entrada{
-from{
-opacity:0;
-transform:translateY(8px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
+  from{
+    opacity:0;
+    transform:translateY(8px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 
 /* INICIO */
 
 .hero{
-padding:18px;
+  padding:18px;
 }
-
-/* BANNER */
 
 .hero-banner{
-width:100%;
-min-height:245px;
-border-radius:18px;
-border:1px solid #333;
-overflow:hidden;
-position:relative;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-background:
-radial-gradient(
-circle at center,
-#292929 0%,
-#111111 40%,
-#050505 75%
-);
+  width:100%;
+  border-radius:16px;
+  border:1px solid var(--borde);
+  overflow:hidden;
+  background:#050505;
 }
 
-.hero-banner:before{
-content:"";
-position:absolute;
-inset:-40%;
-
-background:
-repeating-linear-gradient(
-115deg,
-transparent 0 34px,
-rgba(183,255,0,.05) 35px 37px
-);
-
-transform:rotate(-8deg);
+.hero-banner img{
+  width:100%;
+  height:auto;
+  display:block;
 }
-
-.banner-content{
-position:relative;
-z-index:2;
-text-align:center;
-}
-
-.banner-mini{
-color:#aaa;
-font-size:12px;
-letter-spacing:5px;
-font-weight:bold;
-margin-bottom:12px;
-}
-
-.banner-content h2{
-font-size:68px;
-letter-spacing:8px;
-font-weight:900;
-}
-
-.banner-content h2 span{
-color:var(--verde);
-}
-
-.banner-content p{
-margin-top:13px;
-color:#ddd;
-font-size:14px;
-letter-spacing:2px;
-}
-
-/* HERO */
 
 .hero-copy{
-padding:25px 3px;
+  padding:25px 3px;
 }
 
 .badge{
-display:inline-block;
-border:1px solid var(--verde);
-color:var(--verde);
-border-radius:30px;
-padding:7px 12px;
-font-size:12px;
-font-weight:bold;
-margin-bottom:14px;
+  display:inline-block;
+  border:1px solid var(--verde);
+  color:var(--verde);
+  border-radius:30px;
+  padding:7px 12px;
+  font-size:12px;
+  font-weight:bold;
+  margin-bottom:14px;
 }
 
 .hero-copy h1{
-font-size:80px;
-line-height:.85;
-letter-spacing:-4px;
+  font-size:80px;
+  line-height:.85;
+  letter-spacing:-4px;
 }
 
 .hero-copy h1 span{
-color:var(--verde);
+  color:var(--verde);
 }
 
 .hero-copy p{
-color:#ddd;
-margin-top:15px;
-line-height:1.5;
+  color:#ddd;
+  margin-top:15px;
+  line-height:1.5;
 }
 
 .home-buttons{
-display:grid;
-gap:11px;
-margin-top:25px;
+  display:grid;
+  gap:11px;
+  margin-top:25px;
 }
 
 .main-button{
-width:100%;
-padding:17px;
-border:1px solid #333;
-background:#111;
-color:white;
-border-radius:13px;
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-font-weight:bold;
+  width:100%;
+  padding:17px;
+  border:1px solid #333;
+  background:#111;
+  color:white;
+  border-radius:13px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-weight:bold;
 }
 
 .main-button.primary{
-background:var(--verde);
-color:#000;
-border-color:var(--verde);
+  background:var(--verde);
+  color:#000;
+  border-color:var(--verde);
 }
 
 .arrow{
-font-size:23px;
+  font-size:23px;
 }
 
 /* SECCIONES */
 
 .section{
-padding:22px 18px 40px;
+  padding:22px 18px 40px;
 }
 
 .back{
-border:0;
-background:none;
-color:var(--verde);
-font-weight:bold;
-padding:5px 0 18px;
+  border:0;
+  background:none;
+  color:var(--verde);
+  font-weight:bold;
+  padding:5px 0 18px;
 }
 
 .title{
-font-size:32px;
-font-weight:900;
+  font-size:32px;
+  font-weight:900;
 }
 
 .subtitle{
-color:var(--gris);
-margin:8px 0 20px;
+  color:var(--gris);
+  margin:8px 0 20px;
 }
 
 /* CATEGORIAS */
 
 .menu{
-display:grid;
-gap:10px;
+  display:grid;
+  gap:10px;
 }
 
 .menu-button{
-width:100%;
-border:1px solid var(--borde);
-background:#101010;
-color:white;
-border-radius:14px;
-padding:18px;
+  width:100%;
+  border:1px solid var(--borde);
+  background:#101010;
+  color:white;
+  border-radius:14px;
+  padding:18px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  text-align:left;
+}
 
-display:flex;
-align-items:center;
-gap:14px;
-
-text-align:left;
+.menu-button:active{
+  transform:scale(.99);
 }
 
 .menu-icon{
-font-size:28px;
-width:38px;
-text-align:center;
+  font-size:28px;
+  width:38px;
+  text-align:center;
 }
 
 .menu-info{
-flex:1;
+  flex:1;
 }
 
 .menu-info strong{
-font-size:17px;
+  font-size:17px;
 }
 
 .menu-info small{
-display:block;
-color:#777;
-margin-top:4px;
+  display:block;
+  color:#777;
+  margin-top:4px;
 }
 
 .chevron{
-color:var(--verde);
-font-size:25px;
+  color:var(--verde);
+  font-size:25px;
 }
 
 /* PRODUCTOS */
 
 .products{
-display:grid;
-gap:15px;
+  display:grid;
+  gap:15px;
 }
 
 .product{
-background:#0e0e0e;
-border:1px solid var(--borde);
-border-radius:17px;
-overflow:hidden;
+  background:#0e0e0e;
+  border:1px solid var(--borde);
+  border-radius:17px;
+  overflow:hidden;
 }
 
 .product-media{
-height:330px;
-background:#151515;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-position:relative;
-overflow:hidden;
+  height:370px;
+  background:#151515;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
 }
 
 .product-media img{
-width:100%;
-height:100%;
-object-fit:contain;
-display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+  padding:15px;
 }
 
 .product-placeholder{
-font-size:70px;
+  font-size:70px;
 }
 
 .media-label{
-position:absolute;
-top:12px;
-left:12px;
-
-background:rgba(0,0,0,.78);
-border:1px solid #444;
-border-radius:20px;
-
-padding:6px 10px;
-
-font-size:11px;
-font-weight:bold;
+  position:absolute;
+  top:12px;
+  left:12px;
+  background:rgba(0,0,0,.75);
+  border:1px solid #444;
+  border-radius:20px;
+  padding:6px 10px;
+  font-size:11px;
+  font-weight:bold;
 }
 
+/* INFORMACION */
+
 .product-info{
-padding:15px;
+  padding:15px;
 }
 
 .product-info h3{
-font-size:19px;
-line-height:1.2;
-margin-bottom:8px;
+  font-size:19px;
+  line-height:1.2;
+  margin-bottom:8px;
 }
 
 .price{
-color:var(--verde);
-font-size:26px;
-font-weight:900;
+  color:var(--verde);
+  font-size:26px;
+  font-weight:900;
 }
 
 .actions{
-display:flex;
-gap:8px;
-margin-top:14px;
+  display:flex;
+  gap:8px;
+  margin-top:14px;
 }
 
 .add{
-flex:1;
-border:0;
-background:var(--verde);
-color:#000;
-border-radius:10px;
-padding:12px;
-font-weight:900;
+  flex:1;
+  border:0;
+  background:var(--verde);
+  color:#000;
+  border-radius:10px;
+  padding:12px;
+  font-weight:900;
 }
 
 .whatsapp-small{
-border:1px solid #333;
-background:#171717;
-color:white;
-border-radius:10px;
-padding:12px 14px;
+  border:1px solid #333;
+  background:#171717;
+  color:white;
+  border-radius:10px;
+  padding:12px 14px;
 }
 
 /* FOOTER */
 
 footer{
-text-align:center;
-padding:35px 18px;
-border-top:1px solid var(--borde);
-color:#777;
+  text-align:center;
+  padding:35px 18px;
+  border-top:1px solid var(--borde);
+  color:#777;
 }
 
 footer strong{
-color:white;
-letter-spacing:3px;
+  color:white;
+  letter-spacing:3px;
 }
 
 footer a{
-color:var(--verde);
+  color:var(--verde);
 }
 
 /* CARRITO */
 
 .cart-panel{
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.78);
-z-index:50;
-
-display:none;
-align-items:flex-end;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.75);
+  z-index:50;
+  display:none;
+  align-items:flex-end;
 }
 
 .cart-panel.open{
-display:flex;
+  display:flex;
 }
 
 .cart-box{
-width:100%;
-max-width:600px;
-margin:auto auto 0;
-
-background:#111;
-border:1px solid #333;
-
-border-radius:20px 20px 0 0;
-
-padding:20px;
-
-max-height:85vh;
-overflow:auto;
+  width:100%;
+  max-width:600px;
+  margin:auto auto 0;
+  background:#111;
+  border:1px solid #333;
+  border-radius:20px 20px 0 0;
+  padding:20px;
+  max-height:85vh;
+  overflow:auto;
 }
 
 .cart-head{
-display:flex;
-justify-content:space-between;
-align-items:center;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
 .close{
-border:0;
-background:#222;
-color:white;
-border-radius:8px;
-padding:7px 10px;
+  border:0;
+  background:#222;
+  color:white;
+  border-radius:8px;
+  padding:7px 10px;
 }
 
 .cart-item{
-padding:13px 0;
-border-bottom:1px solid #292929;
+  padding:13px 0;
+  border-bottom:1px solid #292929;
 }
 
 .cart-item-top{
-display:flex;
-justify-content:space-between;
-gap:10px;
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
 }
 
 .cart-price{
-color:var(--verde);
-font-weight:bold;
-margin-top:5px;
+  color:var(--verde);
+  font-weight:bold;
+  margin-top:5px;
 }
 
 .total{
-font-size:23px;
-font-weight:900;
-padding:18px 0;
+  font-size:23px;
+  font-weight:900;
+  padding:18px 0;
 }
 
 .send{
-width:100%;
-border:0;
-background:#20c763;
-color:white;
-padding:15px;
-border-radius:11px;
-font-weight:900;
+  width:100%;
+  border:0;
+  background:#20c763;
+  color:white;
+  padding:15px;
+  border-radius:11px;
+  font-weight:900;
 }
 
-/* COMPUTADORA */
+/* DESKTOP */
 
 @media(min-width:700px){
 
-.home-buttons{
-grid-template-columns:1fr 1fr;
-}
+  .home-buttons{
+    grid-template-columns:1fr 1fr;
+  }
 
-.products{
-grid-template-columns:1fr 1fr;
-}
+  .products{
+    grid-template-columns:1fr 1fr;
+  }
 
-.cart-box{
-border-radius:20px;
-margin:auto;
-}
+  .cart-box{
+    border-radius:20px;
+    margin:auto;
+  }
 
 }
 
@@ -558,7 +497,7 @@ BRI<span>X</span>
 </div>
 
 
-<!-- INICIO -->
+<!-- ================= INICIO ================= -->
 
 <section id="home" class="screen active">
 
@@ -566,24 +505,12 @@ BRI<span>X</span>
 
 <div class="hero-banner">
 
-<div class="banner-content">
-
-<div class="banner-mini">
-TU MOMENTO · TU BEBIDA
-</div>
-
-<h2>
-BRI<span>X</span>
-</h2>
-
-<p>
-BEBIDAS · PROMOS · COMBOS
-</p>
+<img
+src="F7E36772-8F96-4024-8D1F-244561E45971(3).jpeg"
+alt="BRIX - Tu momento, tu bebida"
+>
 
 </div>
-
-</div>
-
 
 <div class="hero-copy">
 
@@ -596,10 +523,9 @@ BRIX<span>.</span>
 </h1>
 
 <p>
-Tu momento, tu bebida.
+Tu momento, tu bebida.<br>
 Explorá nuestro catálogo por categorías.
 </p>
-
 
 <div class="home-buttons">
 
@@ -607,63 +533,32 @@ Explorá nuestro catálogo por categorías.
 class="main-button primary"
 onclick="showScreen('catalog')"
 >
-
-<span>
-🛒 CATÁLOGO
-</span>
-
-<span class="arrow">
-›
-</span>
-
+<span>🛒 CATÁLOGO</span>
+<span class="arrow">›</span>
 </button>
-
 
 <button
 class="main-button"
 onclick="showScreen('promos')"
 >
-
-<span>
-🔥 PROMOCIONES
-</span>
-
-<span class="arrow">
-›
-</span>
-
+<span>🔥 PROMOCIONES</span>
+<span class="arrow">›</span>
 </button>
-
 
 <button
 class="main-button"
 onclick="sendWhatsApp()"
 >
-
-<span>
-📲 PEDIR POR WHATSAPP
-</span>
-
-<span class="arrow">
-›
-</span>
-
+<span>📲 PEDIR POR WHATSAPP</span>
+<span class="arrow">›</span>
 </button>
-
 
 <button
 class="main-button"
 onclick="openInstagram()"
 >
-
-<span>
-📸 @brix_bebidas
-</span>
-
-<span class="arrow">
-›
-</span>
-
+<span>📸 @brix_bebidas</span>
+<span class="arrow">›</span>
 </button>
 
 </div>
@@ -675,7 +570,7 @@ onclick="openInstagram()"
 </section>
 
 
-<!-- CATALOGO -->
+<!-- ================= CATALOGO ================= -->
 
 <section id="catalog" class="screen">
 
@@ -707,7 +602,7 @@ id="catalogMenu"
 </section>
 
 
-<!-- PRODUCTOS -->
+<!-- ================= PRODUCTOS ================= -->
 
 <section id="products" class="screen">
 
@@ -741,7 +636,7 @@ id="productList"
 </section>
 
 
-<!-- PROMOCIONES -->
+<!-- ================= PROMOCIONES ================= -->
 
 <section id="promos" class="screen">
 
@@ -773,7 +668,7 @@ id="promoMenu"
 </section>
 
 
-<!-- PRODUCTOS PROMOS -->
+<!-- ================= PROMOS ================= -->
 
 <section id="promoProducts" class="screen">
 
@@ -807,48 +702,40 @@ id="promoList"
 </section>
 
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-<strong>
-BRIX
-</strong>
+<strong>BRIX</strong>
 
 <p style="margin-top:10px">
 📍 Quebrada del Condorito 3673
 </p>
 
 <p style="margin-top:7px">
-
 📲
-
 <a
 href="https://wa.me/5493512573455"
 target="_blank"
 >
 351 257-3455
 </a>
-
 </p>
 
 <p style="margin-top:7px">
-
 📸
-
 <a
 href="https://instagram.com/brix_bebidas"
 target="_blank"
 >
 @brix_bebidas
 </a>
-
 </p>
 
 </footer>
 
 
-<!-- CARRITO -->
+<!-- ================= CARRITO ================= -->
 
 <div
 class="cart-panel"
@@ -877,22 +764,14 @@ onclick="closeCart()"
 </div>
 
 <div class="total">
-
-Total: $
-
-<span id="total">
-0
-</span>
-
+Total: $<span id="total">0</span>
 </div>
 
 <button
 class="send"
 onclick="sendOrder()"
 >
-
 📲 ENVIAR PEDIDO POR WHATSAPP
-
 </button>
 
 </div>
@@ -905,6 +784,62 @@ onclick="sendOrder()"
 /* ================= PRODUCTOS ================= */
 
 const products = [
+
+{
+name:"SMIRNOFF SABORIZADO",
+price:10900,
+category:"vodka",
+emoji:"🍸",
+image:"IMG_3286.jpeg"
+},
+
+{
+name:"PROMO SMIRNOFF + 2 SPEED",
+price:15500,
+category:"vodka",
+emoji:"🍸",
+image:"pack-red-bull-x4.png"
+},
+
+{
+name:"2 PROMO SMIRNOFF",
+price:29500,
+category:"vodka",
+emoji:"🍸",
+image:"IMG_3287.jpeg"
+},
+
+{
+name:"SKYY SABORIZADO",
+price:14500,
+category:"vodka",
+emoji:"🍾",
+image:"IMG_3288.jpeg"
+},
+
+{
+name:"SKYY SABORIZADO 2",
+price:15500,
+category:"vodka",
+emoji:"🍾",
+image:"IMG_3289.jpeg"
+},
+
+{
+name:"SKYY COSMIC",
+price:17500,
+category:"vodka",
+emoji:"🍾",
+image:"IMG_3290.jpeg"
+},
+
+{
+name:"ABSOLUT SABORIZADO",
+price:26000,
+category:"vodka",
+emoji:"🍾",
+image:"IMG_3291.jpeg"
+},
 
 {
 name:"BRANCA 750",
@@ -926,28 +861,32 @@ image:"fernet-180-anos.png"
 name:"PROMO BRANCA 750 CON HIELO",
 price:25000,
 category:"fernet",
-emoji:"🧊"
+emoji:"🧊",
+image:"promo-branca-750-con-hielo.png"
 },
 
 {
 name:"PROMO BRANCA 750 + 2 COCA COLA 2,5L + HIELO",
 price:30000,
 category:"fernet",
-emoji:"🥃"
+emoji:"🥃",
+image:"branca-750-2-coca-cola-2,5l-hielo.png"
 },
 
 {
 name:"2 PROMO FERNET 750",
 price:48000,
 category:"fernet",
-emoji:"🥃"
+emoji:"🥃",
+image:"2-promo-fernet-750.png"
 },
 
 {
 name:"FERNET 180° + COCA 2,5L",
 price:24000,
 category:"fernet",
-emoji:"🥃"
+emoji:"🥃",
+image:"fernet-180-coca-cola-2,5l.png"
 },
 
 {
@@ -1031,14 +970,16 @@ image:"pritty-225l.png"
 name:"PROMO 2 BALBOS + 1 PRITTY",
 price:10500,
 category:"vino",
-emoji:"🍷"
+emoji:"🍷",
+image:"promo-2-balbos-1-pritty.png"
 },
 
 {
 name:"2 SANTA JULIA MALBEC",
 price:10500,
 category:"vino",
-emoji:"🍷"
+emoji:"🍷",
+image:"2-santa-julia-malbec.png"
 },
 
 {
@@ -1053,76 +994,38 @@ image:"colon-selecto-dulce.png"
 name:"SANTA JULIA TINTO DULCE",
 price:8500,
 category:"vino",
-emoji:"🍷"
+emoji:"🍷",
+image:"santa-julia-tinto-dulce.png"
 },
 
 {
 name:"SANTA JULIA CHENIN DULCE",
 price:9000,
 category:"vino",
-emoji:"🍷"
+emoji:"🍷",
+image:"santa-julia-chenin-dulce.png"
 },
 
 {
 name:"CAVA NEGRA CHARDONNAY",
 price:9000,
 category:"vino",
-emoji:"🍷"
+emoji:"🍷",
+image:"cava-negra-chardonnay.png"
 },
 
 {
 name:"CASARENA ESTATE CHARDONNAY",
 price:9900,
 category:"vino",
-emoji:"🍷"
-},
-
-{
-name:"SMIRNOFF SABORIZADO",
-price:10900,
-category:"vodka",
-emoji:"🍸"
-},
-
-{
-name:"PROMO SMIRNOFF + 2 SPEED",
-price:15500,
-category:"vodka",
-emoji:"🍸"
-},
-
-{
-name:"2 PROMO SMIRNOFF",
-price:29500,
-category:"vodka",
-emoji:"🍸"
-},
-
-{
-name:"SKYY SABORIZADO",
-price:14500,
-category:"vodka",
-emoji:"🍾"
-},
-
-{
-name:"SKYY COSMIC",
-price:17500,
-category:"vodka",
-emoji:"🍾"
-},
-
-{
-name:"ABSOLUT SABORIZADO",
-price:26000,
-category:"vodka",
-emoji:"🍾"
+emoji:"🍷",
+image:"casarena-estate-chardonnay.png"
 }
 
 ];
 
 
-/* ================= PROMOCIONES ================= */
+/* ================= PROMOS ================= */
 
 const promos = [
 
@@ -1130,91 +1033,104 @@ const promos = [
 name:"PROMO SMIRNOFF + 2 SPEED",
 price:15500,
 category:"vodka",
-emoji:"🔥"
+emoji:"🔥",
+image:"pack-red-bull-x4.png"
 },
 
 {
 name:"2 PROMO SMIRNOFF",
 price:29500,
 category:"vodka",
-emoji:"🔥"
+emoji:"🔥",
+image:"IMG_3287.jpeg"
 },
 
 {
 name:"3 PROMO SKYY",
 price:43500,
 category:"vodka",
-emoji:"🔥"
+emoji:"🔥",
+image:"IMG_3288.jpeg"
 },
 
 {
 name:"2 PROMO ABSOLUT",
 price:59000,
 category:"vodka",
-emoji:"🔥"
+emoji:"🔥",
+image:"IMG_3291.jpeg"
 },
 
 {
 name:"PROMO BRANCA 750 CON HIELO",
 price:25000,
 category:"fernet",
-emoji:"🔥"
+emoji:"🔥",
+image:"promo-branca-750-con-hielo.png"
 },
 
 {
 name:"PROMO BRANCA 750 + 2 COCA COLA 2,5L + HIELO",
 price:30000,
 category:"fernet",
-emoji:"🔥"
+emoji:"🔥",
+image:"branca-750-2-coca-cola-2,5l-hielo.png"
 },
 
 {
 name:"2 PROMO FERNET 750",
 price:48000,
 category:"fernet",
-emoji:"🔥"
+emoji:"🔥",
+image:"2-promo-fernet-750.png"
 },
 
 {
 name:"FERNET 180° + COCA 2,5L",
 price:24000,
 category:"fernet",
-emoji:"🔥"
+emoji:"🔥",
+image:"fernet-180-coca-cola-2,5l.png"
 },
 
 {
 name:"SKYY + SMIRNOFF + 4 SPEED",
 price:29000,
 category:"combo",
-emoji:"🔥"
+emoji:"🔥",
+image:"pack-red-bull-x4.png"
 },
 
 {
 name:"PROMO BRANCA + PROMO",
 price:38500,
 category:"combo",
-emoji:"🔥"
+emoji:"🔥",
+image:"promo-branca-750-ret.png"
 },
 
 {
 name:"ABSOLUT + SKYY + 4 SPEED XL",
 price:45000,
 category:"combo",
-emoji:"🔥"
+emoji:"🔥",
+image:"pack-red-bull-x4.png"
 },
 
 {
 name:"ABSOLUT + 2 SKYY + 9 SPEED",
 price:68000,
 category:"combo",
-emoji:"🔥"
+emoji:"🔥",
+image:"pack-red-bull-x4.png"
 },
 
 {
 name:"JAGER + ABSOLUT",
 price:73500,
 category:"combo",
-emoji:"🔥"
+emoji:"🔥",
+image:"IMG_3291.jpeg"
 }
 
 ];
@@ -1305,11 +1221,10 @@ const promoCategories = [
 /* ================= VARIABLES ================= */
 
 let currentList=[];
-
 let cart=[];
 
 
-/* ================= FUNCIONES ================= */
+/* ================= DINERO ================= */
 
 function money(value){
 
@@ -1319,7 +1234,7 @@ return Number(value || 0)
 }
 
 
-/* PANTALLAS */
+/* ================= CAMBIAR PANTALLA ================= */
 
 function showScreen(id){
 
@@ -1338,454 +1253,6 @@ window.scrollTo(0,0);
 }
 
 
-/* CREAR MENUS */
+/* ================= MENU ================= */
 
-function createMenu(
-containerId,
-items,
-functionName
-){
-
-const container=
-document.getElementById(containerId);
-
-container.innerHTML="";
-
-items.forEach(item=>{
-
-container.innerHTML += `
-
-<button
-class="menu-button"
-onclick="${functionName}('${item[0]}')"
->
-
-<span class="menu-icon">
-${item[1]}
-</span>
-
-<span class="menu-info">
-
-<strong>
-${item[2]}
-</strong>
-
-<small>
-${item[3]}
-</small>
-
-</span>
-
-<span class="chevron">
-›
-</span>
-
-</button>
-
-`;
-
-});
-
-}
-
-
-/* IMAGEN */
-
-function imageHTML(product){
-
-if(!product.image){
-
-return `
-<div class="product-placeholder">
-${product.emoji}
-</div>
-`;
-
-}
-
-return `
-
-<img
-src="${product.image}"
-alt="${product.name}"
-onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
->
-
-<div
-class="product-placeholder"
-style="display:none"
->
-${product.emoji}
-</div>
-
-`;
-
-}
-
-
-/* PRODUCTOS */
-
-function renderProducts(
-list,
-containerId,
-titleId,
-title
-){
-
-const container=
-document.getElementById(containerId);
-
-container.innerHTML="";
-
-if(!list.length){
-
-container.innerHTML=
-"<p style='color:#777'>No hay productos disponibles.</p>";
-
-}
-
-list.forEach((product,index)=>{
-
-container.innerHTML += `
-
-<article class="product">
-
-<div class="product-media">
-
-${imageHTML(product)}
-
-<span class="media-label">
-PRODUCTO
-</span>
-
-</div>
-
-
-<div class="product-info">
-
-<h3>
-${product.name}
-</h3>
-
-<div class="price">
-
-${
-product.price > 0
-? "$"+money(product.price)
-: "Consultar"
-}
-
-</div>
-
-
-<div class="actions">
-
-<button
-class="add"
-onclick="addToCart(${index})"
->
-
-${
-product.price > 0
-? "+ AGREGAR"
-: "CONSULTAR"
-}
-
-</button>
-
-
-<button
-class="whatsapp-small"
-onclick="quickWhatsApp('${product.name.replace(/'/g,"\\'")}')"
->
-
-📲
-
-</button>
-
-</div>
-
-</div>
-
-</article>
-
-`;
-
-});
-
-document
-.getElementById(titleId)
-.textContent=title;
-
-}
-
-
-/* ABRIR CATEGORIA */
-
-function openCategory(category){
-
-currentList=
-products.filter(
-product=>product.category===category
-);
-
-renderProducts(
-currentList,
-"productList",
-"productTitle",
-category.toUpperCase()
-);
-
-showScreen("products");
-
-}
-
-
-/* ABRIR PROMO */
-
-function openPromo(category){
-
-currentList=
-promos.filter(
-promo=>promo.category===category
-);
-
-renderProducts(
-currentList,
-"promoList",
-"promoTitle",
-category.toUpperCase()
-);
-
-showScreen("promoProducts");
-
-}
-
-
-/* CARRITO */
-
-function addToCart(index){
-
-if(!currentList[index]){
-return;
-}
-
-cart.push(currentList[index]);
-
-updateCart();
-
-openCart();
-
-}
-
-
-function updateCart(){
-
-document
-.getElementById("cartCount")
-.textContent=cart.length;
-
-let total=0;
-
-const container=
-document.getElementById("cartItems");
-
-if(cart.length===0){
-
-container.innerHTML=
-"<p style='color:#888;margin-top:20px'>Tu pedido está vacío.</p>";
-
-}else{
-
-container.innerHTML="";
-
-cart.forEach((product,index)=>{
-
-total += Number(product.price || 0);
-
-container.innerHTML += `
-
-<div class="cart-item">
-
-<div class="cart-item-top">
-
-<strong>
-${product.name}
-</strong>
-
-<button
-class="close"
-onclick="removeFromCart(${index})"
->
-✕
-</button>
-
-</div>
-
-<div class="cart-price">
-
-${
-product.price
-? "$"+money(product.price)
-: "Consultar precio"
-}
-
-</div>
-
-</div>
-
-`;
-
-});
-
-}
-
-document
-.getElementById("total")
-.textContent=money(total);
-
-}
-
-
-function removeFromCart(index){
-
-cart.splice(index,1);
-
-updateCart();
-
-}
-
-
-/* CARRITO */
-
-function openCart(){
-
-document
-.getElementById("cartPanel")
-.classList.add("open");
-
-updateCart();
-
-}
-
-
-function closeCart(){
-
-document
-.getElementById("cartPanel")
-.classList.remove("open");
-
-}
-
-
-/* WHATSAPP */
-
-function quickWhatsApp(productName){
-
-const message=
-"Hola BRIX! Quiero consultar por: "
-+productName;
-
-window.open(
-"https://wa.me/5493512573455?text="
-+encodeURIComponent(message),
-"_blank"
-);
-
-}
-
-
-function sendWhatsApp(){
-
-const message=
-"Hola BRIX! Quiero consultar por bebidas y promociones.";
-
-window.open(
-"https://wa.me/5493512573455?text="
-+encodeURIComponent(message),
-"_blank"
-);
-
-}
-
-
-/* PEDIDO */
-
-function sendOrder(){
-
-if(cart.length===0){
-
-sendWhatsApp();
-
-return;
-
-}
-
-let message=
-"Hola BRIX! Quiero hacer este pedido:\n\n";
-
-let total=0;
-
-cart.forEach(product=>{
-
-message +=
-"• "
-+product.name
-+" — "
-+(product.price
-?"$"+money(product.price)
-:"Consultar precio")
-+"\n";
-
-total +=
-Number(product.price || 0);
-
-});
-
-message +=
-"\nTotal: $"
-+money(total);
-
-window.open(
-"https://wa.me/5493512573455?text="
-+encodeURIComponent(message),
-"_blank"
-);
-
-}
-
-
-/* INSTAGRAM */
-
-function openInstagram(){
-
-window.open(
-"https://instagram.com/brix_bebidas",
-"_blank"
-);
-
-}
-
-
-/* INICIAR */
-
-createMenu(
-"catalogMenu",
-categories,
-"openCategory"
-);
-
-createMenu(
-"promoMenu",
-promoCategories,
-"openPromo"
-);
-
-updateCart();
-
-</script>
-
-</div>
-
-</body>
-</html>
+function create
