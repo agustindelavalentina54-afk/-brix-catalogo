@@ -1,45 +1,13 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BRIX - Catálogo de Bebidas</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
-    body { background-color: #0d0d0d; color: #fff; padding-top: 70px; }
-
-    header {
-      position: fixed;
-      top: 0; left: 0; width: 100%;
-      background-color: #0d0d0d;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 15px 20px;
-      z-index: 1000;
-      border-bottom: 1px solid #222;
-    }
-
-    .menu-toggle { background: none; border: none; color: #fff; font-size: 1.8rem; cursor: pointer; }
-    .logo-text { font-weight: bold; font-size: 1.3rem; letter-spacing: 2px; }
-    .logo-text span { color: #25d366; }
-
-    .sidebar {
-      position: fixed; top: 0; left: -280px; width: 280px; height: 100%;
-      background-color: #161616; transition: left 0.3s ease; z-index: 1100; padding-top: 60px;
-    }
-    .sidebar.open { left: 0; }
-    .close-btn { position: absolute; top: 15px; right: 20px; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
-    .sidebar ul { list-style: none; padding: 0; }
-    .sidebar ul li button { width: 100%; background: none; border: none; color: #bbb; text-align: left; padding: 15px 25px; font-size: 1.05rem; cursor: pointer; }
-    .sidebar ul li button:hover { background-color: #222; color: #fff; border-left: 4px solid #25d366; }
-
-    .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: none; z-index: 1050; }
-    .overlay.active { display: block; }
-
-    .category-section { display: none; padding: 20px; max-width: 900px; margin: 0 auto; text-align: center; }
-    .category-section.active-category { display: block; }
-
-    .hero-img {
-      width: 100%; max-width: 500px; height: 350px; background: #222;
-      border-radius: 12px; margin: 0 auto 20px auto; display: flex; align-items: center; justify-content: center; overflow: hidden;
-    }
-    .hero-
+BRIX/
+├── index.html
+├── banner-brix.jpeg
+├── videos/
+│   ├── skyy.mp4
+│   ├── gancia.mp4
+│   └── fernet.mp4
+└── fotos/
+    ├── absolut.jpeg
+    ├── sernova.jpeg
+    ├── skyy.jpeg
+    ├── gancia.jpeg
+    └── fernet.jpeg
