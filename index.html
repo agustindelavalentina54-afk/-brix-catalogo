@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#050505">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color"
+content="#050505">
 
 <title>BRIX | Tu momento, tu bebida</title>
 
 <style>
+
+/* =====================================================
+   BRIX
+   DISEÑO GENERAL
+===================================================== */
+
 :root{
   --negro:#050505;
   --negro2:#111111;
@@ -23,10 +34,15 @@
   padding:0;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   background:var(--negro);
   color:var(--blanco);
   font-family:Arial,Helvetica,sans-serif;
+  min-height:100vh;
 }
 
 button{
@@ -34,21 +50,31 @@ button{
   cursor:pointer;
 }
 
+a{
+  text-decoration:none;
+}
+
 .app{
+  width:100%;
   max-width:980px;
   margin:auto;
   min-height:100vh;
 }
 
-/* HEADER */
+/* =====================================================
+   HEADER
+===================================================== */
 
 header{
   position:sticky;
   top:0;
   z-index:20;
+
   background:rgba(5,5,5,.97);
+
   border-bottom:1px solid var(--borde);
-  padding:15px 18px;
+
+  padding:18px;
 }
 
 .top{
@@ -58,9 +84,10 @@ header{
 }
 
 .logo{
-  font-size:42px;
+  font-size:48px;
   font-weight:900;
   letter-spacing:5px;
+  line-height:1;
 }
 
 .logo span{
@@ -69,29 +96,47 @@ header{
 
 .cart{
   border:0;
+
   background:var(--verde);
   color:#000;
+
   border-radius:14px;
-  padding:12px 17px;
-  font-weight:900;
+
+  padding:14px 18px;
+
   font-size:18px;
+  font-weight:900;
+
+  box-shadow:0 0 20px rgba(183,255,0,.12);
 }
 
-/* UBICACION */
+/* =====================================================
+   UBICACION
+===================================================== */
 
 .location{
   text-align:center;
+
   background:#101010;
+
   color:var(--verde);
-  padding:11px;
-  font-size:13px;
+
+  padding:12px 10px;
+
+  font-size:14px;
+
   font-weight:bold;
+
+  border-bottom:1px solid #181818;
 }
 
-/* PANTALLAS */
+/* =====================================================
+   PANTALLAS
+===================================================== */
 
 .screen{
   display:none;
+
   animation:entrada .2s ease;
 }
 
@@ -100,58 +145,85 @@ header{
 }
 
 @keyframes entrada{
+
   from{
     opacity:0;
     transform:translateY(8px);
   }
+
   to{
     opacity:1;
     transform:translateY(0);
   }
+
 }
 
-/* HERO */
+/* =====================================================
+   INICIO
+===================================================== */
 
 .hero{
   padding:18px;
 }
 
+/* BANNER REAL DE BRIX */
+
 .hero-banner{
   width:100%;
-  min-height:180px;
-  border-radius:16px;
+
+  border-radius:18px;
+
   border:1px solid var(--borde);
+
   overflow:hidden;
-  background:#111;
+
+  background:#050505;
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,.35);
 }
 
 .hero-banner img{
   width:100%;
   height:auto;
-  min-height:180px;
-  object-fit:cover;
+
   display:block;
+
+  object-fit:contain;
 }
 
+/* TEXTO INICIO */
+
 .hero-copy{
-  padding:25px 3px;
+  padding:28px 3px;
 }
 
 .badge{
   display:inline-block;
+
   border:1px solid var(--verde);
+
   color:var(--verde);
+
   border-radius:30px;
-  padding:7px 12px;
+
+  padding:8px 13px;
+
   font-size:12px;
+
   font-weight:bold;
-  margin-bottom:14px;
+
+  margin-bottom:16px;
 }
 
 .hero-copy h1{
   font-size:80px;
+
   line-height:.85;
-  letter-spacing:-4px;
+
+  letter-spacing:-5px;
+
+  font-weight:900;
 }
 
 .hero-copy h1 span{
@@ -160,87 +232,149 @@ header{
 
 .hero-copy p{
   color:#ddd;
-  margin-top:15px;
-  line-height:1.5;
+
+  margin-top:18px;
+
+  line-height:1.55;
+
   font-size:18px;
 }
 
+/* =====================================================
+   BOTONES INICIO
+===================================================== */
+
 .home-buttons{
   display:grid;
-  gap:11px;
-  margin-top:25px;
+
+  gap:12px;
+
+  margin-top:27px;
 }
 
 .main-button{
   width:100%;
-  padding:17px;
+
+  padding:18px;
+
   border:1px solid #333;
+
   background:#111;
+
   color:white;
-  border-radius:13px;
+
+  border-radius:14px;
+
   display:flex;
+
   justify-content:space-between;
+
   align-items:center;
+
   font-weight:bold;
+
+  font-size:16px;
+
+  transition:.15s;
+}
+
+.main-button:active{
+  transform:scale(.98);
 }
 
 .main-button.primary{
   background:var(--verde);
+
   color:#000;
+
   border-color:var(--verde);
 }
 
 .arrow{
-  font-size:25px;
+  font-size:27px;
 }
 
-/* SECCIONES */
+/* =====================================================
+   SECCIONES
+===================================================== */
 
 .section{
-  padding:22px 18px 40px;
+  padding:24px 18px 45px;
 }
 
 .back{
   border:0;
+
   background:none;
+
   color:var(--verde);
+
   font-weight:bold;
-  padding:5px 0 18px;
+
+  padding:5px 0 20px;
+
+  font-size:16px;
 }
 
 .title{
-  font-size:32px;
+  font-size:36px;
+
   font-weight:900;
+
+  letter-spacing:-1px;
 }
 
 .subtitle{
   color:var(--gris);
-  margin:8px 0 20px;
+
+  margin:8px 0 22px;
+
+  font-size:16px;
 }
 
-/* MENUS */
+/* =====================================================
+   CATEGORIAS
+===================================================== */
 
 .menu{
   display:grid;
-  gap:10px;
+
+  gap:11px;
 }
 
 .menu-button{
   width:100%;
+
   border:1px solid var(--borde);
+
   background:#101010;
+
   color:white;
-  border-radius:14px;
-  padding:18px;
+
+  border-radius:15px;
+
+  padding:19px;
+
   display:flex;
+
   align-items:center;
+
   gap:14px;
+
   text-align:left;
+
+  transition:.15s;
+}
+
+.menu-button:active{
+  transform:scale(.98);
 }
 
 .menu-icon{
-  font-size:28px;
-  width:38px;
+  font-size:29px;
+
+  width:40px;
+
   text-align:center;
 }
 
@@ -254,129 +388,235 @@ header{
 
 .menu-info small{
   display:block;
+
   color:#777;
-  margin-top:4px;
+
+  margin-top:5px;
+
+  line-height:1.3;
 }
 
 .chevron{
   color:var(--verde);
-  font-size:25px;
+
+  font-size:27px;
 }
 
-/* PRODUCTOS */
+/* =====================================================
+   PRODUCTOS
+===================================================== */
 
 .products{
   display:grid;
-  gap:15px;
+
+  gap:18px;
 }
 
 .product{
   background:#0e0e0e;
+
   border:1px solid var(--borde);
-  border-radius:17px;
+
+  border-radius:18px;
+
   overflow:hidden;
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,.18);
 }
+
+/* =====================================================
+   IMAGEN DEL PRODUCTO
+
+   IMPORTANTE:
+   NO usamos width:100% + height:100%
+   para evitar agrandar/deformar las fotos.
+===================================================== */
 
 .product-media{
-  height:370px;
+  height:330px;
+
   background:#151515;
+
   display:flex;
+
   align-items:center;
+
   justify-content:center;
+
   position:relative;
+
   overflow:hidden;
+
+  padding:18px;
 }
+
+/* IMAGEN */
 
 .product-media img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
   display:block;
-  padding:20px;
+
+  width:auto;
+  height:auto;
+
+  max-width:86%;
+  max-height:285px;
+
+  object-fit:contain;
+
+  object-position:center;
+
+  margin:auto;
+
+  border-radius:4px;
 }
 
+/* FALLBACK */
+
 .product-placeholder{
-  font-size:75px;
+  width:100%;
+  height:100%;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  font-size:72px;
 }
+
+/* ETIQUETA */
 
 .media-label{
   position:absolute;
+
   top:12px;
   left:12px;
-  background:rgba(0,0,0,.75);
+
+  background:rgba(0,0,0,.82);
+
   border:1px solid #444;
+
   border-radius:20px;
+
   padding:6px 10px;
+
   font-size:11px;
+
   font-weight:bold;
 }
 
+/* =====================================================
+   INFORMACION PRODUCTO
+===================================================== */
+
 .product-info{
-  padding:15px;
+  padding:17px;
 }
 
 .product-info h3{
   font-size:19px;
-  line-height:1.2;
-  margin-bottom:8px;
+
+  line-height:1.25;
+
+  margin-bottom:9px;
 }
 
 .price{
   color:var(--verde);
-  font-size:26px;
+
+  font-size:28px;
+
   font-weight:900;
 }
 
+/* =====================================================
+   ACCIONES
+===================================================== */
+
 .actions{
   display:flex;
-  gap:8px;
-  margin-top:14px;
+
+  gap:9px;
+
+  margin-top:15px;
 }
 
 .add{
   flex:1;
+
   border:0;
+
   background:var(--verde);
+
   color:#000;
-  border-radius:10px;
-  padding:12px;
+
+  border-radius:11px;
+
+  padding:14px;
+
   font-weight:900;
 }
 
 .whatsapp-small{
+  width:55px;
+
   border:1px solid #333;
+
   background:#171717;
+
   color:white;
-  border-radius:10px;
-  padding:12px 14px;
+
+  border-radius:11px;
+
+  padding:12px;
+
+  font-size:20px;
 }
 
-/* FOOTER */
+/* =====================================================
+   FOOTER
+===================================================== */
 
 footer{
   text-align:center;
-  padding:35px 18px;
+
+  padding:38px 18px;
+
   border-top:1px solid var(--borde);
+
   color:#777;
+
+  line-height:1.5;
 }
 
 footer strong{
   color:white;
-  letter-spacing:3px;
+
+  letter-spacing:4px;
+
+  font-size:22px;
 }
 
 footer a{
   color:var(--verde);
 }
 
-/* CARRITO */
+/* =====================================================
+   CARRITO
+===================================================== */
 
 .cart-panel{
   position:fixed;
+
   inset:0;
-  background:rgba(0,0,0,.75);
+
+  background:rgba(0,0,0,.78);
+
   z-index:50;
+
   display:none;
+
   align-items:flex-end;
 }
 
@@ -386,66 +626,96 @@ footer a{
 
 .cart-box{
   width:100%;
+
   max-width:600px;
+
   margin:auto auto 0;
+
   background:#111;
+
   border:1px solid #333;
-  border-radius:20px 20px 0 0;
-  padding:20px;
+
+  border-radius:22px 22px 0 0;
+
+  padding:21px;
+
   max-height:85vh;
+
   overflow:auto;
 }
 
 .cart-head{
   display:flex;
+
   justify-content:space-between;
+
   align-items:center;
 }
 
 .close{
   border:0;
+
   background:#222;
+
   color:white;
-  border-radius:8px;
-  padding:7px 10px;
+
+  border-radius:9px;
+
+  padding:8px 11px;
 }
 
 .cart-item{
-  padding:13px 0;
+  padding:14px 0;
+
   border-bottom:1px solid #292929;
 }
 
 .cart-item-top{
   display:flex;
+
   justify-content:space-between;
+
   gap:10px;
 }
 
 .cart-price{
   color:var(--verde);
+
   font-weight:bold;
-  margin-top:5px;
+
+  margin-top:6px;
 }
 
 .total{
-  font-size:23px;
+  font-size:24px;
+
   font-weight:900;
-  padding:18px 0;
+
+  padding:19px 0;
 }
 
 .send{
   width:100%;
+
   border:0;
+
   background:#20c763;
+
   color:white;
-  padding:15px;
-  border-radius:11px;
+
+  padding:16px;
+
+  border-radius:12px;
+
   font-weight:900;
 }
 
-/* DESKTOP */
+/* =====================================================
+   DESKTOP
+===================================================== */
 
 @media(min-width:700px){
+
   .home-buttons{
     grid-template-columns:1fr 1fr;
   }
@@ -454,11 +724,46 @@ footer a{
     grid-template-columns:1fr 1fr;
   }
 
+  .product-media{
+    height:360px;
+  }
+
+  .product-media img{
+    max-height:310px;
+  }
+
   .cart-box{
-    border-radius:20px;
+    border-radius:22px;
+
     margin:auto;
   }
+
 }
+
+/* =====================================================
+   CELULARES PEQUEÑOS
+===================================================== */
+
+@media(max-width:390px){
+
+  .logo{
+    font-size:40px;
+  }
+
+  .hero-copy h1{
+    font-size:65px;
+  }
+
+  .product-media{
+    height:300px;
+  }
+
+  .product-media img{
+    max-height:260px;
+  }
+
+}
+
 </style>
 </head>
 
@@ -466,291 +771,453 @@ footer a{
 
 <div class="app">
 
-<header>
-  <div class="top">
-    <div class="logo">BRI<span>X</span></div>
+<!-- ===================================================
+     HEADER
+=================================================== -->
 
-    <button class="cart" onclick="openCart()">
-      🛒 <span id="cartCount">0</span>
-    </button>
-  </div>
+<header>
+
+<div class="top">
+
+<div class="logo">
+BRI<span>X</span>
+</div>
+
+<button
+class="cart"
+onclick="openCart()"
+>
+
+🛒 <span id="cartCount">0</span>
+
+</button>
+
+</div>
+
 </header>
 
+
 <div class="location">
-  📍 QUEBRADA DEL CONDORITO 3673
+
+📍 QUEBRADA DEL CONDORITO 3673
+
 </div>
 
 
-<!-- ================= INICIO ================= -->
+<!-- ===================================================
+     INICIO
+=================================================== -->
 
-<section id="home" class="screen active">
+<section
+id="home"
+class="screen active"
+>
 
-  <div class="hero">
-
-    <div class="hero-banner">
-      <img
-        src="F7E36772-8F96-4024-8D1F-244561E45971.png"
-        alt="BRIX - Tu momento, tu bebida"
-      >
-    </div>
-
-    <div class="hero-copy">
-
-      <div class="badge">
-        BEBIDAS · PROMOS · COMBOS
-      </div>
-
-      <h1>
-        BRIX<span>.</span>
-      </h1>
-
-      <p>
-        Tu momento, tu bebida.
-        Explorá nuestro catálogo por categorías.
-      </p>
-
-      <div class="home-buttons">
-
-        <button
-          class="main-button primary"
-          onclick="showScreen('catalog')"
-        >
-          <span>🛒 CATÁLOGO</span>
-          <span class="arrow">›</span>
-        </button>
-
-        <button
-          class="main-button"
-          onclick="showScreen('promos')"
-        >
-          <span>🔥 PROMOCIONES</span>
-          <span class="arrow">›</span>
-        </button>
-
-        <button
-          class="main-button"
-          onclick="sendWhatsApp()"
-        >
-          <span>📲 PEDIR POR WHATSAPP</span>
-          <span class="arrow">›</span>
-        </button>
-
-        <button
-          class="main-button"
-          onclick="openInstagram()"
-        >
-          <span>📸 @brix_bebidas</span>
-          <span class="arrow">›</span>
-        </button>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
+<div class="hero">
 
 
-<!-- ================= CATALOGO ================= -->
+<div class="hero-banner">
 
-<section id="catalog" class="screen">
+<img
+src="F7E36772-8F96-4024-8D1F-244561E45971.png"
+alt="BRIX - Tu momento, tu bebida"
+>
 
-  <div class="section">
-
-    <button
-      class="back"
-      onclick="showScreen('home')"
-    >
-      ← VOLVER
-    </button>
-
-    <div class="title">
-      CATÁLOGO
-    </div>
-
-    <div class="subtitle">
-      Elegí una categoría.
-    </div>
-
-    <div
-      class="menu"
-      id="catalogMenu"
-    ></div>
-
-  </div>
-
-</section>
+</div>
 
 
-<!-- ================= PRODUCTOS ================= -->
+<div class="hero-copy">
 
-<section id="products" class="screen">
 
-  <div class="section">
+<div class="badge">
 
-    <button
-      class="back"
-      onclick="showScreen('catalog')"
-    >
-      ← VOLVER AL CATÁLOGO
-    </button>
+BEBIDAS · PROMOS · COMBOS
 
-    <div
-      class="title"
-      id="productTitle"
-    ></div>
+</div>
 
-    <div class="subtitle">
-      Elegí una bebida.
-    </div>
 
-    <div
-      class="products"
-      id="productList"
-    ></div>
+<h1>
 
-  </div>
+BRIX<span>.</span>
+
+</h1>
+
+
+<p>
+
+Tu momento, tu bebida.
+Explorá nuestro catálogo por categorías.
+
+</p>
+
+
+<div class="home-buttons">
+
+
+<button
+class="main-button primary"
+onclick="showScreen('catalog')"
+>
+
+<span>
+🛒 CATÁLOGO
+</span>
+
+<span class="arrow">
+›
+</span>
+
+</button>
+
+
+<button
+class="main-button"
+onclick="showScreen('promos')"
+>
+
+<span>
+🔥 PROMOCIONES
+</span>
+
+<span class="arrow">
+›
+</span>
+
+</button>
+
+
+<button
+class="main-button"
+onclick="sendWhatsApp()"
+>
+
+<span>
+📲 PEDIR POR WHATSAPP
+</span>
+
+<span class="arrow">
+›
+</span>
+
+</button>
+
+
+<button
+class="main-button"
+onclick="openInstagram()"
+>
+
+<span>
+📸 @brix_bebidas
+</span>
+
+<span class="arrow">
+›
+</span>
+
+</button>
+
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- ================= PROMOCIONES ================= -->
+<!-- ===================================================
+     CATALOGO
+=================================================== -->
 
-<section id="promos" class="screen">
+<section
+id="catalog"
+class="screen"
+>
 
-  <div class="section">
-
-    <button
-      class="back"
-      onclick="showScreen('home')"
-    >
-      ← VOLVER
-    </button>
-
-    <div class="title">
-      PROMOCIONES
-    </div>
-
-    <div class="subtitle">
-      Elegí una categoría.
-    </div>
-
-    <div
-      class="menu"
-      id="promoMenu"
-    ></div>
-
-  </div>
-
-</section>
+<div class="section">
 
 
-<!-- ================= PROMOS ================= -->
+<button
+class="back"
+onclick="showScreen('home')"
+>
 
-<section id="promoProducts" class="screen">
+← VOLVER
 
-  <div class="section">
+</button>
 
-    <button
-      class="back"
-      onclick="showScreen('promos')"
-    >
-      ← VOLVER A PROMOCIONES
-    </button>
 
-    <div
-      class="title"
-      id="promoTitle"
-    ></div>
+<div class="title">
+CATÁLOGO
+</div>
 
-    <div class="subtitle">
-      Promociones disponibles.
-    </div>
 
-    <div
-      class="products"
-      id="promoList"
-    ></div>
+<div class="subtitle">
+Elegí una categoría.
+</div>
 
-  </div>
+
+<div
+class="menu"
+id="catalogMenu"
+>
+</div>
+
+
+</div>
 
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- ===================================================
+     PRODUCTOS
+=================================================== -->
+
+<section
+id="products"
+class="screen"
+>
+
+<div class="section">
+
+
+<button
+class="back"
+onclick="showScreen('catalog')"
+>
+
+← VOLVER AL CATÁLOGO
+
+</button>
+
+
+<div
+class="title"
+id="productTitle"
+>
+</div>
+
+
+<div class="subtitle">
+Elegí una bebida.
+</div>
+
+
+<div
+class="products"
+id="productList"
+>
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ===================================================
+     PROMOCIONES
+=================================================== -->
+
+<section
+id="promos"
+class="screen"
+>
+
+<div class="section">
+
+
+<button
+class="back"
+onclick="showScreen('home')"
+>
+
+← VOLVER
+
+</button>
+
+
+<div class="title">
+PROMOCIONES
+</div>
+
+
+<div class="subtitle">
+Elegí una categoría.
+</div>
+
+
+<div
+class="menu"
+id="promoMenu"
+>
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ===================================================
+     PRODUCTOS PROMO
+=================================================== -->
+
+<section
+id="promoProducts"
+class="screen"
+>
+
+<div class="section">
+
+
+<button
+class="back"
+onclick="showScreen('promos')"
+>
+
+← VOLVER A PROMOCIONES
+
+</button>
+
+
+<div
+class="title"
+id="promoTitle"
+>
+</div>
+
+
+<div class="subtitle">
+Promociones disponibles.
+</div>
+
+
+<div
+class="products"
+id="promoList"
+>
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ===================================================
+     FOOTER
+=================================================== -->
 
 <footer>
 
-  <strong>BRIX</strong>
+<strong>
+BRIX
+</strong>
 
-  <p style="margin-top:10px">
-    📍 Quebrada del Condorito 3673
-  </p>
 
-  <p style="margin-top:7px">
-    📲
-    <a
-      href="https://wa.me/5493512573455"
-      target="_blank"
-    >
-      351 257-3455
-    </a>
-  </p>
+<p style="margin-top:10px">
 
-  <p style="margin-top:7px">
-    📸
-    <a
-      href="https://instagram.com/brix_bebidas"
-      target="_blank"
-    >
-      @brix_bebidas
-    </a>
-  </p>
+📍 Quebrada del Condorito 3673
+
+</p>
+
+
+<p style="margin-top:7px">
+
+📲
+
+<a
+href="https://wa.me/5493512573455"
+target="_blank"
+>
+
+351 257-3455
+
+</a>
+
+</p>
+
+
+<p style="margin-top:7px">
+
+📸
+
+<a
+href="https://instagram.com/brix_bebidas"
+target="_blank"
+>
+
+@brix_bebidas
+
+</a>
+
+</p>
 
 </footer>
 
 
-<!-- ================= CARRITO ================= -->
+<!-- ===================================================
+     CARRITO
+=================================================== -->
 
 <div
-  class="cart-panel"
-  id="cartPanel"
-  onclick="if(event.target===this)closeCart()"
+class="cart-panel"
+id="cartPanel"
+onclick="if(event.target===this)closeCart()"
 >
 
-  <div class="cart-box">
 
-    <div class="cart-head">
+<div class="cart-box">
 
-      <h2>
-        🛒 Mi pedido
-      </h2>
 
-      <button
-        class="close"
-        onclick="closeCart()"
-      >
-        ✕
-      </button>
+<div class="cart-head">
 
-    </div>
+<h2>
+🛒 Mi pedido
+</h2>
 
-    <div id="cartItems"></div>
 
-    <div class="total">
-      Total: $
-      <span id="total">0</span>
-    </div>
+<button
+class="close"
+onclick="closeCart()"
+>
 
-    <button
-      class="send"
-      onclick="sendOrder()"
-    >
-      📲 ENVIAR PEDIDO POR WHATSAPP
-    </button>
+✕
 
-  </div>
+</button>
+
+</div>
+
+
+<div id="cartItems">
+</div>
+
+
+<div class="total">
+
+Total: $
+
+<span id="total">
+0
+</span>
+
+</div>
+
+
+<button
+class="send"
+onclick="sendOrder()"
+>
+
+📲 ENVIAR PEDIDO POR WHATSAPP
+
+</button>
+
+
+</div>
 
 </div>
 
@@ -763,245 +1230,263 @@ footer a{
 
 const products = [
 
-  {
-    name:"SMIRNOFF SABORIZADO",
-    price:10900,
-    category:"vodka",
-    emoji:"🍸",
-    image:""
-  },
+{
+name:"SMIRNOFF SABORIZADO",
+price:10900,
+category:"vodka",
+emoji:"🍸",
+image:""
+},
 
-  {
-    name:"PROMO SMIRNOFF + 2 SPEED",
-    price:15500,
-    category:"vodka",
-    emoji:"🍸",
-    image:""
-  },
+{
+name:"PROMO SMIRNOFF + 2 SPEED",
+price:15500,
+category:"vodka",
+emoji:"🍸",
+image:""
+},
 
-  {
-    name:"2 PROMO SMIRNOFF",
-    price:29500,
-    category:"vodka",
-    emoji:"🍸",
-    image:""
-  },
+{
+name:"2 PROMO SMIRNOFF",
+price:29500,
+category:"vodka",
+emoji:"🍸",
+image:""
+},
 
-  {
-    name:"SKYY SABORIZADO",
-    price:14500,
-    category:"vodka",
-    emoji:"🍾",
-    image:""
-  },
+{
+name:"SKYY SABORIZADO",
+price:14500,
+category:"vodka",
+emoji:"🍾",
+image:""
+},
 
-  {
-    name:"SKYY SABORIZADO 2",
-    price:15500,
-    category:"vodka",
-    emoji:"🍾",
-    image:""
-  },
+{
+name:"SKYY SABORIZADO 2",
+price:15500,
+category:"vodka",
+emoji:"🍾",
+image:""
+},
 
-  {
-    name:"SKYY COSMIC",
-    price:17500,
-    category:"vodka",
-    emoji:"🍾",
-    image:""
-  },
+{
+name:"SKYY COSMIC",
+price:17500,
+category:"vodka",
+emoji:"🍾",
+image:""
+},
 
-  {
-    name:"ABSOLUT SABORIZADO",
-    price:26000,
-    category:"vodka",
-    emoji:"🍾",
-    image:""
-  },
+{
+name:"ABSOLUT SABORIZADO",
+price:26000,
+category:"vodka",
+emoji:"🍾",
+image:""
+},
 
-  {
-    name:"BRANCA 750",
-    price:17500,
-    category:"fernet",
-    emoji:"🥃",
-    image:"branca-750.png"
-  },
 
-  {
-    name:"FERNET 180 AÑOS",
-    price:18000,
-    category:"fernet",
-    emoji:"🥃",
-    image:"fernet-180-anos.png"
-  },
+/* FERNET */
 
-  {
-    name:"PROMO BRANCA 750 CON HIELO",
-    price:25000,
-    category:"fernet",
-    emoji:"🧊",
-    image:"promo-branca-750-con-hielo.png"
-  },
+{
+name:"BRANCA 750",
+price:17500,
+category:"fernet",
+emoji:"🥃",
+image:"branca-750.png"
+},
 
-  {
-    name:"PROMO BRANCA 750 + 2 COCA COLA 2,5L + HIELO",
-    price:30000,
-    category:"fernet",
-    emoji:"🥃",
-    image:"branca-750-2-coca-cola-2-5l.png"
-  },
+{
+name:"FERNET 180 AÑOS",
+price:18000,
+category:"fernet",
+emoji:"🥃",
+image:"fernet-180-anos.png"
+},
 
-  {
-    name:"2 PROMO FERNET 750",
-    price:48000,
-    category:"fernet",
-    emoji:"🥃",
-    image:"2-promo-fernet-750.png"
-  },
+{
+name:"PROMO BRANCA 750 CON HIELO",
+price:25000,
+category:"fernet",
+emoji:"🧊",
+image:""
+},
 
-  {
-    name:"FERNET 180° + COCA 2,5L",
-    price:24000,
-    category:"fernet",
-    emoji:"🥃",
-    image:"fernet-180-coca-cola-2-5l.png"
-  },
+{
+name:"PROMO BRANCA 750 + 2 COCA COLA 2,5L + HIELO",
+price:30000,
+category:"fernet",
+emoji:"🥃",
+image:""
+},
 
-  {
-    name:"GANCIA",
-    price:0,
-    category:"gancia",
-    emoji:"🍹",
-    image:""
-  },
+{
+name:"2 PROMO FERNET 750",
+price:48000,
+category:"fernet",
+emoji:"🥃",
+image:""
+},
 
-  {
-    name:"GANCIA + GASEOSA",
-    price:0,
-    category:"gancia",
-    emoji:"🍹",
-    image:""
-  },
+{
+name:"FERNET 180° + COCA 2,5L",
+price:24000,
+category:"fernet",
+emoji:"🥃",
+image:"fernet-180-coca-cola-2-5l.png"
+},
 
-  {
-    name:"CERVEZA",
-    price:0,
-    category:"cerveza",
-    emoji:"🍺",
-    image:""
-  },
 
-  {
-    name:"SPEED 250",
-    price:2000,
-    category:"energizante",
-    emoji:"⚡",
-    image:"speed-250.png"
-  },
+/* GANCIA */
 
-  {
-    name:"SPEED XL",
-    price:3000,
-    category:"energizante",
-    emoji:"⚡",
-    image:"speed-xl.png"
-  },
+{
+name:"GANCIA",
+price:0,
+category:"gancia",
+emoji:"🍹",
+image:""
+},
 
-  {
-    name:"MONSTER",
-    price:3500,
-    category:"energizante",
-    emoji:"⚡",
-    image:"monster.png"
-  },
+{
+name:"GANCIA + GASEOSA",
+price:0,
+category:"gancia",
+emoji:"🍹",
+image:""
+},
 
-  {
-    name:"COCA COLA 500 ML",
-    price:2000,
-    category:"gaseosa",
-    emoji:"🥤",
-    image:"coca-cola-500ml.png"
-  },
 
-  {
-    name:"COCA COLA 2,5L",
-    price:5500,
-    category:"gaseosa",
-    emoji:"🥤",
-    image:"coca-cola-25-desc.png"
-  },
+/* CERVEZA */
 
-  {
-    name:"SPRITE 2,25L",
-    price:5000,
-    category:"gaseosa",
-    emoji:"🥤",
-    image:"sprite-225l.png"
-  },
+{
+name:"CERVEZA",
+price:0,
+category:"cerveza",
+emoji:"🍺",
+image:""
+},
 
-  {
-    name:"PRITTY 2,25L",
-    price:3000,
-    category:"gaseosa",
-    emoji:"🥤",
-    image:"pritty-225l.png"
-  },
 
-  {
-    name:"PROMO 2 BALBOS + 1 PRITTY",
-    price:10500,
-    category:"vino",
-    emoji:"🍷",
-    image:"promo-2-balbos-1-pritty.png"
-  },
+/* ENERGIZANTES */
 
-  {
-    name:"2 SANTA JULIA MALBEC",
-    price:10500,
-    category:"vino",
-    emoji:"🍷",
-    image:"2-santa-julia-malbec.png"
-  },
+{
+name:"SPEED 250",
+price:2000,
+category:"energizante",
+emoji:"⚡",
+image:"speed-250.png"
+},
 
-  {
-    name:"COLON SELECTO DULCE",
-    price:7500,
-    category:"vino",
-    emoji:"🍷",
-    image:"colon-selecto-dulce.png"
-  },
+{
+name:"SPEED XL",
+price:3000,
+category:"energizante",
+emoji:"⚡",
+image:"speed-xl.png"
+},
 
-  {
-    name:"SANTA JULIA TINTO DULCE",
-    price:8500,
-    category:"vino",
-    emoji:"🍷",
-    image:"santa-julia-tinto-dulce.png"
-  },
+{
+name:"MONSTER",
+price:3500,
+category:"energizante",
+emoji:"⚡",
+image:"monster.png"
+},
 
-  {
-    name:"SANTA JULIA CHENIN DULCE",
-    price:9000,
-    category:"vino",
-    emoji:"🍷",
-    image:"santa-julia-chenin-dulce.png"
-  },
 
-  {
-    name:"CAVA NEGRA CHARDONNAY",
-    price:9000,
-    category:"vino",
-    emoji:"🍷",
-    image:"cava-negra-chardonnay.png"
-  },
+/* GASEOSAS */
 
-  {
-    name:"CASARENA ESTATE CHARDONNAY",
-    price:9900,
-    category:"vino",
-    emoji:"🍷",
-    image:"casarena-estate-chardonnay.png"
-  }
+{
+name:"COCA COLA 500 ML",
+price:2000,
+category:"gaseosa",
+emoji:"🥤",
+image:"coca-cola-500ml.png"
+},
+
+{
+name:"COCA COLA 2,5L",
+price:5500,
+category:"gaseosa",
+emoji:"🥤",
+image:"coca-cola-25-desc.png"
+},
+
+{
+name:"SPRITE 2,25L",
+price:5000,
+category:"gaseosa",
+emoji:"🥤",
+image:"sprite-225l.png"
+},
+
+{
+name:"PRITTY 2,25L",
+price:3000,
+category:"gaseosa",
+emoji:"🥤",
+image:"pritty-225l.png"
+},
+
+
+/* VINOS */
+
+{
+name:"PROMO 2 BALBOS + 1 PRITTY",
+price:10500,
+category:"vino",
+emoji:"🍷",
+image:""
+},
+
+{
+name:"2 SANTA JULIA MALBEC",
+price:10500,
+category:"vino",
+emoji:"🍷",
+image:""
+},
+
+{
+name:"COLON SELECTO DULCE",
+price:7500,
+category:"vino",
+emoji:"🍷",
+image:"colon-selecto-dulce.png"
+},
+
+{
+name:"SANTA JULIA TINTO DULCE",
+price:8500,
+category:"vino",
+emoji:"🍷",
+image:"santa-julia-tinto-dulce.png"
+},
+
+{
+name:"SANTA JULIA CHENIN DULCE",
+price:9000,
+category:"vino",
+emoji:"🍷",
+image:"santa-julia-chenin-dulce.png"
+},
+
+{
+name:"CAVA NEGRA CHARDONNAY",
+price:9000,
+category:"vino",
+emoji:"🍷",
+image:"cava-negra-chardonnay.png"
+},
+
+{
+name:"CASARENA ESTATE CHARDONNAY",
+price:9900,
+category:"vino",
+emoji:"🍷",
+image:"casarena-estate-chardonnay.png"
+}
 
 ];
 
@@ -1012,109 +1497,109 @@ const products = [
 
 const promos = [
 
-  {
-    name:"PROMO SMIRNOFF + 2 SPEED",
-    price:15500,
-    category:"vodka",
-    emoji:"🔥",
-    image:""
-  },
+{
+name:"PROMO SMIRNOFF + 2 SPEED",
+price:15500,
+category:"vodka",
+emoji:"🔥",
+image:""
+},
 
-  {
-    name:"2 PROMO SMIRNOFF",
-    price:29500,
-    category:"vodka",
-    emoji:"🔥",
-    image:""
-  },
+{
+name:"2 PROMO SMIRNOFF",
+price:29500,
+category:"vodka",
+emoji:"🔥",
+image:""
+},
 
-  {
-    name:"3 PROMO SKYY",
-    price:43500,
-    category:"vodka",
-    emoji:"🔥",
-    image:""
-  },
+{
+name:"3 PROMO SKYY",
+price:43500,
+category:"vodka",
+emoji:"🔥",
+image:""
+},
 
-  {
-    name:"2 PROMO ABSOLUT",
-    price:59000,
-    category:"vodka",
-    emoji:"🔥",
-    image:""
-  },
+{
+name:"2 PROMO ABSOLUT",
+price:59000,
+category:"vodka",
+emoji:"🔥",
+image:""
+},
 
-  {
-    name:"PROMO BRANCA 750 CON HIELO",
-    price:25000,
-    category:"fernet",
-    emoji:"🔥",
-    image:"promo-branca-750-con-hielo.png"
-  },
+{
+name:"PROMO BRANCA 750 CON HIELO",
+price:25000,
+category:"fernet",
+emoji:"🔥",
+image:"promo-branca-750-retornable.png"
+},
 
-  {
-    name:"PROMO BRANCA 750 + 2 COCA COLA 2,5L + HIELO",
-    price:30000,
-    category:"fernet",
-    emoji:"🔥",
-    image:"branca-750-2-coca-cola-2-5l.png"
-  },
+{
+name:"PROMO BRANCA 750 + 2 COCA COLA 2,5L + HIELO",
+price:30000,
+category:"fernet",
+emoji:"🔥",
+image:"branca-750-2-coca-cola-2-5l.png"
+},
 
-  {
-    name:"2 PROMO FERNET 750",
-    price:48000,
-    category:"fernet",
-    emoji:"🔥",
-    image:"2-promo-fernet-750.png"
-  },
+{
+name:"2 PROMO FERNET 750",
+price:48000,
+category:"fernet",
+emoji:"🔥",
+image:"2-promo-fernet-750.png"
+},
 
-  {
-    name:"FERNET 180° + COCA 2,5L",
-    price:24000,
-    category:"fernet",
-    emoji:"🔥",
-    image:"fernet-180-coca-cola-2-5l.png"
-  },
+{
+name:"FERNET 180° + COCA 2,5L",
+price:24000,
+category:"fernet",
+emoji:"🔥",
+image:"fernet-180-coca-cola-2-5l.png"
+},
 
-  {
-    name:"SKYY + SMIRNOFF + 4 SPEED",
-    price:29000,
-    category:"combo",
-    emoji:"🔥",
-    image:""
-  },
+{
+name:"SKYY + SMIRNOFF + 4 SPEED",
+price:29000,
+category:"combo",
+emoji:"🔥",
+image:""
+},
 
-  {
-    name:"PROMO BRANCA + PROMO",
-    price:38500,
-    category:"combo",
-    emoji:"🔥",
-    image:""
-  },
+{
+name:"PROMO BRANCA + PROMO",
+price:38500,
+category:"combo",
+emoji:"🔥",
+image:""
+},
 
-  {
-    name:"ABSOLUT + SKYY + 4 SPEED XL",
-    price:45000,
-    category:"combo",
-    emoji:"🔥",
-    image:""
-  },
+{
+name:"ABSOLUT + SKYY + 4 SPEED XL",
+price:45000,
+category:"combo",
+emoji:"🔥",
+image:""
+},
 
-  {
-    name:"ABSOLUT + 2 SKYY + 9 SPEED",
-    price:68000,
-    category:"combo",
-    emoji:"🔥",
-    image:""
-  },
+{
+name:"ABSOLUT + 2 SKYY + 9 SPEED",
+price:68000,
+category:"combo",
+emoji:"🔥",
+image:""
+},
 
-  {
-    name:"JAGER + ABSOLUT",
-    price:73500,
-    category:"combo",
-    emoji:"🔥",
-    image:""
-  }
+{
+name:"JAGER + ABSOLUT",
+price:73500,
+category:"combo",
+emoji:"🔥",
+image:""
+}
 
 ];
 
@@ -1125,80 +1610,80 @@ const promos = [
 
 const categories = [
 
-  [
-    "vodka",
-    "🥃",
-    "VODKA",
-    "Smirnoff, Skyy, Absolut y más"
-  ],
+[
+"vodka",
+"🥃",
+"VODKA",
+"Smirnoff, Skyy, Absolut y más"
+],
 
-  [
-    "fernet",
-    "🔥",
-    "FERNET",
-    "Branca y 180 Años"
-  ],
+[
+"fernet",
+"🔥",
+"FERNET",
+"Branca y 180 Años"
+],
 
-  [
-    "gancia",
-    "🍹",
-    "GANCIA",
-    "Gancia y combinaciones"
-  ],
+[
+"gancia",
+"🍹",
+"GANCIA",
+"Gancia y combinaciones"
+],
 
-  [
-    "cerveza",
-    "🍺",
-    "CERVEZA",
-    "Cervezas disponibles"
-  ],
+[
+"cerveza",
+"🍺",
+"CERVEZA",
+"Cervezas disponibles"
+],
 
-  [
-    "gaseosa",
-    "🥤",
-    "GASEOSAS",
-    "Coca-Cola, Sprite y Pritty"
-  ],
+[
+"gaseosa",
+"🥤",
+"GASEOSAS",
+"Coca-Cola, Sprite y Pritty"
+],
 
-  [
-    "energizante",
-    "⚡",
-    "ENERGIZANTES",
-    "Speed y Monster"
-  ],
+[
+"energizante",
+"⚡",
+"ENERGIZANTES",
+"Speed y Monster"
+],
 
-  [
-    "vino",
-    "🍷",
-    "VINOS",
-    "Tintos, blancos y dulces"
-  ]
+[
+"vino",
+"🍷",
+"VINOS",
+"Tintos, blancos y dulces"
+]
 
 ];
 
 
 const promoCategories = [
 
-  [
-    "vodka",
-    "🥃",
-    "PROMOS VODKA",
-    "Ofertas de vodka"
-  ],
+[
+"vodka",
+"🥃",
+"PROMOS VODKA",
+"Ofertas de vodka"
+],
 
-  [
-    "fernet",
-    "🔥",
-    "PROMOS FERNET",
-    "Combos de fernet"
-  ],
+[
+"fernet",
+"🔥",
+"PROMOS FERNET",
+"Combos de fernet"
+],
 
-  [
-    "combo",
-    "🔥",
-    "COMBOS BRIX",
-    "Las promos más completas"
-  ]
+[
+"combo",
+"🔥",
+"COMBOS BRIX",
+"Las promos más completas"
+]
 
 ];
 
@@ -1207,8 +1692,9 @@ const promoCategories = [
    VARIABLES
 ===================================================== */
 
-let currentList = [];
-let cart = [];
+let currentList=[];
+
+let cart=[];
 
 
 /* =====================================================
@@ -1217,8 +1703,8 @@ let cart = [];
 
 function money(value){
 
-  return Number(value || 0)
-    .toLocaleString("es-AR");
+return Number(value || 0)
+.toLocaleString("es-AR");
 
 }
 
@@ -1229,70 +1715,76 @@ function money(value){
 
 function showScreen(id){
 
-  document
-    .querySelectorAll(".screen")
-    .forEach(screen=>{
-      screen.classList.remove("active");
-    });
+document
+.querySelectorAll(".screen")
+.forEach(screen=>{
 
-  document
-    .getElementById(id)
-    .classList.add("active");
+screen.classList.remove("active");
 
-  window.scrollTo(0,0);
+});
+
+const target=document.getElementById(id);
+
+if(target){
+
+target.classList.add("active");
+
+}
+
+window.scrollTo(0,0);
 
 }
 
 
 /* =====================================================
-   MENU
+   CREAR MENU
 ===================================================== */
 
 function createMenu(
-  containerId,
-  items,
-  functionName
+containerId,
+items,
+functionName
 ){
 
-  const container =
-    document.getElementById(containerId);
+const container=
+document.getElementById(containerId);
 
-  container.innerHTML = "";
+container.innerHTML="";
 
-  items.forEach(item=>{
+items.forEach(item=>{
 
-    container.innerHTML += `
+container.innerHTML += `
 
-      <button
-        class="menu-button"
-        onclick="${functionName}('${item[0]}')"
-      >
+<button
+class="menu-button"
+onclick="${functionName}('${item[0]}')"
+>
 
-        <span class="menu-icon">
-          ${item[1]}
-        </span>
+<span class="menu-icon">
+${item[1]}
+</span>
 
-        <span class="menu-info">
+<span class="menu-info">
 
-          <strong>
-            ${item[2]}
-          </strong>
+<strong>
+${item[2]}
+</strong>
 
-          <small>
-            ${item[3]}
-          </small>
+<small>
+${item[3]}
+</small>
 
-        </span>
+</span>
 
-        <span class="chevron">
-          ›
-        </span>
+<span class="chevron">
+›
+</span>
 
-      </button>
+</button>
 
-    `;
+`;
 
-  });
+});
 
 }
 
@@ -1302,164 +1794,229 @@ function createMenu(
 ===================================================== */
 
 function renderProducts(
-  list,
-  containerId,
-  titleId,
-  title
+list,
+containerId,
+titleId,
+title
 ){
 
-  const container =
-    document.getElementById(containerId);
+const container=
+document.getElementById(containerId);
 
-  container.innerHTML = "";
+container.innerHTML="";
 
-  list.forEach((product,index)=>{
 
-    let media = "";
+if(list.length===0){
 
-    if(product.image){
+container.innerHTML=`
 
-      media = `
+<p style="
+color:#888;
+padding:20px 0;
+">
 
-        <img
-          src="${product.image}"
-          alt="${product.name}"
-          loading="lazy"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
-        >
+No hay productos disponibles.
 
-        <div
-          class="product-placeholder"
-          style="display:none"
-        >
-          ${product.emoji}
-        </div>
+</p>
 
-      `;
+`;
 
-    }else{
+}
 
-      media = `
 
-        <div class="product-placeholder">
-          ${product.emoji}
-        </div>
+/* CREAR CADA PRODUCTO */
 
-      `;
+list.forEach((product,index)=>{
 
-    }
 
-    container.innerHTML += `
+let media;
 
-      <article class="product">
 
-        <div class="product-media">
+/*
+   SI TIENE IMAGEN
+*/
 
-          ${media}
+if(product.image){
 
-          <span class="media-label">
-            PRODUCTO
-          </span>
+media=`
 
-        </div>
+<img
+src="${product.image}"
+alt="${product.name}"
+loading="lazy"
 
-        <div class="product-info">
+onerror="this.style.display='none';
+this.nextElementSibling.style.display='flex';"
+>
 
-          <h3>
-            ${product.name}
-          </h3>
+<div
+class="product-placeholder"
+style="display:none"
+>
 
-          <div class="price">
+${product.emoji}
 
-            ${
-              product.price > 0
-              ? "$" + money(product.price)
-              : "Consultar"
-            }
+</div>
 
-          </div>
+`;
 
-          <div class="actions">
+}
 
-            <button
-              class="add"
-              onclick="addToCart(${index})"
-            >
 
-              ${
-                product.price > 0
-                ? "+ AGREGAR"
-                : "CONSULTAR"
-              }
+/*
+   SI NO TIENE IMAGEN
+*/
 
-            </button>
+else{
 
-            <button
-              class="whatsapp-small"
-              onclick="quickWhatsApp('${product.name.replace(/'/g,"\\'")}')"
-            >
-              📲
-            </button>
+media=`
 
-          </div>
+<div
+class="product-placeholder"
+>
 
-        </div>
+${product.emoji}
 
-      </article>
+</div>
 
-    `;
+`;
 
-  });
+}
 
-  document
-    .getElementById(titleId)
-    .textContent = title;
+
+/* TARJETA */
+
+container.innerHTML += `
+
+<article class="product">
+
+
+<div class="product-media">
+
+${media}
+
+
+<span class="media-label">
+
+PRODUCTO
+
+</span>
+
+</div>
+
+
+<div class="product-info">
+
+
+<h3>
+
+${product.name}
+
+</h3>
+
+
+<div class="price">
+
+${
+product.price > 0
+? "$"+money(product.price)
+: "Consultar"
+}
+
+</div>
+
+
+<div class="actions">
+
+
+<button
+class="add"
+onclick="addToCart(${index})"
+>
+
+${
+product.price > 0
+? "+ AGREGAR"
+: "CONSULTAR"
+}
+
+</button>
+
+
+<button
+class="whatsapp-small"
+
+onclick="quickWhatsApp('${product.name.replace(/'/g,"\\'")}')"
+
+>
+
+📲
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+</article>
+
+`;
+
+});
+
+
+document
+.getElementById(titleId)
+.textContent=title;
 
 }
 
 
 /* =====================================================
-   CATEGORIA
+   ABRIR CATEGORIA
 ===================================================== */
 
 function openCategory(category){
 
-  currentList =
-    products.filter(
-      product => product.category === category
-    );
+currentList=
+products.filter(
+product=>product.category===category
+);
 
-  renderProducts(
-    currentList,
-    "productList",
-    "productTitle",
-    category.toUpperCase()
-  );
+renderProducts(
+currentList,
+"productList",
+"productTitle",
+category.toUpperCase()
+);
 
-  showScreen("products");
+showScreen("products");
 
 }
 
 
 /* =====================================================
-   PROMO
+   ABRIR PROMO
 ===================================================== */
 
 function openPromo(category){
 
-  currentList =
-    promos.filter(
-      promo => promo.category === category
-    );
+currentList=
+promos.filter(
+promo=>promo.category===category
+);
 
-  renderProducts(
-    currentList,
-    "promoList",
-    "promoTitle",
-    category.toUpperCase()
-  );
+renderProducts(
+currentList,
+"promoList",
+"promoTitle",
+category.toUpperCase()
+);
 
-  showScreen("promoProducts");
+showScreen("promoProducts");
 
 }
 
@@ -1470,186 +2027,267 @@ function openPromo(category){
 
 function addToCart(index){
 
-  cart.push(currentList[index]);
+if(!currentList[index]){
 
-  updateCart();
-
-  openCart();
+return;
 
 }
 
+cart.push(currentList[index]);
 
-function updateCart(){
+updateCart();
 
-  document
-    .getElementById("cartCount")
-    .textContent = cart.length;
-
-  let total = 0;
-
-  const container =
-    document.getElementById("cartItems");
-
-  if(cart.length === 0){
-
-    container.innerHTML =
-      "<p style='color:#888;margin-top:20px'>Tu pedido está vacío.</p>";
-
-  }else{
-
-    container.innerHTML = "";
-
-    cart.forEach((product,index)=>{
-
-      total += Number(product.price || 0);
-
-      container.innerHTML += `
-
-        <div class="cart-item">
-
-          <div class="cart-item-top">
-
-            <strong>
-              ${product.name}
-            </strong>
-
-            <button
-              class="close"
-              onclick="removeFromCart(${index})"
-            >
-              ✕
-            </button>
-
-          </div>
-
-          <div class="cart-price">
-
-            ${
-              product.price
-              ? "$" + money(product.price)
-              : "Consultar precio"
-            }
-
-          </div>
-
-        </div>
-
-      `;
-
-    });
-
-  }
-
-  document
-    .getElementById("total")
-    .textContent = money(total);
-
-}
-
-
-function removeFromCart(index){
-
-  cart.splice(index,1);
-
-  updateCart();
-
-}
-
-
-function openCart(){
-
-  document
-    .getElementById("cartPanel")
-    .classList.add("open");
-
-  updateCart();
-
-}
-
-
-function closeCart(){
-
-  document
-    .getElementById("cartPanel")
-    .classList.remove("open");
+openCart();
 
 }
 
 
 /* =====================================================
-   WHATSAPP
+   ACTUALIZAR CARRITO
+===================================================== */
+
+function updateCart(){
+
+document
+.getElementById("cartCount")
+.textContent=cart.length;
+
+
+let total=0;
+
+
+const container=
+document.getElementById("cartItems");
+
+
+if(cart.length===0){
+
+container.innerHTML=
+"<p style='color:#888;margin-top:20px'>Tu pedido está vacío.</p>";
+
+}
+
+
+/* PRODUCTOS EN CARRITO */
+
+else{
+
+container.innerHTML="";
+
+
+cart.forEach((product,index)=>{
+
+
+total += Number(product.price || 0);
+
+
+container.innerHTML += `
+
+<div class="cart-item">
+
+
+<div class="cart-item-top">
+
+
+<strong>
+
+${product.name}
+
+</strong>
+
+
+<button
+class="close"
+onclick="removeFromCart(${index})"
+>
+
+✕
+
+</button>
+
+
+</div>
+
+
+<div class="cart-price">
+
+${
+product.price
+? "$"+money(product.price)
+: "Consultar precio"
+}
+
+</div>
+
+
+</div>
+
+`;
+
+});
+
+}
+
+
+document
+.getElementById("total")
+.textContent=money(total);
+
+}
+
+
+/* =====================================================
+   QUITAR DEL CARRITO
+===================================================== */
+
+function removeFromCart(index){
+
+cart.splice(index,1);
+
+updateCart();
+
+}
+
+
+/* =====================================================
+   ABRIR CARRITO
+===================================================== */
+
+function openCart(){
+
+document
+.getElementById("cartPanel")
+.classList.add("open");
+
+updateCart();
+
+}
+
+
+/* =====================================================
+   CERRAR CARRITO
+===================================================== */
+
+function closeCart(){
+
+document
+.getElementById("cartPanel")
+.classList.remove("open");
+
+}
+
+
+/* =====================================================
+   WHATSAPP PRODUCTO
 ===================================================== */
 
 function quickWhatsApp(productName){
 
-  const message =
-    "Hola BRIX! Quiero consultar por: "
-    + productName;
+const message=
+"Hola BRIX! Quiero consultar por: "
++productName;
 
-  window.open(
-    "https://wa.me/5493512573455?text="
-    + encodeURIComponent(message),
-    "_blank"
-  );
+
+window.open(
+
+"https://wa.me/5493512573455?text="
++
+encodeURIComponent(message),
+
+"_blank"
+
+);
 
 }
 
+
+/* =====================================================
+   WHATSAPP GENERAL
+===================================================== */
 
 function sendWhatsApp(){
 
-  const message =
-    "Hola BRIX! Quiero hacer un pedido.";
+const message=
+"Hola BRIX! Quiero hacer un pedido.";
 
-  window.open(
-    "https://wa.me/5493512573455?text="
-    + encodeURIComponent(message),
-    "_blank"
-  );
+
+window.open(
+
+"https://wa.me/5493512573455?text="
++
+encodeURIComponent(message),
+
+"_blank"
+
+);
 
 }
 
 
+/* =====================================================
+   ENVIAR PEDIDO
+===================================================== */
+
 function sendOrder(){
 
-  if(cart.length === 0){
+if(cart.length===0){
 
-    sendWhatsApp();
+sendWhatsApp();
 
-    return;
+return;
 
-  }
+}
 
-  let message =
-    "Hola BRIX! Quiero hacer este pedido:\n\n";
 
-  let total = 0;
+let message=
+"Hola BRIX! Quiero hacer este pedido:\n\n";
 
-  cart.forEach(product=>{
 
-    message +=
-      "• "
-      + product.name
-      + " — "
-      + (
-        product.price
-        ? "$" + money(product.price)
-        : "Consultar precio"
-      )
-      + "\n";
+let total=0;
 
-    total += Number(product.price || 0);
 
-  });
+cart.forEach(product=>{
 
-  message +=
-    "\nTotal: $"
-    + money(total);
 
-  window.open(
-    "https://wa.me/5493512573455?text="
-    + encodeURIComponent(message),
-    "_blank"
-  );
+message +=
+"• "
++
+product.name
++
+" — "
++
+(
+product.price
+?
+"$"+money(product.price)
+:
+"Consultar precio"
+)
++
+"\n";
+
+
+total +=
+Number(product.price || 0);
+
+});
+
+
+message +=
+"\nTotal: $"
++
+money(total);
+
+
+window.open(
+
+"https://wa.me/5493512573455?text="
++
+encodeURIComponent(message),
+
+"_blank"
+
+);
 
 }
 
@@ -1660,10 +2298,13 @@ function sendOrder(){
 
 function openInstagram(){
 
-  window.open(
-    "https://instagram.com/brix_bebidas",
-    "_blank"
-  );
+window.open(
+
+"https://instagram.com/brix_bebidas",
+
+"_blank"
+
+);
 
 }
 
@@ -1673,16 +2314,18 @@ function openInstagram(){
 ===================================================== */
 
 createMenu(
-  "catalogMenu",
-  categories,
-  "openCategory"
+"catalogMenu",
+categories,
+"openCategory"
 );
 
+
 createMenu(
-  "promoMenu",
-  promoCategories,
-  "openPromo"
+"promoMenu",
+promoCategories,
+"openPromo"
 );
+
 
 updateCart();
 
