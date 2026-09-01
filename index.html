@@ -10,655 +10,523 @@
 <style>
 
 :root{
-  --negro:#050505;
-  --negro2:#111111;
-  --blanco:#ffffff;
-  --gris:#999999;
-  --verde:#b7ff00;
-  --borde:#292929;
+--negro:#050505;
+--negro2:#111111;
+--blanco:#ffffff;
+--gris:#999999;
+--verde:#b7ff00;
+--borde:#292929;
 }
 
 *{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
 body{
-  background:var(--negro);
-  color:var(--blanco);
-  font-family:Arial,Helvetica,sans-serif;
+background:var(--negro);
+color:white;
+font-family:Arial,Helvetica,sans-serif;
 }
 
 button{
-  font:inherit;
-  cursor:pointer;
+font:inherit;
+cursor:pointer;
+}
+
+a{
+text-decoration:none;
 }
 
 .app{
-  max-width:980px;
-  margin:auto;
-  min-height:100vh;
+max-width:980px;
+margin:auto;
+min-height:100vh;
 }
 
-/* ================= HEADER ================= */
+/* HEADER */
 
 header{
-  position:sticky;
-  top:0;
-  z-index:20;
-  background:rgba(5,5,5,.96);
-  border-bottom:1px solid var(--borde);
-  padding:15px 18px;
+position:sticky;
+top:0;
+z-index:20;
+background:rgba(5,5,5,.97);
+border-bottom:1px solid var(--borde);
+padding:15px 18px;
 }
 
 .top{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+display:flex;
+align-items:center;
+justify-content:space-between;
 }
 
 .logo{
-  font-size:31px;
-  font-weight:900;
-  letter-spacing:4px;
+font-size:31px;
+font-weight:900;
+letter-spacing:4px;
 }
 
 .logo span{
-  color:var(--verde);
+color:var(--verde);
 }
 
 .cart{
-  border:0;
-  background:var(--verde);
-  color:#000;
-  border-radius:12px;
-  padding:9px 13px;
-  font-weight:900;
+border:0;
+background:var(--verde);
+color:#000;
+border-radius:12px;
+padding:9px 13px;
+font-weight:900;
 }
-
-/* ================= UBICACIÓN ================= */
 
 .location{
-  text-align:center;
-  background:#101010;
-  color:var(--verde);
-  padding:11px;
-  font-size:13px;
-  font-weight:bold;
+text-align:center;
+background:#101010;
+color:var(--verde);
+padding:11px;
+font-size:13px;
+font-weight:bold;
 }
 
-/* ================= PANTALLAS ================= */
+/* PANTALLAS */
 
 .screen{
-  display:none;
-  animation:entrada .2s ease;
+display:none;
+animation:entrada .2s ease;
 }
 
 .screen.active{
-  display:block;
+display:block;
 }
 
 @keyframes entrada{
-
-  from{
-    opacity:0;
-    transform:translateY(8px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-
+from{
+opacity:0;
+transform:translateY(8px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
-/* ================= INICIO ================= */
+/* INICIO */
 
 .hero{
-  padding:18px;
+padding:18px;
 }
+
+/* BANNER */
 
 .hero-banner{
-  width:100%;
-  min-height:180px;
-  border-radius:16px;
-  border:1px solid var(--borde);
+width:100%;
+min-height:245px;
+border-radius:18px;
+border:1px solid #333;
+overflow:hidden;
+position:relative;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+display:flex;
+align-items:center;
+justify-content:center;
 
-  background:
-  radial-gradient(
-    circle at center,
-    #1d1d1d,
-    #050505
-  );
+background:
+radial-gradient(
+circle at center,
+#292929 0%,
+#111111 40%,
+#050505 75%
+);
 }
 
-.hero-banner h2{
-  font-size:48px;
-  letter-spacing:5px;
+.hero-banner:before{
+content:"";
+position:absolute;
+inset:-40%;
+
+background:
+repeating-linear-gradient(
+115deg,
+transparent 0 34px,
+rgba(183,255,0,.05) 35px 37px
+);
+
+transform:rotate(-8deg);
 }
 
-.hero-banner span{
-  color:var(--verde);
+.banner-content{
+position:relative;
+z-index:2;
+text-align:center;
 }
+
+.banner-mini{
+color:#aaa;
+font-size:12px;
+letter-spacing:5px;
+font-weight:bold;
+margin-bottom:12px;
+}
+
+.banner-content h2{
+font-size:68px;
+letter-spacing:8px;
+font-weight:900;
+}
+
+.banner-content h2 span{
+color:var(--verde);
+}
+
+.banner-content p{
+margin-top:13px;
+color:#ddd;
+font-size:14px;
+letter-spacing:2px;
+}
+
+/* HERO */
 
 .hero-copy{
-  padding:25px 3px;
+padding:25px 3px;
 }
 
 .badge{
-  display:inline-block;
-
-  border:1px solid var(--verde);
-  color:var(--verde);
-
-  border-radius:30px;
-
-  padding:7px 12px;
-
-  font-size:12px;
-  font-weight:bold;
-
-  margin-bottom:14px;
+display:inline-block;
+border:1px solid var(--verde);
+color:var(--verde);
+border-radius:30px;
+padding:7px 12px;
+font-size:12px;
+font-weight:bold;
+margin-bottom:14px;
 }
 
 .hero-copy h1{
-  font-size:80px;
-  line-height:.85;
-  letter-spacing:-4px;
+font-size:80px;
+line-height:.85;
+letter-spacing:-4px;
 }
 
 .hero-copy h1 span{
-  color:var(--verde);
+color:var(--verde);
 }
 
 .hero-copy p{
-  color:#ddd;
-  margin-top:15px;
-  line-height:1.5;
+color:#ddd;
+margin-top:15px;
+line-height:1.5;
 }
 
 .home-buttons{
-  display:grid;
-  gap:11px;
-  margin-top:25px;
+display:grid;
+gap:11px;
+margin-top:25px;
 }
 
 .main-button{
+width:100%;
+padding:17px;
+border:1px solid #333;
+background:#111;
+color:white;
+border-radius:13px;
 
-  width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
 
-  padding:17px;
-
-  border:1px solid #333;
-
-  background:#111;
-
-  color:white;
-
-  border-radius:13px;
-
-  display:flex;
-
-  justify-content:space-between;
-
-  align-items:center;
-
-  font-weight:bold;
+font-weight:bold;
 }
 
 .main-button.primary{
-
-  background:var(--verde);
-
-  color:#000;
-
-  border-color:var(--verde);
-
+background:var(--verde);
+color:#000;
+border-color:var(--verde);
 }
 
 .arrow{
-  font-size:23px;
+font-size:23px;
 }
 
-/* ================= SECCIONES ================= */
+/* SECCIONES */
 
 .section{
-  padding:22px 18px 40px;
+padding:22px 18px 40px;
 }
 
 .back{
-
-  border:0;
-
-  background:none;
-
-  color:var(--verde);
-
-  font-weight:bold;
-
-  padding:5px 0 18px;
-
+border:0;
+background:none;
+color:var(--verde);
+font-weight:bold;
+padding:5px 0 18px;
 }
 
 .title{
-
-  font-size:32px;
-
-  font-weight:900;
-
+font-size:32px;
+font-weight:900;
 }
 
 .subtitle{
-
-  color:var(--gris);
-
-  margin:8px 0 20px;
-
+color:var(--gris);
+margin:8px 0 20px;
 }
 
-/* ================= MENÚ ================= */
+/* CATEGORIAS */
 
 .menu{
-  display:grid;
-  gap:10px;
+display:grid;
+gap:10px;
 }
 
 .menu-button{
+width:100%;
+border:1px solid var(--borde);
+background:#101010;
+color:white;
+border-radius:14px;
+padding:18px;
 
-  width:100%;
+display:flex;
+align-items:center;
+gap:14px;
 
-  border:1px solid var(--borde);
-
-  background:#101010;
-
-  color:white;
-
-  border-radius:14px;
-
-  padding:18px;
-
-  display:flex;
-
-  align-items:center;
-
-  gap:14px;
-
-  text-align:left;
-
+text-align:left;
 }
 
 .menu-icon{
-
-  font-size:28px;
-
-  width:38px;
-
-  text-align:center;
-
+font-size:28px;
+width:38px;
+text-align:center;
 }
 
 .menu-info{
-  flex:1;
+flex:1;
 }
 
 .menu-info strong{
-  font-size:17px;
+font-size:17px;
 }
 
 .menu-info small{
-
-  display:block;
-
-  color:#777;
-
-  margin-top:4px;
-
+display:block;
+color:#777;
+margin-top:4px;
 }
 
 .chevron{
-
-  color:var(--verde);
-
-  font-size:25px;
-
+color:var(--verde);
+font-size:25px;
 }
 
-/* ================= PRODUCTOS ================= */
+/* PRODUCTOS */
 
 .products{
-
-  display:grid;
-
-  gap:15px;
-
+display:grid;
+gap:15px;
 }
 
 .product{
-
-  background:#0e0e0e;
-
-  border:1px solid var(--borde);
-
-  border-radius:17px;
-
-  overflow:hidden;
-
+background:#0e0e0e;
+border:1px solid var(--borde);
+border-radius:17px;
+overflow:hidden;
 }
 
-/* ================= FOTO PRODUCTO ================= */
-
 .product-media{
+height:330px;
+background:#151515;
 
-  height:370px;
+display:flex;
+align-items:center;
+justify-content:center;
 
-  background:#151515;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  position:relative;
-
-  overflow:hidden;
-
+position:relative;
+overflow:hidden;
 }
 
 .product-media img{
-
-  width:100%;
-
-  height:100%;
-
-  object-fit:contain;
-
-  display:block;
-
-  padding:20px;
-
+width:100%;
+height:100%;
+object-fit:contain;
+display:block;
 }
 
 .product-placeholder{
-
-  font-size:70px;
-
+font-size:70px;
 }
 
 .media-label{
+position:absolute;
+top:12px;
+left:12px;
 
-  position:absolute;
+background:rgba(0,0,0,.78);
+border:1px solid #444;
+border-radius:20px;
 
-  top:12px;
+padding:6px 10px;
 
-  left:12px;
-
-  background:rgba(0,0,0,.75);
-
-  border:1px solid #444;
-
-  border-radius:20px;
-
-  padding:6px 10px;
-
-  font-size:11px;
-
-  font-weight:bold;
-
+font-size:11px;
+font-weight:bold;
 }
 
-/* ================= INFORMACIÓN ================= */
-
 .product-info{
-
-  padding:15px;
-
+padding:15px;
 }
 
 .product-info h3{
-
-  font-size:19px;
-
-  line-height:1.2;
-
-  margin-bottom:8px;
-
+font-size:19px;
+line-height:1.2;
+margin-bottom:8px;
 }
 
 .price{
-
-  color:var(--verde);
-
-  font-size:26px;
-
-  font-weight:900;
-
+color:var(--verde);
+font-size:26px;
+font-weight:900;
 }
 
 .actions{
-
-  display:flex;
-
-  gap:8px;
-
-  margin-top:14px;
-
+display:flex;
+gap:8px;
+margin-top:14px;
 }
 
 .add{
-
-  flex:1;
-
-  border:0;
-
-  background:var(--verde);
-
-  color:#000;
-
-  border-radius:10px;
-
-  padding:12px;
-
-  font-weight:900;
-
+flex:1;
+border:0;
+background:var(--verde);
+color:#000;
+border-radius:10px;
+padding:12px;
+font-weight:900;
 }
 
 .whatsapp-small{
-
-  border:1px solid #333;
-
-  background:#171717;
-
-  color:white;
-
-  border-radius:10px;
-
-  padding:12px 14px;
-
+border:1px solid #333;
+background:#171717;
+color:white;
+border-radius:10px;
+padding:12px 14px;
 }
 
-/* ================= FOOTER ================= */
+/* FOOTER */
 
 footer{
-
-  text-align:center;
-
-  padding:35px 18px;
-
-  border-top:1px solid var(--borde);
-
-  color:#777;
-
+text-align:center;
+padding:35px 18px;
+border-top:1px solid var(--borde);
+color:#777;
 }
 
 footer strong{
-
-  color:white;
-
-  letter-spacing:3px;
-
+color:white;
+letter-spacing:3px;
 }
 
 footer a{
-
-  color:var(--verde);
-
+color:var(--verde);
 }
 
-/* ================= CARRITO ================= */
+/* CARRITO */
 
 .cart-panel{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.78);
+z-index:50;
 
-  position:fixed;
-
-  inset:0;
-
-  background:rgba(0,0,0,.75);
-
-  z-index:50;
-
-  display:none;
-
-  align-items:flex-end;
-
+display:none;
+align-items:flex-end;
 }
 
 .cart-panel.open{
-
-  display:flex;
-
+display:flex;
 }
 
 .cart-box{
+width:100%;
+max-width:600px;
+margin:auto auto 0;
 
-  width:100%;
+background:#111;
+border:1px solid #333;
 
-  max-width:600px;
+border-radius:20px 20px 0 0;
 
-  margin:auto auto 0;
+padding:20px;
 
-  background:#111;
-
-  border:1px solid #333;
-
-  border-radius:20px 20px 0 0;
-
-  padding:20px;
-
-  max-height:85vh;
-
-  overflow:auto;
-
+max-height:85vh;
+overflow:auto;
 }
 
 .cart-head{
-
-  display:flex;
-
-  justify-content:space-between;
-
-  align-items:center;
-
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
 .close{
-
-  border:0;
-
-  background:#222;
-
-  color:white;
-
-  border-radius:8px;
-
-  padding:7px 10px;
-
+border:0;
+background:#222;
+color:white;
+border-radius:8px;
+padding:7px 10px;
 }
 
 .cart-item{
-
-  padding:13px 0;
-
-  border-bottom:1px solid #292929;
-
+padding:13px 0;
+border-bottom:1px solid #292929;
 }
 
 .cart-item-top{
-
-  display:flex;
-
-  justify-content:space-between;
-
-  gap:10px;
-
+display:flex;
+justify-content:space-between;
+gap:10px;
 }
 
 .cart-price{
-
-  color:var(--verde);
-
-  font-weight:bold;
-
-  margin-top:5px;
-
+color:var(--verde);
+font-weight:bold;
+margin-top:5px;
 }
 
 .total{
-
-  font-size:23px;
-
-  font-weight:900;
-
-  padding:18px 0;
-
+font-size:23px;
+font-weight:900;
+padding:18px 0;
 }
 
 .send{
-
-  width:100%;
-
-  border:0;
-
-  background:#20c763;
-
-  color:white;
-
-  padding:15px;
-
-  border-radius:11px;
-
-  font-weight:900;
-
+width:100%;
+border:0;
+background:#20c763;
+color:white;
+padding:15px;
+border-radius:11px;
+font-weight:900;
 }
 
-/* ================= DESKTOP ================= */
+/* COMPUTADORA */
 
 @media(min-width:700px){
 
-  .home-buttons{
+.home-buttons{
+grid-template-columns:1fr 1fr;
+}
 
-    grid-template-columns:1fr 1fr;
+.products{
+grid-template-columns:1fr 1fr;
+}
 
-  }
-
-  .products{
-
-    grid-template-columns:1fr 1fr;
-
-  }
-
-  .cart-box{
-
-    border-radius:20px;
-
-    margin:auto;
-
-  }
+.cart-box{
+border-radius:20px;
+margin:auto;
+}
 
 }
 
@@ -668,8 +536,6 @@ footer a{
 <body>
 
 <div class="app">
-
-<!-- ================= HEADER ================= -->
 
 <header>
 
@@ -692,7 +558,7 @@ BRI<span>X</span>
 </div>
 
 
-<!-- ================= INICIO ================= -->
+<!-- INICIO -->
 
 <section id="home" class="screen active">
 
@@ -700,11 +566,24 @@ BRI<span>X</span>
 
 <div class="hero-banner">
 
+<div class="banner-content">
+
+<div class="banner-mini">
+TU MOMENTO · TU BEBIDA
+</div>
+
 <h2>
 BRI<span>X</span>
 </h2>
 
+<p>
+BEBIDAS · PROMOS · COMBOS
+</p>
+
 </div>
+
+</div>
+
 
 <div class="hero-copy">
 
@@ -720,6 +599,7 @@ BRIX<span>.</span>
 Tu momento, tu bebida.
 Explorá nuestro catálogo por categorías.
 </p>
+
 
 <div class="home-buttons">
 
@@ -795,7 +675,7 @@ onclick="openInstagram()"
 </section>
 
 
-<!-- ================= CATALOGO ================= -->
+<!-- CATALOGO -->
 
 <section id="catalog" class="screen">
 
@@ -827,7 +707,7 @@ id="catalogMenu"
 </section>
 
 
-<!-- ================= PRODUCTOS ================= -->
+<!-- PRODUCTOS -->
 
 <section id="products" class="screen">
 
@@ -861,7 +741,7 @@ id="productList"
 </section>
 
 
-<!-- ================= PROMOCIONES ================= -->
+<!-- PROMOCIONES -->
 
 <section id="promos" class="screen">
 
@@ -893,7 +773,7 @@ id="promoMenu"
 </section>
 
 
-<!-- ================= PROMOS PRODUCTOS ================= -->
+<!-- PRODUCTOS PROMOS -->
 
 <section id="promoProducts" class="screen">
 
@@ -927,7 +807,7 @@ id="promoList"
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -968,7 +848,7 @@ target="_blank"
 </footer>
 
 
-<!-- ================= CARRITO ================= -->
+<!-- CARRITO -->
 
 <div
 class="cart-panel"
@@ -998,9 +878,7 @@ onclick="closeCart()"
 
 <div class="total">
 
-Total:
-
-$
+Total: $
 
 <span id="total">
 0
@@ -1024,73 +902,24 @@ onclick="sendOrder()"
 
 <script>
 
-/* =========================================================
-   PRODUCTOS
-========================================================= */
+/* ================= PRODUCTOS ================= */
 
 const products = [
-
-{
-name:"SMIRNOFF SABORIZADO",
-price:10900,
-category:"vodka",
-emoji:"🍸"
-},
-
-{
-name:"PROMO SMIRNOFF + 2 SPEED",
-price:15500,
-category:"vodka",
-emoji:"🍸"
-},
-
-{
-name:"2 PROMO SMIRNOFF",
-price:29500,
-category:"vodka",
-emoji:"🍸"
-},
-
-{
-name:"SKYY SABORIZADO",
-price:14500,
-category:"vodka",
-emoji:"🍾"
-},
-
-{
-name:"SKYY SABORIZADO 2",
-price:15500,
-category:"vodka",
-emoji:"🍾"
-},
-
-{
-name:"SKYY COSMIC",
-price:17500,
-category:"vodka",
-emoji:"🍾"
-},
-
-{
-name:"ABSOLUT SABORIZADO",
-price:26000,
-category:"vodka",
-emoji:"🍾"
-},
 
 {
 name:"BRANCA 750",
 price:17500,
 category:"fernet",
-emoji:"🥃"
+emoji:"🥃",
+image:"branca-750.png"
 },
 
 {
 name:"FERNET 180 AÑOS",
 price:18000,
 category:"fernet",
-emoji:"🥃"
+emoji:"🥃",
+image:"fernet-180-anos.png"
 },
 
 {
@@ -1146,49 +975,56 @@ emoji:"🍺"
 name:"SPEED 250",
 price:2000,
 category:"energizante",
-emoji:"⚡"
+emoji:"⚡",
+image:"speed-250.png"
 },
 
 {
 name:"SPEED XL",
 price:3000,
 category:"energizante",
-emoji:"⚡"
+emoji:"⚡",
+image:"speed-xl.png"
 },
 
 {
 name:"MONSTER",
 price:3500,
 category:"energizante",
-emoji:"⚡"
+emoji:"⚡",
+image:"monster.png"
 },
 
 {
 name:"COCA COLA 500 ML",
 price:2000,
 category:"gaseosa",
-emoji:"🥤"
+emoji:"🥤",
+image:"coca-cola-500ml.png"
 },
 
 {
 name:"COCA COLA 2,5L",
 price:5500,
 category:"gaseosa",
-emoji:"🥤"
+emoji:"🥤",
+image:"coca-cola-25-desc.png"
 },
 
 {
 name:"SPRITE 2,25L",
 price:5000,
 category:"gaseosa",
-emoji:"🥤"
+emoji:"🥤",
+image:"sprite-225l.png"
 },
 
 {
 name:"PRITTY 2,25L",
 price:3000,
 category:"gaseosa",
-emoji:"🥤"
+emoji:"🥤",
+image:"pritty-225l.png"
 },
 
 {
@@ -1209,7 +1045,8 @@ emoji:"🍷"
 name:"COLON SELECTO DULCE",
 price:7500,
 category:"vino",
-emoji:"🍷"
+emoji:"🍷",
+image:"colon-selecto-dulce.png"
 },
 
 {
@@ -1238,14 +1075,54 @@ name:"CASARENA ESTATE CHARDONNAY",
 price:9900,
 category:"vino",
 emoji:"🍷"
+},
+
+{
+name:"SMIRNOFF SABORIZADO",
+price:10900,
+category:"vodka",
+emoji:"🍸"
+},
+
+{
+name:"PROMO SMIRNOFF + 2 SPEED",
+price:15500,
+category:"vodka",
+emoji:"🍸"
+},
+
+{
+name:"2 PROMO SMIRNOFF",
+price:29500,
+category:"vodka",
+emoji:"🍸"
+},
+
+{
+name:"SKYY SABORIZADO",
+price:14500,
+category:"vodka",
+emoji:"🍾"
+},
+
+{
+name:"SKYY COSMIC",
+price:17500,
+category:"vodka",
+emoji:"🍾"
+},
+
+{
+name:"ABSOLUT SABORIZADO",
+price:26000,
+category:"vodka",
+emoji:"🍾"
 }
 
 ];
 
 
-/* =========================================================
-   PROMOCIONES
-========================================================= */
+/* ================= PROMOCIONES ================= */
 
 const promos = [
 
@@ -1343,94 +1220,7 @@ emoji:"🔥"
 ];
 
 
-/* =========================================================
-   IMÁGENES
-========================================================= */
-
-/*
-   IMPORTANTE:
-   Las imágenes están en la misma carpeta que index.html.
-*/
-
-const productImages = {
-
-"BRANCA 750":
-"branca-750.png",
-
-"FERNET 180 AÑOS":
-"fernet-180-anos.png",
-
-"PROMO BRANCA 750 CON HIELO":
-"promo-branca-750-con-hielo.png",
-
-"PROMO BRANCA 750 + 2 COCA COLA 2,5L + HIELO":
-"promo-branca-750-2-coca-cola-2-5l-hielo.png",
-
-"2 PROMO FERNET 750":
-"2-promo-fernet-750.png",
-
-"FERNET 180° + COCA 2,5L":
-"fernet-180-coca-cola-25.png",
-
-"PROMO 2 BALBOS + 1 PRITTY":
-"promo-2-balbos-1-pritty.png",
-
-"2 SANTA JULIA MALBEC":
-"2-santa-julia-malbec.png",
-
-"COLON SELECTO DULCE":
-"colon-selecto-dulce.png",
-
-"SANTA JULIA TINTO DULCE":
-"santa-julia-tinto-dulce.png",
-
-"SANTA JULIA CHENIN DULCE":
-"santa-julia-chenin-dulce.png",
-
-"CAVA NEGRA CHARDONNAY":
-"cava-negra-chardonnay.png",
-
-"CASARENA ESTATE CHARDONNAY":
-"casarena-estate-chardonnay.png",
-
-"SPEED 250":
-"speed-250.png",
-
-"SPEED XL":
-"speed-xl.png",
-
-"MONSTER":
-"monster.png",
-
-"COCA COLA 500 ML":
-"coca-cola-500ml.png",
-
-"COCA COLA 2,5L":
-"coca-cola-25-desc.png",
-
-"SPRITE 2,25L":
-"sprite-225l.png",
-
-"PRITTY 2,25L":
-"pritty-225l.png"
-
-};
-
-
-/* =========================================================
-   OBTENER IMAGEN
-========================================================= */
-
-function getProductImage(name){
-
-return productImages[name] || "";
-
-}
-
-
-/* =========================================================
-   CATEGORÍAS
-========================================================= */
+/* ================= CATEGORIAS ================= */
 
 const categories = [
 
@@ -1512,18 +1302,14 @@ const promoCategories = [
 ];
 
 
-/* =========================================================
-   VARIABLES
-========================================================= */
+/* ================= VARIABLES ================= */
 
 let currentList=[];
 
 let cart=[];
 
 
-/* =========================================================
-   FORMATO DE DINERO
-========================================================= */
+/* ================= FUNCIONES ================= */
 
 function money(value){
 
@@ -1533,9 +1319,7 @@ return Number(value || 0)
 }
 
 
-/* =========================================================
-   CAMBIAR PANTALLA
-========================================================= */
+/* PANTALLAS */
 
 function showScreen(id){
 
@@ -1554,9 +1338,7 @@ window.scrollTo(0,0);
 }
 
 
-/* =========================================================
-   CREAR MENÚ
-========================================================= */
+/* CREAR MENUS */
 
 function createMenu(
 containerId,
@@ -1607,9 +1389,41 @@ ${item[3]}
 }
 
 
-/* =========================================================
-   MOSTRAR PRODUCTOS
-========================================================= */
+/* IMAGEN */
+
+function imageHTML(product){
+
+if(!product.image){
+
+return `
+<div class="product-placeholder">
+${product.emoji}
+</div>
+`;
+
+}
+
+return `
+
+<img
+src="${product.image}"
+alt="${product.name}"
+onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+>
+
+<div
+class="product-placeholder"
+style="display:none"
+>
+${product.emoji}
+</div>
+
+`;
+
+}
+
+
+/* PRODUCTOS */
 
 function renderProducts(
 list,
@@ -1623,45 +1437,14 @@ document.getElementById(containerId);
 
 container.innerHTML="";
 
-list.forEach((product,index)=>{
+if(!list.length){
 
-const image=
-getProductImage(product.name);
-
-let mediaHTML="";
-
-if(image){
-
-mediaHTML=`
-
-<img
-src="${image}"
-alt="${product.name}"
-loading="lazy"
-onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
->
-
-<div
-class="product-placeholder"
-style="display:none"
->
-${product.emoji}
-</div>
-
-`;
-
-}else{
-
-mediaHTML=`
-
-<div class="product-placeholder">
-${product.emoji}
-</div>
-
-`;
+container.innerHTML=
+"<p style='color:#777'>No hay productos disponibles.</p>";
 
 }
 
+list.forEach((product,index)=>{
 
 container.innerHTML += `
 
@@ -1669,7 +1452,7 @@ container.innerHTML += `
 
 <div class="product-media">
 
-${mediaHTML}
+${imageHTML(product)}
 
 <span class="media-label">
 PRODUCTO
@@ -1737,9 +1520,7 @@ document
 }
 
 
-/* =========================================================
-   ABRIR CATEGORÍA
-========================================================= */
+/* ABRIR CATEGORIA */
 
 function openCategory(category){
 
@@ -1760,9 +1541,7 @@ showScreen("products");
 }
 
 
-/* =========================================================
-   ABRIR PROMO
-========================================================= */
+/* ABRIR PROMO */
 
 function openPromo(category){
 
@@ -1783,11 +1562,13 @@ showScreen("promoProducts");
 }
 
 
-/* =========================================================
-   CARRITO
-========================================================= */
+/* CARRITO */
 
 function addToCart(index){
+
+if(!currentList[index]){
+return;
+}
 
 cart.push(currentList[index]);
 
@@ -1875,9 +1656,7 @@ updateCart();
 }
 
 
-/* =========================================================
-   ABRIR CARRITO
-========================================================= */
+/* CARRITO */
 
 function openCart(){
 
@@ -1890,10 +1669,6 @@ updateCart();
 }
 
 
-/* =========================================================
-   CERRAR CARRITO
-========================================================= */
-
 function closeCart(){
 
 document
@@ -1903,9 +1678,7 @@ document
 }
 
 
-/* =========================================================
-   WHATSAPP
-========================================================= */
+/* WHATSAPP */
 
 function quickWhatsApp(productName){
 
@@ -1922,22 +1695,34 @@ window.open(
 }
 
 
-/* =========================================================
-   ENVIAR PEDIDO
-========================================================= */
+function sendWhatsApp(){
+
+const message=
+"Hola BRIX! Quiero consultar por bebidas y promociones.";
+
+window.open(
+"https://wa.me/5493512573455?text="
++encodeURIComponent(message),
+"_blank"
+);
+
+}
+
+
+/* PEDIDO */
 
 function sendOrder(){
 
 if(cart.length===0){
 
-quickWhatsApp("un pedido");
+sendWhatsApp();
 
 return;
 
 }
 
 let message=
-"Hola BRIX! Quiero hacer este pedido:%0A%0A";
+"Hola BRIX! Quiero hacer este pedido:\n\n";
 
 let total=0;
 
@@ -1950,29 +1735,27 @@ message +=
 +(product.price
 ?"$"+money(product.price)
 :"Consultar precio")
-+"%0A";
++"\n";
 
-total += Number(product.price || 0);
+total +=
+Number(product.price || 0);
 
 });
 
 message +=
-"%0A*Total: $"
-+money(total)
-+"*";
+"\nTotal: $"
++money(total);
 
 window.open(
 "https://wa.me/5493512573455?text="
-+message,
++encodeURIComponent(message),
 "_blank"
 );
 
 }
 
 
-/* =========================================================
-   INSTAGRAM
-========================================================= */
+/* INSTAGRAM */
 
 function openInstagram(){
 
@@ -1984,9 +1767,7 @@ window.open(
 }
 
 
-/* =========================================================
-   INICIAR
-========================================================= */
+/* INICIAR */
 
 createMenu(
 "catalogMenu",
