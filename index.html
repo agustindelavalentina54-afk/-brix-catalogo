@@ -229,8 +229,29 @@ nav a{
   border:2px solid #292929;
   border-radius:22px;
   background:#111;
-  padding:25px;
+  overflow:hidden;
   text-align:center;
+}
+
+.promo-image{
+  width:100%;
+  height:300px;
+  background:#050505;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px;
+}
+
+.promo-image img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+}
+
+.promo-info{
+  padding:22px;
 }
 
 .promo h3{
@@ -351,7 +372,6 @@ footer strong{
 
   .product-image img{
     max-height:335px;
-    max-width:100%;
   }
 
   .card-info{
@@ -368,6 +388,10 @@ footer strong{
 
   .promos{
     grid-template-columns:1fr;
+  }
+
+  .promo-image{
+    height:330px;
   }
 }
 
@@ -416,6 +440,10 @@ footer strong{
   .order-btn{
     font-size:12px;
     padding:13px 5px;
+  }
+
+  .promo-image{
+    height:290px;
   }
 }
 </style>
@@ -483,708 +511,696 @@ footer strong{
 <main class="container" id="catalogo">
 
 
-<!-- =========================
-     VODKA
-========================= -->
+<!-- VODKA -->
 
 <section class="category">
 
-  <h2 class="category-title">VODKA</h2>
+<h2 class="category-title">VODKA</h2>
 
-  <div class="products">
+<div class="products">
 
-    <div class="card">
+<div class="card">
 
-      <div class="product-image">
-        <img
-          src="./smirnoff.png"
-          alt="Smirnoff"
-        >
-      </div>
+<div class="product-image">
+<img src="./smirnoff.png" alt="Smirnoff">
+</div>
 
-      <div class="card-info">
+<div class="card-info">
 
-        <h3>SMIRNOFF SABORIZADO</h3>
+<h3>SMIRNOFF SABORIZADO</h3>
 
-        <div class="price">
-          $10.900
-        </div>
+<div class="price">$11.900</div>
 
-        <a
-          class="order-btn"
-          href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20pedir%20SMIRNOFF%20SABORIZADO.%20%C2%BFEst%C3%A1%20disponible%3F"
-          target="_blank"
-        >
-          💬 PEDIR POR WHATSAPP
-        </a>
+<a
+class="order-btn"
+href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20pedir%20SMIRNOFF%20SABORIZADO."
+target="_blank"
+>
+💬 PEDIR POR WHATSAPP
+</a>
 
-      </div>
-
-    </div>
+</div>
+</div>
 
 
-    <div class="card">
+<div class="card">
 
-      <div class="product-image">
-        <img
-          src="./skyy.png"
-          alt="SKYY Infusions Raspberry"
-        >
-      </div>
+<div class="product-image">
+<img src="./skyy.png" alt="SKYY Infusions Raspberry">
+</div>
 
-      <div class="card-info">
+<div class="card-info">
 
-        <h3>SKYY INFUSIONS RASPBERRY</h3>
+<h3>SKYY INFUSIONS RASPBERRY</h3>
 
-        <div class="price">
-          $14.500
-        </div>
+<div class="price">$14.500</div>
 
-        <a
-          class="order-btn"
-          href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20pedir%20SKYY%20INFUSIONS%20RASPBERRY.%20%C2%BFEst%C3%A1%20disponible%3F"
-          target="_blank"
-        >
-          💬 PEDIR POR WHATSAPP
-        </a>
+<a
+class="order-btn"
+href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20pedir%20SKYY%20INFUSIONS%20RASPBERRY."
+target="_blank"
+>
+💬 PEDIR POR WHATSAPP
+</a>
 
-      </div>
+</div>
+</div>
 
-    </div>
+</div>
+</section>
 
-  </div>
 
+<!-- FERNET -->
+
+<section class="category">
+
+<h2 class="category-title">FERNET</h2>
+
+<div class="products">
+
+<div class="card">
+
+<div class="product-image">
+<img src="./branca-750.png" alt="Fernet Branca 750">
+</div>
+
+<div class="card-info">
+
+<h3>FERNET BRANCA 750</h3>
+
+<div class="price">$17.500</div>
+
+<a
+class="order-btn"
+href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20pedir%20FERNET%20BRANCA%20750."
+target="_blank"
+>
+💬 PEDIR POR WHATSAPP
+</a>
+
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- GANCIA -->
+
+<section class="category">
+
+<h2 class="category-title">GANCIA</h2>
+
+<div class="products">
+
+<div class="card">
+
+<div class="product-image">
+<img src="./gancia.png" alt="Gancia">
+</div>
+
+<div class="card-info">
+
+<h3>GANCIA</h3>
+
+<div class="price">CONSULTAR</div>
+
+<a
+class="order-btn"
+href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20consultar%20por%20GANCIA."
+target="_blank"
+>
+💬 PEDIR POR WHATSAPP
+</a>
+
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- CERVEZA -->
+
+<section class="category">
+
+<h2 class="category-title">CERVEZA</h2>
+
+<div class="products">
+
+<div class="card">
+
+<div class="product-image">
+<div style="font-size:90px;">🍺</div>
+</div>
+
+<div class="card-info">
+
+<h3>CERVEZA</h3>
+
+<div class="price">CONSULTAR</div>
+
+<a
+class="order-btn"
+href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20consultar%20por%20CERVEZA."
+target="_blank"
+>
+💬 PEDIR POR WHATSAPP
+</a>
+
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- GASEOSAS -->
+
+<section class="category">
+
+<h2 class="category-title">GASEOSAS</h2>
+
+<div class="products">
+
+<div class="card">
+
+<div class="product-image">
+<img src="./coca-cola.png" alt="Coca Cola">
+</div>
+
+<div class="card-info">
+
+<h3>COCA COLA</h3>
+
+<div class="price">CONSULTAR</div>
+
+<a
+class="order-btn"
+href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20consultar%20por%20COCA%20COLA."
+target="_blank"
+>
+💬 PEDIR POR WHATSAPP
+</a>
+
+</div>
+</div>
+
+
+<div class="card">
+
+<div class="product-image">
+<img src="./sprite.png" alt="Sprite 2,25L">
+</div>
+
+<div class="card-info">
+
+<h3>SPRITE 2,25L</h3>
+
+<div class="price">$5.000</div>
+
+<a
+class="order-btn"
+href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20pedir%20SPRITE%202%2C25L."
+target="_blank"
+>
+💬 PEDIR POR WHATSAPP
+</a>
+
+</div>
+</div>
+
+
+<div class="card">
+
+<div class="product-image">
+<img src="./pritty.png" alt="Pritty 2,25L">
+</div>
+
+<div class="card-info">
+
+<h3>PRITTY 2,25L</h3>
+
+<div class="price">$3.000</div>
+
+<a
+class="order-btn"
+href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20pedir%20PRITTY%202%2C25L."
+target="_blank"
+>
+💬 PEDIR POR WHATSAPP
+</a>
+
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- ENERGIZANTES -->
+
+<section class="category">
+
+<h2 class="category-title">ENERGIZANTES</h2>
+
+<div class="products">
+
+<div class="card">
+
+<div class="product-image">
+<img src="./speed-xl.png" alt="Speed XL">
+</div>
+
+<div class="card-info">
+
+<h3>SPEED XL</h3>
+
+<div class="price">$3.000</div>
+
+<a
+class="order-btn"
+href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20pedir%20SPEED%20XL."
+target="_blank"
+>
+💬 PEDIR POR WHATSAPP
+</a>
+
+</div>
+</div>
+
+
+<div class="card">
+
+<div class="product-image">
+<img src="./monster.png" alt="Monster">
+</div>
+
+<div class="card-info">
+
+<h3>MONSTER</h3>
+
+<div class="price">$3.500</div>
+
+<a
+class="order-btn"
+href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20pedir%20MONSTER."
+target="_blank"
+>
+💬 PEDIR POR WHATSAPP
+</a>
+
+</div>
+</div>
+
+
+<div class="card">
+
+<div class="product-image">
+<img src="./monster-mango.png" alt="Monster Mango Loco">
+</div>
+
+<div class="card-info">
+
+<h3>MONSTER MANGO LOCO</h3>
+
+<div class="price">CONSULTAR</div>
+
+<a
+class="order-btn"
+href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20consultar%20por%20MONSTER%20MANGO%20LOCO."
+target="_blank"
+>
+💬 PEDIR POR WHATSAPP
+</a>
+
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- VINOS -->
+
+<section class="category">
+
+<h2 class="category-title">VINOS</h2>
+
+<div class="products">
+
+<div class="card">
+
+<div class="product-image">
+<img src="./toro-blanco.png" alt="Toro Blanco">
+</div>
+
+<div class="card-info">
+
+<h3>TORO BLANCO</h3>
+
+<div class="price">CONSULTAR</div>
+
+<a
+class="order-btn"
+href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20consultar%20por%20TORO%20BLANCO."
+target="_blank"
+>
+💬 PEDIR POR WHATSAPP
+</a>
+
+</div>
+</div>
+
+
+<div class="card">
+
+<div class="product-image">
+<img src="./toro-tinto.png" alt="Toro Tinto">
+</div>
+
+<div class="card-info">
+
+<h3>TORO TINTO</h3>
+
+<div class="price">CONSULTAR</div>
+
+<a
+class="order-btn"
+href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20consultar%20por%20TORO%20TINTO."
+target="_blank"
+>
+💬 PEDIR POR WHATSAPP
+</a>
+
+</div>
+</div>
+
+
+<div class="card">
+
+<div class="product-image">
+<img src="./balbo.png" alt="Balbo">
+</div>
+
+<div class="card-info">
+
+<h3>BALBO</h3>
+
+<div class="price">CONSULTAR</div>
+
+<a
+class="order-btn"
+href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20consultar%20por%20BALBO."
+target="_blank"
+>
+💬 PEDIR POR WHATSAPP
+</a>
+
+</div>
+</div>
+
+</div>
 </section>
 
 
 <!-- =========================
-     FERNET
-========================= -->
-
-<section class="category">
-
-  <h2 class="category-title">FERNET</h2>
-
-  <div class="products">
-
-    <div class="card">
-
-      <div class="product-image">
-        <img
-          src="./branca-750.png"
-          alt="Fernet Branca 750"
-        >
-      </div>
-
-      <div class="card-info">
-
-        <h3>FERNET BRANCA 750</h3>
-
-        <div class="price">
-          $17.500
-        </div>
-
-        <a
-          class="order-btn"
-          href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20pedir%20FERNET%20BRANCA%20750.%20%C2%BFEst%C3%A1%20disponible%3F"
-          target="_blank"
-        >
-          💬 PEDIR POR WHATSAPP
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     GANCIA
-========================= -->
-
-<section class="category">
-
-  <h2 class="category-title">GANCIA</h2>
-
-  <div class="products">
-
-    <div class="card">
-
-      <div class="product-image">
-        <img
-          src="./gancia.png"
-          alt="Gancia"
-        >
-      </div>
-
-      <div class="card-info">
-
-        <h3>GANCIA</h3>
-
-        <div class="price">
-          CONSULTAR
-        </div>
-
-        <a
-          class="order-btn"
-          href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20consultar%20por%20GANCIA."
-          target="_blank"
-        >
-          💬 PEDIR POR WHATSAPP
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     CERVEZA
-========================= -->
-
-<section class="category">
-
-  <h2 class="category-title">CERVEZA</h2>
-
-  <div class="products">
-
-    <div class="card">
-
-      <div class="product-image">
-        <div style="font-size:90px;">
-          🍺
-        </div>
-      </div>
-
-      <div class="card-info">
-
-        <h3>CERVEZA</h3>
-
-        <div class="price">
-          CONSULTAR
-        </div>
-
-        <a
-          class="order-btn"
-          href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20consultar%20por%20CERVEZA."
-          target="_blank"
-        >
-          💬 PEDIR POR WHATSAPP
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     GASEOSAS
-========================= -->
-
-<section class="category">
-
-  <h2 class="category-title">GASEOSAS</h2>
-
-  <div class="products">
-
-    <div class="card">
-
-      <div class="product-image">
-        <img
-          src="./coca-cola.png"
-          alt="Coca Cola"
-        >
-      </div>
-
-      <div class="card-info">
-
-        <h3>COCA COLA</h3>
-
-        <div class="price">
-          CONSULTAR
-        </div>
-
-        <a
-          class="order-btn"
-          href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20consultar%20por%20COCA%20COLA."
-          target="_blank"
-        >
-          💬 PEDIR POR WHATSAPP
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <div class="card">
-
-      <div class="product-image">
-        <img
-          src="./sprite.png"
-          alt="Sprite 2,25L"
-        >
-      </div>
-
-      <div class="card-info">
-
-        <h3>SPRITE 2,25L</h3>
-
-        <div class="price">
-          $5.000
-        </div>
-
-        <a
-          class="order-btn"
-          href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20pedir%20SPRITE%202%2C25L.%20%C2%BFEst%C3%A1%20disponible%3F"
-          target="_blank"
-        >
-          💬 PEDIR POR WHATSAPP
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <div class="card">
-
-      <div class="product-image">
-        <img
-          src="./pritty.png"
-          alt="Pritty 2,25L"
-        >
-      </div>
-
-      <div class="card-info">
-
-        <h3>PRITTY 2,25L</h3>
-
-        <div class="price">
-          $3.000
-        </div>
-
-        <a
-          class="order-btn"
-          href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20pedir%20PRITTY%202%2C25L.%20%C2%BFEst%C3%A1%20disponible%3F"
-          target="_blank"
-        >
-          💬 PEDIR POR WHATSAPP
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     ENERGIZANTES
-========================= -->
-
-<section class="category">
-
-  <h2 class="category-title">ENERGIZANTES</h2>
-
-  <div class="products">
-
-
-    <div class="card">
-
-      <div class="product-image">
-        <img
-          src="./speed-xl.png"
-          alt="Speed XL"
-        >
-      </div>
-
-      <div class="card-info">
-
-        <h3>SPEED XL</h3>
-
-        <div class="price">
-          $3.000
-        </div>
-
-        <a
-          class="order-btn"
-          href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20pedir%20SPEED%20XL.%20%C2%BFEst%C3%A1%20disponible%3F"
-          target="_blank"
-        >
-          💬 PEDIR POR WHATSAPP
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <div class="card">
-
-      <div class="product-image">
-        <img
-          src="./monster.png"
-          alt="Monster"
-        >
-      </div>
-
-      <div class="card-info">
-
-        <h3>MONSTER</h3>
-
-        <div class="price">
-          $3.500
-        </div>
-
-        <a
-          class="order-btn"
-          href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20pedir%20MONSTER.%20%C2%BFEst%C3%A1%20disponible%3F"
-          target="_blank"
-        >
-          💬 PEDIR POR WHATSAPP
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <div class="card">
-
-      <div class="product-image">
-        <img
-          src="./monster-mango.png"
-          alt="Monster Mango Loco"
-        >
-      </div>
-
-      <div class="card-info">
-
-        <h3>MONSTER MANGO LOCO</h3>
-
-        <div class="price">
-          CONSULTAR
-        </div>
-
-        <a
-          class="order-btn"
-          href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20consultar%20por%20MONSTER%20MANGO%20LOCO."
-          target="_blank"
-        >
-          💬 PEDIR POR WHATSAPP
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     VINOS
-========================= -->
-
-<section class="category">
-
-  <h2 class="category-title">VINOS</h2>
-
-  <div class="products">
-
-
-    <div class="card">
-
-      <div class="product-image">
-        <img
-          src="./toro-blanco.png"
-          alt="Toro Blanco"
-        >
-      </div>
-
-      <div class="card-info">
-
-        <h3>TORO BLANCO</h3>
-
-        <div class="price">
-          CONSULTAR
-        </div>
-
-        <a
-          class="order-btn"
-          href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20consultar%20por%20TORO%20BLANCO."
-          target="_blank"
-        >
-          💬 PEDIR POR WHATSAPP
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <div class="card">
-
-      <div class="product-image">
-        <img
-          src="./toro-tinto.png"
-          alt="Toro Tinto"
-        >
-      </div>
-
-      <div class="card-info">
-
-        <h3>TORO TINTO</h3>
-
-        <div class="price">
-          CONSULTAR
-        </div>
-
-        <a
-          class="order-btn"
-          href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20consultar%20por%20TORO%20TINTO."
-          target="_blank"
-        >
-          💬 PEDIR POR WHATSAPP
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <div class="card">
-
-      <div class="product-image">
-        <img
-          src="./balbo.png"
-          alt="Balbo"
-        >
-      </div>
-
-      <div class="card-info">
-
-        <h3>BALBO</h3>
-
-        <div class="price">
-          CONSULTAR
-        </div>
-
-        <a
-          class="order-btn"
-          href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20consultar%20por%20BALBO."
-          target="_blank"
-        >
-          💬 PEDIR POR WHATSAPP
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     PROMOCIONES
+     PROMOCIONES NUEVAS
 ========================= -->
 
 <section class="category" id="promociones">
 
-  <h2 class="category-title">
-    PROMOCIONES
-  </h2>
+<h2 class="category-title">PROMOCIONES</h2>
 
-  <div class="promos">
+<div class="promos">
 
 
-    <div class="promo">
+<!-- 1 SMIRNOFF + 2 SPEED XL -->
 
-      <h3>
-        SMIRNOFF + 2 SPEED
-      </h3>
+<div class="promo">
 
-      <div class="price">
-        $15.500
-      </div>
+<div class="promo-image">
+<img
+src="./promo-smirnoff-1-speed-2.png"
+alt="Promo Smirnoff + 2 Speed XL"
+>
+</div>
 
-      <a
-        class="order-btn"
-        href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20la%20promo%20SMIRNOFF%20%2B%202%20SPEED."
-        target="_blank"
-      >
-        💬 PEDIR POR WHATSAPP
-      </a>
+<div class="promo-info">
 
-    </div>
+<h3>SMIRNOFF + 2 SPEED XL</h3>
 
+<div class="price">$16.000</div>
 
-    <div class="promo">
+<a
+class="order-btn"
+href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20la%20promo%20SMIRNOFF%20%2B%202%20SPEED%20XL."
+target="_blank"
+>
+💬 PEDIR POR WHATSAPP
+</a>
 
-      <h3>
-        2 PROMO SMIRNOFF
-      </h3>
-
-      <div class="price">
-        $29.500
-      </div>
-
-      <a
-        class="order-btn"
-        href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%202%20PROMO%20SMIRNOFF."
-        target="_blank"
-      >
-        💬 PEDIR POR WHATSAPP
-      </a>
-
-    </div>
+</div>
+</div>
 
 
-    <div class="promo">
+<!-- 2 SMIRNOFF + 4 SPEED XL -->
 
-      <h3>
-        3 PROMO SKYY
-      </h3>
+<div class="promo">
 
-      <div class="price">
-        $43.500
-      </div>
+<div class="promo-image">
+<img
+src="./promo-smirnoff-2-speed-4.png"
+alt="2 Smirnoff + 4 Speed XL"
+>
+</div>
 
-      <a
-        class="order-btn"
-        href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%203%20PROMO%20SKYY."
-        target="_blank"
-      >
-        💬 PEDIR POR WHATSAPP
-      </a>
+<div class="promo-info">
 
-    </div>
+<h3>2 SMIRNOFF + 4 SPEED XL</h3>
 
+<div class="price">$30.000</div>
 
-    <div class="promo">
+<a
+class="order-btn"
+href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20la%20promo%202%20SMIRNOFF%20%2B%204%20SPEED%20XL."
+target="_blank"
+>
+💬 PEDIR POR WHATSAPP
+</a>
 
-      <h3>
-        PROMO BRANCA 750 CON HIELO
-      </h3>
-
-      <div class="price">
-        $25.000
-      </div>
-
-      <a
-        class="order-btn"
-        href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20la%20PROMO%20BRANCA%20750%20CON%20HIELO."
-        target="_blank"
-      >
-        💬 PEDIR POR WHATSAPP
-      </a>
-
-    </div>
+</div>
+</div>
 
 
-    <div class="promo">
+<!-- 1 SKYY + 2 SPEED XL -->
 
-      <h3>
-        BRANCA 750 + 2 COCA COLA 2,5L + HIELO
-      </h3>
+<div class="promo">
 
-      <div class="price">
-        $30.000
-      </div>
+<div class="promo-image">
+<img
+src="./promo-skyy-1-speed-2.png"
+alt="SKYY + 2 Speed XL"
+>
+</div>
 
-      <a
-        class="order-btn"
-        href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20la%20promo%20BRANCA%20750%20%2B%202%20COCA%20COLA%202%2C5L%20%2B%20HIELO."
-        target="_blank"
-      >
-        💬 PEDIR POR WHATSAPP
-      </a>
+<div class="promo-info">
 
-    </div>
+<h3>SKYY + 2 SPEED XL</h3>
 
+<div class="price">$16.000</div>
 
-    <div class="promo">
+<a
+class="order-btn"
+href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20la%20promo%20SKYY%20%2B%202%20SPEED%20XL."
+target="_blank"
+>
+💬 PEDIR POR WHATSAPP
+</a>
 
-      <h3>
-        2 PROMO FERNET 750
-      </h3>
-
-      <div class="price">
-        $48.000
-      </div>
-
-      <a
-        class="order-btn"
-        href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%202%20PROMO%20FERNET%20750."
-        target="_blank"
-      >
-        💬 PEDIR POR WHATSAPP
-      </a>
-
-    </div>
+</div>
+</div>
 
 
-    <div class="promo">
+<!-- 2 SKYY + 4 SPEED XL -->
 
-      <h3>
-        SKYY + SMIRNOFF + 4 SPEED
-      </h3>
+<div class="promo">
 
-      <div class="price">
-        $29.000
-      </div>
+<div class="promo-image">
+<img
+src="./promo-skyy-2-speed-4.png"
+alt="2 SKYY + 4 Speed XL"
+>
+</div>
 
-      <a
-        class="order-btn"
-        href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20la%20promo%20SKYY%20%2B%20SMIRNOFF%20%2B%204%20SPEED."
-        target="_blank"
-      >
-        💬 PEDIR POR WHATSAPP
-      </a>
+<div class="promo-info">
 
-    </div>
+<h3>2 SKYY + 4 SPEED XL</h3>
 
+<div class="price">$30.000</div>
 
-    <div class="promo">
+<a
+class="order-btn"
+href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20la%20promo%202%20SKYY%20%2B%204%20SPEED%20XL."
+target="_blank"
+>
+💬 PEDIR POR WHATSAPP
+</a>
 
-      <h3>
-        PROMO BRANCA + PROMO
-      </h3>
-
-      <div class="price">
-        $38.500
-      </div>
-
-      <a
-        class="order-btn"
-        href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20la%20PROMO%20BRANCA%20%2B%20PROMO."
-        target="_blank"
-      >
-        💬 PEDIR POR WHATSAPP
-      </a>
-
-    </div>
+</div>
+</div>
 
 
-  </div>
+<!-- 3 SKYY + 6 SPEED XL -->
 
+<div class="promo">
+
+<div class="promo-image">
+<img
+src="./promo-skyy-3-speed-6.png"
+alt="3 SKYY + 6 Speed XL"
+>
+</div>
+
+<div class="promo-info">
+
+<h3>3 SKYY + 6 SPEED XL</h3>
+
+<div class="price">$45.000</div>
+
+<a
+class="order-btn"
+href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20la%20promo%203%20SKYY%20%2B%206%20SPEED%20XL."
+target="_blank"
+>
+💬 PEDIR POR WHATSAPP
+</a>
+
+</div>
+</div>
+
+
+<!-- 2 FERNET + 2 COCA -->
+
+<div class="promo">
+
+<div class="promo-image">
+<img
+src="./promo-fernet-2-coca-2.png"
+alt="2 Fernet + 2 Coca"
+>
+</div>
+
+<div class="promo-info">
+
+<h3>2 PROMO FERNET 750</h3>
+
+<div class="price">$48.000</div>
+
+<a
+class="order-btn"
+href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20la%20promo%202%20FERNET%20750."
+target="_blank"
+>
+💬 PEDIR POR WHATSAPP
+</a>
+
+</div>
+</div>
+
+
+<!-- 2 VODKA + 2 FERNET -->
+
+<div class="promo">
+
+<div class="promo-image">
+<img
+src="./promo-vodka-fernet-2-2.png"
+alt="2 Promo Vodka + 2 Promo Fernet"
+>
+</div>
+
+<div class="promo-info">
+
+<h3>2 PROMO VODKA + 2 PROMO FERNET</h3>
+
+<div class="price">$77.000</div>
+
+<a
+class="order-btn"
+href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20la%20promo%202%20PROMO%20VODKA%20%2B%202%20PROMO%20FERNET."
+target="_blank"
+>
+💬 PEDIR POR WHATSAPP
+</a>
+
+</div>
+</div>
+
+
+<!-- SKYY POR MAYOR -->
+
+<div class="promo">
+
+<div class="promo-image">
+
+<img
+src="./promo-skyy-3-speed-6.png"
+alt="SKYY por mayor"
+>
+
+</div>
+
+<div class="promo-info">
+
+<h3>SKYY POR MAYOR</h3>
+
+<div class="price">DESDE $45.000</div>
+
+<a
+class="order-btn"
+href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20consultar%20por%20SKYY%20POR%20MAYOR."
+target="_blank"
+>
+💬 PEDIR POR WHATSAPP
+</a>
+
+</div>
+</div>
+
+
+<!-- SKYY JUNGLE -->
+
+<div class="promo">
+
+<div class="promo-image">
+
+<img
+src="./promo-skyy-1-speed-2.png"
+alt="SKYY Jungle + 2 Speed XL"
+>
+
+</div>
+
+<div class="promo-info">
+
+<h3>SKYY JUNGLE + 2 SPEED XL</h3>
+
+<div class="price">$17.000</div>
+
+<a
+class="order-btn"
+href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20la%20promo%20SKYY%20JUNGLE%20%2B%202%20SPEED%20XL."
+target="_blank"
+>
+💬 PEDIR POR WHATSAPP
+</a>
+
+</div>
+</div>
+
+
+</div>
 </section>
 
 </main>
@@ -1192,66 +1208,44 @@ footer strong{
 
 <section class="contact">
 
-  <h2>
-    ¿QUERÉS HACER UN PEDIDO?
-  </h2>
+<h2>¿QUERÉS HACER UN PEDIDO?</h2>
 
-  <p>
-    Escribinos directamente por WhatsApp o Instagram.
-  </p>
+<p>
+Escribinos directamente por WhatsApp o Instagram.
+</p>
 
-  <div class="contact-buttons">
+<div class="contact-buttons">
 
-    <a
-      href="https://wa.me/5493512573455"
-      target="_blank"
-    >
-      📲 WHATSAPP
-    </a>
+<a
+href="https://wa.me/5493512573455"
+target="_blank"
+>
+📲 WHATSAPP
+</a>
 
-    <a
-      href="https://instagram.com/brix_bebidas"
-      target="_blank"
-    >
-      📸 INSTAGRAM
-    </a>
+<a
+href="https://instagram.com/brix_bebidas"
+target="_blank"
+>
+📸 INSTAGRAM
+</a>
 
-  </div>
+</div>
 
 </section>
 
 
 <footer>
 
-  <p>
-    <strong>BRIX</strong> — Tu momento, tu bebida.
-  </p>
+<p>
+<strong>BRIX</strong> — Tu momento, tu bebida.
+</p>
 
-  <p style="margin-top:8px;">
-    QUEBRADA DEL CONDORITO 3673
-  </p>
+<p style="margin-top:8px;">
+QUEBRADA DEL CONDORITO 3673
+</p>
 
 </footer>
-
-
-<script>
-
-function pedir(producto){
-
-  const mensaje =
-    "Hola BRIX! Quiero pedir " +
-    producto +
-    ". ¿Está disponible?";
-
-  window.open(
-    "https://wa.me/5493512573455?text=" +
-    encodeURIComponent(mensaje),
-    "_blank"
-  );
-
-}
-
-</script>
 
 </body>
 </html>
