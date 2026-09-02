@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>BRIX — Tu momento, tu bebida</title>
 
-<meta name="description" content="BRIX — Bebidas, promociones y pedidos por WhatsApp.">
+<meta
+name="description"
+content="BRIX — Tu momento, tu bebida. Bebidas y promociones."
+>
 
 <style>
+
+/* =========================
+   BASE
+========================= */
 
 *{
     margin:0;
@@ -21,22 +31,17 @@ html{
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
     background:#050505;
-    color:#fff;
+    color:#ffffff;
+    font-family:Arial,Helvetica,sans-serif;
 }
-
-/* =========================
-   VARIABLES
-========================= */
 
 :root{
     --verde:#c8ff00;
-    --verde2:#9dff00;
     --negro:#050505;
-    --gris:#111;
-    --gris2:#1a1a1a;
-    --blanco:#fff;
+    --gris:#0d0d0d;
+    --gris2:#151515;
+    --borde:#303030;
 }
 
 /* =========================
@@ -48,24 +53,24 @@ header{
     top:0;
     z-index:1000;
 
-    height:76px;
+    min-height:74px;
 
-    background:rgba(0,0,0,.96);
-    border-bottom:1px solid #222;
+    padding:12px 5%;
+
+    background:rgba(0,0,0,.97);
+
+    border-bottom:1px solid #252525;
 
     display:flex;
     align-items:center;
     justify-content:space-between;
-
-    padding:0 6%;
 }
 
 .logo{
-    color:#fff;
-    font-size:38px;
+    font-size:40px;
     font-weight:900;
     font-style:italic;
-    letter-spacing:-3px;
+    letter-spacing:-4px;
 }
 
 .logo span{
@@ -78,10 +83,12 @@ nav{
 }
 
 nav a{
-    color:#fff;
+    color:#ffffff;
     text-decoration:none;
+
     font-size:15px;
-    font-weight:800;
+    font-weight:900;
+
     transition:.2s;
 }
 
@@ -94,16 +101,16 @@ nav a:hover{
     align-items:center;
     gap:8px;
 
-    color:#fff;
+    color:#ffffff;
     text-decoration:none;
 
-    font-weight:800;
-    font-size:14px;
+    font-size:13px;
+    font-weight:900;
 }
 
-.whatsapp-top span{
+.whatsapp-icon{
     color:var(--verde);
-    font-size:24px;
+    font-size:22px;
 }
 
 /* =========================
@@ -117,8 +124,8 @@ nav a:hover{
 
 .hero img{
     width:100%;
-    display:block;
     height:auto;
+    display:block;
 }
 
 /* =========================
@@ -131,19 +138,17 @@ nav a:hover{
 
     background:#0b0b0b;
 
-    border-bottom:1px solid #222;
+    border-bottom:1px solid #252525;
 }
 
 .benefit{
-    min-height:110px;
+    min-height:105px;
 
     display:flex;
     align-items:center;
     justify-content:center;
 
-    gap:18px;
-
-    padding:20px;
+    gap:15px;
 
     border-right:1px solid #333;
 }
@@ -153,8 +158,7 @@ nav a:hover{
 }
 
 .benefit-icon{
-    font-size:42px;
-    color:var(--verde);
+    font-size:37px;
 }
 
 .benefit-text{
@@ -176,30 +180,52 @@ nav a:hover{
     margin:auto;
 }
 
-/* =========================
-   TITULOS
-========================= */
-
 .section{
     padding:55px 0;
 }
 
+/* =========================
+   TITULOS
+========================= */
+
 .section-title{
     font-size:30px;
     font-weight:900;
+
     margin-bottom:30px;
 }
 
 .section-title::after{
     content:"";
+
     display:block;
 
-    width:48px;
+    width:50px;
     height:4px;
 
     background:var(--verde);
 
     margin-top:10px;
+}
+
+.category-title{
+    font-size:25px;
+    font-weight:900;
+
+    margin:45px 0 20px;
+}
+
+.category-title::after{
+    content:"";
+
+    display:block;
+
+    width:35px;
+    height:3px;
+
+    background:var(--verde);
+
+    margin-top:8px;
 }
 
 /* =========================
@@ -208,43 +234,54 @@ nav a:hover{
 
 .categories{
     display:grid;
+
     grid-template-columns:repeat(7,1fr);
-    gap:15px;
+
+    gap:14px;
 }
 
 .category{
+    min-height:120px;
+
     background:#0d0d0d;
 
-    border:1px solid #383838;
-    border-radius:16px;
+    border:1px solid #333;
 
-    min-height:125px;
+    border-radius:15px;
 
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
+    color:#fff;
 
     text-decoration:none;
-    color:#fff;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
 
     transition:.25s;
 }
 
 .category:hover{
     border-color:var(--verde);
+
     transform:translateY(-4px);
-    box-shadow:0 0 20px rgba(200,255,0,.12);
+
+    box-shadow:0 0 20px rgba(200,255,0,.10);
 }
 
 .category-icon{
-    font-size:40px;
-    margin-bottom:12px;
+    font-size:38px;
+
+    margin-bottom:10px;
 }
 
 .category-name{
+    font-size:13px;
+
     font-weight:900;
-    font-size:14px;
 }
 
 /* =========================
@@ -253,14 +290,17 @@ nav a:hover{
 
 .products{
     display:grid;
+
     grid-template-columns:repeat(4,1fr);
-    gap:22px;
+
+    gap:20px;
 }
 
 .product{
     background:#101010;
 
-    border:1px solid #333;
+    border:1px solid #303030;
+
     border-radius:15px;
 
     overflow:hidden;
@@ -270,50 +310,50 @@ nav a:hover{
 
 .product:hover{
     transform:translateY(-4px);
+
     border-color:var(--verde);
 }
 
-.product-media{
-    height:285px;
+/*
+   IMÁGENES
+   NO SE ESTIRAN
+*/
 
-    background:#0a0a0a;
+.product-image{
+    height:290px;
+
+    background:#080808;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
-    padding:22px;
+    padding:18px;
 
-    position:relative;
     overflow:hidden;
 }
 
-.product-media img{
+.product-image img{
+    display:block;
+
     width:auto;
     height:auto;
 
-    max-width:92%;
-    max-height:245px;
+    max-width:100%;
+    max-height:255px;
 
     object-fit:contain;
-
-    display:block;
 }
 
-.image-fallback{
-    display:none;
-
-    width:100%;
-    height:100%;
-
-    align-items:center;
-    justify-content:center;
-
-    font-size:80px;
-}
+/* =========================
+   INFORMACION
+========================= */
 
 .product-info{
-    padding:18px;
+    padding:17px;
+
     text-align:center;
 }
 
@@ -321,39 +361,48 @@ nav a:hover{
     min-height:42px;
 
     display:flex;
+
     align-items:center;
     justify-content:center;
 
-    font-size:16px;
+    font-size:15px;
+
     font-weight:900;
 }
 
 .price{
     color:var(--verde);
 
-    font-size:22px;
+    font-size:21px;
+
     font-weight:900;
 
-    margin:10px 0 15px;
+    margin:9px 0 14px;
 }
 
 .consultar{
-    font-size:19px;
+    font-size:17px;
 }
+
+/* =========================
+   WHATSAPP BUTTON
+========================= */
 
 .order-button{
     width:100%;
 
+    padding:11px 7px;
+
     border:1px solid var(--verde);
+
+    border-radius:8px;
+
     background:transparent;
 
     color:#fff;
 
-    padding:11px 8px;
+    font-size:12px;
 
-    border-radius:8px;
-
-    font-size:13px;
     font-weight:900;
 
     cursor:pointer;
@@ -363,6 +412,7 @@ nav a:hover{
 
 .order-button:hover{
     background:var(--verde);
+
     color:#000;
 }
 
@@ -370,95 +420,112 @@ nav a:hover{
    PROMOCIONES
 ========================= */
 
-.promo-box{
-    background:#0c0c0c;
+.promo-highlight{
+    background:#0d0d0d;
 
     border:1px solid #333;
+
     border-radius:18px;
 
-    padding:35px;
+    padding:30px;
 
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
 
-    gap:30px;
-}
-
-.promo-left{
-    display:flex;
-    align-items:center;
     gap:25px;
 }
 
+.promo-highlight-left{
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+}
+
 .promo-icon{
-    font-size:65px;
+    font-size:60px;
 }
 
 .promo-small{
-    font-size:15px;
+    font-size:14px;
+
     margin-bottom:5px;
 }
 
 .promo-big{
     color:var(--verde);
-    font-size:32px;
+
+    font-size:31px;
+
     font-weight:900;
 }
 
 .promo-button{
+    padding:14px 25px;
+
     border:1px solid var(--verde);
+
+    border-radius:8px;
+
     background:transparent;
 
     color:#fff;
 
-    padding:14px 30px;
-
-    border-radius:7px;
-
     font-weight:900;
-    cursor:pointer;
 
-    transition:.2s;
+    cursor:pointer;
 }
 
 .promo-button:hover{
     background:var(--verde);
+
     color:#000;
 }
 
-/* =========================
-   PROMOS GRID
-========================= */
-
 .promo-grid{
     display:grid;
+
     grid-template-columns:repeat(3,1fr);
-    gap:20px;
+
+    gap:18px;
 }
 
 .promo-card{
     background:#101010;
 
-    border:1px solid #333;
+    border:1px solid #303030;
+
     border-radius:15px;
 
-    padding:25px;
+    padding:23px;
 
     text-align:center;
 }
 
 .promo-card h3{
-    font-size:17px;
-    margin-bottom:12px;
+    min-height:45px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:16px;
 }
 
 .promo-price{
     color:var(--verde);
-    font-size:23px;
+
+    font-size:22px;
+
     font-weight:900;
 
-    margin-bottom:17px;
+    margin:10px 0 15px;
 }
 
 /* =========================
@@ -466,29 +533,34 @@ nav a:hover{
 ========================= */
 
 .contact{
-    text-align:center;
-
     padding:60px 20px;
 
-    background:#0a0a0a;
+    text-align:center;
+
+    background:#090909;
 
     border-top:1px solid #222;
 }
 
 .contact h2{
-    font-size:32px;
+    font-size:29px;
+
     margin-bottom:10px;
 }
 
 .contact p{
-    color:#bbb;
+    color:#aaa;
+
     margin-bottom:25px;
 }
 
 .contact-buttons{
     display:flex;
+
     justify-content:center;
+
     gap:15px;
+
     flex-wrap:wrap;
 }
 
@@ -501,9 +573,9 @@ nav a:hover{
 
     text-decoration:none;
 
-    color:#000;
-
     background:var(--verde);
+
+    color:#000;
 
     font-weight:900;
 }
@@ -517,9 +589,9 @@ nav a:hover{
 ========================= */
 
 footer{
-    text-align:center;
-
     padding:30px;
+
+    text-align:center;
 
     color:#777;
 
@@ -533,19 +605,31 @@ footer strong{
 }
 
 /* =========================
-   MOBILE
+   TABLET
 ========================= */
 
-@media(max-width:900px){
+@media(max-width:1000px){
+
+    .categories{
+        grid-template-columns:repeat(4,1fr);
+    }
+
+    .products{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+}
+
+/* =========================
+   CELULAR
+========================= */
+
+@media(max-width:700px){
 
     header{
-        height:auto;
-        min-height:70px;
-
-        padding:12px 5%;
+        padding:10px 4%;
 
         flex-wrap:wrap;
-        gap:10px;
     }
 
     .logo{
@@ -554,25 +638,22 @@ footer strong{
 
     nav{
         order:3;
+
         width:100%;
 
         justify-content:center;
 
         gap:25px;
 
-        padding-top:7px;
+        padding-top:8px;
     }
 
     nav a{
-        font-size:13px;
+        font-size:12px;
     }
 
     .whatsapp-top{
-        font-size:11px;
-    }
-
-    .whatsapp-top span{
-        font-size:20px;
+        font-size:10px;
     }
 
     .benefits{
@@ -580,9 +661,11 @@ footer strong{
     }
 
     .benefit{
+        min-height:75px;
+
         border-right:none;
+
         border-bottom:1px solid #333;
-        min-height:85px;
     }
 
     .benefit:last-child{
@@ -595,49 +678,54 @@ footer strong{
 
     .products{
         grid-template-columns:repeat(2,1fr);
-        gap:13px;
+
+        gap:12px;
     }
 
-    .product-media{
-        height:230px;
-        padding:15px;
+    .product-image{
+        height:220px;
+
+        padding:12px;
     }
 
-    .product-media img{
-        max-height:200px;
-        max-width:90%;
+    .product-image img{
+        max-height:195px;
+
+        max-width:95%;
     }
 
     .product-info{
-        padding:13px 10px;
+        padding:12px 9px;
     }
 
     .product-name{
-        font-size:13px;
+        font-size:12px;
+
         min-height:38px;
     }
 
     .price{
-        font-size:19px;
-        margin:8px 0 12px;
+        font-size:18px;
     }
 
     .order-button{
-        font-size:11px;
-        padding:10px 5px;
+        font-size:10px;
+
+        padding:10px 4px;
     }
 
-    .promo-box{
+    .promo-highlight{
         flex-direction:column;
+
         text-align:center;
     }
 
-    .promo-left{
+    .promo-highlight-left{
         flex-direction:column;
     }
 
     .promo-big{
-        font-size:27px;
+        font-size:26px;
     }
 
     .promo-grid{
@@ -647,61 +735,28 @@ footer strong{
 }
 
 /* =========================
-   CELULARES MUY PEQUEÑOS
+   CELULARES PEQUEÑOS
 ========================= */
 
-@media(max-width:420px){
+@media(max-width:400px){
 
-    .products{
-        grid-template-columns:1fr 1fr;
+    .product-image{
+        height:200px;
     }
 
-    .product-media{
-        height:205px;
-    }
-
-    .product-media img{
+    .product-image img{
         max-height:175px;
     }
 
-    .category{
-        min-height:110px;
-    }
-
-    .category-icon{
-        font-size:32px;
-    }
-
-    .category-name{
-        font-size:12px;
-    }
-
-}
-
-/* =========================
-   ANIMACION
-========================= */
-
-@keyframes aparecer{
-    from{
-        opacity:0;
-        transform:translateY(15px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-.product{
-    animation:aparecer .5s ease;
 }
 
 </style>
+
 </head>
 
+
 <body>
+
 
 <!-- =========================
      HEADER
@@ -714,8 +769,15 @@ footer strong{
     </div>
 
     <nav>
-        <a href="#catalogo">CATÁLOGO</a>
-        <a href="#promociones">PROMOCIONES</a>
+
+        <a href="#catalogo">
+            CATÁLOGO
+        </a>
+
+        <a href="#promociones">
+            PROMOCIONES
+        </a>
+
     </nav>
 
     <a
@@ -723,8 +785,13 @@ footer strong{
         href="https://wa.me/5493512573455"
         target="_blank"
     >
-        <span>◉</span>
+
+        <span class="whatsapp-icon">
+            ◉
+        </span>
+
         PEDÍ POR WHATSAPP
+
     </a>
 
 </header>
@@ -752,11 +819,18 @@ footer strong{
 
     <div class="benefit">
 
-        <div class="benefit-icon">👍</div>
+        <div class="benefit-icon">
+            👍
+        </div>
 
         <div class="benefit-text">
+
             CALIDAD<br>
-            <strong>SIEMPRE</strong>
+
+            <strong>
+                SIEMPRE
+            </strong>
+
         </div>
 
     </div>
@@ -764,11 +838,18 @@ footer strong{
 
     <div class="benefit">
 
-        <div class="benefit-icon">🛵</div>
+        <div class="benefit-icon">
+            🛵
+        </div>
 
         <div class="benefit-text">
+
             ENVÍOS<br>
-            <strong>RÁPIDOS</strong>
+
+            <strong>
+                RÁPIDOS
+            </strong>
+
         </div>
 
     </div>
@@ -776,11 +857,18 @@ footer strong{
 
     <div class="benefit">
 
-        <div class="benefit-icon">💬</div>
+        <div class="benefit-icon">
+            💬
+        </div>
 
         <div class="benefit-text">
+
             PEDÍ FÁCIL<br>
-            <strong>POR WHATSAPP</strong>
+
+            <strong>
+                POR WHATSAPP
+            </strong>
+
         </div>
 
     </div>
@@ -789,7 +877,7 @@ footer strong{
 
 
 <!-- =========================
-     CATEGORÍAS
+     CATEGORIAS
 ========================= -->
 
 <section class="section">
@@ -803,39 +891,101 @@ footer strong{
 
     <div class="categories">
 
-        <a class="category" href="#vodka">
-            <div class="category-icon">🍾</div>
-            <div class="category-name">VODKA</div>
+        <a
+            href="#vodka"
+            class="category"
+        >
+            <div class="category-icon">
+                🍾
+            </div>
+
+            <div class="category-name">
+                VODKA
+            </div>
         </a>
 
-        <a class="category" href="#fernet">
-            <div class="category-icon">🥃</div>
-            <div class="category-name">FERNET</div>
+
+        <a
+            href="#fernet"
+            class="category"
+        >
+            <div class="category-icon">
+                🥃
+            </div>
+
+            <div class="category-name">
+                FERNET
+            </div>
         </a>
 
-        <a class="category" href="#gancia">
-            <div class="category-icon">🍸</div>
-            <div class="category-name">GANCIA</div>
+
+        <a
+            href="#gancia"
+            class="category"
+        >
+            <div class="category-icon">
+                🍸
+            </div>
+
+            <div class="category-name">
+                GANCIA
+            </div>
         </a>
 
-        <a class="category" href="#cerveza">
-            <div class="category-icon">🍺</div>
-            <div class="category-name">CERVEZA</div>
+
+        <a
+            href="#cerveza"
+            class="category"
+        >
+            <div class="category-icon">
+                🍺
+            </div>
+
+            <div class="category-name">
+                CERVEZA
+            </div>
         </a>
 
-        <a class="category" href="#gaseosas">
-            <div class="category-icon">🥤</div>
-            <div class="category-name">GASEOSAS</div>
+
+        <a
+            href="#gaseosas"
+            class="category"
+        >
+            <div class="category-icon">
+                🥤
+            </div>
+
+            <div class="category-name">
+                GASEOSAS
+            </div>
         </a>
 
-        <a class="category" href="#energizantes">
-            <div class="category-icon">⚡</div>
-            <div class="category-name">ENERGIZANTES</div>
+
+        <a
+            href="#energizantes"
+            class="category"
+        >
+            <div class="category-icon">
+                ⚡
+            </div>
+
+            <div class="category-name">
+                ENERGIZANTES
+            </div>
         </a>
 
-        <a class="category" href="#vinos">
-            <div class="category-icon">🍷</div>
-            <div class="category-name">VINOS</div>
+
+        <a
+            href="#vinos"
+            class="category"
+        >
+            <div class="category-icon">
+                🍷
+            </div>
+
+            <div class="category-name">
+                VINOS
+            </div>
         </a>
 
     </div>
@@ -846,44 +996,55 @@ footer strong{
 
 
 <!-- =========================
-     CATÁLOGO
+     CATALOGO
 ========================= -->
 
-<section class="section" id="catalogo">
+<section
+    class="section"
+    id="catalogo"
+>
 
 <div class="container">
+
 
     <h2 class="section-title">
         CATÁLOGO
     </h2>
 
 
-    <!-- VODKA -->
+    <!-- =====================
+         VODKA
+    ====================== -->
 
-    <h2 id="vodka" style="margin:35px 0 20px;">
+    <h3
+        class="category-title"
+        id="vodka"
+    >
         VODKA
-    </h2>
+    </h3>
+
 
     <div class="products">
 
+
+        <!-- SMIRNOFF -->
+
         <div class="product">
 
-            <div class="product-media">
+            <div class="product-image">
 
                 <img
-                    src="./smirnoff-saborizado.png"
-                    alt="Smirnoff Saborizado"
-                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                    src="./smirnoff.png"
+                    alt="Smirnoff"
                 >
 
-                <div class="image-fallback">🍾</div>
-
             </div>
+
 
             <div class="product-info">
 
                 <div class="product-name">
-                    SMIRNOFF SABORIZADO
+                    SMIRNOFF
                 </div>
 
                 <div class="price">
@@ -892,7 +1053,7 @@ footer strong{
 
                 <button
                     class="order-button"
-                    onclick="pedir('SMIRNOFF SABORIZADO')"
+                    onclick="pedir('SMIRNOFF')"
                 >
                     💬 PEDIR POR WHATSAPP
                 </button>
@@ -902,172 +1063,123 @@ footer strong{
         </div>
 
 
+        <!-- SKYY -->
+
         <div class="product">
 
-            <div class="product-media">
+            <div class="product-image">
 
                 <img
-                    src="./skyy-saborizado.png"
-                    alt="SKYY Saborizado"
-                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                    src="./skyy.png"
+                    alt="SKYY Infusions"
                 >
 
-                <div class="image-fallback">🍾</div>
-
             </div>
+
 
             <div class="product-info">
 
                 <div class="product-name">
-                    SKYY SABORIZADO
+                    SKYY INFUSIONS
                 </div>
 
                 <div class="price">
                     $14.500
                 </div>
 
-                <button class="order-button"
-                    onclick="pedir('SKYY SABORIZADO')">
-                    💬 PEDIR POR WHATSAPP
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <div class="product">
-
-            <div class="product-media">
-
-                <img
-                    src="./absolut-saborizado.png"
-                    alt="Absolut Saborizado"
-                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                <button
+                    class="order-button"
+                    onclick="pedir('SKYY INFUSIONS')"
                 >
-
-                <div class="image-fallback">🍾</div>
-
-            </div>
-
-            <div class="product-info">
-
-                <div class="product-name">
-                    ABSOLUT SABORIZADO
-                </div>
-
-                <div class="price">
-                    $26.000
-                </div>
-
-                <button class="order-button"
-                    onclick="pedir('ABSOLUT SABORIZADO')">
                     💬 PEDIR POR WHATSAPP
                 </button>
 
             </div>
 
         </div>
+
 
     </div>
 
 
-    <!-- FERNET -->
+    <!-- =====================
+         FERNET
+    ====================== -->
 
-    <h2 id="fernet" style="margin:55px 0 20px;">
+    <h3
+        class="category-title"
+        id="fernet"
+    >
         FERNET
-    </h2>
+    </h3>
+
 
     <div class="products">
 
+
         <div class="product">
 
-            <div class="product-media">
+            <div class="product-image">
 
                 <img
                     src="./branca-750.png"
-                    alt="Branca 750"
-                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                    alt="Fernet Branca 750"
                 >
 
-                <div class="image-fallback">🥃</div>
-
             </div>
+
 
             <div class="product-info">
 
                 <div class="product-name">
-                    BRANCA 750
+                    FERNET BRANCA 750
                 </div>
 
                 <div class="price">
                     $17.500
                 </div>
 
-                <button class="order-button"
-                    onclick="pedir('BRANCA 750')">
-                    💬 PEDIR POR WHATSAPP
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <div class="product">
-
-            <div class="product-media">
-
-                <img
-                    src="./fernet-180-anos.png"
-                    alt="Fernet 180 Años"
-                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                <button
+                    class="order-button"
+                    onclick="pedir('FERNET BRANCA 750')"
                 >
-
-                <div class="image-fallback">🥃</div>
-
-            </div>
-
-            <div class="product-info">
-
-                <div class="product-name">
-                    FERNET 180 AÑOS
-                </div>
-
-                <div class="price">
-                    $18.000
-                </div>
-
-                <button class="order-button"
-                    onclick="pedir('FERNET 180 AÑOS')">
                     💬 PEDIR POR WHATSAPP
                 </button>
 
             </div>
 
         </div>
+
 
     </div>
 
 
-    <!-- GANCIA -->
+    <!-- =====================
+         GANCIA
+    ====================== -->
 
-    <h2 id="gancia" style="margin:55px 0 20px;">
+    <h3
+        class="category-title"
+        id="gancia"
+    >
         GANCIA
-    </h2>
+    </h3>
+
 
     <div class="products">
 
+
         <div class="product">
 
-            <div class="product-media">
+            <div class="product-image">
 
-                <div class="image-fallback"
-                     style="display:flex;">
-                    🍸
-                </div>
+                <img
+                    src="./gancia.png"
+                    alt="Gancia"
+                >
 
             </div>
+
 
             <div class="product-info">
 
@@ -1079,8 +1191,10 @@ footer strong{
                     CONSULTAR
                 </div>
 
-                <button class="order-button"
-                    onclick="pedir('GANCIA')">
+                <button
+                    class="order-button"
+                    onclick="pedir('GANCIA')"
+                >
                     💬 PEDIR POR WHATSAPP
                 </button>
 
@@ -1088,27 +1202,34 @@ footer strong{
 
         </div>
 
+
     </div>
 
 
-    <!-- CERVEZA -->
+    <!-- =====================
+         CERVEZA
+    ====================== -->
 
-    <h2 id="cerveza" style="margin:55px 0 20px;">
+    <h3
+        class="category-title"
+        id="cerveza"
+    >
         CERVEZA
-    </h2>
+    </h3>
+
 
     <div class="products">
 
         <div class="product">
 
-            <div class="product-media">
+            <div class="product-image">
 
-                <div class="image-fallback"
-                     style="display:flex;">
+                <div style="font-size:80px;">
                     🍺
                 </div>
 
             </div>
+
 
             <div class="product-info">
 
@@ -1120,8 +1241,10 @@ footer strong{
                     CONSULTAR
                 </div>
 
-                <button class="order-button"
-                    onclick="pedir('CERVEZA')">
+                <button
+                    class="order-button"
+                    onclick="pedir('CERVEZA')"
+                >
                     💬 PEDIR POR WHATSAPP
                 </button>
 
@@ -1132,40 +1255,49 @@ footer strong{
     </div>
 
 
-    <!-- GASEOSAS -->
+    <!-- =====================
+         GASEOSAS
+    ====================== -->
 
-    <h2 id="gaseosas" style="margin:55px 0 20px;">
+    <h3
+        class="category-title"
+        id="gaseosas"
+    >
         GASEOSAS
-    </h2>
+    </h3>
+
 
     <div class="products">
 
+
+        <!-- COCA COLA -->
+
         <div class="product">
 
-            <div class="product-media">
+            <div class="product-image">
 
                 <img
-                    src="./coca-cola-500ml.png"
-                    alt="Coca Cola 500 ML"
-                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                    src="./coca-cola.png"
+                    alt="Coca Cola"
                 >
 
-                <div class="image-fallback">🥤</div>
-
             </div>
+
 
             <div class="product-info">
 
                 <div class="product-name">
-                    COCA COLA 500 ML
+                    COCA COLA
                 </div>
 
-                <div class="price">
-                    $2.000
+                <div class="price consultar">
+                    CONSULTAR
                 </div>
 
-                <button class="order-button"
-                    onclick="pedir('COCA COLA 500 ML')">
+                <button
+                    class="order-button"
+                    onclick="pedir('COCA COLA')"
+                >
                     💬 PEDIR POR WHATSAPP
                 </button>
 
@@ -1174,53 +1306,19 @@ footer strong{
         </div>
 
 
-        <div class="product">
-
-            <div class="product-media">
-
-                <img
-                    src="./coca-cola-25-desc.png"
-                    alt="Coca Cola 2,5L"
-                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-                >
-
-                <div class="image-fallback">🥤</div>
-
-            </div>
-
-            <div class="product-info">
-
-                <div class="product-name">
-                    COCA COLA 2,5L
-                </div>
-
-                <div class="price">
-                    $5.500
-                </div>
-
-                <button class="order-button"
-                    onclick="pedir('COCA COLA 2,5L')">
-                    💬 PEDIR POR WHATSAPP
-                </button>
-
-            </div>
-
-        </div>
-
+        <!-- SPRITE -->
 
         <div class="product">
 
-            <div class="product-media">
+            <div class="product-image">
 
                 <img
-                    src="./sprite-225l.png"
+                    src="./sprite.png"
                     alt="Sprite 2,25L"
-                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
                 >
 
-                <div class="image-fallback">🥤</div>
-
             </div>
+
 
             <div class="product-info">
 
@@ -1232,8 +1330,10 @@ footer strong{
                     $5.000
                 </div>
 
-                <button class="order-button"
-                    onclick="pedir('SPRITE 2,25L')">
+                <button
+                    class="order-button"
+                    onclick="pedir('SPRITE 2,25L')"
+                >
                     💬 PEDIR POR WHATSAPP
                 </button>
 
@@ -1242,19 +1342,19 @@ footer strong{
         </div>
 
 
+        <!-- PRITTY -->
+
         <div class="product">
 
-            <div class="product-media">
+            <div class="product-image">
 
                 <img
-                    src="./pritty-225l.png"
+                    src="./pritty.png"
                     alt="Pritty 2,25L"
-                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
                 >
 
-                <div class="image-fallback">🥤</div>
-
             </div>
+
 
             <div class="product-info">
 
@@ -1266,73 +1366,49 @@ footer strong{
                     $3.000
                 </div>
 
-                <button class="order-button"
-                    onclick="pedir('PRITTY 2,25L')">
+                <button
+                    class="order-button"
+                    onclick="pedir('PRITTY 2,25L')"
+                >
                     💬 PEDIR POR WHATSAPP
                 </button>
 
             </div>
 
         </div>
+
 
     </div>
 
 
-    <!-- ENERGIZANTES -->
+    <!-- =====================
+         ENERGIZANTES
+    ====================== -->
 
-    <h2 id="energizantes" style="margin:55px 0 20px;">
+    <h3
+        class="category-title"
+        id="energizantes"
+    >
         ENERGIZANTES
-    </h2>
+    </h3>
+
 
     <div class="products">
 
-        <div class="product">
 
-            <div class="product-media">
-
-                <img
-                    src="./speed-250.png"
-                    alt="Speed 250"
-                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-                >
-
-                <div class="image-fallback">⚡</div>
-
-            </div>
-
-            <div class="product-info">
-
-                <div class="product-name">
-                    SPEED 250
-                </div>
-
-                <div class="price">
-                    $2.000
-                </div>
-
-                <button class="order-button"
-                    onclick="pedir('SPEED 250')">
-                    💬 PEDIR POR WHATSAPP
-                </button>
-
-            </div>
-
-        </div>
-
+        <!-- SPEED XL -->
 
         <div class="product">
 
-            <div class="product-media">
+            <div class="product-image">
 
                 <img
                     src="./speed-xl.png"
                     alt="Speed XL"
-                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
                 >
 
-                <div class="image-fallback">⚡</div>
-
             </div>
+
 
             <div class="product-info">
 
@@ -1344,8 +1420,10 @@ footer strong{
                     $3.000
                 </div>
 
-                <button class="order-button"
-                    onclick="pedir('SPEED XL')">
+                <button
+                    class="order-button"
+                    onclick="pedir('SPEED XL')"
+                >
                     💬 PEDIR POR WHATSAPP
                 </button>
 
@@ -1354,19 +1432,19 @@ footer strong{
         </div>
 
 
+        <!-- MONSTER -->
+
         <div class="product">
 
-            <div class="product-media">
+            <div class="product-image">
 
                 <img
                     src="./monster.png"
                     alt="Monster"
-                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
                 >
 
-                <div class="image-fallback">⚡</div>
-
             </div>
+
 
             <div class="product-info">
 
@@ -1378,8 +1456,10 @@ footer strong{
                     $3.500
                 </div>
 
-                <button class="order-button"
-                    onclick="pedir('MONSTER')">
+                <button
+                    class="order-button"
+                    onclick="pedir('MONSTER')"
+                >
                     💬 PEDIR POR WHATSAPP
                 </button>
 
@@ -1387,47 +1467,35 @@ footer strong{
 
         </div>
 
-    </div>
 
-
-    <!-- VINOS -->
-
-    <h2 id="vinos" style="margin:55px 0 20px;">
-        VINOS
-    </h2>
-
-    <p style="color:#aaa;margin-bottom:20px;">
-        Selección de vinos BRIX
-    </p>
-
-    <div class="products">
+        <!-- MONSTER MANGO -->
 
         <div class="product">
 
-            <div class="product-media">
+            <div class="product-image">
 
                 <img
-                    src="./toro.png"
-                    alt="Toro"
-                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                    src="./monster-mango.png"
+                    alt="Monster Mango Loco"
                 >
 
-                <div class="image-fallback">🍷</div>
-
             </div>
+
 
             <div class="product-info">
 
                 <div class="product-name">
-                    TORO
+                    MONSTER MANGO LOCO
                 </div>
 
                 <div class="price consultar">
                     CONSULTAR
                 </div>
 
-                <button class="order-button"
-                    onclick="pedir('TORO')">
+                <button
+                    class="order-button"
+                    onclick="pedir('MONSTER MANGO LOCO')"
+                >
                     💬 PEDIR POR WHATSAPP
                 </button>
 
@@ -1436,19 +1504,109 @@ footer strong{
         </div>
 
 
+    </div>
+
+
+    <!-- =====================
+         VINOS
+    ====================== -->
+
+    <h3
+        class="category-title"
+        id="vinos"
+    >
+        VINOS
+    </h3>
+
+
+    <div class="products">
+
+
+        <!-- TORO BLANCO -->
+
         <div class="product">
 
-            <div class="product-media">
+            <div class="product-image">
+
+                <img
+                    src="./toro-blanco.png"
+                    alt="Toro Blanco"
+                >
+
+            </div>
+
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    TORO BLANCO
+                </div>
+
+                <div class="price consultar">
+                    CONSULTAR
+                </div>
+
+                <button
+                    class="order-button"
+                    onclick="pedir('TORO BLANCO')"
+                >
+                    💬 PEDIR POR WHATSAPP
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- TORO TINTO -->
+
+        <div class="product">
+
+            <div class="product-image">
+
+                <img
+                    src="./toro-tinto.png"
+                    alt="Toro Tinto"
+                >
+
+            </div>
+
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    TORO TINTO
+                </div>
+
+                <div class="price consultar">
+                    CONSULTAR
+                </div>
+
+                <button
+                    class="order-button"
+                    onclick="pedir('TORO TINTO')"
+                >
+                    💬 PEDIR POR WHATSAPP
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- BALBO -->
+
+        <div class="product">
+
+            <div class="product-image">
 
                 <img
                     src="./balbo.png"
                     alt="Balbo"
-                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
                 >
 
-                <div class="image-fallback">🍷</div>
-
             </div>
+
 
             <div class="product-info">
 
@@ -1460,8 +1618,10 @@ footer strong{
                     CONSULTAR
                 </div>
 
-                <button class="order-button"
-                    onclick="pedir('BALBO')">
+                <button
+                    class="order-button"
+                    onclick="pedir('BALBO')"
+                >
                     💬 PEDIR POR WHATSAPP
                 </button>
 
@@ -1469,7 +1629,9 @@ footer strong{
 
         </div>
 
+
     </div>
+
 
 </div>
 
@@ -1477,20 +1639,26 @@ footer strong{
 
 
 <!-- =========================
-     BANNER PROMOCIONES
+     PROMOCIONES
 ========================= -->
 
-<section class="section" id="promociones">
+<section
+    class="section"
+    id="promociones"
+>
 
 <div class="container">
 
-    <div class="promo-box">
 
-        <div class="promo-left">
+    <div class="promo-highlight">
+
+
+        <div class="promo-highlight-left">
 
             <div class="promo-icon">
                 🏷️
             </div>
+
 
             <div>
 
@@ -1506,14 +1674,17 @@ footer strong{
 
         </div>
 
+
         <button
             class="promo-button"
-            onclick="document.getElementById('promo-lista').scrollIntoView({behavior:'smooth'})"
+            onclick="document.getElementById('lista-promos').scrollIntoView({behavior:'smooth'})"
         >
             VER PROMOCIONES →
         </button>
 
+
     </div>
+
 
 </div>
 
@@ -1521,12 +1692,16 @@ footer strong{
 
 
 <!-- =========================
-     LISTA PROMOCIONES
+     LISTA DE PROMOCIONES
 ========================= -->
 
-<section class="section" id="promo-lista">
+<section
+    class="section"
+    id="lista-promos"
+>
 
 <div class="container">
+
 
     <h2 class="section-title">
         PROMOCIONES
@@ -1535,6 +1710,8 @@ footer strong{
 
     <div class="promo-grid">
 
+
+        <!-- SMIRNOFF + SPEED -->
 
         <div class="promo-card">
 
@@ -1546,13 +1723,17 @@ footer strong{
                 $15.500
             </div>
 
-            <button class="order-button"
-                onclick="pedir('PROMO SMIRNOFF + 2 SPEED')">
+            <button
+                class="order-button"
+                onclick="pedir('PROMO SMIRNOFF + 2 SPEED')"
+            >
                 💬 PEDIR POR WHATSAPP
             </button>
 
         </div>
 
+
+        <!-- 2 SMIRNOFF -->
 
         <div class="promo-card">
 
@@ -1564,13 +1745,17 @@ footer strong{
                 $29.500
             </div>
 
-            <button class="order-button"
-                onclick="pedir('2 PROMO SMIRNOFF')">
+            <button
+                class="order-button"
+                onclick="pedir('2 PROMO SMIRNOFF')"
+            >
                 💬 PEDIR POR WHATSAPP
             </button>
 
         </div>
 
+
+        <!-- 3 SKYY -->
 
         <div class="promo-card">
 
@@ -1582,67 +1767,61 @@ footer strong{
                 $43.500
             </div>
 
-            <button class="order-button"
-                onclick="pedir('3 PROMO SKYY')">
+            <button
+                class="order-button"
+                onclick="pedir('3 PROMO SKYY')"
+            >
                 💬 PEDIR POR WHATSAPP
             </button>
 
         </div>
 
 
-        <div class="promo-card">
-
-            <h3>
-                2 PROMO ABSOLUT
-            </h3>
-
-            <div class="promo-price">
-                $59.000
-            </div>
-
-            <button class="order-button"
-                onclick="pedir('2 PROMO ABSOLUT')">
-                💬 PEDIR POR WHATSAPP
-            </button>
-
-        </div>
-
+        <!-- BRANCA + HIELO -->
 
         <div class="promo-card">
 
             <h3>
-                BRANCA 750 + HIELO
+                PROMO BRANCA 750 CON HIELO
             </h3>
 
             <div class="promo-price">
                 $25.000
             </div>
 
-            <button class="order-button"
-                onclick="pedir('PROMO BRANCA 750 CON HIELO')">
+            <button
+                class="order-button"
+                onclick="pedir('PROMO BRANCA 750 CON HIELO')"
+            >
                 💬 PEDIR POR WHATSAPP
             </button>
 
         </div>
 
 
+        <!-- BRANCA + COCA -->
+
         <div class="promo-card">
 
             <h3>
-                BRANCA + 2 COCA 2,5L + HIELO
+                BRANCA 750 + 2 COCA COLA 2,5L + HIELO
             </h3>
 
             <div class="promo-price">
                 $30.000
             </div>
 
-            <button class="order-button"
-                onclick="pedir('PROMO BRANCA 750 + 2 COCA COLA 2,5L + HIELO')">
+            <button
+                class="order-button"
+                onclick="pedir('PROMO BRANCA 750 + 2 COCA COLA 2,5L + HIELO')"
+            >
                 💬 PEDIR POR WHATSAPP
             </button>
 
         </div>
 
+
+        <!-- 2 FERNET -->
 
         <div class="promo-card">
 
@@ -1654,31 +1833,17 @@ footer strong{
                 $48.000
             </div>
 
-            <button class="order-button"
-                onclick="pedir('2 PROMO FERNET 750')">
+            <button
+                class="order-button"
+                onclick="pedir('2 PROMO FERNET 750')"
+            >
                 💬 PEDIR POR WHATSAPP
             </button>
 
         </div>
 
 
-        <div class="promo-card">
-
-            <h3>
-                FERNET 180° + COCA 2,5L
-            </h3>
-
-            <div class="promo-price">
-                $24.000
-            </div>
-
-            <button class="order-button"
-                onclick="pedir('FERNET 180° + COCA COLA 2,5L')">
-                💬 PEDIR POR WHATSAPP
-            </button>
-
-        </div>
-
+        <!-- SKYY + SMIRNOFF -->
 
         <div class="promo-card">
 
@@ -1690,66 +1855,37 @@ footer strong{
                 $29.000
             </div>
 
-            <button class="order-button"
-                onclick="pedir('SKYY + SMIRNOFF + 4 SPEED')">
+            <button
+                class="order-button"
+                onclick="pedir('SKYY + SMIRNOFF + 4 SPEED')"
+            >
                 💬 PEDIR POR WHATSAPP
             </button>
 
         </div>
 
+
+        <!-- BRANCA + PROMO -->
 
         <div class="promo-card">
 
             <h3>
-                ABSOLUT + SKYY + 4 SPEED XL
+                PROMO BRANCA + PROMO
             </h3>
 
             <div class="promo-price">
-                $45.000
+                $38.500
             </div>
 
-            <button class="order-button"
-                onclick="pedir('ABSOLUT + SKYY + 4 SPEED XL')">
+            <button
+                class="order-button"
+                onclick="pedir('PROMO BRANCA + PROMO')"
+            >
                 💬 PEDIR POR WHATSAPP
             </button>
 
         </div>
 
-
-        <div class="promo-card">
-
-            <h3>
-                ABSOLUT + 2 SKYY + 9 SPEED
-            </h3>
-
-            <div class="promo-price">
-                $68.000
-            </div>
-
-            <button class="order-button"
-                onclick="pedir('ABSOLUT + 2 SKYY + 9 SPEED')">
-                💬 PEDIR POR WHATSAPP
-            </button>
-
-        </div>
-
-
-        <div class="promo-card">
-
-            <h3>
-                JAGER + ABSOLUT
-            </h3>
-
-            <div class="promo-price">
-                $73.500
-            </div>
-
-            <button class="order-button"
-                onclick="pedir('JAGER + ABSOLUT')">
-                💬 PEDIR POR WHATSAPP
-            </button>
-
-        </div>
 
     </div>
 
@@ -1764,15 +1900,19 @@ footer strong{
 
 <section class="contact">
 
+
     <h2>
         ¿QUERÉS HACER TU PEDIDO?
     </h2>
+
 
     <p>
         Escribinos por WhatsApp y te ayudamos.
     </p>
 
+
     <div class="contact-buttons">
+
 
         <a
             class="contact-button"
@@ -1782,6 +1922,7 @@ footer strong{
             💬 WHATSAPP
         </a>
 
+
         <a
             class="contact-button instagram"
             href="https://instagram.com/brix_bebidas"
@@ -1790,7 +1931,9 @@ footer strong{
             📷 INSTAGRAM
         </a>
 
+
     </div>
+
 
 </section>
 
@@ -1801,7 +1944,11 @@ footer strong{
 
 <footer>
 
-    <strong>BRIX</strong> — Tu momento, tu bebida.
+    <strong>
+        BRIX
+    </strong>
+
+    — Tu momento, tu bebida.
 
     <br><br>
 
@@ -1831,11 +1978,13 @@ function pedir(producto){
         "?text=" +
         encodeURIComponent(mensaje);
 
-    window.open(url, "_blank");
+    window.open(url,"_blank");
 
 }
 
 </script>
 
+
 </body>
+
 </html>
