@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050505">
 
-<title>BRIX — Tu momento, tu bebida</title>
+<title>BRIX — Tu momento, tu bebida.</title>
 
 <style>
 
@@ -19,413 +20,1008 @@ html{
 }
 
 body{
-  font-family:Arial,Helvetica,sans-serif;
+  font-family:Arial, Helvetica, sans-serif;
   background:#050505;
-  color:white;
+  color:#fff;
+  overflow-x:hidden;
 }
 
-/* HEADER */
+/* =========================
+   COLORES
+========================= */
+
+:root{
+  --green:#baff00;
+  --dark:#050505;
+  --card:#0b0b0b;
+  --border:#292929;
+  --gray:#a9a9a9;
+}
+
+/* =========================
+   HEADER
+========================= */
 
 header{
   position:sticky;
   top:0;
   z-index:1000;
-  background:#050505;
+  background:rgba(5,5,5,.96);
+  backdrop-filter:blur(12px);
   border-bottom:1px solid #252525;
-  padding:16px 20px 12px;
 }
 
 .header-top{
+  width:100%;
+  max-width:1200px;
+  margin:auto;
+  min-height:110px;
+  padding:18px 25px;
+
   display:flex;
-  justify-content:space-between;
   align-items:center;
+  justify-content:space-between;
+  gap:25px;
 }
 
 .logo{
-  font-size:48px;
-  font-weight:900;
-  font-style:italic;
-  letter-spacing:-5px;
+  width:150px;
+  height:auto;
+  object-fit:contain;
 }
 
-.logo span{
-  color:#baff00;
-}
+/* BOTÓN WHATSAPP SUPERIOR */
 
-.whatsapp-top{
-  color:white;
+.top-whatsapp{
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  padding:13px 22px;
+
+  border:2px solid var(--green);
+  border-radius:18px;
+
+  color:#fff;
   text-decoration:none;
-  font-weight:800;
-  display:flex;
-  align-items:center;
-  gap:9px;
-  font-size:15px;
+
+  font-weight:900;
+  font-size:17px;
+
+  transition:.25s ease;
 }
 
-.whatsapp-circle{
-  width:34px;
-  height:34px;
-  border:2px solid #baff00;
-  border-radius:50%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  color:#baff00;
+.top-whatsapp:hover{
+  transform:translateY(-2px);
+  box-shadow:0 0 22px rgba(186,255,0,.18);
 }
+
+.top-whatsapp-icon{
+  width:42px;
+  height:42px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  background:#25d366;
+  color:white;
+
+  font-size:28px;
+  font-weight:bold;
+
+  box-shadow:
+    0 0 0 3px #080808,
+    0 0 0 5px var(--green);
+}
+
+/* NAVEGACIÓN */
 
 nav{
+  max-width:900px;
+  margin:auto;
+
   display:flex;
   justify-content:center;
-  gap:45px;
-  margin-top:12px;
+  gap:80px;
+
+  padding:0 20px 20px;
 }
 
 nav a{
   color:white;
   text-decoration:none;
-  font-size:20px;
+
+  font-size:21px;
   font-weight:900;
+
+  transition:.2s;
 }
 
+nav a:hover{
+  color:var(--green);
+}
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero{
-  padding:18px;
+  width:100%;
+  min-height:430px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:60px 20px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(186,255,0,.08),
+      transparent 45%
+    );
 }
 
 .hero img{
   width:100%;
-  max-height:520px;
-  object-fit:cover;
-  border-radius:20px;
-  display:block;
+  max-width:1100px;
+  max-height:500px;
+
+  object-fit:contain;
+
+  border-radius:25px;
 }
 
+/* =========================
+   INTRO
+========================= */
 
-/* BENEFICIOS */
+.intro{
+  max-width:900px;
+  margin:40px auto 80px;
 
-.benefits{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:15px;
-  padding:20px;
-}
+  padding:0 20px;
 
-.benefit{
-  background:#0b0b0b;
-  border:1px solid #292929;
-  border-radius:15px;
-  padding:18px;
   text-align:center;
 }
 
-.benefit strong{
-  display:block;
-  color:#baff00;
-  margin-bottom:6px;
+.intro h1{
+  font-size:clamp(36px,6vw,65px);
+  font-weight:900;
+  line-height:1;
 }
 
-.benefit span{
-  color:#bbb;
-  font-size:13px;
+.intro h1 span{
+  color:var(--green);
 }
 
+.intro p{
+  margin-top:22px;
 
-/* CONTENEDOR */
+  color:var(--gray);
 
-.container{
+  font-size:20px;
+  line-height:1.5;
+}
+
+/* =========================
+   CATEGORÍAS
+========================= */
+
+.categories{
+  max-width:1200px;
+  margin:auto;
+
+  padding:0 20px 70px;
+}
+
+.section-title{
+  text-align:center;
+
+  font-size:38px;
+  font-weight:900;
+
+  margin-bottom:35px;
+}
+
+.section-title span{
+  color:var(--green);
+}
+
+.category-buttons{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.category-buttons button{
+  border:1px solid #3b3b3b;
+  background:#0b0b0b;
+  color:white;
+
+  padding:13px 23px;
+
+  border-radius:30px;
+
+  font-size:15px;
+  font-weight:800;
+
+  cursor:pointer;
+
+  transition:.2s;
+}
+
+.category-buttons button:hover,
+.category-buttons button.active{
+  background:var(--green);
+  color:#000;
+  border-color:var(--green);
+}
+
+/* =========================
+   PRODUCTOS
+========================= */
+
+.catalog{
+  max-width:1200px;
+  margin:auto;
+
   padding:20px;
 }
 
-
-/* CATEGORIAS */
-
-.category{
-  margin:55px 0;
+.category-section{
+  margin-bottom:80px;
 }
 
 .category-title{
-  font-size:38px;
-  font-weight:900;
+  display:flex;
+  align-items:center;
+  gap:15px;
+
   margin-bottom:30px;
+
+  font-size:30px;
+  font-weight:900;
 }
 
 .category-title::after{
   content:"";
-  display:block;
-  width:65px;
-  height:5px;
-  background:#baff00;
-  margin-top:12px;
+  height:2px;
+  flex:1;
+
+  background:var(--green);
+
+  opacity:.45;
 }
-
-
-/* PRODUCTOS */
 
 .products{
   display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:22px;
+  grid-template-columns:repeat(2,1fr);
+  gap:25px;
 }
 
-.card{
-  background:#111;
-  border:2px solid #292929;
-  border-radius:24px;
-  overflow:hidden;
+.product{
+  background:var(--card);
+
+  border:1px solid var(--border);
+
+  border-radius:25px;
+
+  padding:25px;
+
+  text-align:center;
+
+  transition:.25s ease;
+}
+
+.product:hover{
+  transform:translateY(-5px);
+
+  border-color:var(--green);
+
+  box-shadow:0 0 25px rgba(186,255,0,.08);
 }
 
 .product-image{
-  height:365px;
-  background:#050505;
+  width:100%;
+  height:300px;
+
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:15px;
+
+  margin-bottom:20px;
 }
 
 .product-image img{
   width:auto;
   height:auto;
+
   max-width:100%;
-  max-height:335px;
+  max-height:285px;
+
   object-fit:contain;
-  display:block;
 }
 
-.card-info{
-  background:#111;
-  padding:25px 16px 20px;
-  text-align:center;
-}
+.product h3{
+  font-size:22px;
+  font-weight:900;
 
-.card h3{
-  font-size:20px;
-  margin-bottom:18px;
+  margin-bottom:10px;
 }
 
 .price{
-  color:#baff00;
-  font-size:27px;
+  color:var(--green);
+
+  font-size:24px;
   font-weight:900;
-  margin-bottom:22px;
+
+  margin-bottom:18px;
 }
 
-.order-btn{
-  display:block;
-  width:100%;
-  border:2px solid #baff00;
-  border-radius:15px;
-  padding:15px 8px;
-  color:white;
-  background:#090909;
+.order-button{
+  display:inline-block;
+
+  padding:12px 22px;
+
+  border:1px solid var(--green);
+  border-radius:14px;
+
+  color:var(--green);
   text-decoration:none;
-  font-size:15px;
+
   font-weight:900;
+
+  transition:.2s;
 }
 
+.order-button:hover{
+  background:var(--green);
+  color:#000;
+}
 
-/* PROMOCIONES */
+/* =========================
+   PROMOCIONES
+========================= */
 
-.promos{
+.promotions{
+  max-width:1200px;
+  margin:80px auto;
+
+  padding:0 20px;
+}
+
+.promos-grid{
   display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:22px;
+
+  grid-template-columns:repeat(2,1fr);
+
+  gap:25px;
 }
 
 .promo{
-  background:#111;
-  border:2px solid #292929;
-  border-radius:22px;
+  background:#090909;
+
+  border:1px solid #292929;
+
+  border-radius:25px;
+
   overflow:hidden;
+
+  transition:.25s ease;
+}
+
+.promo:hover{
+  border-color:var(--green);
+
+  transform:translateY(-4px);
 }
 
 .promo-image{
   width:100%;
-  height:330px;
-  background:#050505;
+  height:350px;
+
   display:flex;
-  justify-content:center;
   align-items:center;
-  padding:10px;
+  justify-content:center;
+
+  background:#050505;
+
+  padding:15px;
 }
 
 .promo-image img{
   width:100%;
   height:100%;
+
   object-fit:contain;
-  display:block;
 }
 
 .promo-info{
   padding:22px;
+
   text-align:center;
 }
 
-.promo h3{
-  font-size:20px;
-  margin-bottom:15px;
-}
-
-
-/* CONTACTO */
-
-.contact{
-  margin:70px 20px 40px;
-  padding:35px 20px;
-  background:#0b0b0b;
-  border:1px solid #292929;
-  border-radius:25px;
-  text-align:center;
-}
-
-.contact h2{
-  font-size:32px;
-  margin-bottom:12px;
-}
-
-.contact p{
-  color:#bbb;
-  margin-bottom:25px;
-}
-
-.contact-buttons{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:15px;
-}
-
-.contact-buttons a{
-  color:white;
-  text-decoration:none;
-  border:2px solid #baff00;
-  padding:14px 22px;
-  border-radius:14px;
+.promo-info h3{
+  font-size:21px;
   font-weight:900;
+
+  margin-bottom:10px;
 }
 
+.promo-price{
+  color:var(--green);
 
-/* FOOTER */
+  font-size:27px;
+  font-weight:900;
+
+  margin-bottom:18px;
+}
+
+/* =========================
+   CONTACTO
+========================= */
+
+.contact-section{
+  width:100%;
+  max-width:900px;
+
+  margin:90px auto 0;
+
+  padding:0 20px 70px;
+}
+
+/* TARJETA PEDIDO */
+
+.contact-card{
+  background:#090909;
+
+  border:1px solid #292929;
+
+  border-radius:32px;
+
+  padding:65px 35px 55px;
+
+  text-align:center;
+}
+
+.contact-card h2{
+  color:#fff;
+
+  font-size:clamp(38px,6vw,64px);
+
+  line-height:1.05;
+
+  font-weight:900;
+
+  letter-spacing:-1px;
+}
+
+.contact-subtitle{
+  margin:32px auto 45px;
+
+  color:#bdbdbd;
+
+  font-size:clamp(18px,3vw,25px);
+
+  line-height:1.5;
+}
+
+/* WHATSAPP */
+
+.contact-whatsapp{
+  position:relative;
+
+  display:flex;
+  align-items:center;
+
+  width:100%;
+  max-width:650px;
+
+  min-height:145px;
+
+  margin:auto;
+
+  padding:22px 30px;
+
+  border:2px solid var(--green);
+
+  border-radius:25px;
+
+  background:#080808;
+
+  color:white;
+
+  text-decoration:none;
+
+  transition:.25s ease;
+}
+
+.contact-whatsapp:hover{
+  transform:translateY(-3px);
+
+  box-shadow:0 0 25px rgba(186,255,0,.18);
+}
+
+/* LOGO WHATSAPP */
+
+.whatsapp-logo{
+  width:75px;
+  height:75px;
+
+  min-width:75px;
+
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:#25d366;
+
+  color:white;
+
+  font-size:46px;
+  font-weight:bold;
+
+  box-shadow:
+    0 0 0 5px #090909,
+    0 0 0 7px var(--green),
+    0 0 22px rgba(186,255,0,.35);
+}
+
+.app-info{
+  flex:1;
+
+  text-align:left;
+
+  padding-left:25px;
+}
+
+.app-info strong{
+  display:block;
+
+  color:var(--green);
+
+  font-size:24px;
+  font-weight:900;
+
+  margin-bottom:8px;
+}
+
+.app-info small{
+  display:block;
+
+  color:#ddd;
+
+  font-size:17px;
+
+  line-height:1.4;
+}
+
+.app-arrow{
+  color:var(--green);
+
+  font-size:48px;
+
+  line-height:1;
+
+  margin-left:15px;
+}
+
+/* SEPARADOR */
+
+.social-divider{
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  gap:25px;
+
+  margin:40px auto;
+
+  max-width:650px;
+}
+
+.social-divider span{
+  height:2px;
+
+  flex:1;
+
+  background:var(--green);
+
+  opacity:.7;
+}
+
+.social-divider b{
+  color:var(--green);
+
+  font-size:34px;
+
+  font-weight:400;
+}
+
+/* INSTAGRAM */
+
+.instagram-card{
+  position:relative;
+
+  display:flex;
+  align-items:center;
+
+  width:100%;
+  max-width:750px;
+
+  min-height:145px;
+
+  margin:auto;
+
+  padding:22px 30px;
+
+  background:#090909;
+
+  border:2px solid var(--green);
+
+  border-radius:25px;
+
+  color:white;
+
+  text-decoration:none;
+
+  transition:.25s ease;
+
+  box-shadow:0 0 18px rgba(186,255,0,.08);
+}
+
+.instagram-card:hover{
+  transform:translateY(-3px);
+
+  box-shadow:0 0 28px rgba(186,255,0,.18);
+}
+
+/* LOGO INSTAGRAM */
+
+.instagram-icon{
+  width:78px;
+  height:78px;
+
+  min-width:78px;
+
+  border-radius:22px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border:3px solid var(--green);
+
+  color:var(--green);
+
+  font-size:63px;
+
+  line-height:1;
+
+  box-shadow:
+    0 0 0 4px #090909,
+    0 0 15px rgba(186,255,0,.22);
+
+  position:relative;
+}
+
+.instagram-icon::after{
+  content:"♥";
+
+  position:absolute;
+
+  right:-12px;
+  top:-14px;
+
+  color:var(--green);
+
+  font-size:20px;
+}
+
+.instagram-info{
+  flex:1;
+
+  text-align:left;
+
+  padding-left:25px;
+}
+
+.instagram-info strong{
+  display:block;
+
+  color:#fff;
+
+  font-size:22px;
+
+  font-weight:900;
+
+  margin-bottom:7px;
+}
+
+.instagram-info b{
+  display:block;
+
+  color:var(--green);
+
+  font-size:23px;
+
+  font-weight:800;
+
+  margin-bottom:7px;
+}
+
+.instagram-info small{
+  display:block;
+
+  color:#aaa;
+
+  font-size:16px;
+}
+
+.instagram-arrow{
+  color:var(--green);
+
+  font-size:48px;
+
+  line-height:1;
+
+  margin-left:15px;
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-  border-top:1px solid #222;
-  padding:30px 20px;
+  border-top:1px solid #242424;
+
+  padding:55px 20px 70px;
+
   text-align:center;
+}
+
+.footer-brand{
+  font-size:24px;
+
+  color:#aaa;
+}
+
+.footer-brand strong{
+  color:var(--green);
+}
+
+.footer-address{
+  margin-top:20px;
+
   color:#888;
+
+  font-size:18px;
 }
 
-footer strong{
-  color:#baff00;
-}
-
-
-/* CELULAR */
+/* =========================
+   MÓVIL
+========================= */
 
 @media(max-width:700px){
 
-  .logo{
-    font-size:43px;
+  .header-top{
+    min-height:85px;
+
+    padding:15px;
+
+    gap:10px;
   }
 
-  .whatsapp-top{
+  .logo{
+    width:105px;
+  }
+
+  .top-whatsapp{
+    padding:9px 12px;
+
+    border-radius:15px;
+
     font-size:13px;
+
+    gap:8px;
+  }
+
+  .top-whatsapp-icon{
+    width:32px;
+    height:32px;
+
+    font-size:21px;
   }
 
   nav{
-    gap:35px;
-  }
+    gap:45px;
 
-  nav a{
-    font-size:18px;
-  }
-
-  .benefits{
-    grid-template-columns:1fr;
-  }
-
-  .hero{
-    padding:10px;
-  }
-
-  .hero img{
-    max-height:350px;
-  }
-
-  .container{
-    padding:18px;
-  }
-
-  .products{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:18px;
-  }
-
-  .product-image{
-    height:330px;
-  }
-
-  .product-image img{
-    max-height:300px;
-  }
-
-  .promos{
-    grid-template-columns:1fr;
-  }
-
-  .promo-image{
-    height:330px;
-  }
-
-}
-
-@media(max-width:430px){
-
-  .logo{
-    font-size:39px;
-  }
-
-  .whatsapp-top{
-    font-size:12px;
-  }
-
-  nav{
-    gap:25px;
+    padding-bottom:16px;
   }
 
   nav a{
     font-size:17px;
   }
 
+  .hero{
+    min-height:240px;
+
+    padding:30px 15px;
+  }
+
+  .intro{
+    margin:30px auto 55px;
+  }
+
+  .intro p{
+    font-size:17px;
+  }
+
+  .section-title{
+    font-size:30px;
+  }
+
+  .category-buttons{
+    gap:8px;
+  }
+
+  .category-buttons button{
+    padding:10px 15px;
+
+    font-size:13px;
+  }
+
   .products{
-    gap:14px;
+    grid-template-columns:1fr;
+
+    gap:18px;
+  }
+
+  .category-title{
+    font-size:26px;
+  }
+
+  .product{
+    padding:20px;
   }
 
   .product-image{
-    height:300px;
+    height:260px;
   }
 
-  .product-image img{
-    max-height:275px;
-  }
+  .promos-grid{
+    grid-template-columns:1fr;
 
-  .card h3{
-    font-size:16px;
-  }
-
-  .price{
-    font-size:22px;
-  }
-
-  .order-btn{
-    font-size:12px;
+    gap:20px;
   }
 
   .promo-image{
-    height:290px;
+    height:300px;
   }
 
+  /* CONTACTO */
+
+  .contact-section{
+    margin-top:55px;
+
+    padding:0 14px 55px;
+  }
+
+  .contact-card{
+    padding:48px 18px 40px;
+
+    border-radius:25px;
+  }
+
+  .contact-card h2{
+    font-size:39px;
+  }
+
+  .contact-subtitle{
+    font-size:18px;
+
+    margin:25px auto 35px;
+  }
+
+  .contact-whatsapp{
+    min-height:125px;
+
+    padding:18px;
+
+    border-radius:22px;
+  }
+
+  .whatsapp-logo{
+    width:62px;
+    height:62px;
+
+    min-width:62px;
+
+    font-size:38px;
+  }
+
+  .app-info{
+    padding-left:18px;
+  }
+
+  .app-info strong{
+    font-size:19px;
+  }
+
+  .app-info small{
+    font-size:14px;
+  }
+
+  .app-arrow{
+    font-size:38px;
+  }
+
+  .social-divider{
+    gap:15px;
+
+    margin:32px auto;
+  }
+
+  .instagram-card{
+    min-height:125px;
+
+    padding:18px;
+
+    border-radius:22px;
+  }
+
+  .instagram-icon{
+    width:60px;
+    height:60px;
+
+    min-width:60px;
+
+    border-radius:18px;
+
+    font-size:48px;
+  }
+
+  .instagram-info{
+    padding-left:17px;
+  }
+
+  .instagram-info strong{
+    font-size:16px;
+  }
+
+  .instagram-info b{
+    font-size:18px;
+  }
+
+  .instagram-info small{
+    font-size:13px;
+  }
+
+  .instagram-arrow{
+    font-size:36px;
+  }
+
+  footer{
+    padding:45px 15px 60px;
+  }
+
+  .footer-brand{
+    font-size:19px;
+  }
+
+  .footer-address{
+    font-size:15px;
+  }
 }
 
 </style>
@@ -435,170 +1031,236 @@ footer strong{
 <body>
 
 
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
 
-<div class="header-top">
+  <div class="header-top">
 
-<div class="logo">
-BRI<span>X</span>
-</div>
+    <!-- LOGO -->
+    <a href="#">
+      <img
+        src="banner-brix-final.png"
+        alt="BRIX"
+        class="logo"
+      >
+    </a>
 
-<a
-class="whatsapp-top"
-href="https://wa.me/5493512573455"
-target="_blank"
->
-<span class="whatsapp-circle">●</span>
-PEDÍ POR WHATSAPP
-</a>
+    <!-- WHATSAPP ARRIBA -->
+    <a
+      href="https://wa.me/5493512573455"
+      target="_blank"
+      class="top-whatsapp"
+    >
 
-</div>
+      <span class="top-whatsapp-icon">☏</span>
+
+      <span>
+        HACÉ UN PEDIDO
+      </span>
+
+    </a>
+
+  </div>
 
 
-<nav>
+  <nav>
 
-<a href="#catalogo">CATÁLOGO</a>
+    <a href="#catalogo">
+      CATÁLOGO
+    </a>
 
-<a href="#promociones">PROMOCIONES</a>
+    <a href="#promociones">
+      PROMOCIONES
+    </a>
 
-</nav>
+  </nav>
 
 </header>
 
 
 
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
 
-<img
-src="./banner-brix-final.png"
-alt="BRIX"
->
+  <img
+    src="banner-brix-final.png"
+    alt="BRIX Bebidas"
+  >
 
 </section>
 
 
 
-<section class="benefits">
+<!-- =========================
+     INTRO
+========================= -->
 
-<div class="benefit">
+<section class="intro">
 
-<strong>⚡ CALIDAD</strong>
+  <h1>
+    TU MOMENTO.<br>
+    <span>TU BEBIDA.</span>
+  </h1>
 
-<span>
-Las mejores bebidas
-</span>
-
-</div>
-
-
-<div class="benefit">
-
-<strong>💚 BRIX</strong>
-
-<span>
-Tu momento, tu bebida
-</span>
-
-</div>
-
-
-<div class="benefit">
-
-<strong>📲 WHATSAPP</strong>
-
-<span>
-Pedí fácil y rápido
-</span>
-
-</div>
+  <p>
+    Elegí tus bebidas favoritas,
+    descubrí nuestras promociones
+    y hacé tu pedido directamente por WhatsApp.
+  </p>
 
 </section>
 
 
 
-<main class="container" id="catalogo">
+<!-- =========================
+     CATEGORÍAS
+========================= -->
+
+<section class="categories">
+
+  <h2 class="section-title">
+    <span>BRIX</span> CATÁLOGO
+  </h2>
+
+  <div class="category-buttons">
+
+    <button
+      class="active"
+      onclick="scrollToCategory('vodka')"
+    >
+      VODKA
+    </button>
+
+    <button
+      onclick="scrollToCategory('fernet')"
+    >
+      FERNET
+    </button>
+
+    <button
+      onclick="scrollToCategory('gancia')"
+    >
+      GANCIA
+    </button>
+
+    <button
+      onclick="scrollToCategory('cerveza')"
+    >
+      CERVEZA
+    </button>
+
+    <button
+      onclick="scrollToCategory('gaseosas')"
+    >
+      GASEOSAS
+    </button>
+
+    <button
+      onclick="scrollToCategory('energizantes')"
+    >
+      ENERGIZANTES
+    </button>
+
+    <button
+      onclick="scrollToCategory('vinos')"
+    >
+      VINOS
+    </button>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     CATÁLOGO
+========================= -->
+
+<main class="catalog" id="catalogo">
 
 
 <!-- VODKA -->
 
-<section class="category">
-
-<h2 class="category-title">
-VODKA
-</h2>
-
-<div class="products">
-
-
-<div class="card">
-
-<div class="product-image">
-
-<img
-src="./smirnoff.png"
-alt="Smirnoff"
+<section
+  class="category-section"
+  id="vodka"
 >
 
-</div>
+  <h2 class="category-title">
+    VODKA
+  </h2>
 
-<div class="card-info">
-
-<h3>
-SMIRNOFF SABORIZADO
-</h3>
-
-<div class="price">
-$11.900
-</div>
-
-<a
-class="order-btn"
-href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20pedir%20SMIRNOFF%20SABORIZADO."
-target="_blank"
->
-💬 PEDIR POR WHATSAPP
-</a>
-
-</div>
-
-</div>
+  <div class="products">
 
 
+    <article class="product">
 
-<div class="card">
+      <div class="product-image">
 
-<div class="product-image">
+        <img
+          src="smirnoff.png"
+          alt="Smirnoff Saborizado"
+        >
 
-<img
-src="./skyy.png"
-alt="SKYY Infusions Raspberry"
->
+      </div>
 
-</div>
+      <h3>
+        SMIRNOFF SABORIZADO
+      </h3>
 
-<div class="card-info">
+      <div class="price">
+        $11.900
+      </div>
 
-<h3>
-SKYY INFUSIONS RASPBERRY
-</h3>
+      <a
+        class="order-button"
+        target="_blank"
+        href="https://wa.me/5493512573455?text=Hola%20BRIX,%20quiero%20consultar%20por%20Smirnoff%20Saborizado"
+      >
+        PEDIR POR WHATSAPP
+      </a>
 
-<div class="price">
-$14.500
-</div>
+    </article>
 
-<a
-class="order-btn"
-href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20pedir%20SKYY%20INFUSIONS%20RASPBERRY."
-target="_blank"
->
-💬 PEDIR POR WHATSAPP
-</a>
 
-</div>
+    <article class="product">
 
-</div>
+      <div class="product-image">
 
-</div>
+        <img
+          src="skyy.png"
+          alt="SKYY Infusions Raspberry"
+        >
+
+      </div>
+
+      <h3>
+        SKYY INFUSIONS RASPBERRY
+      </h3>
+
+      <div class="price">
+        $14.500
+      </div>
+
+      <a
+        class="order-button"
+        target="_blank"
+        href="https://wa.me/5493512573455?text=Hola%20BRIX,%20quiero%20consultar%20por%20SKYY%20Infusions%20Raspberry"
+      >
+        PEDIR POR WHATSAPP
+      </a>
+
+    </article>
+
+
+  </div>
 
 </section>
 
@@ -606,48 +1268,49 @@ target="_blank"
 
 <!-- FERNET -->
 
-<section class="category">
-
-<h2 class="category-title">
-FERNET
-</h2>
-
-<div class="products">
-
-<div class="card">
-
-<div class="product-image">
-
-<img
-src="./branca-750.png"
-alt="Fernet Branca"
+<section
+  class="category-section"
+  id="fernet"
 >
 
-</div>
+  <h2 class="category-title">
+    FERNET
+  </h2>
 
-<div class="card-info">
+  <div class="products">
 
-<h3>
-FERNET BRANCA 750
-</h3>
 
-<div class="price">
-$17.500
-</div>
+    <article class="product">
 
-<a
-class="order-btn"
-href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20pedir%20FERNET%20BRANCA%20750."
-target="_blank"
->
-💬 PEDIR POR WHATSAPP
-</a>
+      <div class="product-image">
 
-</div>
+        <img
+          src="branca-750.png"
+          alt="Fernet Branca 750"
+        >
 
-</div>
+      </div>
 
-</div>
+      <h3>
+        FERNET BRANCA 750 ML
+      </h3>
+
+      <div class="price">
+        $17.500
+      </div>
+
+      <a
+        class="order-button"
+        target="_blank"
+        href="https://wa.me/5493512573455?text=Hola%20BRIX,%20quiero%20consultar%20por%20Fernet%20Branca%20750"
+      >
+        PEDIR POR WHATSAPP
+      </a>
+
+    </article>
+
+
+  </div>
 
 </section>
 
@@ -655,48 +1318,49 @@ target="_blank"
 
 <!-- GANCIA -->
 
-<section class="category">
-
-<h2 class="category-title">
-GANCIA
-</h2>
-
-<div class="products">
-
-<div class="card">
-
-<div class="product-image">
-
-<img
-src="./gancia.png"
-alt="Gancia"
+<section
+  class="category-section"
+  id="gancia"
 >
 
-</div>
+  <h2 class="category-title">
+    GANCIA
+  </h2>
 
-<div class="card-info">
+  <div class="products">
 
-<h3>
-GANCIA
-</h3>
 
-<div class="price">
-CONSULTAR
-</div>
+    <article class="product">
 
-<a
-class="order-btn"
-href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20consultar%20por%20GANCIA."
-target="_blank"
->
-💬 PEDIR POR WHATSAPP
-</a>
+      <div class="product-image">
 
-</div>
+        <img
+          src="gancia.png"
+          alt="Gancia"
+        >
 
-</div>
+      </div>
 
-</div>
+      <h3>
+        GANCIA
+      </h3>
+
+      <div class="price">
+        CONSULTAR
+      </div>
+
+      <a
+        class="order-button"
+        target="_blank"
+        href="https://wa.me/5493512573455?text=Hola%20BRIX,%20quiero%20consultar%20por%20Gancia"
+      >
+        CONSULTAR
+      </a>
+
+    </article>
+
+
+  </div>
 
 </section>
 
@@ -704,47 +1368,48 @@ target="_blank"
 
 <!-- CERVEZA -->
 
-<section class="category">
-
-<h2 class="category-title">
-CERVEZA
-</h2>
-
-<div class="products">
-
-<div class="card">
-
-<div class="product-image">
-
-<div style="font-size:90px;">
-🍺
-</div>
-
-</div>
-
-<div class="card-info">
-
-<h3>
-CERVEZA
-</h3>
-
-<div class="price">
-CONSULTAR
-</div>
-
-<a
-class="order-btn"
-href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20consultar%20por%20CERVEZA."
-target="_blank"
+<section
+  class="category-section"
+  id="cerveza"
 >
-💬 PEDIR POR WHATSAPP
-</a>
 
-</div>
+  <h2 class="category-title">
+    CERVEZA
+  </h2>
 
-</div>
+  <div class="products">
 
-</div>
+
+    <article class="product">
+
+      <div class="product-image">
+
+        <div style="font-size:100px;">
+          🍺
+        </div>
+
+      </div>
+
+      <h3>
+        CERVEZA
+      </h3>
+
+      <div class="price">
+        CONSULTAR
+      </div>
+
+      <a
+        class="order-button"
+        target="_blank"
+        href="https://wa.me/5493512573455?text=Hola%20BRIX,%20quiero%20consultar%20por%20Cerveza"
+      >
+        CONSULTAR
+      </a>
+
+    </article>
+
+
+  </div>
 
 </section>
 
@@ -752,119 +1417,109 @@ target="_blank"
 
 <!-- GASEOSAS -->
 
-<section class="category">
-
-<h2 class="category-title">
-GASEOSAS
-</h2>
-
-<div class="products">
-
-
-<div class="card">
-
-<div class="product-image">
-
-<img
-src="./coca-cola.png"
-alt="Coca Cola"
+<section
+  class="category-section"
+  id="gaseosas"
 >
 
-</div>
+  <h2 class="category-title">
+    GASEOSAS
+  </h2>
 
-<div class="card-info">
-
-<h3>
-COCA COLA
-</h3>
-
-<div class="price">
-CONSULTAR
-</div>
-
-<a
-class="order-btn"
-href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20consultar%20por%20COCA%20COLA."
-target="_blank"
->
-💬 PEDIR POR WHATSAPP
-</a>
-
-</div>
-
-</div>
+  <div class="products">
 
 
+    <article class="product">
 
-<div class="card">
+      <div class="product-image">
 
-<div class="product-image">
+        <img
+          src="coca-cola.png"
+          alt="Coca Cola"
+        >
 
-<img
-src="./sprite.png"
-alt="Sprite"
->
+      </div>
 
-</div>
+      <h3>
+        COCA COLA
+      </h3>
 
-<div class="card-info">
+      <div class="price">
+        CONSULTAR
+      </div>
 
-<h3>
-SPRITE 2,25L
-</h3>
+      <a
+        class="order-button"
+        target="_blank"
+        href="https://wa.me/5493512573455?text=Hola%20BRIX,%20quiero%20consultar%20por%20Coca%20Cola"
+      >
+        CONSULTAR
+      </a>
 
-<div class="price">
-$5.000
-</div>
-
-<a
-class="order-btn"
-href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20pedir%20SPRITE%202%2C25L."
-target="_blank"
->
-💬 PEDIR POR WHATSAPP
-</a>
-
-</div>
-
-</div>
+    </article>
 
 
+    <article class="product">
 
-<div class="card">
+      <div class="product-image">
 
-<div class="product-image">
+        <img
+          src="sprite.png"
+          alt="Sprite 2,25L"
+        >
 
-<img
-src="./pritty.png"
-alt="Pritty"
->
+      </div>
 
-</div>
+      <h3>
+        SPRITE 2,25 L
+      </h3>
 
-<div class="card-info">
+      <div class="price">
+        $5.000
+      </div>
 
-<h3>
-PRITTY 2,25L
-</h3>
+      <a
+        class="order-button"
+        target="_blank"
+        href="https://wa.me/5493512573455?text=Hola%20BRIX,%20quiero%20consultar%20por%20Sprite%202,25L"
+      >
+        PEDIR POR WHATSAPP
+      </a>
 
-<div class="price">
-$3.000
-</div>
+    </article>
 
-<a
-class="order-btn"
-href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20pedir%20PRITTY%202%2C25L."
-target="_blank"
->
-💬 PEDIR POR WHATSAPP
-</a>
 
-</div>
+    <article class="product">
 
-</div>
+      <div class="product-image">
 
-</div>
+        <img
+          src="pritty.png"
+          alt="Pritty 2,25L"
+        >
+
+      </div>
+
+      <h3>
+        PRITTY 2,25 L
+      </h3>
+
+      <div class="price">
+        $3.000
+      </div>
+
+      <a
+        class="order-button"
+        target="_blank"
+        href="https://wa.me/5493512573455?text=Hola%20BRIX,%20quiero%20consultar%20por%20Pritty%202,25L"
+      >
+        PEDIR POR WHATSAPP
+      </a>
+
+    </article>
+
+
+  </div>
 
 </section>
 
@@ -872,119 +1527,109 @@ target="_blank"
 
 <!-- ENERGIZANTES -->
 
-<section class="category">
-
-<h2 class="category-title">
-ENERGIZANTES
-</h2>
-
-<div class="products">
-
-
-<div class="card">
-
-<div class="product-image">
-
-<img
-src="./speed-xl.png"
-alt="Speed XL"
+<section
+  class="category-section"
+  id="energizantes"
 >
 
-</div>
+  <h2 class="category-title">
+    ENERGIZANTES
+  </h2>
 
-<div class="card-info">
-
-<h3>
-SPEED XL
-</h3>
-
-<div class="price">
-$3.000
-</div>
-
-<a
-class="order-btn"
-href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20pedir%20SPEED%20XL."
-target="_blank"
->
-💬 PEDIR POR WHATSAPP
-</a>
-
-</div>
-
-</div>
+  <div class="products">
 
 
+    <article class="product">
 
-<div class="card">
+      <div class="product-image">
 
-<div class="product-image">
+        <img
+          src="speed-xl.png"
+          alt="Speed XL"
+        >
 
-<img
-src="./monster.png"
-alt="Monster"
->
+      </div>
 
-</div>
+      <h3>
+        SPEED XL
+      </h3>
 
-<div class="card-info">
+      <div class="price">
+        $3.000
+      </div>
 
-<h3>
-MONSTER
-</h3>
+      <a
+        class="order-button"
+        target="_blank"
+        href="https://wa.me/5493512573455?text=Hola%20BRIX,%20quiero%20consultar%20por%20Speed%20XL"
+      >
+        PEDIR POR WHATSAPP
+      </a>
 
-<div class="price">
-$3.500
-</div>
-
-<a
-class="order-btn"
-href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20pedir%20MONSTER."
-target="_blank"
->
-💬 PEDIR POR WHATSAPP
-</a>
-
-</div>
-
-</div>
+    </article>
 
 
+    <article class="product">
 
-<div class="card">
+      <div class="product-image">
 
-<div class="product-image">
+        <img
+          src="monster.png"
+          alt="Monster"
+        >
 
-<img
-src="./monster-mango.png"
-alt="Monster Mango Loco"
->
+      </div>
 
-</div>
+      <h3>
+        MONSTER
+      </h3>
 
-<div class="card-info">
+      <div class="price">
+        $3.500
+      </div>
 
-<h3>
-MONSTER MANGO LOCO
-</h3>
+      <a
+        class="order-button"
+        target="_blank"
+        href="https://wa.me/5493512573455?text=Hola%20BRIX,%20quiero%20consultar%20por%20Monster"
+      >
+        PEDIR POR WHATSAPP
+      </a>
 
-<div class="price">
-CONSULTAR
-</div>
+    </article>
 
-<a
-class="order-btn"
-href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20consultar%20por%20MONSTER%20MANGO%20LOCO."
-target="_blank"
->
-💬 PEDIR POR WHATSAPP
-</a>
 
-</div>
+    <article class="product">
 
-</div>
+      <div class="product-image">
 
-</div>
+        <img
+          src="monster-mango.png"
+          alt="Monster Mango Loco"
+        >
+
+      </div>
+
+      <h3>
+        MONSTER MANGO LOCO
+      </h3>
+
+      <div class="price">
+        CONSULTAR
+      </div>
+
+      <a
+        class="order-button"
+        target="_blank"
+        href="https://wa.me/5493512573455?text=Hola%20BRIX,%20quiero%20consultar%20por%20Monster%20Mango%20Loco"
+      >
+        CONSULTAR
+      </a>
+
+    </article>
+
+
+  </div>
 
 </section>
 
@@ -992,394 +1637,109 @@ target="_blank"
 
 <!-- VINOS -->
 
-<section class="category">
-
-<h2 class="category-title">
-VINOS
-</h2>
-
-<div class="products">
-
-
-<div class="card">
-
-<div class="product-image">
-
-<img
-src="./toro-blanco.png"
-alt="Toro Blanco"
+<section
+  class="category-section"
+  id="vinos"
 >
 
-</div>
+  <h2 class="category-title">
+    VINOS
+  </h2>
 
-<div class="card-info">
+  <div class="products">
 
-<h3>
-TORO BLANCO
-</h3>
 
-<div class="price">
-CONSULTAR
-</div>
+    <article class="product">
 
-<a
-class="order-btn"
-href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20consultar%20por%20TORO%20BLANCO."
-target="_blank"
->
-💬 PEDIR POR WHATSAPP
-</a>
+      <div class="product-image">
 
-</div>
+        <img
+          src="toro-blanco.png"
+          alt="Toro Blanco"
+        >
 
-</div>
+      </div>
 
+      <h3>
+        TORO BLANCO
+      </h3>
 
+      <div class="price">
+        CONSULTAR
+      </div>
 
-<div class="card">
+      <a
+        class="order-button"
+        target="_blank"
+        href="https://wa.me/5493512573455?text=Hola%20BRIX,%20quiero%20consultar%20por%20Toro%20Blanco"
+      >
+        CONSULTAR
+      </a>
 
-<div class="product-image">
+    </article>
 
-<img
-src="./toro-tinto.png"
-alt="Toro Tinto"
->
 
-</div>
+    <article class="product">
 
-<div class="card-info">
+      <div class="product-image">
 
-<h3>
-TORO TINTO
-</h3>
+        <img
+          src="toro-tinto.png"
+          alt="Toro Tinto"
+        >
 
-<div class="price">
-CONSULTAR
-</div>
+      </div>
 
-<a
-class="order-btn"
-href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20consultar%20por%20TORO%20TINTO."
-target="_blank"
->
-💬 PEDIR POR WHATSAPP
-</a>
+      <h3>
+        TORO TINTO
+      </h3>
 
-</div>
+      <div class="price">
+        CONSULTAR
+      </div>
 
-</div>
+      <a
+        class="order-button"
+        target="_blank"
+        href="https://wa.me/5493512573455?text=Hola%20BRIX,%20quiero%20consultar%20por%20Toro%20Tinto"
+      >
+        CONSULTAR
+      </a>
 
+    </article>
 
 
-<div class="card">
+    <article class="product">
 
-<div class="product-image">
+      <div class="product-image">
 
-<img
-src="./balbo.png"
-alt="Balbo"
->
+        <img
+          src="balbo.png"
+          alt="Balbo"
+        >
 
-</div>
+      </div>
 
-<div class="card-info">
+      <h3>
+        BALBO
+      </h3>
 
-<h3>
-BALBO
-</h3>
+      <div class="price">
+        CONSULTAR
+      </div>
 
-<div class="price">
-CONSULTAR
-</div>
+      <a
+        class="order-button"
+        target="_blank"
+        href="https://wa.me/5493512573455?text=Hola%20BRIX,%20quiero%20consultar%20por%20Balbo"
+      >
+        CONSULTAR
+      </a>
 
-<a
-class="order-btn"
-href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20consultar%20por%20BALBO."
-target="_blank"
->
-💬 PEDIR POR WHATSAPP
-</a>
+    </article>
 
-</div>
 
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- PROMOCIONES -->
-
-<section class="category" id="promociones">
-
-<h2 class="category-title">
-PROMOCIONES
-</h2>
-
-<div class="promos">
-
-
-<!-- PROMO 1 -->
-
-<div class="promo">
-
-<div class="promo-image">
-
-<img
-src="./promo-smirnoff-1-speed-2.png"
-alt="Smirnoff + 2 Speed XL"
->
-
-</div>
-
-<div class="promo-info">
-
-<h3>
-SMIRNOFF + 2 SPEED XL
-</h3>
-
-<div class="price">
-$16.000
-</div>
-
-<a
-class="order-btn"
-href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20la%20promo%20SMIRNOFF%20%2B%202%20SPEED%20XL."
-target="_blank"
->
-💬 PEDIR POR WHATSAPP
-</a>
-
-</div>
-
-</div>
-
-
-
-<!-- PROMO 2 -->
-
-<div class="promo">
-
-<div class="promo-image">
-
-<img
-src="./promo-smirnoff-2-speed-4.png"
-alt="2 Smirnoff + 4 Speed XL"
->
-
-</div>
-
-<div class="promo-info">
-
-<h3>
-2 SMIRNOFF + 4 SPEED XL
-</h3>
-
-<div class="price">
-$30.000
-</div>
-
-<a
-class="order-btn"
-href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20la%20promo%202%20SMIRNOFF%20%2B%204%20SPEED%20XL."
-target="_blank"
->
-💬 PEDIR POR WHATSAPP
-</a>
-
-</div>
-
-</div>
-
-
-
-<!-- PROMO 3 -->
-
-<div class="promo">
-
-<div class="promo-image">
-
-<img
-src="./promo-skyy-1-speed-2.png"
-alt="SKYY + 2 Speed XL"
->
-
-</div>
-
-<div class="promo-info">
-
-<h3>
-SKYY + 2 SPEED XL
-</h3>
-
-<div class="price">
-$16.000
-</div>
-
-<a
-class="order-btn"
-href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20la%20promo%20SKYY%20%2B%202%20SPEED%20XL."
-target="_blank"
->
-💬 PEDIR POR WHATSAPP
-</a>
-
-</div>
-
-</div>
-
-
-
-<!-- PROMO 4 -->
-
-<div class="promo">
-
-<div class="promo-image">
-
-<img
-src="./promo-skyy-2-speed-4.png"
-alt="2 SKYY + 4 Speed XL"
->
-
-</div>
-
-<div class="promo-info">
-
-<h3>
-2 SKYY + 4 SPEED XL
-</h3>
-
-<div class="price">
-$30.000
-</div>
-
-<a
-class="order-btn"
-href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20la%20promo%202%20SKYY%20%2B%204%20SPEED%20XL."
-target="_blank"
->
-💬 PEDIR POR WHATSAPP
-</a>
-
-</div>
-
-</div>
-
-
-
-<!-- PROMO 5 -->
-
-<div class="promo">
-
-<div class="promo-image">
-
-<img
-src="./promo-skyy-3-speed-6.png"
-alt="3 SKYY + 6 Speed XL"
->
-
-</div>
-
-<div class="promo-info">
-
-<h3>
-3 SKYY + 6 SPEED XL
-</h3>
-
-<div class="price">
-$45.000
-</div>
-
-<a
-class="order-btn"
-href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20la%20promo%203%20SKYY%20%2B%206%20SPEED%20XL."
-target="_blank"
->
-💬 PEDIR POR WHATSAPP
-</a>
-
-</div>
-
-</div>
-
-
-
-<!-- PROMO 6 -->
-
-<div class="promo">
-
-<div class="promo-image">
-
-<img
-src="./promo-fernet-2-coca-2.png"
-alt="2 Fernet + 2 Coca"
->
-
-</div>
-
-<div class="promo-info">
-
-<h3>
-2 PROMO FERNET 750
-</h3>
-
-<div class="price">
-$48.000
-</div>
-
-<a
-class="order-btn"
-href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20la%20promo%202%20PROMO%20FERNET%20750."
-target="_blank"
->
-💬 PEDIR POR WHATSAPP
-</a>
-
-</div>
-
-</div>
-
-
-
-<!-- PROMO 7 -->
-
-<div class="promo">
-
-<div class="promo-image">
-
-<img
-src="./promo-vodka-fernet-2-2.png"
-alt="2 Promo Vodka + 2 Promo Fernet"
->
-
-</div>
-
-<div class="promo-info">
-
-<h3>
-2 PROMO VODKA + 2 PROMO FERNET
-</h3>
-
-<div class="price">
-$77.000
-</div>
-
-<a
-class="order-btn"
-href="https://wa.me/5493512573455?text=Hola%20BRIX!%20Quiero%20la%20promo%202%20PROMO%20VODKA%20%2B%202%20PROMO%20FERNET."
-target="_blank"
->
-💬 PEDIR POR WHATSAPP
-</a>
-
-</div>
-
-</div>
-
-
-</div>
+  </div>
 
 </section>
 
@@ -1387,51 +1747,428 @@ target="_blank"
 
 
 
-<!-- CONTACTO -->
+<!-- =========================
+     PROMOCIONES
+========================= -->
 
-<section class="contact">
-
-<h2>
-¿QUERÉS HACER UN PEDIDO?
-</h2>
-
-<p>
-Escribinos directamente por WhatsApp o Instagram.
-</p>
-
-<div class="contact-buttons">
-
-<a
-href="https://wa.me/5493512573455"
-target="_blank"
+<section
+  class="promotions"
+  id="promociones"
 >
-📲 WHATSAPP
-</a>
 
-<a
-href="https://instagram.com/brix_bebidas"
-target="_blank"
->
-📸 INSTAGRAM
-</a>
+  <h2 class="section-title">
+    <span>PROMO</span> BRIX
+  </h2>
 
-</div>
+
+  <div class="promos-grid">
+
+
+    <!-- 1 -->
+    <article class="promo">
+
+      <div class="promo-image">
+
+        <img
+          src="promo-smirnoff-1-speed-2.png"
+          alt="Smirnoff más 2 Speed XL"
+        >
+
+      </div>
+
+      <div class="promo-info">
+
+        <h3>
+          SMIRNOFF + 2 SPEED XL
+        </h3>
+
+        <div class="promo-price">
+          $16.000
+        </div>
+
+        <a
+          class="order-button"
+          target="_blank"
+          href="https://wa.me/5493512573455?text=Hola%20BRIX,%20quiero%20la%20promo%20Smirnoff%20%2B%202%20Speed%20XL"
+        >
+          PEDIR PROMO
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <!-- 2 -->
+    <article class="promo">
+
+      <div class="promo-image">
+
+        <img
+          src="promo-smirnoff-2-speed-4.png"
+          alt="2 Smirnoff más 4 Speed XL"
+        >
+
+      </div>
+
+      <div class="promo-info">
+
+        <h3>
+          2 SMIRNOFF + 4 SPEED XL
+        </h3>
+
+        <div class="promo-price">
+          $30.000
+        </div>
+
+        <a
+          class="order-button"
+          target="_blank"
+          href="https://wa.me/5493512573455?text=Hola%20BRIX,%20quiero%20la%20promo%202%20Smirnoff%20%2B%204%20Speed%20XL"
+        >
+          PEDIR PROMO
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <!-- 3 -->
+    <article class="promo">
+
+      <div class="promo-image">
+
+        <img
+          src="promo-skyy-1-speed-2.png"
+          alt="SKYY más 2 Speed XL"
+        >
+
+      </div>
+
+      <div class="promo-info">
+
+        <h3>
+          SKYY + 2 SPEED XL
+        </h3>
+
+        <div class="promo-price">
+          $16.000
+        </div>
+
+        <a
+          class="order-button"
+          target="_blank"
+          href="https://wa.me/5493512573455?text=Hola%20BRIX,%20quiero%20la%20promo%20SKYY%20%2B%202%20Speed%20XL"
+        >
+          PEDIR PROMO
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <!-- 4 -->
+    <article class="promo">
+
+      <div class="promo-image">
+
+        <img
+          src="promo-skyy-2-speed-4.png"
+          alt="2 SKYY más 4 Speed XL"
+        >
+
+      </div>
+
+      <div class="promo-info">
+
+        <h3>
+          2 SKYY + 4 SPEED XL
+        </h3>
+
+        <div class="promo-price">
+          $30.000
+        </div>
+
+        <a
+          class="order-button"
+          target="_blank"
+          href="https://wa.me/5493512573455?text=Hola%20BRIX,%20quiero%20la%20promo%202%20SKYY%20%2B%204%20Speed%20XL"
+        >
+          PEDIR PROMO
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <!-- 5 -->
+    <article class="promo">
+
+      <div class="promo-image">
+
+        <img
+          src="promo-skyy-3-speed-6.png"
+          alt="3 SKYY más 6 Speed XL"
+        >
+
+      </div>
+
+      <div class="promo-info">
+
+        <h3>
+          3 SKYY + 6 SPEED XL
+        </h3>
+
+        <div class="promo-price">
+          $45.000
+        </div>
+
+        <a
+          class="order-button"
+          target="_blank"
+          href="https://wa.me/5493512573455?text=Hola%20BRIX,%20quiero%20la%20promo%203%20SKYY%20%2B%206%20Speed%20XL"
+        >
+          PEDIR PROMO
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <!-- 6 -->
+    <article class="promo">
+
+      <div class="promo-image">
+
+        <img
+          src="promo-fernet-2-coca-2.png"
+          alt="2 Fernet más 2 Coca Cola más hielo"
+        >
+
+      </div>
+
+      <div class="promo-info">
+
+        <h3>
+          2 PROMO FERNET 750
+        </h3>
+
+        <div class="promo-price">
+          $48.000
+        </div>
+
+        <a
+          class="order-button"
+          target="_blank"
+          href="https://wa.me/5493512573455?text=Hola%20BRIX,%20quiero%20la%20promo%202%20Fernet%20750"
+        >
+          PEDIR PROMO
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <!-- 7 -->
+    <article class="promo">
+
+      <div class="promo-image">
+
+        <img
+          src="promo-vodka-fernet-2-2.png"
+          alt="2 promociones de vodka más 2 promociones de Fernet"
+        >
+
+      </div>
+
+      <div class="promo-info">
+
+        <h3>
+          2 PROMO VODKA + 2 PROMO FERNET
+        </h3>
+
+        <div class="promo-price">
+          $77.000
+        </div>
+
+        <a
+          class="order-button"
+          target="_blank"
+          href="https://wa.me/5493512573455?text=Hola%20BRIX,%20quiero%20la%20promo%202%20Vodka%20%2B%202%20Fernet"
+        >
+          PEDIR PROMO
+        </a>
+
+      </div>
+
+    </article>
+
+
+  </div>
 
 </section>
 
 
 
+<!-- =========================
+     CONTACTO
+========================= -->
+
+<section
+  class="contact-section"
+  id="contacto"
+>
+
+
+  <!-- PEDIDOS -->
+
+  <div class="contact-card">
+
+    <h2>
+      ¿QUERÉS HACER<br>
+      UN PEDIDO?
+    </h2>
+
+    <p class="contact-subtitle">
+      Escribinos directamente por WhatsApp<br>
+      y te respondemos al instante.
+    </p>
+
+
+    <a
+      class="contact-whatsapp"
+      href="https://wa.me/5493512573455"
+      target="_blank"
+    >
+
+      <div class="whatsapp-logo">
+        ☏
+      </div>
+
+      <div class="app-info">
+
+        <strong>
+          HACÉ UN PEDIDO
+        </strong>
+
+        <small>
+          Escribinos directamente<br>
+          por WhatsApp
+        </small>
+
+      </div>
+
+      <div class="app-arrow">
+        ›
+      </div>
+
+    </a>
+
+  </div>
+
+
+  <!-- SEPARADOR -->
+
+  <div class="social-divider">
+
+    <span></span>
+
+    <b>♡</b>
+
+    <span></span>
+
+  </div>
+
+
+  <!-- INSTAGRAM -->
+
+  <a
+    class="instagram-card"
+    href="https://instagram.com/brix_bebidas"
+    target="_blank"
+  >
+
+    <div class="instagram-icon">
+      ◎
+    </div>
+
+    <div class="instagram-info">
+
+      <strong>
+        SEGUINOS EN INSTAGRAM
+      </strong>
+
+      <b>
+        @brix_bebidas
+      </b>
+
+      <small>
+        Novedades, promos y mucho más.
+      </small>
+
+    </div>
+
+    <div class="instagram-arrow">
+      ›
+    </div>
+
+  </a>
+
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
-<p>
-<strong>BRIX</strong> — Tu momento, tu bebida.
-</p>
+  <div class="footer-brand">
 
-<p style="margin-top:8px;">
-QUEBRADA DEL CONDORITO 3673
-</p>
+    <strong>BRIX</strong>
+    — Tu momento, tu bebida.
+
+  </div>
+
+  <div class="footer-address">
+
+    QUEBRADA DEL CONDORITO 3673
+
+  </div>
 
 </footer>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+function scrollToCategory(id){
+
+  const section = document.getElementById(id);
+
+  if(section){
+
+    section.scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
+
+  }
+
+}
+
+</script>
 
 
 </body>
