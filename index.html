@@ -1,767 +1,701 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<title>BRIX — Tu momento, tu bebida</title>
 
-<meta name="theme-color"
-content="#050505">
-
-<title>BRIX | Tu momento, tu bebida</title>
+<meta name="description" content="BRIX — Bebidas, promociones y pedidos por WhatsApp.">
 
 <style>
 
-/* =====================================================
-   BRIX
-   DISEÑO GENERAL
-===================================================== */
-
-:root{
-  --negro:#050505;
-  --negro2:#111111;
-  --blanco:#ffffff;
-  --gris:#999999;
-  --verde:#b7ff00;
-  --borde:#292929;
-}
-
 *{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
-  scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-  background:var(--negro);
-  color:var(--blanco);
-  font-family:Arial,Helvetica,sans-serif;
-  min-height:100vh;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#050505;
+    color:#fff;
 }
 
-button{
-  font:inherit;
-  cursor:pointer;
+/* =========================
+   VARIABLES
+========================= */
+
+:root{
+    --verde:#c8ff00;
+    --verde2:#9dff00;
+    --negro:#050505;
+    --gris:#111;
+    --gris2:#1a1a1a;
+    --blanco:#fff;
 }
 
-a{
-  text-decoration:none;
-}
-
-.app{
-  width:100%;
-  max-width:980px;
-  margin:auto;
-  min-height:100vh;
-}
-
-/* =====================================================
+/* =========================
    HEADER
-===================================================== */
+========================= */
 
 header{
-  position:sticky;
-  top:0;
-  z-index:20;
+    position:sticky;
+    top:0;
+    z-index:1000;
 
-  background:rgba(5,5,5,.97);
+    height:76px;
 
-  border-bottom:1px solid var(--borde);
+    background:rgba(0,0,0,.96);
+    border-bottom:1px solid #222;
 
-  padding:18px;
-}
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 
-.top{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+    padding:0 6%;
 }
 
 .logo{
-  font-size:48px;
-  font-weight:900;
-  letter-spacing:5px;
-  line-height:1;
+    color:#fff;
+    font-size:38px;
+    font-weight:900;
+    font-style:italic;
+    letter-spacing:-3px;
 }
 
 .logo span{
-  color:var(--verde);
+    color:var(--verde);
 }
 
-.cart{
-  border:0;
-
-  background:var(--verde);
-  color:#000;
-
-  border-radius:14px;
-
-  padding:14px 18px;
-
-  font-size:18px;
-  font-weight:900;
-
-  box-shadow:0 0 20px rgba(183,255,0,.12);
+nav{
+    display:flex;
+    gap:35px;
 }
 
-/* =====================================================
-   UBICACION
-===================================================== */
-
-.location{
-  text-align:center;
-
-  background:#101010;
-
-  color:var(--verde);
-
-  padding:12px 10px;
-
-  font-size:14px;
-
-  font-weight:bold;
-
-  border-bottom:1px solid #181818;
+nav a{
+    color:#fff;
+    text-decoration:none;
+    font-size:15px;
+    font-weight:800;
+    transition:.2s;
 }
 
-/* =====================================================
-   PANTALLAS
-===================================================== */
-
-.screen{
-  display:none;
-
-  animation:entrada .2s ease;
+nav a:hover{
+    color:var(--verde);
 }
 
-.screen.active{
-  display:block;
+.whatsapp-top{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    color:#fff;
+    text-decoration:none;
+
+    font-weight:800;
+    font-size:14px;
 }
 
-@keyframes entrada{
-
-  from{
-    opacity:0;
-    transform:translateY(8px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-
+.whatsapp-top span{
+    color:var(--verde);
+    font-size:24px;
 }
 
-/* =====================================================
-   INICIO
-===================================================== */
+/* =========================
+   BANNER
+========================= */
 
 .hero{
-  padding:18px;
+    width:100%;
+    background:#000;
 }
 
-/* BANNER REAL DE BRIX */
-
-.hero-banner{
-  width:100%;
-
-  border-radius:18px;
-
-  border:1px solid var(--borde);
-
-  overflow:hidden;
-
-  background:#050505;
-
-  box-shadow:
-    0 15px 40px rgba(0,0,0,.35);
+.hero img{
+    width:100%;
+    display:block;
+    height:auto;
 }
 
-.hero-banner img{
-  width:100%;
-  height:auto;
+/* =========================
+   BENEFICIOS
+========================= */
 
-  display:block;
+.benefits{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
 
-  object-fit:contain;
+    background:#0b0b0b;
+
+    border-bottom:1px solid #222;
 }
 
-/* TEXTO INICIO */
+.benefit{
+    min-height:110px;
 
-.hero-copy{
-  padding:28px 3px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:18px;
+
+    padding:20px;
+
+    border-right:1px solid #333;
 }
 
-.badge{
-  display:inline-block;
-
-  border:1px solid var(--verde);
-
-  color:var(--verde);
-
-  border-radius:30px;
-
-  padding:8px 13px;
-
-  font-size:12px;
-
-  font-weight:bold;
-
-  margin-bottom:16px;
+.benefit:last-child{
+    border-right:none;
 }
 
-.hero-copy h1{
-  font-size:80px;
-
-  line-height:.85;
-
-  letter-spacing:-5px;
-
-  font-weight:900;
+.benefit-icon{
+    font-size:42px;
+    color:var(--verde);
 }
 
-.hero-copy h1 span{
-  color:var(--verde);
+.benefit-text{
+    font-size:14px;
+    line-height:1.5;
 }
 
-.hero-copy p{
-  color:#ddd;
-
-  margin-top:18px;
-
-  line-height:1.55;
-
-  font-size:18px;
+.benefit-text strong{
+    color:var(--verde);
 }
 
-/* =====================================================
-   BOTONES INICIO
-===================================================== */
+/* =========================
+   CONTENEDOR
+========================= */
 
-.home-buttons{
-  display:grid;
-
-  gap:12px;
-
-  margin-top:27px;
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
 }
 
-.main-button{
-  width:100%;
-
-  padding:18px;
-
-  border:1px solid #333;
-
-  background:#111;
-
-  color:white;
-
-  border-radius:14px;
-
-  display:flex;
-
-  justify-content:space-between;
-
-  align-items:center;
-
-  font-weight:bold;
-
-  font-size:16px;
-
-  transition:.15s;
-}
-
-.main-button:active{
-  transform:scale(.98);
-}
-
-.main-button.primary{
-  background:var(--verde);
-
-  color:#000;
-
-  border-color:var(--verde);
-}
-
-.arrow{
-  font-size:27px;
-}
-
-/* =====================================================
-   SECCIONES
-===================================================== */
+/* =========================
+   TITULOS
+========================= */
 
 .section{
-  padding:24px 18px 45px;
+    padding:55px 0;
 }
 
-.back{
-  border:0;
-
-  background:none;
-
-  color:var(--verde);
-
-  font-weight:bold;
-
-  padding:5px 0 20px;
-
-  font-size:16px;
+.section-title{
+    font-size:30px;
+    font-weight:900;
+    margin-bottom:30px;
 }
 
-.title{
-  font-size:36px;
+.section-title::after{
+    content:"";
+    display:block;
 
-  font-weight:900;
+    width:48px;
+    height:4px;
 
-  letter-spacing:-1px;
+    background:var(--verde);
+
+    margin-top:10px;
 }
 
-.subtitle{
-  color:var(--gris);
-
-  margin:8px 0 22px;
-
-  font-size:16px;
-}
-
-/* =====================================================
+/* =========================
    CATEGORIAS
-===================================================== */
+========================= */
 
-.menu{
-  display:grid;
-
-  gap:11px;
+.categories{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:15px;
 }
 
-.menu-button{
-  width:100%;
+.category{
+    background:#0d0d0d;
 
-  border:1px solid var(--borde);
+    border:1px solid #383838;
+    border-radius:16px;
 
-  background:#101010;
+    min-height:125px;
 
-  color:white;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
 
-  border-radius:15px;
+    text-decoration:none;
+    color:#fff;
 
-  padding:19px;
-
-  display:flex;
-
-  align-items:center;
-
-  gap:14px;
-
-  text-align:left;
-
-  transition:.15s;
+    transition:.25s;
 }
 
-.menu-button:active{
-  transform:scale(.98);
+.category:hover{
+    border-color:var(--verde);
+    transform:translateY(-4px);
+    box-shadow:0 0 20px rgba(200,255,0,.12);
 }
 
-.menu-icon{
-  font-size:29px;
-
-  width:40px;
-
-  text-align:center;
+.category-icon{
+    font-size:40px;
+    margin-bottom:12px;
 }
 
-.menu-info{
-  flex:1;
+.category-name{
+    font-weight:900;
+    font-size:14px;
 }
 
-.menu-info strong{
-  font-size:17px;
-}
-
-.menu-info small{
-  display:block;
-
-  color:#777;
-
-  margin-top:5px;
-
-  line-height:1.3;
-}
-
-.chevron{
-  color:var(--verde);
-
-  font-size:27px;
-}
-
-/* =====================================================
+/* =========================
    PRODUCTOS
-===================================================== */
+========================= */
 
 .products{
-  display:grid;
-
-  gap:18px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
 }
 
 .product{
-  background:#0e0e0e;
+    background:#101010;
 
-  border:1px solid var(--borde);
+    border:1px solid #333;
+    border-radius:15px;
 
-  border-radius:18px;
+    overflow:hidden;
 
-  overflow:hidden;
-
-  box-shadow:
-    0 12px 30px rgba(0,0,0,.18);
+    transition:.25s;
 }
 
-/* =====================================================
-   IMAGEN DEL PRODUCTO
-
-   IMPORTANTE:
-   NO usamos width:100% + height:100%
-   para evitar agrandar/deformar las fotos.
-===================================================== */
+.product:hover{
+    transform:translateY(-4px);
+    border-color:var(--verde);
+}
 
 .product-media{
-  height:330px;
+    height:285px;
 
-  background:#151515;
+    background:#0a0a0a;
 
-  display:flex;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-  align-items:center;
+    padding:22px;
 
-  justify-content:center;
-
-  position:relative;
-
-  overflow:hidden;
-
-  padding:18px;
+    position:relative;
+    overflow:hidden;
 }
-
-/* IMAGEN */
 
 .product-media img{
-  display:block;
+    width:auto;
+    height:auto;
 
-  width:auto;
-  height:auto;
+    max-width:92%;
+    max-height:245px;
 
-  max-width:86%;
-  max-height:285px;
+    object-fit:contain;
 
-  object-fit:contain;
-
-  object-position:center;
-
-  margin:auto;
-
-  border-radius:4px;
+    display:block;
 }
 
-/* FALLBACK */
+.image-fallback{
+    display:none;
 
-.product-placeholder{
-  width:100%;
-  height:100%;
+    width:100%;
+    height:100%;
 
-  display:flex;
+    align-items:center;
+    justify-content:center;
 
-  align-items:center;
-  justify-content:center;
-
-  font-size:72px;
+    font-size:80px;
 }
-
-/* ETIQUETA */
-
-.media-label{
-  position:absolute;
-
-  top:12px;
-  left:12px;
-
-  background:rgba(0,0,0,.82);
-
-  border:1px solid #444;
-
-  border-radius:20px;
-
-  padding:6px 10px;
-
-  font-size:11px;
-
-  font-weight:bold;
-}
-
-/* =====================================================
-   INFORMACION PRODUCTO
-===================================================== */
 
 .product-info{
-  padding:17px;
+    padding:18px;
+    text-align:center;
 }
 
-.product-info h3{
-  font-size:19px;
+.product-name{
+    min-height:42px;
 
-  line-height:1.25;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-  margin-bottom:9px;
+    font-size:16px;
+    font-weight:900;
 }
 
 .price{
-  color:var(--verde);
+    color:var(--verde);
 
-  font-size:28px;
+    font-size:22px;
+    font-weight:900;
 
-  font-weight:900;
+    margin:10px 0 15px;
 }
 
-/* =====================================================
-   ACCIONES
-===================================================== */
-
-.actions{
-  display:flex;
-
-  gap:9px;
-
-  margin-top:15px;
+.consultar{
+    font-size:19px;
 }
 
-.add{
-  flex:1;
+.order-button{
+    width:100%;
 
-  border:0;
+    border:1px solid var(--verde);
+    background:transparent;
 
-  background:var(--verde);
+    color:#fff;
 
-  color:#000;
+    padding:11px 8px;
 
-  border-radius:11px;
+    border-radius:8px;
 
-  padding:14px;
+    font-size:13px;
+    font-weight:900;
 
-  font-weight:900;
+    cursor:pointer;
+
+    transition:.2s;
 }
 
-.whatsapp-small{
-  width:55px;
-
-  border:1px solid #333;
-
-  background:#171717;
-
-  color:white;
-
-  border-radius:11px;
-
-  padding:12px;
-
-  font-size:20px;
+.order-button:hover{
+    background:var(--verde);
+    color:#000;
 }
 
-/* =====================================================
+/* =========================
+   PROMOCIONES
+========================= */
+
+.promo-box{
+    background:#0c0c0c;
+
+    border:1px solid #333;
+    border-radius:18px;
+
+    padding:35px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:30px;
+}
+
+.promo-left{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.promo-icon{
+    font-size:65px;
+}
+
+.promo-small{
+    font-size:15px;
+    margin-bottom:5px;
+}
+
+.promo-big{
+    color:var(--verde);
+    font-size:32px;
+    font-weight:900;
+}
+
+.promo-button{
+    border:1px solid var(--verde);
+    background:transparent;
+
+    color:#fff;
+
+    padding:14px 30px;
+
+    border-radius:7px;
+
+    font-weight:900;
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.promo-button:hover{
+    background:var(--verde);
+    color:#000;
+}
+
+/* =========================
+   PROMOS GRID
+========================= */
+
+.promo-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.promo-card{
+    background:#101010;
+
+    border:1px solid #333;
+    border-radius:15px;
+
+    padding:25px;
+
+    text-align:center;
+}
+
+.promo-card h3{
+    font-size:17px;
+    margin-bottom:12px;
+}
+
+.promo-price{
+    color:var(--verde);
+    font-size:23px;
+    font-weight:900;
+
+    margin-bottom:17px;
+}
+
+/* =========================
+   CONTACTO
+========================= */
+
+.contact{
+    text-align:center;
+
+    padding:60px 20px;
+
+    background:#0a0a0a;
+
+    border-top:1px solid #222;
+}
+
+.contact h2{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.contact p{
+    color:#bbb;
+    margin-bottom:25px;
+}
+
+.contact-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.contact-button{
+    display:inline-block;
+
+    padding:14px 25px;
+
+    border-radius:8px;
+
+    text-decoration:none;
+
+    color:#000;
+
+    background:var(--verde);
+
+    font-weight:900;
+}
+
+.contact-button.instagram{
+    background:#fff;
+}
+
+/* =========================
    FOOTER
-===================================================== */
+========================= */
 
 footer{
-  text-align:center;
+    text-align:center;
 
-  padding:38px 18px;
+    padding:30px;
 
-  border-top:1px solid var(--borde);
+    color:#777;
 
-  color:#777;
+    font-size:13px;
 
-  line-height:1.5;
+    border-top:1px solid #222;
 }
 
 footer strong{
-  color:white;
-
-  letter-spacing:4px;
-
-  font-size:22px;
+    color:var(--verde);
 }
 
-footer a{
-  color:var(--verde);
-}
+/* =========================
+   MOBILE
+========================= */
 
-/* =====================================================
-   CARRITO
-===================================================== */
+@media(max-width:900px){
 
-.cart-panel{
-  position:fixed;
+    header{
+        height:auto;
+        min-height:70px;
 
-  inset:0;
+        padding:12px 5%;
 
-  background:rgba(0,0,0,.78);
+        flex-wrap:wrap;
+        gap:10px;
+    }
 
-  z-index:50;
+    .logo{
+        font-size:32px;
+    }
 
-  display:none;
+    nav{
+        order:3;
+        width:100%;
 
-  align-items:flex-end;
-}
+        justify-content:center;
 
-.cart-panel.open{
-  display:flex;
-}
+        gap:25px;
 
-.cart-box{
-  width:100%;
+        padding-top:7px;
+    }
 
-  max-width:600px;
+    nav a{
+        font-size:13px;
+    }
 
-  margin:auto auto 0;
+    .whatsapp-top{
+        font-size:11px;
+    }
 
-  background:#111;
+    .whatsapp-top span{
+        font-size:20px;
+    }
 
-  border:1px solid #333;
+    .benefits{
+        grid-template-columns:1fr;
+    }
 
-  border-radius:22px 22px 0 0;
+    .benefit{
+        border-right:none;
+        border-bottom:1px solid #333;
+        min-height:85px;
+    }
 
-  padding:21px;
+    .benefit:last-child{
+        border-bottom:none;
+    }
 
-  max-height:85vh;
+    .categories{
+        grid-template-columns:repeat(2,1fr);
+    }
 
-  overflow:auto;
-}
+    .products{
+        grid-template-columns:repeat(2,1fr);
+        gap:13px;
+    }
 
-.cart-head{
-  display:flex;
+    .product-media{
+        height:230px;
+        padding:15px;
+    }
 
-  justify-content:space-between;
+    .product-media img{
+        max-height:200px;
+        max-width:90%;
+    }
 
-  align-items:center;
-}
+    .product-info{
+        padding:13px 10px;
+    }
 
-.close{
-  border:0;
+    .product-name{
+        font-size:13px;
+        min-height:38px;
+    }
 
-  background:#222;
+    .price{
+        font-size:19px;
+        margin:8px 0 12px;
+    }
 
-  color:white;
+    .order-button{
+        font-size:11px;
+        padding:10px 5px;
+    }
 
-  border-radius:9px;
+    .promo-box{
+        flex-direction:column;
+        text-align:center;
+    }
 
-  padding:8px 11px;
-}
+    .promo-left{
+        flex-direction:column;
+    }
 
-.cart-item{
-  padding:14px 0;
+    .promo-big{
+        font-size:27px;
+    }
 
-  border-bottom:1px solid #292929;
-}
-
-.cart-item-top{
-  display:flex;
-
-  justify-content:space-between;
-
-  gap:10px;
-}
-
-.cart-price{
-  color:var(--verde);
-
-  font-weight:bold;
-
-  margin-top:6px;
-}
-
-.total{
-  font-size:24px;
-
-  font-weight:900;
-
-  padding:19px 0;
-}
-
-.send{
-  width:100%;
-
-  border:0;
-
-  background:#20c763;
-
-  color:white;
-
-  padding:16px;
-
-  border-radius:12px;
-
-  font-weight:900;
-}
-
-/* =====================================================
-   DESKTOP
-===================================================== */
-
-@media(min-width:700px){
-
-  .home-buttons{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .products{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .product-media{
-    height:360px;
-  }
-
-  .product-media img{
-    max-height:310px;
-  }
-
-  .cart-box{
-    border-radius:22px;
-
-    margin:auto;
-  }
+    .promo-grid{
+        grid-template-columns:1fr;
+    }
 
 }
 
-/* =====================================================
-   CELULARES PEQUEÑOS
-===================================================== */
+/* =========================
+   CELULARES MUY PEQUEÑOS
+========================= */
 
-@media(max-width:390px){
+@media(max-width:420px){
 
-  .logo{
-    font-size:40px;
-  }
+    .products{
+        grid-template-columns:1fr 1fr;
+    }
 
-  .hero-copy h1{
-    font-size:65px;
-  }
+    .product-media{
+        height:205px;
+    }
 
-  .product-media{
-    height:300px;
-  }
+    .product-media img{
+        max-height:175px;
+    }
 
-  .product-media img{
-    max-height:260px;
-  }
+    .category{
+        min-height:110px;
+    }
 
+    .category-icon{
+        font-size:32px;
+    }
+
+    .category-name{
+        font-size:12px;
+    }
+
+}
+
+/* =========================
+   ANIMACION
+========================= */
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.product{
+    animation:aparecer .5s ease;
 }
 
 </style>
@@ -769,1569 +703,1139 @@ footer a{
 
 <body>
 
-<div class="app">
-
-<!-- ===================================================
+<!-- =========================
      HEADER
-=================================================== -->
+========================= -->
 
 <header>
 
-<div class="top">
+    <div class="logo">
+        BRI<span>X</span>
+    </div>
 
-<div class="logo">
-BRI<span>X</span>
-</div>
+    <nav>
+        <a href="#catalogo">CATÁLOGO</a>
+        <a href="#promociones">PROMOCIONES</a>
+    </nav>
 
-<button
-class="cart"
-onclick="openCart()"
->
-
-🛒 <span id="cartCount">0</span>
-
-</button>
-
-</div>
+    <a
+        class="whatsapp-top"
+        href="https://wa.me/5493512573455"
+        target="_blank"
+    >
+        <span>◉</span>
+        PEDÍ POR WHATSAPP
+    </a>
 
 </header>
 
 
-<div class="location">
+<!-- =========================
+     BANNER
+========================= -->
 
-📍 QUEBRADA DEL CONDORITO 3673
+<section class="hero">
 
-</div>
+    <img
+        src="./banner-brix-final.png"
+        alt="BRIX — Tu momento, tu bebida"
+    >
 
-
-<!-- ===================================================
-     INICIO
-=================================================== -->
-
-<section
-id="home"
-class="screen active"
->
-
-<div class="hero">
+</section>
 
 
-<div class="hero-banner">
+<!-- =========================
+     BENEFICIOS
+========================= -->
 
-<img
-src="F7E36772-8F96-4024-8D1F-244561E45971.png"
-alt="BRIX - Tu momento, tu bebida"
->
+<section class="benefits">
 
-</div>
+    <div class="benefit">
 
+        <div class="benefit-icon">👍</div>
 
-<div class="hero-copy">
+        <div class="benefit-text">
+            CALIDAD<br>
+            <strong>SIEMPRE</strong>
+        </div>
 
-
-<div class="badge">
-
-BEBIDAS · PROMOS · COMBOS
-
-</div>
+    </div>
 
 
-<h1>
+    <div class="benefit">
 
-BRIX<span>.</span>
+        <div class="benefit-icon">🛵</div>
 
-</h1>
+        <div class="benefit-text">
+            ENVÍOS<br>
+            <strong>RÁPIDOS</strong>
+        </div>
 
-
-<p>
-
-Tu momento, tu bebida.
-Explorá nuestro catálogo por categorías.
-
-</p>
+    </div>
 
 
-<div class="home-buttons">
+    <div class="benefit">
+
+        <div class="benefit-icon">💬</div>
+
+        <div class="benefit-text">
+            PEDÍ FÁCIL<br>
+            <strong>POR WHATSAPP</strong>
+        </div>
+
+    </div>
+
+</section>
 
 
-<button
-class="main-button primary"
-onclick="showScreen('catalog')"
->
+<!-- =========================
+     CATEGORÍAS
+========================= -->
 
-<span>
-🛒 CATÁLOGO
-</span>
+<section class="section">
 
-<span class="arrow">
-›
-</span>
+<div class="container">
 
-</button>
+    <h2 class="section-title">
+        CATEGORÍAS
+    </h2>
 
 
-<button
-class="main-button"
-onclick="showScreen('promos')"
->
+    <div class="categories">
 
-<span>
-🔥 PROMOCIONES
-</span>
+        <a class="category" href="#vodka">
+            <div class="category-icon">🍾</div>
+            <div class="category-name">VODKA</div>
+        </a>
 
-<span class="arrow">
-›
-</span>
+        <a class="category" href="#fernet">
+            <div class="category-icon">🥃</div>
+            <div class="category-name">FERNET</div>
+        </a>
 
-</button>
+        <a class="category" href="#gancia">
+            <div class="category-icon">🍸</div>
+            <div class="category-name">GANCIA</div>
+        </a>
 
+        <a class="category" href="#cerveza">
+            <div class="category-icon">🍺</div>
+            <div class="category-name">CERVEZA</div>
+        </a>
 
-<button
-class="main-button"
-onclick="sendWhatsApp()"
->
+        <a class="category" href="#gaseosas">
+            <div class="category-icon">🥤</div>
+            <div class="category-name">GASEOSAS</div>
+        </a>
 
-<span>
-📲 PEDIR POR WHATSAPP
-</span>
+        <a class="category" href="#energizantes">
+            <div class="category-icon">⚡</div>
+            <div class="category-name">ENERGIZANTES</div>
+        </a>
 
-<span class="arrow">
-›
-</span>
+        <a class="category" href="#vinos">
+            <div class="category-icon">🍷</div>
+            <div class="category-name">VINOS</div>
+        </a>
 
-</button>
-
-
-<button
-class="main-button"
-onclick="openInstagram()"
->
-
-<span>
-📸 @brix_bebidas
-</span>
-
-<span class="arrow">
-›
-</span>
-
-</button>
-
-
-</div>
-
-</div>
+    </div>
 
 </div>
 
 </section>
 
 
-<!-- ===================================================
-     CATALOGO
-=================================================== -->
+<!-- =========================
+     CATÁLOGO
+========================= -->
 
-<section
-id="catalog"
-class="screen"
->
+<section class="section" id="catalogo">
 
-<div class="section">
+<div class="container">
 
-
-<button
-class="back"
-onclick="showScreen('home')"
->
-
-← VOLVER
-
-</button>
+    <h2 class="section-title">
+        CATÁLOGO
+    </h2>
 
 
-<div class="title">
-CATÁLOGO
-</div>
+    <!-- VODKA -->
+
+    <h2 id="vodka" style="margin:35px 0 20px;">
+        VODKA
+    </h2>
+
+    <div class="products">
+
+        <div class="product">
+
+            <div class="product-media">
+
+                <img
+                    src="./smirnoff-saborizado.png"
+                    alt="Smirnoff Saborizado"
+                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                >
+
+                <div class="image-fallback">🍾</div>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    SMIRNOFF SABORIZADO
+                </div>
+
+                <div class="price">
+                    $10.900
+                </div>
+
+                <button
+                    class="order-button"
+                    onclick="pedir('SMIRNOFF SABORIZADO')"
+                >
+                    💬 PEDIR POR WHATSAPP
+                </button>
+
+            </div>
+
+        </div>
 
 
-<div class="subtitle">
-Elegí una categoría.
-</div>
+        <div class="product">
+
+            <div class="product-media">
+
+                <img
+                    src="./skyy-saborizado.png"
+                    alt="SKYY Saborizado"
+                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                >
+
+                <div class="image-fallback">🍾</div>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    SKYY SABORIZADO
+                </div>
+
+                <div class="price">
+                    $14.500
+                </div>
+
+                <button class="order-button"
+                    onclick="pedir('SKYY SABORIZADO')">
+                    💬 PEDIR POR WHATSAPP
+                </button>
+
+            </div>
+
+        </div>
 
 
-<div
-class="menu"
-id="catalogMenu"
->
-</div>
+        <div class="product">
 
+            <div class="product-media">
+
+                <img
+                    src="./absolut-saborizado.png"
+                    alt="Absolut Saborizado"
+                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                >
+
+                <div class="image-fallback">🍾</div>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    ABSOLUT SABORIZADO
+                </div>
+
+                <div class="price">
+                    $26.000
+                </div>
+
+                <button class="order-button"
+                    onclick="pedir('ABSOLUT SABORIZADO')">
+                    💬 PEDIR POR WHATSAPP
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FERNET -->
+
+    <h2 id="fernet" style="margin:55px 0 20px;">
+        FERNET
+    </h2>
+
+    <div class="products">
+
+        <div class="product">
+
+            <div class="product-media">
+
+                <img
+                    src="./branca-750.png"
+                    alt="Branca 750"
+                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                >
+
+                <div class="image-fallback">🥃</div>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    BRANCA 750
+                </div>
+
+                <div class="price">
+                    $17.500
+                </div>
+
+                <button class="order-button"
+                    onclick="pedir('BRANCA 750')">
+                    💬 PEDIR POR WHATSAPP
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-media">
+
+                <img
+                    src="./fernet-180-anos.png"
+                    alt="Fernet 180 Años"
+                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                >
+
+                <div class="image-fallback">🥃</div>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    FERNET 180 AÑOS
+                </div>
+
+                <div class="price">
+                    $18.000
+                </div>
+
+                <button class="order-button"
+                    onclick="pedir('FERNET 180 AÑOS')">
+                    💬 PEDIR POR WHATSAPP
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- GANCIA -->
+
+    <h2 id="gancia" style="margin:55px 0 20px;">
+        GANCIA
+    </h2>
+
+    <div class="products">
+
+        <div class="product">
+
+            <div class="product-media">
+
+                <div class="image-fallback"
+                     style="display:flex;">
+                    🍸
+                </div>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    GANCIA
+                </div>
+
+                <div class="price consultar">
+                    CONSULTAR
+                </div>
+
+                <button class="order-button"
+                    onclick="pedir('GANCIA')">
+                    💬 PEDIR POR WHATSAPP
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CERVEZA -->
+
+    <h2 id="cerveza" style="margin:55px 0 20px;">
+        CERVEZA
+    </h2>
+
+    <div class="products">
+
+        <div class="product">
+
+            <div class="product-media">
+
+                <div class="image-fallback"
+                     style="display:flex;">
+                    🍺
+                </div>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    CERVEZA
+                </div>
+
+                <div class="price consultar">
+                    CONSULTAR
+                </div>
+
+                <button class="order-button"
+                    onclick="pedir('CERVEZA')">
+                    💬 PEDIR POR WHATSAPP
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- GASEOSAS -->
+
+    <h2 id="gaseosas" style="margin:55px 0 20px;">
+        GASEOSAS
+    </h2>
+
+    <div class="products">
+
+        <div class="product">
+
+            <div class="product-media">
+
+                <img
+                    src="./coca-cola-500ml.png"
+                    alt="Coca Cola 500 ML"
+                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                >
+
+                <div class="image-fallback">🥤</div>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    COCA COLA 500 ML
+                </div>
+
+                <div class="price">
+                    $2.000
+                </div>
+
+                <button class="order-button"
+                    onclick="pedir('COCA COLA 500 ML')">
+                    💬 PEDIR POR WHATSAPP
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-media">
+
+                <img
+                    src="./coca-cola-25-desc.png"
+                    alt="Coca Cola 2,5L"
+                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                >
+
+                <div class="image-fallback">🥤</div>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    COCA COLA 2,5L
+                </div>
+
+                <div class="price">
+                    $5.500
+                </div>
+
+                <button class="order-button"
+                    onclick="pedir('COCA COLA 2,5L')">
+                    💬 PEDIR POR WHATSAPP
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-media">
+
+                <img
+                    src="./sprite-225l.png"
+                    alt="Sprite 2,25L"
+                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                >
+
+                <div class="image-fallback">🥤</div>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    SPRITE 2,25L
+                </div>
+
+                <div class="price">
+                    $5.000
+                </div>
+
+                <button class="order-button"
+                    onclick="pedir('SPRITE 2,25L')">
+                    💬 PEDIR POR WHATSAPP
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-media">
+
+                <img
+                    src="./pritty-225l.png"
+                    alt="Pritty 2,25L"
+                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                >
+
+                <div class="image-fallback">🥤</div>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    PRITTY 2,25L
+                </div>
+
+                <div class="price">
+                    $3.000
+                </div>
+
+                <button class="order-button"
+                    onclick="pedir('PRITTY 2,25L')">
+                    💬 PEDIR POR WHATSAPP
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ENERGIZANTES -->
+
+    <h2 id="energizantes" style="margin:55px 0 20px;">
+        ENERGIZANTES
+    </h2>
+
+    <div class="products">
+
+        <div class="product">
+
+            <div class="product-media">
+
+                <img
+                    src="./speed-250.png"
+                    alt="Speed 250"
+                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                >
+
+                <div class="image-fallback">⚡</div>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    SPEED 250
+                </div>
+
+                <div class="price">
+                    $2.000
+                </div>
+
+                <button class="order-button"
+                    onclick="pedir('SPEED 250')">
+                    💬 PEDIR POR WHATSAPP
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-media">
+
+                <img
+                    src="./speed-xl.png"
+                    alt="Speed XL"
+                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                >
+
+                <div class="image-fallback">⚡</div>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    SPEED XL
+                </div>
+
+                <div class="price">
+                    $3.000
+                </div>
+
+                <button class="order-button"
+                    onclick="pedir('SPEED XL')">
+                    💬 PEDIR POR WHATSAPP
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-media">
+
+                <img
+                    src="./monster.png"
+                    alt="Monster"
+                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                >
+
+                <div class="image-fallback">⚡</div>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    MONSTER
+                </div>
+
+                <div class="price">
+                    $3.500
+                </div>
+
+                <button class="order-button"
+                    onclick="pedir('MONSTER')">
+                    💬 PEDIR POR WHATSAPP
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- VINOS -->
+
+    <h2 id="vinos" style="margin:55px 0 20px;">
+        VINOS
+    </h2>
+
+    <p style="color:#aaa;margin-bottom:20px;">
+        Selección de vinos BRIX
+    </p>
+
+    <div class="products">
+
+        <div class="product">
+
+            <div class="product-media">
+
+                <img
+                    src="./toro.png"
+                    alt="Toro"
+                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                >
+
+                <div class="image-fallback">🍷</div>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    TORO
+                </div>
+
+                <div class="price consultar">
+                    CONSULTAR
+                </div>
+
+                <button class="order-button"
+                    onclick="pedir('TORO')">
+                    💬 PEDIR POR WHATSAPP
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-media">
+
+                <img
+                    src="./balbo.png"
+                    alt="Balbo"
+                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                >
+
+                <div class="image-fallback">🍷</div>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    BALBO
+                </div>
+
+                <div class="price consultar">
+                    CONSULTAR
+                </div>
+
+                <button class="order-button"
+                    onclick="pedir('BALBO')">
+                    💬 PEDIR POR WHATSAPP
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
 
 </section>
 
 
-<!-- ===================================================
-     PRODUCTOS
-=================================================== -->
+<!-- =========================
+     BANNER PROMOCIONES
+========================= -->
 
-<section
-id="products"
-class="screen"
->
+<section class="section" id="promociones">
 
-<div class="section">
+<div class="container">
 
+    <div class="promo-box">
 
-<button
-class="back"
-onclick="showScreen('catalog')"
->
+        <div class="promo-left">
 
-← VOLVER AL CATÁLOGO
+            <div class="promo-icon">
+                🏷️
+            </div>
 
-</button>
+            <div>
 
+                <div class="promo-small">
+                    MIRÁ TODAS NUESTRAS
+                </div>
 
-<div
-class="title"
-id="productTitle"
->
-</div>
+                <div class="promo-big">
+                    PROMOCIONES
+                </div>
 
+            </div>
 
-<div class="subtitle">
-Elegí una bebida.
-</div>
+        </div>
 
+        <button
+            class="promo-button"
+            onclick="document.getElementById('promo-lista').scrollIntoView({behavior:'smooth'})"
+        >
+            VER PROMOCIONES →
+        </button>
 
-<div
-class="products"
-id="productList"
->
-</div>
-
+    </div>
 
 </div>
 
 </section>
 
 
-<!-- ===================================================
-     PROMOCIONES
-=================================================== -->
+<!-- =========================
+     LISTA PROMOCIONES
+========================= -->
 
-<section
-id="promos"
-class="screen"
->
+<section class="section" id="promo-lista">
 
-<div class="section">
+<div class="container">
 
-
-<button
-class="back"
-onclick="showScreen('home')"
->
-
-← VOLVER
-
-</button>
+    <h2 class="section-title">
+        PROMOCIONES
+    </h2>
 
 
-<div class="title">
-PROMOCIONES
-</div>
+    <div class="promo-grid">
 
 
-<div class="subtitle">
-Elegí una categoría.
-</div>
+        <div class="promo-card">
+
+            <h3>
+                SMIRNOFF + 2 SPEED
+            </h3>
+
+            <div class="promo-price">
+                $15.500
+            </div>
+
+            <button class="order-button"
+                onclick="pedir('PROMO SMIRNOFF + 2 SPEED')">
+                💬 PEDIR POR WHATSAPP
+            </button>
+
+        </div>
 
 
-<div
-class="menu"
-id="promoMenu"
->
-</div>
+        <div class="promo-card">
 
+            <h3>
+                2 PROMO SMIRNOFF
+            </h3>
+
+            <div class="promo-price">
+                $29.500
+            </div>
+
+            <button class="order-button"
+                onclick="pedir('2 PROMO SMIRNOFF')">
+                💬 PEDIR POR WHATSAPP
+            </button>
+
+        </div>
+
+
+        <div class="promo-card">
+
+            <h3>
+                3 PROMO SKYY
+            </h3>
+
+            <div class="promo-price">
+                $43.500
+            </div>
+
+            <button class="order-button"
+                onclick="pedir('3 PROMO SKYY')">
+                💬 PEDIR POR WHATSAPP
+            </button>
+
+        </div>
+
+
+        <div class="promo-card">
+
+            <h3>
+                2 PROMO ABSOLUT
+            </h3>
+
+            <div class="promo-price">
+                $59.000
+            </div>
+
+            <button class="order-button"
+                onclick="pedir('2 PROMO ABSOLUT')">
+                💬 PEDIR POR WHATSAPP
+            </button>
+
+        </div>
+
+
+        <div class="promo-card">
+
+            <h3>
+                BRANCA 750 + HIELO
+            </h3>
+
+            <div class="promo-price">
+                $25.000
+            </div>
+
+            <button class="order-button"
+                onclick="pedir('PROMO BRANCA 750 CON HIELO')">
+                💬 PEDIR POR WHATSAPP
+            </button>
+
+        </div>
+
+
+        <div class="promo-card">
+
+            <h3>
+                BRANCA + 2 COCA 2,5L + HIELO
+            </h3>
+
+            <div class="promo-price">
+                $30.000
+            </div>
+
+            <button class="order-button"
+                onclick="pedir('PROMO BRANCA 750 + 2 COCA COLA 2,5L + HIELO')">
+                💬 PEDIR POR WHATSAPP
+            </button>
+
+        </div>
+
+
+        <div class="promo-card">
+
+            <h3>
+                2 PROMO FERNET 750
+            </h3>
+
+            <div class="promo-price">
+                $48.000
+            </div>
+
+            <button class="order-button"
+                onclick="pedir('2 PROMO FERNET 750')">
+                💬 PEDIR POR WHATSAPP
+            </button>
+
+        </div>
+
+
+        <div class="promo-card">
+
+            <h3>
+                FERNET 180° + COCA 2,5L
+            </h3>
+
+            <div class="promo-price">
+                $24.000
+            </div>
+
+            <button class="order-button"
+                onclick="pedir('FERNET 180° + COCA COLA 2,5L')">
+                💬 PEDIR POR WHATSAPP
+            </button>
+
+        </div>
+
+
+        <div class="promo-card">
+
+            <h3>
+                SKYY + SMIRNOFF + 4 SPEED
+            </h3>
+
+            <div class="promo-price">
+                $29.000
+            </div>
+
+            <button class="order-button"
+                onclick="pedir('SKYY + SMIRNOFF + 4 SPEED')">
+                💬 PEDIR POR WHATSAPP
+            </button>
+
+        </div>
+
+
+        <div class="promo-card">
+
+            <h3>
+                ABSOLUT + SKYY + 4 SPEED XL
+            </h3>
+
+            <div class="promo-price">
+                $45.000
+            </div>
+
+            <button class="order-button"
+                onclick="pedir('ABSOLUT + SKYY + 4 SPEED XL')">
+                💬 PEDIR POR WHATSAPP
+            </button>
+
+        </div>
+
+
+        <div class="promo-card">
+
+            <h3>
+                ABSOLUT + 2 SKYY + 9 SPEED
+            </h3>
+
+            <div class="promo-price">
+                $68.000
+            </div>
+
+            <button class="order-button"
+                onclick="pedir('ABSOLUT + 2 SKYY + 9 SPEED')">
+                💬 PEDIR POR WHATSAPP
+            </button>
+
+        </div>
+
+
+        <div class="promo-card">
+
+            <h3>
+                JAGER + ABSOLUT
+            </h3>
+
+            <div class="promo-price">
+                $73.500
+            </div>
+
+            <button class="order-button"
+                onclick="pedir('JAGER + ABSOLUT')">
+                💬 PEDIR POR WHATSAPP
+            </button>
+
+        </div>
+
+    </div>
 
 </div>
 
 </section>
 
 
-<!-- ===================================================
-     PRODUCTOS PROMO
-=================================================== -->
+<!-- =========================
+     CONTACTO
+========================= -->
 
-<section
-id="promoProducts"
-class="screen"
->
+<section class="contact">
 
-<div class="section">
+    <h2>
+        ¿QUERÉS HACER TU PEDIDO?
+    </h2>
 
+    <p>
+        Escribinos por WhatsApp y te ayudamos.
+    </p>
 
-<button
-class="back"
-onclick="showScreen('promos')"
->
+    <div class="contact-buttons">
 
-← VOLVER A PROMOCIONES
+        <a
+            class="contact-button"
+            href="https://wa.me/5493512573455"
+            target="_blank"
+        >
+            💬 WHATSAPP
+        </a>
 
-</button>
+        <a
+            class="contact-button instagram"
+            href="https://instagram.com/brix_bebidas"
+            target="_blank"
+        >
+            📷 INSTAGRAM
+        </a>
 
-
-<div
-class="title"
-id="promoTitle"
->
-</div>
-
-
-<div class="subtitle">
-Promociones disponibles.
-</div>
-
-
-<div
-class="products"
-id="promoList"
->
-</div>
-
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- ===================================================
+<!-- =========================
      FOOTER
-=================================================== -->
+========================= -->
 
 <footer>
 
-<strong>
-BRIX
-</strong>
+    <strong>BRIX</strong> — Tu momento, tu bebida.
 
+    <br><br>
 
-<p style="margin-top:10px">
-
-📍 Quebrada del Condorito 3673
-
-</p>
-
-
-<p style="margin-top:7px">
-
-📲
-
-<a
-href="https://wa.me/5493512573455"
-target="_blank"
->
-
-351 257-3455
-
-</a>
-
-</p>
-
-
-<p style="margin-top:7px">
-
-📸
-
-<a
-href="https://instagram.com/brix_bebidas"
-target="_blank"
->
-
-@brix_bebidas
-
-</a>
-
-</p>
+    Quebrada del Condorito 3673
 
 </footer>
 
 
-<!-- ===================================================
-     CARRITO
-=================================================== -->
-
-<div
-class="cart-panel"
-id="cartPanel"
-onclick="if(event.target===this)closeCart()"
->
-
-
-<div class="cart-box">
-
-
-<div class="cart-head">
-
-<h2>
-🛒 Mi pedido
-</h2>
-
-
-<button
-class="close"
-onclick="closeCart()"
->
-
-✕
-
-</button>
-
-</div>
-
-
-<div id="cartItems">
-</div>
-
-
-<div class="total">
-
-Total: $
-
-<span id="total">
-0
-</span>
-
-</div>
-
-
-<button
-class="send"
-onclick="sendOrder()"
->
-
-📲 ENVIAR PEDIDO POR WHATSAPP
-
-</button>
-
-
-</div>
-
-</div>
-
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
 <script>
 
-/* =====================================================
-   PRODUCTOS
-===================================================== */
+function pedir(producto){
 
-const products = [
+    const numero = "5493512573455";
 
-{
-name:"SMIRNOFF SABORIZADO",
-price:10900,
-category:"vodka",
-emoji:"🍸",
-image:""
-},
+    const mensaje =
+        "Hola BRIX! Quiero pedir " +
+        producto +
+        ". ¿Está disponible?";
 
-{
-name:"PROMO SMIRNOFF + 2 SPEED",
-price:15500,
-category:"vodka",
-emoji:"🍸",
-image:""
-},
+    const url =
+        "https://wa.me/" +
+        numero +
+        "?text=" +
+        encodeURIComponent(mensaje);
 
-{
-name:"2 PROMO SMIRNOFF",
-price:29500,
-category:"vodka",
-emoji:"🍸",
-image:""
-},
-
-{
-name:"SKYY SABORIZADO",
-price:14500,
-category:"vodka",
-emoji:"🍾",
-image:""
-},
-
-{
-name:"SKYY SABORIZADO 2",
-price:15500,
-category:"vodka",
-emoji:"🍾",
-image:""
-},
-
-{
-name:"SKYY COSMIC",
-price:17500,
-category:"vodka",
-emoji:"🍾",
-image:""
-},
-
-{
-name:"ABSOLUT SABORIZADO",
-price:26000,
-category:"vodka",
-emoji:"🍾",
-image:""
-},
-
-
-/* FERNET */
-
-{
-name:"BRANCA 750",
-price:17500,
-category:"fernet",
-emoji:"🥃",
-image:"branca-750.png"
-},
-
-{
-name:"FERNET 180 AÑOS",
-price:18000,
-category:"fernet",
-emoji:"🥃",
-image:"fernet-180-anos.png"
-},
-
-{
-name:"PROMO BRANCA 750 CON HIELO",
-price:25000,
-category:"fernet",
-emoji:"🧊",
-image:""
-},
-
-{
-name:"PROMO BRANCA 750 + 2 COCA COLA 2,5L + HIELO",
-price:30000,
-category:"fernet",
-emoji:"🥃",
-image:""
-},
-
-{
-name:"2 PROMO FERNET 750",
-price:48000,
-category:"fernet",
-emoji:"🥃",
-image:""
-},
-
-{
-name:"FERNET 180° + COCA 2,5L",
-price:24000,
-category:"fernet",
-emoji:"🥃",
-image:"fernet-180-coca-cola-2-5l.png"
-},
-
-
-/* GANCIA */
-
-{
-name:"GANCIA",
-price:0,
-category:"gancia",
-emoji:"🍹",
-image:""
-},
-
-{
-name:"GANCIA + GASEOSA",
-price:0,
-category:"gancia",
-emoji:"🍹",
-image:""
-},
-
-
-/* CERVEZA */
-
-{
-name:"CERVEZA",
-price:0,
-category:"cerveza",
-emoji:"🍺",
-image:""
-},
-
-
-/* ENERGIZANTES */
-
-{
-name:"SPEED 250",
-price:2000,
-category:"energizante",
-emoji:"⚡",
-image:"speed-250.png"
-},
-
-{
-name:"SPEED XL",
-price:3000,
-category:"energizante",
-emoji:"⚡",
-image:"speed-xl.png"
-},
-
-{
-name:"MONSTER",
-price:3500,
-category:"energizante",
-emoji:"⚡",
-image:"monster.png"
-},
-
-
-/* GASEOSAS */
-
-{
-name:"COCA COLA 500 ML",
-price:2000,
-category:"gaseosa",
-emoji:"🥤",
-image:"coca-cola-500ml.png"
-},
-
-{
-name:"COCA COLA 2,5L",
-price:5500,
-category:"gaseosa",
-emoji:"🥤",
-image:"coca-cola-25-desc.png"
-},
-
-{
-name:"SPRITE 2,25L",
-price:5000,
-category:"gaseosa",
-emoji:"🥤",
-image:"sprite-225l.png"
-},
-
-{
-name:"PRITTY 2,25L",
-price:3000,
-category:"gaseosa",
-emoji:"🥤",
-image:"pritty-225l.png"
-},
-
-
-/* VINOS */
-
-{
-name:"PROMO 2 BALBOS + 1 PRITTY",
-price:10500,
-category:"vino",
-emoji:"🍷",
-image:""
-},
-
-{
-name:"2 SANTA JULIA MALBEC",
-price:10500,
-category:"vino",
-emoji:"🍷",
-image:""
-},
-
-{
-name:"COLON SELECTO DULCE",
-price:7500,
-category:"vino",
-emoji:"🍷",
-image:"colon-selecto-dulce.png"
-},
-
-{
-name:"SANTA JULIA TINTO DULCE",
-price:8500,
-category:"vino",
-emoji:"🍷",
-image:"santa-julia-tinto-dulce.png"
-},
-
-{
-name:"SANTA JULIA CHENIN DULCE",
-price:9000,
-category:"vino",
-emoji:"🍷",
-image:"santa-julia-chenin-dulce.png"
-},
-
-{
-name:"CAVA NEGRA CHARDONNAY",
-price:9000,
-category:"vino",
-emoji:"🍷",
-image:"cava-negra-chardonnay.png"
-},
-
-{
-name:"CASARENA ESTATE CHARDONNAY",
-price:9900,
-category:"vino",
-emoji:"🍷",
-image:"casarena-estate-chardonnay.png"
-}
-
-];
-
-
-/* =====================================================
-   PROMOCIONES
-===================================================== */
-
-const promos = [
-
-{
-name:"PROMO SMIRNOFF + 2 SPEED",
-price:15500,
-category:"vodka",
-emoji:"🔥",
-image:""
-},
-
-{
-name:"2 PROMO SMIRNOFF",
-price:29500,
-category:"vodka",
-emoji:"🔥",
-image:""
-},
-
-{
-name:"3 PROMO SKYY",
-price:43500,
-category:"vodka",
-emoji:"🔥",
-image:""
-},
-
-{
-name:"2 PROMO ABSOLUT",
-price:59000,
-category:"vodka",
-emoji:"🔥",
-image:""
-},
-
-{
-name:"PROMO BRANCA 750 CON HIELO",
-price:25000,
-category:"fernet",
-emoji:"🔥",
-image:"promo-branca-750-retornable.png"
-},
-
-{
-name:"PROMO BRANCA 750 + 2 COCA COLA 2,5L + HIELO",
-price:30000,
-category:"fernet",
-emoji:"🔥",
-image:"branca-750-2-coca-cola-2-5l.png"
-},
-
-{
-name:"2 PROMO FERNET 750",
-price:48000,
-category:"fernet",
-emoji:"🔥",
-image:"2-promo-fernet-750.png"
-},
-
-{
-name:"FERNET 180° + COCA 2,5L",
-price:24000,
-category:"fernet",
-emoji:"🔥",
-image:"fernet-180-coca-cola-2-5l.png"
-},
-
-{
-name:"SKYY + SMIRNOFF + 4 SPEED",
-price:29000,
-category:"combo",
-emoji:"🔥",
-image:""
-},
-
-{
-name:"PROMO BRANCA + PROMO",
-price:38500,
-category:"combo",
-emoji:"🔥",
-image:""
-},
-
-{
-name:"ABSOLUT + SKYY + 4 SPEED XL",
-price:45000,
-category:"combo",
-emoji:"🔥",
-image:""
-},
-
-{
-name:"ABSOLUT + 2 SKYY + 9 SPEED",
-price:68000,
-category:"combo",
-emoji:"🔥",
-image:""
-},
-
-{
-name:"JAGER + ABSOLUT",
-price:73500,
-category:"combo",
-emoji:"🔥",
-image:""
-}
-
-];
-
-
-/* =====================================================
-   CATEGORIAS
-===================================================== */
-
-const categories = [
-
-[
-"vodka",
-"🥃",
-"VODKA",
-"Smirnoff, Skyy, Absolut y más"
-],
-
-[
-"fernet",
-"🔥",
-"FERNET",
-"Branca y 180 Años"
-],
-
-[
-"gancia",
-"🍹",
-"GANCIA",
-"Gancia y combinaciones"
-],
-
-[
-"cerveza",
-"🍺",
-"CERVEZA",
-"Cervezas disponibles"
-],
-
-[
-"gaseosa",
-"🥤",
-"GASEOSAS",
-"Coca-Cola, Sprite y Pritty"
-],
-
-[
-"energizante",
-"⚡",
-"ENERGIZANTES",
-"Speed y Monster"
-],
-
-[
-"vino",
-"🍷",
-"VINOS",
-"Tintos, blancos y dulces"
-]
-
-];
-
-
-const promoCategories = [
-
-[
-"vodka",
-"🥃",
-"PROMOS VODKA",
-"Ofertas de vodka"
-],
-
-[
-"fernet",
-"🔥",
-"PROMOS FERNET",
-"Combos de fernet"
-],
-
-[
-"combo",
-"🔥",
-"COMBOS BRIX",
-"Las promos más completas"
-]
-
-];
-
-
-/* =====================================================
-   VARIABLES
-===================================================== */
-
-let currentList=[];
-
-let cart=[];
-
-
-/* =====================================================
-   DINERO
-===================================================== */
-
-function money(value){
-
-return Number(value || 0)
-.toLocaleString("es-AR");
+    window.open(url, "_blank");
 
 }
-
-
-/* =====================================================
-   CAMBIAR PANTALLA
-===================================================== */
-
-function showScreen(id){
-
-document
-.querySelectorAll(".screen")
-.forEach(screen=>{
-
-screen.classList.remove("active");
-
-});
-
-const target=document.getElementById(id);
-
-if(target){
-
-target.classList.add("active");
-
-}
-
-window.scrollTo(0,0);
-
-}
-
-
-/* =====================================================
-   CREAR MENU
-===================================================== */
-
-function createMenu(
-containerId,
-items,
-functionName
-){
-
-const container=
-document.getElementById(containerId);
-
-container.innerHTML="";
-
-items.forEach(item=>{
-
-container.innerHTML += `
-
-<button
-class="menu-button"
-onclick="${functionName}('${item[0]}')"
->
-
-<span class="menu-icon">
-${item[1]}
-</span>
-
-<span class="menu-info">
-
-<strong>
-${item[2]}
-</strong>
-
-<small>
-${item[3]}
-</small>
-
-</span>
-
-<span class="chevron">
-›
-</span>
-
-</button>
-
-`;
-
-});
-
-}
-
-
-/* =====================================================
-   PRODUCTOS
-===================================================== */
-
-function renderProducts(
-list,
-containerId,
-titleId,
-title
-){
-
-const container=
-document.getElementById(containerId);
-
-container.innerHTML="";
-
-
-if(list.length===0){
-
-container.innerHTML=`
-
-<p style="
-color:#888;
-padding:20px 0;
-">
-
-No hay productos disponibles.
-
-</p>
-
-`;
-
-}
-
-
-/* CREAR CADA PRODUCTO */
-
-list.forEach((product,index)=>{
-
-
-let media;
-
-
-/*
-   SI TIENE IMAGEN
-*/
-
-if(product.image){
-
-media=`
-
-<img
-src="${product.image}"
-alt="${product.name}"
-loading="lazy"
-
-onerror="this.style.display='none';
-this.nextElementSibling.style.display='flex';"
->
-
-<div
-class="product-placeholder"
-style="display:none"
->
-
-${product.emoji}
-
-</div>
-
-`;
-
-}
-
-
-/*
-   SI NO TIENE IMAGEN
-*/
-
-else{
-
-media=`
-
-<div
-class="product-placeholder"
->
-
-${product.emoji}
-
-</div>
-
-`;
-
-}
-
-
-/* TARJETA */
-
-container.innerHTML += `
-
-<article class="product">
-
-
-<div class="product-media">
-
-${media}
-
-
-<span class="media-label">
-
-PRODUCTO
-
-</span>
-
-</div>
-
-
-<div class="product-info">
-
-
-<h3>
-
-${product.name}
-
-</h3>
-
-
-<div class="price">
-
-${
-product.price > 0
-? "$"+money(product.price)
-: "Consultar"
-}
-
-</div>
-
-
-<div class="actions">
-
-
-<button
-class="add"
-onclick="addToCart(${index})"
->
-
-${
-product.price > 0
-? "+ AGREGAR"
-: "CONSULTAR"
-}
-
-</button>
-
-
-<button
-class="whatsapp-small"
-
-onclick="quickWhatsApp('${product.name.replace(/'/g,"\\'")}')"
-
->
-
-📲
-
-</button>
-
-
-</div>
-
-
-</div>
-
-
-</article>
-
-`;
-
-});
-
-
-document
-.getElementById(titleId)
-.textContent=title;
-
-}
-
-
-/* =====================================================
-   ABRIR CATEGORIA
-===================================================== */
-
-function openCategory(category){
-
-currentList=
-products.filter(
-product=>product.category===category
-);
-
-renderProducts(
-currentList,
-"productList",
-"productTitle",
-category.toUpperCase()
-);
-
-showScreen("products");
-
-}
-
-
-/* =====================================================
-   ABRIR PROMO
-===================================================== */
-
-function openPromo(category){
-
-currentList=
-promos.filter(
-promo=>promo.category===category
-);
-
-renderProducts(
-currentList,
-"promoList",
-"promoTitle",
-category.toUpperCase()
-);
-
-showScreen("promoProducts");
-
-}
-
-
-/* =====================================================
-   CARRITO
-===================================================== */
-
-function addToCart(index){
-
-if(!currentList[index]){
-
-return;
-
-}
-
-cart.push(currentList[index]);
-
-updateCart();
-
-openCart();
-
-}
-
-
-/* =====================================================
-   ACTUALIZAR CARRITO
-===================================================== */
-
-function updateCart(){
-
-document
-.getElementById("cartCount")
-.textContent=cart.length;
-
-
-let total=0;
-
-
-const container=
-document.getElementById("cartItems");
-
-
-if(cart.length===0){
-
-container.innerHTML=
-"<p style='color:#888;margin-top:20px'>Tu pedido está vacío.</p>";
-
-}
-
-
-/* PRODUCTOS EN CARRITO */
-
-else{
-
-container.innerHTML="";
-
-
-cart.forEach((product,index)=>{
-
-
-total += Number(product.price || 0);
-
-
-container.innerHTML += `
-
-<div class="cart-item">
-
-
-<div class="cart-item-top">
-
-
-<strong>
-
-${product.name}
-
-</strong>
-
-
-<button
-class="close"
-onclick="removeFromCart(${index})"
->
-
-✕
-
-</button>
-
-
-</div>
-
-
-<div class="cart-price">
-
-${
-product.price
-? "$"+money(product.price)
-: "Consultar precio"
-}
-
-</div>
-
-
-</div>
-
-`;
-
-});
-
-}
-
-
-document
-.getElementById("total")
-.textContent=money(total);
-
-}
-
-
-/* =====================================================
-   QUITAR DEL CARRITO
-===================================================== */
-
-function removeFromCart(index){
-
-cart.splice(index,1);
-
-updateCart();
-
-}
-
-
-/* =====================================================
-   ABRIR CARRITO
-===================================================== */
-
-function openCart(){
-
-document
-.getElementById("cartPanel")
-.classList.add("open");
-
-updateCart();
-
-}
-
-
-/* =====================================================
-   CERRAR CARRITO
-===================================================== */
-
-function closeCart(){
-
-document
-.getElementById("cartPanel")
-.classList.remove("open");
-
-}
-
-
-/* =====================================================
-   WHATSAPP PRODUCTO
-===================================================== */
-
-function quickWhatsApp(productName){
-
-const message=
-"Hola BRIX! Quiero consultar por: "
-+productName;
-
-
-window.open(
-
-"https://wa.me/5493512573455?text="
-+
-encodeURIComponent(message),
-
-"_blank"
-
-);
-
-}
-
-
-/* =====================================================
-   WHATSAPP GENERAL
-===================================================== */
-
-function sendWhatsApp(){
-
-const message=
-"Hola BRIX! Quiero hacer un pedido.";
-
-
-window.open(
-
-"https://wa.me/5493512573455?text="
-+
-encodeURIComponent(message),
-
-"_blank"
-
-);
-
-}
-
-
-/* =====================================================
-   ENVIAR PEDIDO
-===================================================== */
-
-function sendOrder(){
-
-if(cart.length===0){
-
-sendWhatsApp();
-
-return;
-
-}
-
-
-let message=
-"Hola BRIX! Quiero hacer este pedido:\n\n";
-
-
-let total=0;
-
-
-cart.forEach(product=>{
-
-
-message +=
-"• "
-+
-product.name
-+
-" — "
-+
-(
-product.price
-?
-"$"+money(product.price)
-:
-"Consultar precio"
-)
-+
-"\n";
-
-
-total +=
-Number(product.price || 0);
-
-});
-
-
-message +=
-"\nTotal: $"
-+
-money(total);
-
-
-window.open(
-
-"https://wa.me/5493512573455?text="
-+
-encodeURIComponent(message),
-
-"_blank"
-
-);
-
-}
-
-
-/* =====================================================
-   INSTAGRAM
-===================================================== */
-
-function openInstagram(){
-
-window.open(
-
-"https://instagram.com/brix_bebidas",
-
-"_blank"
-
-);
-
-}
-
-
-/* =====================================================
-   INICIAR
-===================================================== */
-
-createMenu(
-"catalogMenu",
-categories,
-"openCategory"
-);
-
-
-createMenu(
-"promoMenu",
-promoCategories,
-"openPromo"
-);
-
-
-updateCart();
 
 </script>
-
-</div>
 
 </body>
 </html>
