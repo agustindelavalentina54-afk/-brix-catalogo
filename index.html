@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
 <meta name="theme-color" content="#050505">
 
 <title>BRIX — Tu momento, tu bebida.</title>
 
 <style>
+
+/* =====================================================
+   BRIX — ESTILO GENERAL
+===================================================== */
 
 *{
   box-sizing:border-box;
@@ -26,79 +37,104 @@ body{
   overflow-x:hidden;
 }
 
-/* =========================
-   COLORES
-========================= */
-
 :root{
   --green:#baff00;
   --dark:#050505;
   --card:#0b0b0b;
   --border:#292929;
-  --gray:#a9a9a9;
+  --gray:#aaa;
 }
 
-/* =========================
+
+/* =====================================================
    HEADER
-========================= */
+===================================================== */
 
 header{
   position:sticky;
   top:0;
   z-index:1000;
-  background:rgba(5,5,5,.96);
+
+  background:rgba(5,5,5,.97);
+
   backdrop-filter:blur(12px);
+
   border-bottom:1px solid #252525;
 }
 
 .header-top{
   width:100%;
   max-width:1200px;
+
+  min-height:105px;
+
   margin:auto;
-  min-height:110px;
+
   padding:18px 25px;
 
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:25px;
+
+  gap:20px;
 }
+
+
+/* LOGO BRIX */
 
 .logo{
-  width:150px;
-  height:auto;
-  object-fit:contain;
+  font-size:58px;
+  font-weight:1000;
+  font-style:italic;
+  letter-spacing:-6px;
+
+  color:#fff;
+
+  text-decoration:none;
 }
 
-/* BOTÓN WHATSAPP SUPERIOR */
+.logo span{
+  color:var(--green);
+}
+
+
+/* WHATSAPP ARRIBA */
 
 .top-whatsapp{
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:13px;
 
-  padding:13px 22px;
+  padding:12px 20px;
 
   border:2px solid var(--green);
   border-radius:18px;
 
   color:#fff;
+
   text-decoration:none;
 
-  font-weight:900;
   font-size:17px;
+  font-weight:900;
 
   transition:.25s ease;
 }
 
 .top-whatsapp:hover{
   transform:translateY(-2px);
-  box-shadow:0 0 22px rgba(186,255,0,.18);
+
+  box-shadow:
+    0 0 25px rgba(186,255,0,.18);
 }
 
-.top-whatsapp-icon{
+
+/* ICONO WHATSAPP */
+
+.whatsapp-mini{
   width:42px;
   height:42px;
+
+  min-width:42px;
 
   display:flex;
   align-items:center;
@@ -107,24 +143,33 @@ header{
   border-radius:50%;
 
   background:#25d366;
+
   color:white;
 
-  font-size:28px;
-  font-weight:bold;
-
   box-shadow:
-    0 0 0 3px #080808,
-    0 0 0 5px var(--green);
+    0 0 0 3px #050505,
+    0 0 0 5px var(--green),
+    0 0 15px rgba(186,255,0,.3);
 }
+
+.whatsapp-mini svg{
+  width:25px;
+  height:25px;
+  fill:white;
+}
+
 
 /* NAVEGACIÓN */
 
 nav{
   max-width:900px;
+
   margin:auto;
 
   display:flex;
+
   justify-content:center;
+
   gap:80px;
 
   padding:0 20px 20px;
@@ -132,9 +177,11 @@ nav{
 
 nav a{
   color:white;
+
   text-decoration:none;
 
   font-size:21px;
+
   font-weight:900;
 
   transition:.2s;
@@ -144,31 +191,37 @@ nav a:hover{
   color:var(--green);
 }
 
-/* =========================
+
+/* =====================================================
    HERO
-========================= */
+===================================================== */
 
 .hero{
   width:100%;
-  min-height:430px;
+
+  min-height:420px;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
-  padding:60px 20px;
+  padding:45px 20px;
 
   background:
     radial-gradient(
       circle at center,
       rgba(186,255,0,.08),
-      transparent 45%
+      transparent 48%
     );
 }
 
 .hero img{
   width:100%;
+
   max-width:1100px;
+
   max-height:500px;
 
   object-fit:contain;
@@ -176,12 +229,14 @@ nav a:hover{
   border-radius:25px;
 }
 
-/* =========================
+
+/* =====================================================
    INTRO
-========================= */
+===================================================== */
 
 .intro{
   max-width:900px;
+
   margin:40px auto 80px;
 
   padding:0 20px;
@@ -190,8 +245,10 @@ nav a:hover{
 }
 
 .intro h1{
-  font-size:clamp(36px,6vw,65px);
+  font-size:clamp(38px,6vw,65px);
+
   font-weight:900;
+
   line-height:1;
 }
 
@@ -205,15 +262,18 @@ nav a:hover{
   color:var(--gray);
 
   font-size:20px;
+
   line-height:1.5;
 }
 
-/* =========================
+
+/* =====================================================
    CATEGORÍAS
-========================= */
+===================================================== */
 
 .categories{
   max-width:1200px;
+
   margin:auto;
 
   padding:0 20px 70px;
@@ -223,6 +283,7 @@ nav a:hover{
   text-align:center;
 
   font-size:38px;
+
   font-weight:900;
 
   margin-bottom:35px;
@@ -234,21 +295,27 @@ nav a:hover{
 
 .category-buttons{
   display:flex;
+
   justify-content:center;
+
   flex-wrap:wrap;
+
   gap:12px;
 }
 
 .category-buttons button{
   border:1px solid #3b3b3b;
+
   background:#0b0b0b;
+
   color:white;
 
-  padding:13px 23px;
+  padding:13px 21px;
 
   border-radius:30px;
 
-  font-size:15px;
+  font-size:14px;
+
   font-weight:800;
 
   cursor:pointer;
@@ -256,19 +323,22 @@ nav a:hover{
   transition:.2s;
 }
 
-.category-buttons button:hover,
-.category-buttons button.active{
+.category-buttons button:hover{
   background:var(--green);
+
   color:#000;
+
   border-color:var(--green);
 }
 
-/* =========================
-   PRODUCTOS
-========================= */
+
+/* =====================================================
+   CATÁLOGO
+===================================================== */
 
 .catalog{
   max-width:1200px;
+
   margin:auto;
 
   padding:20px;
@@ -280,18 +350,23 @@ nav a:hover{
 
 .category-title{
   display:flex;
+
   align-items:center;
+
   gap:15px;
 
   margin-bottom:30px;
 
   font-size:30px;
+
   font-weight:900;
 }
 
 .category-title::after{
   content:"";
+
   height:2px;
+
   flex:1;
 
   background:var(--green);
@@ -299,9 +374,14 @@ nav a:hover{
   opacity:.45;
 }
 
+
+/* PRODUCTOS */
+
 .products{
   display:grid;
+
   grid-template-columns:repeat(2,1fr);
+
   gap:25px;
 }
 
@@ -324,15 +404,22 @@ nav a:hover{
 
   border-color:var(--green);
 
-  box-shadow:0 0 25px rgba(186,255,0,.08);
+  box-shadow:
+    0 0 25px rgba(186,255,0,.08);
 }
+
+
+/* IMAGEN PRODUCTO */
 
 .product-image{
   width:100%;
-  height:300px;
+
+  height:310px;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
   margin-bottom:20px;
@@ -340,39 +427,56 @@ nav a:hover{
 
 .product-image img{
   width:auto;
+
   height:auto;
 
   max-width:100%;
-  max-height:285px;
+
+  max-height:300px;
 
   object-fit:contain;
+
+  border-radius:15px;
 }
 
+
+/* NOMBRE */
+
 .product h3{
-  font-size:22px;
+  font-size:21px;
+
   font-weight:900;
 
   margin-bottom:10px;
 }
 
+
+/* PRECIO */
+
 .price{
   color:var(--green);
 
   font-size:24px;
+
   font-weight:900;
 
   margin-bottom:18px;
 }
 
+
+/* BOTÓN */
+
 .order-button{
   display:inline-block;
 
-  padding:12px 22px;
+  padding:12px 20px;
 
   border:1px solid var(--green);
+
   border-radius:14px;
 
   color:var(--green);
+
   text-decoration:none;
 
   font-weight:900;
@@ -382,15 +486,18 @@ nav a:hover{
 
 .order-button:hover{
   background:var(--green);
+
   color:#000;
 }
 
-/* =========================
+
+/* =====================================================
    PROMOCIONES
-========================= */
+===================================================== */
 
 .promotions{
   max-width:1200px;
+
   margin:80px auto;
 
   padding:0 20px;
@@ -424,10 +531,13 @@ nav a:hover{
 
 .promo-image{
   width:100%;
+
   height:350px;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
   background:#050505;
@@ -437,6 +547,7 @@ nav a:hover{
 
 .promo-image img{
   width:100%;
+
   height:100%;
 
   object-fit:contain;
@@ -450,6 +561,7 @@ nav a:hover{
 
 .promo-info h3{
   font-size:21px;
+
   font-weight:900;
 
   margin-bottom:10px;
@@ -459,23 +571,27 @@ nav a:hover{
   color:var(--green);
 
   font-size:27px;
+
   font-weight:900;
 
   margin-bottom:18px;
 }
 
-/* =========================
+
+/* =====================================================
    CONTACTO
-========================= */
+===================================================== */
 
 .contact-section{
   width:100%;
+
   max-width:900px;
 
   margin:90px auto 0;
 
   padding:0 20px 70px;
 }
+
 
 /* TARJETA PEDIDO */
 
@@ -499,8 +615,6 @@ nav a:hover{
   line-height:1.05;
 
   font-weight:900;
-
-  letter-spacing:-1px;
 }
 
 .contact-subtitle{
@@ -513,15 +627,18 @@ nav a:hover{
   line-height:1.5;
 }
 
-/* WHATSAPP */
+
+/* WHATSAPP CONTACTO */
 
 .contact-whatsapp{
   position:relative;
 
   display:flex;
+
   align-items:center;
 
   width:100%;
+
   max-width:650px;
 
   min-height:145px;
@@ -546,13 +663,16 @@ nav a:hover{
 .contact-whatsapp:hover{
   transform:translateY(-3px);
 
-  box-shadow:0 0 25px rgba(186,255,0,.18);
+  box-shadow:
+    0 0 25px rgba(186,255,0,.18);
 }
 
-/* LOGO WHATSAPP */
+
+/* LOGO WHATSAPP GRANDE */
 
 .whatsapp-logo{
   width:75px;
+
   height:75px;
 
   min-width:75px;
@@ -560,21 +680,27 @@ nav a:hover{
   border-radius:50%;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
   background:#25d366;
-
-  color:white;
-
-  font-size:46px;
-  font-weight:bold;
 
   box-shadow:
     0 0 0 5px #090909,
     0 0 0 7px var(--green),
     0 0 22px rgba(186,255,0,.35);
 }
+
+.whatsapp-logo svg{
+  width:48px;
+
+  height:48px;
+
+  fill:white;
+}
+
 
 .app-info{
   flex:1;
@@ -590,6 +716,7 @@ nav a:hover{
   color:var(--green);
 
   font-size:24px;
+
   font-weight:900;
 
   margin-bottom:8px;
@@ -615,12 +742,16 @@ nav a:hover{
   margin-left:15px;
 }
 
-/* SEPARADOR */
+
+/* =====================================================
+   SEPARADOR
+===================================================== */
 
 .social-divider{
   display:flex;
 
   align-items:center;
+
   justify-content:center;
 
   gap:25px;
@@ -648,15 +779,20 @@ nav a:hover{
   font-weight:400;
 }
 
-/* INSTAGRAM */
+
+/* =====================================================
+   INSTAGRAM
+===================================================== */
 
 .instagram-card{
   position:relative;
 
   display:flex;
+
   align-items:center;
 
   width:100%;
+
   max-width:750px;
 
   min-height:145px;
@@ -677,19 +813,23 @@ nav a:hover{
 
   transition:.25s ease;
 
-  box-shadow:0 0 18px rgba(186,255,0,.08);
+  box-shadow:
+    0 0 18px rgba(186,255,0,.08);
 }
 
 .instagram-card:hover{
   transform:translateY(-3px);
 
-  box-shadow:0 0 28px rgba(186,255,0,.18);
+  box-shadow:
+    0 0 28px rgba(186,255,0,.18);
 }
+
 
 /* LOGO INSTAGRAM */
 
 .instagram-icon{
   width:78px;
+
   height:78px;
 
   min-width:78px;
@@ -697,16 +837,14 @@ nav a:hover{
   border-radius:22px;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
   border:3px solid var(--green);
 
   color:var(--green);
-
-  font-size:63px;
-
-  line-height:1;
 
   box-shadow:
     0 0 0 4px #090909,
@@ -715,12 +853,25 @@ nav a:hover{
   position:relative;
 }
 
+.instagram-icon svg{
+  width:55px;
+
+  height:55px;
+
+  stroke:var(--green);
+
+  fill:none;
+
+  stroke-width:2.5;
+}
+
 .instagram-icon::after{
   content:"♥";
 
   position:absolute;
 
   right:-12px;
+
   top:-14px;
 
   color:var(--green);
@@ -778,9 +929,10 @@ nav a:hover{
   margin-left:15px;
 }
 
-/* =========================
+
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
 footer{
   border-top:1px solid #242424;
@@ -808,39 +960,49 @@ footer{
   font-size:18px;
 }
 
-/* =========================
+
+/* =====================================================
    MÓVIL
-========================= */
+===================================================== */
 
 @media(max-width:700px){
 
   .header-top{
     min-height:85px;
 
-    padding:15px;
-
-    gap:10px;
-  }
-
-  .logo{
-    width:105px;
-  }
-
-  .top-whatsapp{
-    padding:9px 12px;
-
-    border-radius:15px;
-
-    font-size:13px;
+    padding:14px 15px;
 
     gap:8px;
   }
 
-  .top-whatsapp-icon{
-    width:32px;
-    height:32px;
+  .logo{
+    font-size:43px;
 
-    font-size:21px;
+    letter-spacing:-5px;
+  }
+
+  .top-whatsapp{
+    padding:8px 11px;
+
+    border-radius:15px;
+
+    font-size:12px;
+
+    gap:8px;
+  }
+
+  .whatsapp-mini{
+    width:31px;
+
+    height:31px;
+
+    min-width:31px;
+  }
+
+  .whatsapp-mini svg{
+    width:19px;
+
+    height:19px;
   }
 
   nav{
@@ -854,7 +1016,7 @@ footer{
   }
 
   .hero{
-    min-height:240px;
+    min-height:250px;
 
     padding:30px 15px;
   }
@@ -876,9 +1038,9 @@ footer{
   }
 
   .category-buttons button{
-    padding:10px 15px;
+    padding:10px 14px;
 
-    font-size:13px;
+    font-size:12px;
   }
 
   .products{
@@ -896,7 +1058,11 @@ footer{
   }
 
   .product-image{
-    height:260px;
+    height:270px;
+  }
+
+  .product-image img{
+    max-height:260px;
   }
 
   .promos-grid{
@@ -908,6 +1074,7 @@ footer{
   .promo-image{
     height:300px;
   }
+
 
   /* CONTACTO */
 
@@ -943,11 +1110,16 @@ footer{
 
   .whatsapp-logo{
     width:62px;
+
     height:62px;
 
     min-width:62px;
+  }
 
-    font-size:38px;
+  .whatsapp-logo svg{
+    width:39px;
+
+    height:39px;
   }
 
   .app-info{
@@ -982,13 +1154,18 @@ footer{
 
   .instagram-icon{
     width:60px;
+
     height:60px;
 
     min-width:60px;
 
     border-radius:18px;
+  }
 
-    font-size:48px;
+  .instagram-icon svg{
+    width:42px;
+
+    height:42px;
   }
 
   .instagram-info{
@@ -1022,40 +1199,48 @@ footer{
   .footer-address{
     font-size:15px;
   }
+
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- =========================
+<!-- =====================================================
      HEADER
-========================= -->
+===================================================== -->
 
 <header>
 
   <div class="header-top">
 
+
     <!-- LOGO -->
-    <a href="#">
-      <img
-        src="banner-brix-final.png"
-        alt="BRIX"
-        class="logo"
-      >
+
+    <a href="#" class="logo">
+      BRI<span>X</span>
     </a>
 
+
     <!-- WHATSAPP ARRIBA -->
+
     <a
       href="https://wa.me/5493512573455"
       target="_blank"
       class="top-whatsapp"
     >
 
-      <span class="top-whatsapp-icon">☏</span>
+      <span class="whatsapp-mini">
+
+        <svg viewBox="0 0 24 24">
+          <path d="M20.5 3.5A11.9 11.9 0 0 0 12.04 0C5.45 0 .09 5.36.09 11.95c0 2.1.55 4.15 1.59 5.96L0 24l6.23-1.63a11.94 11.94 0 0 0 5.8 1.48h.01c6.59 0 11.95-5.36 11.95-11.95 0-3.19-1.24-6.19-3.49-8.4ZM12.04 21.8h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.7.97.99-3.61-.23-.37a9.86 9.86 0 1 1 8.34 4.6Zm5.42-7.4c-.3-.15-1.78-.88-2.05-.98-.27-.1-.47-.15-.67.15-.2.3-.77.98-.94 1.18-.17.2-.35.22-.65.07-.3-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.03-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.09 4.5.71.31 1.27.49 1.71.63.72.23 1.37.2 1.88.12.57-.08 1.78-.73 2.03-1.43.25-.7.25-1.3.17-1.43-.07-.13-.27-.2-.57-.35Z"/>
+        </svg>
+
+      </span>
 
       <span>
         HACÉ UN PEDIDO
@@ -1082,9 +1267,9 @@ footer{
 
 
 
-<!-- =========================
+<!-- =====================================================
      HERO
-========================= -->
+===================================================== -->
 
 <section class="hero">
 
@@ -1097,9 +1282,9 @@ footer{
 
 
 
-<!-- =========================
+<!-- =====================================================
      INTRO
-========================= -->
+===================================================== -->
 
 <section class="intro">
 
@@ -1118,9 +1303,9 @@ footer{
 
 
 
-<!-- =========================
+<!-- =====================================================
      CATEGORÍAS
-========================= -->
+===================================================== -->
 
 <section class="categories">
 
@@ -1128,48 +1313,38 @@ footer{
     <span>BRIX</span> CATÁLOGO
   </h2>
 
+
   <div class="category-buttons">
 
-    <button
-      class="active"
-      onclick="scrollToCategory('vodka')"
-    >
+    <button onclick="scrollToCategory('vodka')">
       VODKA
     </button>
 
-    <button
-      onclick="scrollToCategory('fernet')"
-    >
+    <button onclick="scrollToCategory('fernet')">
       FERNET
     </button>
 
-    <button
-      onclick="scrollToCategory('gancia')"
-    >
+    <button onclick="scrollToCategory('listas')">
+      LISTAS
+    </button>
+
+    <button onclick="scrollToCategory('gancia')">
       GANCIA
     </button>
 
-    <button
-      onclick="scrollToCategory('cerveza')"
-    >
+    <button onclick="scrollToCategory('cerveza')">
       CERVEZA
     </button>
 
-    <button
-      onclick="scrollToCategory('gaseosas')"
-    >
+    <button onclick="scrollToCategory('gaseosas')">
       GASEOSAS
     </button>
 
-    <button
-      onclick="scrollToCategory('energizantes')"
-    >
+    <button onclick="scrollToCategory('energizantes')">
       ENERGIZANTES
     </button>
 
-    <button
-      onclick="scrollToCategory('vinos')"
-    >
+    <button onclick="scrollToCategory('vinos')">
       VINOS
     </button>
 
@@ -1179,14 +1354,16 @@ footer{
 
 
 
-<!-- =========================
+<!-- =====================================================
      CATÁLOGO
-========================= -->
+===================================================== -->
 
 <main class="catalog" id="catalogo">
 
 
-<!-- VODKA -->
+<!-- =====================================================
+     VODKA
+===================================================== -->
 
 <section
   class="category-section"
@@ -1197,8 +1374,11 @@ footer{
     VODKA
   </h2>
 
+
   <div class="products">
 
+
+    <!-- SMIRNOFF -->
 
     <article class="product">
 
@@ -1229,6 +1409,8 @@ footer{
 
     </article>
 
+
+    <!-- SKYY -->
 
     <article class="product">
 
@@ -1266,7 +1448,9 @@ footer{
 
 
 
-<!-- FERNET -->
+<!-- =====================================================
+     FERNET
+===================================================== -->
 
 <section
   class="category-section"
@@ -1277,8 +1461,11 @@ footer{
     FERNET
   </h2>
 
+
   <div class="products">
 
+
+    <!-- BRANCA -->
 
     <article class="product">
 
@@ -1310,13 +1497,134 @@ footer{
     </article>
 
 
+    <!-- ONLY FERNET COLA -->
+
+    <article class="product">
+
+      <div class="product-image">
+
+        <img
+          src="only-fernet-cola.png"
+          alt="Only Fernet Cola"
+        >
+
+      </div>
+
+      <h3>
+        ONLY FERNET COLA
+      </h3>
+
+      <div class="price">
+        CONSULTAR
+      </div>
+
+      <a
+        class="order-button"
+        target="_blank"
+        href="https://wa.me/5493512573455?text=Hola%20BRIX,%20quiero%20consultar%20por%20Only%20Fernet%20Cola"
+      >
+        CONSULTAR
+      </a>
+
+    </article>
+
+
   </div>
 
 </section>
 
 
 
-<!-- GANCIA -->
+<!-- =====================================================
+     BEBIDAS LISTAS
+===================================================== -->
+
+<section
+  class="category-section"
+  id="listas"
+>
+
+  <h2 class="category-title">
+    BEBIDAS LISTAS
+  </h2>
+
+
+  <div class="products">
+
+
+    <!-- RED BERRIES -->
+
+    <article class="product">
+
+      <div class="product-image">
+
+        <img
+          src="smirnoff-ice-red-berries.png"
+          alt="Smirnoff Ice Red Berries"
+        >
+
+      </div>
+
+      <h3>
+        SMIRNOFF ICE RED BERRIES
+      </h3>
+
+      <div class="price">
+        CONSULTAR
+      </div>
+
+      <a
+        class="order-button"
+        target="_blank"
+        href="https://wa.me/5493512573455?text=Hola%20BRIX,%20quiero%20consultar%20por%20Smirnoff%20Ice%20Red%20Berries"
+      >
+        CONSULTAR
+      </a>
+
+    </article>
+
+
+    <!-- GREEN APPLE -->
+
+    <article class="product">
+
+      <div class="product-image">
+
+        <img
+          src="smirnoff-ice-green-apple.png"
+          alt="Smirnoff Ice Green Apple"
+        >
+
+      </div>
+
+      <h3>
+        SMIRNOFF ICE GREEN APPLE
+      </h3>
+
+      <div class="price">
+        CONSULTAR
+      </div>
+
+      <a
+        class="order-button"
+        target="_blank"
+        href="https://wa.me/5493512573455?text=Hola%20BRIX,%20quiero%20consultar%20por%20Smirnoff%20Ice%20Green%20Apple"
+      >
+        CONSULTAR
+      </a>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     GANCIA
+===================================================== -->
 
 <section
   class="category-section"
@@ -1326,6 +1634,7 @@ footer{
   <h2 class="category-title">
     GANCIA
   </h2>
+
 
   <div class="products">
 
@@ -1366,7 +1675,9 @@ footer{
 
 
 
-<!-- CERVEZA -->
+<!-- =====================================================
+     CERVEZA
+===================================================== -->
 
 <section
   class="category-section"
@@ -1377,21 +1688,25 @@ footer{
     CERVEZA
   </h2>
 
+
   <div class="products">
 
+
+    <!-- 361 -->
 
     <article class="product">
 
       <div class="product-image">
 
-        <div style="font-size:100px;">
-          🍺
-        </div>
+        <img
+          src="cerveza-361.png"
+          alt="Cerveza 361"
+        >
 
       </div>
 
       <h3>
-        CERVEZA
+        CERVEZA 361
       </h3>
 
       <div class="price">
@@ -1401,7 +1716,39 @@ footer{
       <a
         class="order-button"
         target="_blank"
-        href="https://wa.me/5493512573455?text=Hola%20BRIX,%20quiero%20consultar%20por%20Cerveza"
+        href="https://wa.me/5493512573455?text=Hola%20BRIX,%20quiero%20consultar%20por%20Cerveza%20361"
+      >
+        CONSULTAR
+      </a>
+
+    </article>
+
+
+    <!-- IGUANA -->
+
+    <article class="product">
+
+      <div class="product-image">
+
+        <img
+          src="cerveza-iguana.png"
+          alt="Cerveza Iguana"
+        >
+
+      </div>
+
+      <h3>
+        CERVEZA IGUANA
+      </h3>
+
+      <div class="price">
+        CONSULTAR
+      </div>
+
+      <a
+        class="order-button"
+        target="_blank"
+        href="https://wa.me/5493512573455?text=Hola%20BRIX,%20quiero%20consultar%20por%20Cerveza%20Iguana"
       >
         CONSULTAR
       </a>
@@ -1415,7 +1762,9 @@ footer{
 
 
 
-<!-- GASEOSAS -->
+<!-- =====================================================
+     GASEOSAS
+===================================================== -->
 
 <section
   class="category-section"
@@ -1426,8 +1775,11 @@ footer{
     GASEOSAS
   </h2>
 
+
   <div class="products">
 
+
+    <!-- COCA COLA -->
 
     <article class="product">
 
@@ -1459,6 +1811,40 @@ footer{
     </article>
 
 
+    <!-- COCA COLA ZERO -->
+
+    <article class="product">
+
+      <div class="product-image">
+
+        <img
+          src="coca-cola-zero.png"
+          alt="Coca Cola Zero"
+        >
+
+      </div>
+
+      <h3>
+        COCA COLA ZERO
+      </h3>
+
+      <div class="price">
+        CONSULTAR
+      </div>
+
+      <a
+        class="order-button"
+        target="_blank"
+        href="https://wa.me/5493512573455?text=Hola%20BRIX,%20quiero%20consultar%20por%20Coca%20Cola%20Zero"
+      >
+        CONSULTAR
+      </a>
+
+    </article>
+
+
+    <!-- SPRITE -->
+
     <article class="product">
 
       <div class="product-image">
@@ -1488,6 +1874,8 @@ footer{
 
     </article>
 
+
+    <!-- PRITTY -->
 
     <article class="product">
 
@@ -1519,13 +1907,79 @@ footer{
     </article>
 
 
+    <!-- SECCO -->
+
+    <article class="product">
+
+      <div class="product-image">
+
+        <img
+          src="secco-pomelo.png"
+          alt="Secco Pomelo"
+        >
+
+      </div>
+
+      <h3>
+        SECCO POMELO 2 L
+      </h3>
+
+      <div class="price">
+        CONSULTAR
+      </div>
+
+      <a
+        class="order-button"
+        target="_blank"
+        href="https://wa.me/5493512573455?text=Hola%20BRIX,%20quiero%20consultar%20por%20Secco%20Pomelo"
+      >
+        CONSULTAR
+      </a>
+
+    </article>
+
+
+    <!-- DOBLE COLA -->
+
+    <article class="product">
+
+      <div class="product-image">
+
+        <img
+          src="doble-cola.png"
+          alt="Doble Cola"
+        >
+
+      </div>
+
+      <h3>
+        DOBLE COLA
+      </h3>
+
+      <div class="price">
+        CONSULTAR
+      </div>
+
+      <a
+        class="order-button"
+        target="_blank"
+        href="https://wa.me/5493512573455?text=Hola%20BRIX,%20quiero%20consultar%20por%20Doble%20Cola"
+      >
+        CONSULTAR
+      </a>
+
+    </article>
+
+
   </div>
 
 </section>
 
 
 
-<!-- ENERGIZANTES -->
+<!-- =====================================================
+     ENERGIZANTES
+===================================================== -->
 
 <section
   class="category-section"
@@ -1536,8 +1990,11 @@ footer{
     ENERGIZANTES
   </h2>
 
+
   <div class="products">
 
+
+    <!-- SPEED XL -->
 
     <article class="product">
 
@@ -1569,6 +2026,8 @@ footer{
     </article>
 
 
+    <!-- MONSTER -->
+
     <article class="product">
 
       <div class="product-image">
@@ -1598,6 +2057,8 @@ footer{
 
     </article>
 
+
+    <!-- MONSTER MANGO -->
 
     <article class="product">
 
@@ -1635,7 +2096,9 @@ footer{
 
 
 
-<!-- VINOS -->
+<!-- =====================================================
+     VINOS
+===================================================== -->
 
 <section
   class="category-section"
@@ -1645,6 +2108,7 @@ footer{
   <h2 class="category-title">
     VINOS
   </h2>
+
 
   <div class="products">
 
@@ -1743,13 +2207,14 @@ footer{
 
 </section>
 
+
 </main>
 
 
 
-<!-- =========================
+<!-- =====================================================
      PROMOCIONES
-========================= -->
+===================================================== -->
 
 <section
   class="promotions"
@@ -1764,7 +2229,8 @@ footer{
   <div class="promos-grid">
 
 
-    <!-- 1 -->
+    <!-- SMIRNOFF + 2 SPEED -->
+
     <article class="promo">
 
       <div class="promo-image">
@@ -1799,7 +2265,8 @@ footer{
     </article>
 
 
-    <!-- 2 -->
+    <!-- 2 SMIRNOFF + 4 SPEED -->
+
     <article class="promo">
 
       <div class="promo-image">
@@ -1834,7 +2301,8 @@ footer{
     </article>
 
 
-    <!-- 3 -->
+    <!-- SKYY + 2 SPEED -->
+
     <article class="promo">
 
       <div class="promo-image">
@@ -1869,7 +2337,8 @@ footer{
     </article>
 
 
-    <!-- 4 -->
+    <!-- 2 SKYY + 4 SPEED -->
+
     <article class="promo">
 
       <div class="promo-image">
@@ -1904,7 +2373,8 @@ footer{
     </article>
 
 
-    <!-- 5 -->
+    <!-- 3 SKYY + 6 SPEED -->
+
     <article class="promo">
 
       <div class="promo-image">
@@ -1939,14 +2409,15 @@ footer{
     </article>
 
 
-    <!-- 6 -->
+    <!-- FERNET -->
+
     <article class="promo">
 
       <div class="promo-image">
 
         <img
           src="promo-fernet-2-coca-2.png"
-          alt="2 Fernet más 2 Coca Cola más hielo"
+          alt="2 Fernet más 2 Coca y hielo"
         >
 
       </div>
@@ -1974,7 +2445,8 @@ footer{
     </article>
 
 
-    <!-- 7 -->
+    <!-- VODKA + FERNET -->
+
     <article class="promo">
 
       <div class="promo-image">
@@ -2015,9 +2487,9 @@ footer{
 
 
 
-<!-- =========================
+<!-- =====================================================
      CONTACTO
-========================= -->
+===================================================== -->
 
 <section
   class="contact-section"
@@ -2034,11 +2506,14 @@ footer{
       UN PEDIDO?
     </h2>
 
+
     <p class="contact-subtitle">
       Escribinos directamente por WhatsApp<br>
       y te respondemos al instante.
     </p>
 
+
+    <!-- WHATSAPP -->
 
     <a
       class="contact-whatsapp"
@@ -2047,8 +2522,15 @@ footer{
     >
 
       <div class="whatsapp-logo">
-        ☏
+
+        <svg viewBox="0 0 24 24">
+
+          <path d="M20.5 3.5A11.9 11.9 0 0 0 12.04 0C5.45 0 .09 5.36.09 11.95c0 2.1.55 4.15 1.59 5.96L0 24l6.23-1.63a11.94 11.94 0 0 0 5.8 1.48h.01c6.59 0 11.95-5.36 11.95-11.95 0-3.19-1.24-6.19-3.49-8.4ZM12.04 21.8h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.7.97.99-3.61-.23-.37a9.86 9.86 0 1 1 8.34 4.6Zm5.42-7.4c-.3-.15-1.78-.88-2.05-.98-.27-.1-.47-.15-.67.15-.2.3-.77.98-.94 1.18-.17.2-.35.22-.65.07-.3-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.03-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.09 4.5.71.31 1.27.49 1.71.63.72.23 1.37.2 1.88.12.57-.08 1.78-.73 2.03-1.43.25-.7.25-1.3.17-1.43-.07-.13-.27-.2-.57-.35Z"/>
+
+        </svg>
+
       </div>
+
 
       <div class="app-info">
 
@@ -2063,6 +2545,7 @@ footer{
 
       </div>
 
+
       <div class="app-arrow">
         ›
       </div>
@@ -2070,6 +2553,7 @@ footer{
     </a>
 
   </div>
+
 
 
   <!-- SEPARADOR -->
@@ -2085,6 +2569,7 @@ footer{
   </div>
 
 
+
   <!-- INSTAGRAM -->
 
   <a
@@ -2093,9 +2578,39 @@ footer{
     target="_blank"
   >
 
+
     <div class="instagram-icon">
-      ◎
+
+      <svg
+        viewBox="0 0 24 24"
+      >
+
+        <rect
+          x="3"
+          y="3"
+          width="18"
+          height="18"
+          rx="5"
+        />
+
+        <circle
+          cx="12"
+          cy="12"
+          r="4"
+        />
+
+        <circle
+          cx="17.5"
+          cy="6.5"
+          r="1"
+          fill="var(--green)"
+          stroke="none"
+        />
+
+      </svg>
+
     </div>
+
 
     <div class="instagram-info">
 
@@ -2113,6 +2628,7 @@ footer{
 
     </div>
 
+
     <div class="instagram-arrow">
       ›
     </div>
@@ -2124,9 +2640,9 @@ footer{
 
 
 
-<!-- =========================
+<!-- =====================================================
      FOOTER
-========================= -->
+===================================================== -->
 
 <footer>
 
@@ -2136,6 +2652,7 @@ footer{
     — Tu momento, tu bebida.
 
   </div>
+
 
   <div class="footer-address">
 
@@ -2147,15 +2664,16 @@ footer{
 
 
 
-<!-- =========================
+<!-- =====================================================
      JAVASCRIPT
-========================= -->
+===================================================== -->
 
 <script>
 
 function scrollToCategory(id){
 
-  const section = document.getElementById(id);
+  const section =
+    document.getElementById(id);
 
   if(section){
 
@@ -2172,4 +2690,5 @@ function scrollToCategory(id){
 
 
 </body>
+
 </html>
